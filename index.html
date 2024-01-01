@@ -10,21 +10,55 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script src="javascript/index.js"></script>
+    <script src="javascript/index.js" type="module" defer></script>
 </head>
 <body>
     <header>
-        <figure class="logo">
-            <h2 class="sr-only">AXYS Creative</h2>
-            <p>AXYS</p>
-            <img src="" alt="">
-            <p>Creative</p>
-        </figure>
+        <a href="index.html" class="logo" aria-label="Axis Creative">
+            <p aria-hidden="true">AXYS</p>
+            <svg viewBox="0 0 82 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.76903 0.644194C1.9719 -0.972363 -1.16006 2.158 0.454202 4.95682L9.43292 20.5241C9.99662 21.5015 9.99619 22.7054 9.4318 23.6823L0.442096 39.2433C-1.17415 42.0409 1.95561 45.1735 4.75388 43.5589L37.1822 24.8481C39.2877 23.6332 39.2887 20.5943 37.1841 19.378L4.76903 0.644194Z" fill="#E48C66"/>
+                <path d="M77.231 0.442182C80.0281 -1.17438 83.1601 1.95599 81.5458 4.75481L72.5671 20.3221C72.0034 21.2995 72.0038 22.5034 72.5682 23.4803L81.5579 39.0413C83.1742 41.8389 80.0444 44.9715 77.2461 43.3569L44.8178 24.6461C42.7123 23.4312 42.7113 20.3923 44.8159 19.1759L77.231 0.442182Z" fill="#E48C66"/>
+            </svg>                
+            <p aria-hidden="true">Creative</p>
+        </a>
+        <button class="burger-menu">
+            menu
+            <div class="burger">
+                <span class="burger-line"> </span>
+                <span class="burger-line"> </span>
+            </div>
+        </button>
     </header>
     <main>
-        <section id="hero-section"></section>
+        <section id="hero-section">
+            <div class="headline">
+                <h1>
+                    <span>Creative</span><br>
+                    <span>Web design +</span><br>
+                    <span>Development</span>
+                </h1>
+
+                <p>Unlimited requests. <br>One simple subscription.</p>
+            </div>
+
+            <div class="cta-wrapper">
+                <a href="#plans-section" class="cta-1">
+                    <div class="ring"></div>
+                    <p class="anchor-text">View plans</p>
+                </a>
+                <a href="#work-section" class="cta-2">
+                    <div class="dot"></div>
+                    <p class="anchor-text">Our work</p>
+                </a>
+            </div>
+        </section>
+        
         <section id="work-section"></section>
+
         <section id="statement-section"></section>
+
+        <div class="mouse-cursor"></div>
     </main>
     <footer></footer>
 </body>

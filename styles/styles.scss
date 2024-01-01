@@ -1,2 +1,58 @@
-@import 'variables.scss', 
-'globals.scss'
+@import 'variables.scss',
+'mixins.scss',
+'globals.scss';
+
+#hero-section {
+    padding: 248px 0;
+    
+    @include mq-max('xxl') {
+        padding: 124px 0;
+    }
+
+    .headline {
+    
+        h1 {
+            font-size: 96px;
+            font-weight: 300;
+            text-transform: uppercase;
+    
+            @include mq-max('xl') {
+                font-size: 64px;
+            }
+    
+            @include mq-max('md') {
+                font-size: 32px;
+            }
+    
+            span {
+    
+                &:first-of-type {
+                    color: $coral;
+                }
+    
+                &:last-of-type {
+                    padding-left: 240px;
+    
+                    @include mq-max('xl') {
+                        padding-left: 160px;
+                    }
+    
+                    @include mq-max('md') {
+                        padding-left: 0;
+                    }
+                }
+            }
+    
+        }
+    
+        p {
+            font-size: 14px;
+            color: $white;
+            translate: 0 -148%;
+        }
+    }
+
+    // .cta-wrapper {
+    //     // see  'cta-wrapper' in _globals.scss
+    // }
+}
