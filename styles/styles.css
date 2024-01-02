@@ -40,6 +40,9 @@ footer {
 }
 
 header {
+  position: sticky;
+  top: 0;
+  width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -150,11 +153,36 @@ header .menu-btn.active .burger-line:last-of-type {
 .cta-wrapper .cta-2 .anchor-text {
   transition: 0.3s ease;
 }
+.cta-wrapper .cta-1:hover .ring, .cta-wrapper .cta-1:focus .ring {
+  border-color: #7EC1D4;
+  translate: -24px 0;
+}
+.cta-wrapper .cta-1:hover .ring svg, .cta-wrapper .cta-1:focus .ring svg {
+  opacity: 1;
+}
+.cta-wrapper .cta-1:hover .anchor-text, .cta-wrapper .cta-1:focus .anchor-text {
+  translate: -12px 0;
+  color: #7EC1D4;
+  background-color: transparent;
+}
 .cta-wrapper .cta-1 .ring {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 2px solid #3D3D3D;
   width: 48px;
   height: 48px;
   border-radius: 50%;
+  transition: 0.3s ease;
+}
+.cta-wrapper .cta-1 .ring svg {
+  width: 24px;
+  height: 24px;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+.cta-wrapper .cta-1 .ring svg path {
+  fill: #7EC1D4;
 }
 .cta-wrapper .cta-1 .anchor-text {
   background-color: #101010;
@@ -176,6 +204,13 @@ header .menu-btn.active .burger-line:last-of-type {
 .cta-wrapper .cta-2:hover .dot, .cta-wrapper .cta-2:focus .dot {
   scale: 4;
   background-color: #E48C66;
+}
+@media screen and (max-width: 480px) {
+  .cta-wrapper .cta-2:hover .dot, .cta-wrapper .cta-2:focus .dot {
+    scale: 1;
+    width: 16px;
+    height: 16px;
+  }
 }
 
 .mouse-cursor {

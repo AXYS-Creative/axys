@@ -38,6 +38,9 @@ footer {
 }
 
 header {
+    position: sticky;
+    top: 0;
+    width: 100vw;
     @include row-between;
 
     .logo {
@@ -159,12 +162,43 @@ header {
 
     .cta-1 {
 
-        .ring {
+        &:hover, 
+        &:focus {
+
+            .ring {
+                border-color: $blue;
+                translate: -24px 0;
+
+                svg {
+                    opacity: 1;
+                }
+            }
             
+            .anchor-text {
+                translate: -12px 0;
+                color: $blue;
+                background-color: transparent;
+            }
+        }
+
+        .ring {
+            @include row-center;
             border: 2px solid $grey;
             width: 48px;
             height: 48px;
             border-radius: 50%;
+            transition: 0.3s ease;
+
+            svg {
+                width: 24px;
+                height: 24px;
+                opacity: 0;
+                transition: 0.3s ease;
+
+                path {
+                    fill: $blue;
+                }
+            }
         }
         .anchor-text {
             background-color: $black;
@@ -188,15 +222,19 @@ header {
         &:focus {
             
             .anchor-text {
-                // color: $grey-light;
                 color: $coral;
                 translate: 10px 0;
             }
 
             .dot {
                 scale: 4;
-                // background-color: $grey-light;
                 background-color: $coral;
+
+                @include mq-max('sm') {
+                    scale: 1;
+                    width: 16px;
+                    height: 16px;
+                }
             }
         }
     }
