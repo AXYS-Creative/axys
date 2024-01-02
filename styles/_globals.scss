@@ -16,6 +16,29 @@ body {
     background-color: $black;
 }
 
+h1,
+h2 {
+    font-size: 96px;
+    text-transform: uppercase;
+
+    @include mq-max('xxl') {
+        font-size: 80px;
+    }
+
+    @include mq-max('xl') {
+        font-size: 64px;
+    }
+
+    @include mq-max('md') {
+        font-size: 48px;
+        margin-bottom: 12px;
+    }
+
+    @include mq-max('sm') {
+        font-size: 36px;
+    }
+}
+
 a {
     text-decoration: none;
 }
@@ -308,6 +331,18 @@ header {
         height: 100%;
         background-color: rgba($grey-dark, 0.5);
     }
+}
+
+.coral-text {
+    color: $coral;
+}
+
+.blue-text {
+    color: $blue;
+}
+
+.green-text {
+    color: $green;
 }
 
 // Utility

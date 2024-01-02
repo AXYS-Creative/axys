@@ -15,6 +15,37 @@ body {
   background-color: #101010;
 }
 
+h1,
+h2 {
+  font-size: 96px;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 1440px) {
+  h1,
+  h2 {
+    font-size: 80px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  h1,
+  h2 {
+    font-size: 64px;
+  }
+}
+@media screen and (max-width: 768px) {
+  h1,
+  h2 {
+    font-size: 48px;
+    margin-bottom: 12px;
+  }
+}
+@media screen and (max-width: 480px) {
+  h1,
+  h2 {
+    font-size: 36px;
+  }
+}
+
 a {
   text-decoration: none;
 }
@@ -264,6 +295,18 @@ header .menu-btn.active .burger-line:last-of-type {
   background-color: rgba(30, 30, 30, 0.5);
 }
 
+.coral-text {
+  color: #E48C66;
+}
+
+.blue-text {
+  color: #7EC1D4;
+}
+
+.green-text {
+  color: #A4D1A2;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -291,30 +334,9 @@ header .menu-btn.active .burger-line:last-of-type {
     margin-bottom: 96px;
   }
 }
-#hero-section .headline h1 {
-  font-size: 96px;
-  font-weight: 300;
-  text-transform: uppercase;
-}
-@media screen and (max-width: 1440px) {
-  #hero-section .headline h1 {
-    font-size: 80px;
-  }
-}
-@media screen and (max-width: 1200px) {
-  #hero-section .headline h1 {
-    font-size: 64px;
-  }
-}
 @media screen and (max-width: 768px) {
   #hero-section .headline h1 {
-    font-size: 48px;
     margin-bottom: 12px;
-  }
-}
-@media screen and (max-width: 480px) {
-  #hero-section .headline h1 {
-    font-size: 36px;
   }
 }
 #hero-section .headline h1 span:first-of-type {
@@ -362,5 +384,46 @@ header .menu-btn.active .burger-line:last-of-type {
 @media screen and (max-width: 768px) {
   #hero-section .cta-wrapper {
     margin-left: 0;
+  }
+}
+
+#work-section .marquee {
+  overflow: hidden;
+  width: 100vw;
+  max-width: 1920px;
+  translate: -48px 0;
+}
+@media screen and (max-width: 768px) {
+  #work-section .marquee {
+    translate: -24px 0;
+  }
+}
+#work-section .marquee-inner {
+  display: flex;
+  width: fit-content;
+  animation: marquee 24s linear infinite;
+}
+@media screen and (max-width: 1200px) {
+  #work-section .marquee-inner {
+    animation-duration: 18s;
+  }
+}
+@media screen and (max-width: 480px) {
+  #work-section .marquee-inner {
+    animation-duration: 6s;
+  }
+}
+@keyframes marquee {
+  to {
+    translate: -50% 0;
+  }
+}
+#work-section .marquee h2 {
+  display: inline-flex;
+  gap: 24px;
+}
+@media screen and (max-width: 480px) {
+  #work-section .marquee h2 {
+    gap: 12px;
   }
 }/*# sourceMappingURL=styles.css.map */

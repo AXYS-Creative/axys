@@ -18,25 +18,10 @@
 
     
         h1 {
-            font-size: 96px;
-            font-weight: 300;
-            text-transform: uppercase;
-    
-            @include mq-max('xxl') {
-                font-size: 80px;
-            }
-
-            @include mq-max('xl') {
-                font-size: 64px;
-            }
+            // see 'h1, h2' in _globals.scss
     
             @include mq-max('md') {
-                font-size: 48px;
                 margin-bottom: 12px;
-            }
-
-            @include mq-max('sm') {
-                font-size: 36px;
             }
     
             span {
@@ -89,6 +74,49 @@
 
         @include mq-max('md') {
             margin-left: 0;
+        }
+    }
+}
+
+#work-section {
+
+    .marquee {
+        overflow: hidden;
+        width: 100vw;
+        max-width: $content-width;
+        translate: calc($content-padding * -1) 0;
+        
+        @include mq-max('md') {
+            translate: calc($content-padding-md * -1) 0;
+            }
+
+        &-inner {
+            display: flex;
+            width: fit-content;
+            animation: marquee 24s linear infinite;
+
+            @include mq-max('xl') {
+                animation-duration: 18s;
+            }
+
+            @include mq-max('sm') {
+                animation-duration: 6s;
+            }
+        }
+
+        @keyframes marquee {
+            to {
+                translate: -50% 0;
+            }
+        }
+
+        h2 {
+            display: inline-flex;
+            gap: 24px;
+
+            @include mq-max('sm') {
+                gap: 12px;
+            }
         }
     }
 }
