@@ -5,6 +5,11 @@
     color: $white;
     font-family: 'Archivo', sans-serif;
     font-weight: 300;
+
+    &::selection {
+        color: $white;
+        background-color: rgba($coral, 0.75);
+    }
 }
 
 body {
@@ -28,7 +33,7 @@ footer {
     margin: auto;
 
     @include mq-max('md') {
-        padding: 12px $content-padding-md;
+        padding: $content-padding-md;
     }
 }
 
@@ -39,9 +44,27 @@ header {
         @include row-center;
 
         p {
+            overflow: hidden;
             font-size: 16px;
             font-weight: 900;
             text-transform: uppercase;
+            
+            @include mq-max('sm') {
+                animation: hide-logo 0.36s ease 2s forwards;
+            }
+
+            &:first-of-type {
+                width: 48px;
+            }
+            &:last-of-type {
+                width: 96px;
+            }
+        }
+
+        @keyframes hide-logo {
+            to {
+                width: 0;
+            }
         }
 
         svg {
@@ -50,21 +73,34 @@ header {
         }
     }
 
-    .burger-menu {
+    .menu-btn {
         text-transform: uppercase;
         @include row-center;
         gap: 12px;
         cursor: pointer;
 
+        &:hover {
+            
+            .menu-btn-text {
+                translate: -12px 0;
+            }
+        }
+
+        .menu-btn-text {
+            // border: $test;
+            transition: 0.3s ease;
+            width: 36px;
+        }
+
         .burger {
             position: relative;
-            width: 24px;
-            height: 24px;
-            transition: 0.3s ease;
+            width: 48px;
+            height: 48px;
+            transition: 0.4s cubic-bezier(0.05,1.75,.75,1.75), rotate 0.3s ease;
 
             &-line {
                 @include absolute-center;
-                width: 100%;
+                width: 28px;
                 height: 3px;
                 background-color: $white;
                 transition: 0.3s ease;
@@ -80,10 +116,6 @@ header {
         }
 
         &.active {
-            
-            .burger {
-                rotate: 90deg;
-            }
 
             .burger-line {
 
@@ -103,6 +135,71 @@ header {
 
 .cta-wrapper {
     @include row-between;
+    width: 360px;
+    
+    @include mq-max('md') {
+        width: 264px;
+    }
+
+    .cta-1,
+    .cta-2 {
+        @include row-center;
+        font-size: 24px;
+        text-transform: uppercase;
+        
+        @include mq-max('md') {
+            font-size: 16px;
+        }
+
+        .anchor-text {
+            transition: 0.3s ease;
+        }
+
+    }
+
+    .cta-1 {
+
+        .ring {
+            
+            border: 2px solid $grey;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+        }
+        .anchor-text {
+            background-color: $black;
+            translate: -24px 0;
+            padding: 2px 0;
+        }
+    }
+
+    .cta-2 {
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: $grey;
+            margin-right: 12px;
+            transition: 0.3s ease;
+        }
+        
+        &:hover,
+        &:focus {
+            
+            .anchor-text {
+                // color: $grey-light;
+                color: $coral;
+                translate: 10px 0;
+            }
+
+            .dot {
+                scale: 4;
+                // background-color: $grey-light;
+                background-color: $coral;
+            }
+        }
+    }
 }
 
 
@@ -110,6 +207,7 @@ header {
 
 .mouse-cursor {
     border: 2px solid $grey;
+    // border: 2px solid rgba($white, 0.8);
     position: fixed;
     translate: -50% -50%; // Essential for centering mouse-div
     width: 48px;
@@ -119,8 +217,59 @@ header {
     border 0.4s ease,
     width 0.48s ease,
     height 0.48s ease;
-    // pointer-events: none;
+    pointer-events: none;
+    // z-index: -1;
+    // mix-blend-mode: difference;
+
+    @media (hover: none) {
+        display: none;
+    }
+
+    &.logo-active,
+    &.cta1-active {
+        z-index: 1;
+        width: 128px;
+        height: 128px;
+        border: 0px solid transparent;
+    }
+
+    &.cta2-active {
+        scale: 0.8;
+        border-width: 4px;
+        border-color: $white;
+        transition: 0.6s cubic-bezier(.02,.35,.39,1.12),
+          border 0.4s ease,
+          background 0.28s ease 0.5s;
+    }
+
+    &.burger-active {
+        // background: rgba(grey, 0.5);
+        width: 72px;
+        height: 72px;
+        // filter: blur(2px);
+        // backdrop-filter: blur(1px);
+        transition: 0.4s cubic-bezier(.02,.35,.39,1.12), border 0.3s ease;
+        // z-index: 3;
+    }
+}
+
+.stripes-bg {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    translate: -50% 0;
+    height: 100vh;
+    width: 92vw;
     z-index: -1;
+    display: flex;
+    justify-content: space-around;
+    z-index: -5;
+
+    .stripe {
+        width: 2px;
+        height: 100%;
+        background-color: rgba($grey-dark, 0.5);
+    }
 }
 
 // Utility

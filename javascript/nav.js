@@ -1,7 +1,7 @@
-const burgerMenu = document.querySelector(".burger-menu");
+const menuBtn = document.querySelector(".menu-btn");
 
 function toggleNav() {
-  burgerMenu.classList.toggle("active");
+  menuBtn.classList.toggle("active");
 }
 
-burgerMenu.addEventListener("click", toggleNav);
+menuBtn.addEventListener("click", toggleNav);

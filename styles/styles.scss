@@ -3,25 +3,40 @@
 'globals.scss';
 
 #hero-section {
-    padding: 248px 0;
+    padding: 196px 0;
     
     @include mq-max('xxl') {
         padding: 124px 0;
     }
 
     .headline {
+        margin-bottom: 128px;
+
+        @include mq-max('xxl') {
+            margin-bottom: 96px;
+        }
+
     
         h1 {
             font-size: 96px;
             font-weight: 300;
             text-transform: uppercase;
     
+            @include mq-max('xxl') {
+                font-size: 80px;
+            }
+
             @include mq-max('xl') {
                 font-size: 64px;
             }
     
             @include mq-max('md') {
-                font-size: 32px;
+                font-size: 48px;
+                margin-bottom: 12px;
+            }
+
+            @include mq-max('sm') {
+                font-size: 36px;
             }
     
             span {
@@ -47,12 +62,33 @@
     
         p {
             font-size: 14px;
+            line-height: 148%;
             color: $white;
-            translate: 0 -148%;
+            translate: 0 -64px;
+            
+            @include mq-max('xl') {
+                font-size: 12px;
+                translate: 0 -48px;
+            }
+ 
+                @include mq-max('md') {
+ 
+                translate: 0 0;
+                line-height: 112%;
+            }
         }
     }
 
-    // .cta-wrapper {
-    //     // see  'cta-wrapper' in _globals.scss
-    // }
+    .cta-wrapper {
+        // see  'cta-wrapper' in _globals.scss
+        margin-left: 224px;
+        
+        @include mq-max('xl') {
+            margin-left: 96px;
+        }
+
+        @include mq-max('md') {
+            margin-left: 0;
+        }
+    }
 }
