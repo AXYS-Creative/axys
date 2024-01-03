@@ -4,7 +4,8 @@ const cursor = document.querySelector(".mouse-cursor"),
   burger = document.querySelector(".burger"),
   cta1 = document.querySelector(".cta-1"),
   cta2 = document.querySelector(".cta-2"),
-  dot = cta2.querySelector(".dot");
+  dot = cta2.querySelector(".dot"),
+  faqItems = document.querySelectorAll(".faq-item");
 
 let followMouse = true;
 cursor.style.opacity = 0; // Initially hide when loading the site
@@ -58,4 +59,21 @@ cta2.addEventListener("mouseenter", () => {
 cta2.addEventListener("mouseleave", () => {
   followMouse = true;
   cursor.classList.remove("cta2-active");
+});
+
+faqItems.forEach((item) => {
+  item.addEventListener("mousemove", (e) => {
+    const faqItemArrow = item
+      .querySelector(".angle-arrow-wrapper")
+      .getBoundingClientRect();
+    cursor.style.top = faqItemArrow.top + faqItemArrow.height / 2 + "px";
+    cursor.style.left = faqItemArrow.left + faqItemArrow.width / 2 + "px";
+    cursor.classList.add("faq-item-active");
+    followMouse = false;
+  });
+
+  item.addEventListener("mouseleave", () => {
+    cursor.classList.remove("faq-item-active");
+    followMouse = true;
+  });
 });
