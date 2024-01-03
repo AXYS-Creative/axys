@@ -152,7 +152,6 @@
     display: flex;
     align-items: flex-start;
     gap: 64px;
-    // height: 100vh;
     
     @include mq-max('xxl') {
         margin-left: 0;
@@ -179,7 +178,11 @@
 
     .headline-full {
         position: sticky;   
-        top: 33%; 
+        top: 33%;
+
+        @include mq-max('lg') {
+            position: static;
+        }
     }
 
     .section-headline {
@@ -258,8 +261,10 @@
     .benefit-list {
 
         @include mq-max('lg') {
-            position: absolute;
-            top: 480px;
+            // border: $test;
+            // position: absolute;
+            // top: 480px;
+            translate: -67% 28%;
         }
     }
 }

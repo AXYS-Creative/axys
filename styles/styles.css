@@ -537,6 +537,11 @@ button {
   position: sticky;
   top: 33%;
 }
+@media screen and (max-width: 1024px) {
+  #benefits-section .headline-full {
+    position: static;
+  }
+}
 #benefits-section .section-headline {
   text-align: left;
 }
@@ -599,8 +604,7 @@ button {
 }
 @media screen and (max-width: 1024px) {
   #benefits-section .benefit-list {
-    position: absolute;
-    top: 480px;
+    translate: -67% 28%;
   }
 }
 
