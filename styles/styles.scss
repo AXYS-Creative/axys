@@ -9,7 +9,8 @@
         padding: 124px 0;
     }
 
-    .headline {
+    .section-headline {
+        text-align: left;
         margin-bottom: 128px;
 
         @include mq-max('xxl') {
@@ -25,10 +26,6 @@
             }
     
             span {
-    
-                &:first-of-type {
-                    color: $coral;
-                }
     
                 &:last-of-type {
                     padding-left: 240px;
@@ -67,11 +64,11 @@
     .cta-wrapper {
         // see  'cta-wrapper' in _globals.scss
         margin-left: 224px;
-        
+    
         @include mq-max('xl') {
             margin-left: 96px;
         }
-
+    
         @include mq-max('md') {
             margin-left: 0;
         }
@@ -124,7 +121,12 @@
 #statement-section {
     @include row-center;
     text-align: center;
-    padding-top: 20%;
+    height: 100vh;
+
+    @include mq-max('xl') {
+        height: unset;
+        padding: 264px 0;
+    }
     
     h3 {
         font-size: 48px;
@@ -144,14 +146,122 @@
 
 }
 
+#benefits-section {
+    // @include inset;
+    margin-left: 128px;
+    display: flex;
+    gap: 64px;
+    // height: 100vh;
+    
+    @include mq-max('xxl') {
+        margin-left: 0;
+    }
+
+    @include mq-max('lg') {
+        position: relative;
+    }
+
+    & > div {
+        width: 50%;
+        // display: flex;
+        // justify-content: center;
+        // flex-direction: column;
+
+        @include mq-max('lg') {
+            width: unset;
+        }
+    }
+
+    .section-headline {
+        text-align: left;
+
+        @include mq-max('lg') {
+            padding-bottom: 420px;
+        }
+    }
+
+    .cta-wrapper {
+        margin-left: 64px;
+
+        @include mq-max('xl') {
+            margin-left: 0;
+        }
+    }
+
+    .benefit-block {
+        width: 580px;
+        margin-bottom: 64px;
+        
+        @include mq-max('xl') {
+            --icon-width: 36px;
+            width: unset;
+        }
+
+        @include mq-max('lg') {
+            width: 640px;
+        }
+
+        h3 {
+            font-size: 48px;
+            font-weight: 200;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            @include mq-max('xxl') {
+                font-size: 36px;
+            }
+        
+            @include mq-max('xl') {
+                // font-size: 64px;
+            }
+        
+            @include mq-max('md') {
+                // font-size: 48px;
+            }
+        
+            @include mq-max('sm') {
+                // font-size: 36px;
+            }
+
+            .benefit-icon {
+                width: 48px;
+            }
+        }
+        
+        p {
+            font-size: 20px;
+            font-weight: 200;
+            padding-left: calc(48px + 12px);
+        }
+    }
+
+    .benefit-list {
+
+        @include mq-max('lg') {
+            position: absolute;
+            top: 480px;
+        }
+    }
+}
+
 #faq-section {
     @include column-center;
 
     .faq-list {
         display: flex;
         flex-direction: column;
-        width: 64%;
+        width: 58%;
         margin: 48px 0;
+        
+        @include mq-max('xl') {
+            width: 80%;
+        }
+
+        @include mq-max('md') {
+            width: 100%;
+        }
         
         .faq-item {
             position: relative;
@@ -161,6 +271,10 @@
             display: grid;
             grid-template-rows: 0fr;
             transition: all 0.3s ease, margin 0.4s ease;
+
+            &:hover {
+                border-color: $green;
+            }
             
             @include mq-max('xxl') {
                 margin-bottom: 12px;
@@ -186,14 +300,20 @@
             
             h3 {
                 color: $white;
-                display: flex;
-                text-align: left;
-                gap: 12px;
                 font-size: 20px;
+                text-align: left;
+                display: flex;
+                gap: 12px;
                 transition: 0.3s ease;
 
                 @include mq-max('xxl') {
                     font-size: 16px;
+                    gap: 8px;
+                }
+
+                @include mq-max('md') {
+                    font-size: 14px;
+                    gap: 4px;
                 }
                 
                 &-indicator {
@@ -202,7 +322,7 @@
             }
             
             .angle-arrow-wrapper {
-                transition: 0.2s ease;
+                transition: 0.4s $cubic-ease-back-dramatic;
 
                 .angle-arrow {
                     width: 36px;
@@ -234,16 +354,20 @@
             overflow: hidden;
             opacity: 0;
             pointer-events: none;
-            display: flex;
-            gap: 24px;
             translate: 0 -24px;
-            font-size: 20px;
             padding: 12px 0;
+            display: flex;
+            font-size: 20px;
+            line-height: 150%;
             transition: 0.2s ease 0s;
+            cursor: pointer;
 
             @include mq-max('xxl') {
                 font-size: 16px;
-                padding: 8px 0;
+            }
+
+            @include mq-max('md') {
+                font-size: 14px;
             }
             
             &.active {
@@ -259,14 +383,17 @@
                 }
             }
 
-            p {
-                line-height: 150%;
+            .answer-indicator {                
+                padding-right: 12px;
+                
+                @include mq-max('xxl') {
+                    padding-right: 10px;
+                }
 
-                // &-indicator {
-                //     font-weight: 700;
-                // }
+                @include mq-max('md') {
+                    padding-right: 6px;
+                }
             }
-
 
             .faq-inner-link {
                 text-decoration: underline;

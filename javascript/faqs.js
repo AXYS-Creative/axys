@@ -7,7 +7,7 @@ const questionsData = [
   {
     question: "Why wouldn't I just hire a full-time creator?",
     answer:
-      "To save money. The average annual salary for senior level designers and developers well exceeds 100k; and that's without including any benefits.\n \n With the monthly plan, you're simply paying for what you need. You can pause or resume anytime you're low on work.",
+      "To save money. The average annual salary for senior level designers and developers well exceeds 100k; and that's not including any benefits. With the monthly plan, you're simply paying for what you need. You can pause or resume anytime you're low on work.",
   },
   {
     question: "Do I have a limited number of requests?",
@@ -17,12 +17,12 @@ const questionsData = [
   {
     question: "What if I only have a single request?",
     answer:
-      "This is where the pause feature excels. Anytime your workload becomes light, we can pause your plan which stops all charges. Then you can easily start up again when you do need our services.",
+      "This is where the pause feature excels. Anytime your workload becomes light, we can pause your plan, which stops all charges. Then you can easily start up again when you do need our services.",
   },
   {
     question: "How does the pause feature work?",
     answer:
-      "When your workload becomes light, we can freeze your subscription and prevent all charges. Since memberships are billed monthly, we'll still be able to provide services for however many remaining days were left in the month when you paused. These days are acceptable for service anytime in the future!",
+      "When your workload becomes light, we can freeze your subscription and prevent all charges. Since memberships are billed monthly, we'll still be able to provide services for however many remaining days were left in the month when you paused. These days can be used for service anytime in the future!",
   },
   {
     question: "How quickly do you deliver?",
@@ -31,17 +31,17 @@ const questionsData = [
   },
   {
     question: "How do I make a request and track progress?",
-    answer: `This is done with <a class='page-link faq-inner-link' href='https://trello.com/' target='_blank'>Trello <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path opacity="1" fill="#1E3050" d="M392.3 32H56.1C25.1 32 0 57.1 0 88c-.1 0 0-4 0 336 0 30.9 25.1 56 56 56h336.2c30.8-.2 55.7-25.2 55.7-56V88c.1-30.8-24.8-55.8-55.6-56zM197 371.3c-.2 14.7-12.1 26.6-26.9 26.6H87.4c-14.8 .1-26.9-11.8-27-26.6V117.1c0-14.8 12-26.9 26.9-26.9h82.9c14.8 0 26.9 12 26.9 26.9v254.2zm193.1-112c0 14.8-12 26.9-26.9 26.9h-81c-14.8 0-26.9-12-26.9-26.9V117.2c0-14.8 12-26.9 26.8-26.9h81.1c14.8 0 26.9 12 26.9 26.9v142.1z"/></svg></a>, a user-friendly managing tool that makes communication and collaboration simple. In addition to describing the work needed you can also upload images, videos, documents, or links to other resources.`,
+    answer: `This is done with <a class='page-link faq-inner-link' href='https://trello.com/' target='_blank'>Trello <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path opacity="1" fill="#1E3050" d="M392.3 32H56.1C25.1 32 0 57.1 0 88c-.1 0 0-4 0 336 0 30.9 25.1 56 56 56h336.2c30.8-.2 55.7-25.2 55.7-56V88c.1-30.8-24.8-55.8-55.6-56zM197 371.3c-.2 14.7-12.1 26.6-26.9 26.6H87.4c-14.8 .1-26.9-11.8-27-26.6V117.1c0-14.8 12-26.9 26.9-26.9h82.9c14.8 0 26.9 12 26.9 26.9v254.2zm193.1-112c0 14.8-12 26.9-26.9 26.9h-81c-14.8 0-26.9-12-26.9-26.9V117.2c0-14.8 12-26.9 26.8-26.9h81.1c14.8 0 26.9 12 26.9 26.9v142.1z"/></svg></a>, a user-friendly managing tool that makes communication and collaboration simple. In addition to describing the work needed, you can also upload images, videos, documents, or links to other resources.`,
   },
   {
     question: "Who are the designers and developers?",
     answer:
-      "AXYS Creative is driven by only two people: Aaron and Bailey Garcia. This helps with quick decision making and promotes swift turn around. We can each handle the design and development aspect of the work.",
+      "AXYS Creative is driven by only two people: Aaron and Bailey Garcia. This helps with quick decision-making and promotes swift turnaround. We can each handle the design and development aspect of the work.",
   },
   {
     question: "Are there limits to your services?",
     answer:
-      "Yes. We currently don't offer development for social media type applications that required large data bases. We also don't develop mobile apps of any kind. Possibly in the future though!",
+      "Yes. We currently don't offer development for social media-type applications that require large databases. We also don't develop mobile apps of any kind. Possibly in the future though!",
   },
   {
     question: "What if I'm unsatisfied with the work?",
@@ -73,8 +73,8 @@ questionsData.forEach(({ question, answer, uniqueClass }, index) => {
                     </div>
                 </button>
                 <div class="answer" id="answer-${index}">
+                  <span class="answer-indicator">A.</span>
                   <p>
-                    <span class="answer-indicator">A.</span>
                     ${formattedAnswer}
                   </p>
                 </div>

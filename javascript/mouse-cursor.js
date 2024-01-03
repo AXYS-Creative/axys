@@ -2,9 +2,8 @@ const cursor = document.querySelector(".mouse-cursor"),
   logo = document.querySelector(".logo"),
   menuBtn = document.querySelector(".menu-btn"),
   burger = document.querySelector(".burger"),
-  cta1 = document.querySelector(".cta-1"),
-  cta2 = document.querySelector(".cta-2"),
-  dot = cta2.querySelector(".dot"),
+  cta1 = document.querySelectorAll(".cta-1"),
+  cta2 = document.querySelectorAll(".cta-2"),
   faqItems = document.querySelectorAll(".faq-item");
 
 let followMouse = true;
@@ -40,40 +39,45 @@ menuBtn.addEventListener("mouseleave", () => {
   followMouse = true;
 });
 
-cta1.addEventListener("mouseenter", () => {
-  cursor.classList.add("cta1-active");
+cta1.forEach((cta) => {
+  cta.addEventListener("mouseenter", () => {
+    cursor.classList.add("cta1-active");
+  });
+
+  cta.addEventListener("mouseleave", () => {
+    cursor.classList.remove("cta1-active");
+  });
 });
 
-cta1.addEventListener("mouseleave", () => {
-  cursor.classList.remove("cta1-active");
-});
+cta2.forEach((cta) => {
+  cta.addEventListener("mouseenter", () => {
+    followMouse = false;
+    const dot = cta.querySelector(".dot");
+    const dotRect = dot.getBoundingClientRect();
+    cursor.style.left = dotRect.left + dotRect.width / 2 + "px";
+    cursor.style.top = dotRect.top + dotRect.height / 2 + "px";
+    cursor.classList.add("cta2-active");
+  });
 
-cta2.addEventListener("mouseenter", () => {
-  followMouse = false;
-  const dotRect = dot.getBoundingClientRect();
-  cursor.style.left = dotRect.left + dotRect.width / 2 + "px";
-  cursor.style.top = dotRect.top + dotRect.height / 2 + "px";
-  cursor.classList.add("cta2-active");
-});
-
-cta2.addEventListener("mouseleave", () => {
-  followMouse = true;
-  cursor.classList.remove("cta2-active");
+  cta.addEventListener("mouseleave", () => {
+    followMouse = true;
+    cursor.classList.remove("cta2-active");
+  });
 });
 
 faqItems.forEach((item) => {
   item.addEventListener("mousemove", (e) => {
-    const faqItemArrow = item
-      .querySelector(".angle-arrow-wrapper")
-      .getBoundingClientRect();
-    cursor.style.top = faqItemArrow.top + faqItemArrow.height / 2 + "px";
-    cursor.style.left = faqItemArrow.left + faqItemArrow.width / 2 + "px";
+    // const faqItemArrow = item
+    //   .querySelector(".angle-arrow-wrapper")
+    //   .getBoundingClientRect();
+    // cursor.style.top = faqItemArrow.top + faqItemArrow.height / 2 + "px";
+    // cursor.style.left = faqItemArrow.left + faqItemArrow.width / 2 + "px";
     cursor.classList.add("faq-item-active");
-    followMouse = false;
+    // followMouse = false;
   });
 
   item.addEventListener("mouseleave", () => {
     cursor.classList.remove("faq-item-active");
-    followMouse = true;
+    // followMouse = true;
   });
 });

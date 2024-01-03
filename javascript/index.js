@@ -1,7 +1,8 @@
 import "./nav.js";
-import "./mouse-cursor.js";
 import "./faqs.js";
+import "./benefits.js";
 import "./animations.js";
+import "./mouse-cursor.js";
 // import "./lenis.js"; // Screws with mouse div for some reason.
 
 // Clear focus from any element on mousemove (remove button :focus styles)
