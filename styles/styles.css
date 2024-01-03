@@ -224,6 +224,7 @@ button {
 }
 .cta-wrapper .cta-1:hover .ring svg, .cta-wrapper .cta-1:focus .ring svg {
   opacity: 1;
+  scale: 1;
 }
 .cta-wrapper .cta-1:hover .cta-text, .cta-wrapper .cta-1:focus .cta-text {
   translate: -12px 0;
@@ -244,6 +245,7 @@ button {
   width: 24px;
   height: 24px;
   opacity: 0;
+  scale: 0.25;
   transition: 0.3s ease;
 }
 .cta-wrapper .cta-1 .ring svg path {
@@ -510,6 +512,11 @@ button {
 #benefits-section > div {
   width: 50%;
 }
+@media screen and (max-width: 1440px) {
+  #benefits-section > div {
+    width: 46%;
+  }
+}
 @media screen and (max-width: 1024px) {
   #benefits-section > div {
     width: unset;
@@ -532,12 +539,11 @@ button {
   }
 }
 #benefits-section .benefit-block {
-  width: 580px;
+  width: 658px;
   margin-bottom: 64px;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1440px) {
   #benefits-section .benefit-block {
-    --icon-width: 36px;
     width: unset;
   }
 }
@@ -552,20 +558,20 @@ button {
   margin-bottom: 24px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 24px;
 }
 @media screen and (max-width: 1440px) {
   #benefits-section .benefit-block h3 {
     font-size: 36px;
   }
 }
-#benefits-section .benefit-block h3 .benefit-icon {
+#benefits-section .benefit-block h3 svg {
   width: 48px;
 }
 #benefits-section .benefit-block p {
   font-size: 20px;
   font-weight: 200;
-  padding-left: 60px;
+  padding-left: 72px;
 }
 @media screen and (max-width: 1024px) {
   #benefits-section .benefit-list {

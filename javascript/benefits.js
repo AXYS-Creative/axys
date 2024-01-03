@@ -7,9 +7,9 @@ const benefitData = [
   },
   {
     title: "Swift turnaround",
-    icon: "../assets/graphics/infinity-light.svg",
+    icon: "../assets/graphics/rotate-right-light.svg",
     description:
-      "Gain access to endless designs and development services. Simply put in a ticket in Trello to get started. Please be aware that each request is worked on and delivered one by one.",
+      "Get designs or sections of your website generally within 2-3 business days (M-F). Please be aware that full websites can take weeks or even months to complete depending on their size and complexity.",
   },
 ];
 

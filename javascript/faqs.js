@@ -2,7 +2,7 @@ const questionsData = [
   {
     question: "What services do you offer?",
     answer:
-      "We design and develop websites that leave positive impressions. We offer designs in a wide range of areas such as user experience (UX), graphics, motion, and interaction. We specialize in front-end development, accessibility, and search engine optimization.",
+      "We primarily focus on design and development for websites. We also offer a wide range of design work such as: user experience (UX), graphics, motion, and interaction. We specialize in front-end development, accessibility, and search engine optimization.",
   },
   {
     question: "Why wouldn't I just hire a full-time creator?",
@@ -17,12 +17,12 @@ const questionsData = [
   {
     question: "What if I only have a single request?",
     answer:
-      "This is where the pause feature excels. Anytime your workload becomes light, we can pause your plan, which stops all charges. Then you can easily start up again when you do need our services.",
+      "This is where the pause feature excels. Anytime your workload becomes light, we can pause your plan, preventing all charges. Then you can easily start up again when you do need our services.",
   },
   {
     question: "How does the pause feature work?",
     answer:
-      "When your workload becomes light, we can freeze your subscription and prevent all charges. Since memberships are billed monthly, we'll still be able to provide services for however many remaining days were left in the month when you paused. These days can be used for service anytime in the future!",
+      "When your workload becomes light, we can freeze your subscription to prevent all charges. Since memberships are billed monthly, we'll still be able to provide services for however many remaining days were left in the month when you paused. These days can be used for service anytime in the future!\n\n Another benefit of pausing your plan over cancelling it, is that your rate is locked in. This way, anytime you do need our services again you won't see a price change.",
   },
   {
     question: "How quickly do you deliver?",

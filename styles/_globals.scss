@@ -227,6 +227,7 @@ button {
 
                 svg {
                     opacity: 1;
+                    scale: 1;
                 }
             }
             
@@ -249,6 +250,7 @@ button {
                 width: 24px;
                 height: 24px;
                 opacity: 0;
+                scale: 0.25;
                 transition: 0.3s ease;
 
                 path {
