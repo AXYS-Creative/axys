@@ -93,6 +93,13 @@ header .menu-btn .burger {
   height: 48px;
   transition: 0.4s cubic-bezier(0.05, 1.75, 0.75, 1.75), rotate 0.3s ease;
 }
+header .menu-btn .burger .burger-line-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  transition: 0.3s ease;
+}
 header .menu-btn .burger-line {
   position: absolute;
   top: 50%;
@@ -108,6 +115,9 @@ header .menu-btn .burger-line:first-of-type {
 }
 header .menu-btn .burger-line:last-of-type {
   translate: -50% calc(-50% + 4px);
+}
+header .menu-btn.active .burger-line-wrapper {
+  rotate: 90deg;
 }
 header .menu-btn.active .burger-line:first-of-type {
   translate: -50% -50%;
@@ -497,6 +507,7 @@ button {
 #benefits-section {
   margin-left: 128px;
   display: flex;
+  align-items: flex-start;
   gap: 64px;
 }
 @media screen and (max-width: 1440px) {
@@ -521,6 +532,10 @@ button {
   #benefits-section > div {
     width: unset;
   }
+}
+#benefits-section .headline-full {
+  position: sticky;
+  top: 33%;
 }
 #benefits-section .section-headline {
   text-align: left;
@@ -552,6 +567,9 @@ button {
     width: 640px;
   }
 }
+#benefits-section .benefit-block:last-of-type {
+  margin-bottom: 0;
+}
 #benefits-section .benefit-block h3 {
   font-size: 48px;
   font-weight: 200;
@@ -563,6 +581,7 @@ button {
 @media screen and (max-width: 1440px) {
   #benefits-section .benefit-block h3 {
     font-size: 36px;
+    margin-bottom: 12px;
   }
 }
 #benefits-section .benefit-block h3 svg {
@@ -572,6 +591,11 @@ button {
   font-size: 20px;
   font-weight: 200;
   padding-left: 72px;
+}
+@media screen and (max-width: 1440px) {
+  #benefits-section .benefit-block p {
+    font-size: 16px;
+  }
 }
 @media screen and (max-width: 1024px) {
   #benefits-section .benefit-list {

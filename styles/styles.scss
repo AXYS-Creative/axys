@@ -150,6 +150,7 @@
     // @include inset;
     margin-left: 128px;
     display: flex;
+    align-items: flex-start;
     gap: 64px;
     // height: 100vh;
     
@@ -174,6 +175,11 @@
         @include mq-max('lg') {
             width: unset;
         }
+    }
+
+    .headline-full {
+        position: sticky;   
+        top: 33%; 
     }
 
     .section-headline {
@@ -204,6 +210,10 @@
             width: 640px;
         }
 
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
         h3 {
             font-size: 48px;
             font-weight: 200;
@@ -214,6 +224,7 @@
 
             @include mq-max('xxl') {
                 font-size: 36px;
+                margin-bottom: 12px;
             }
         
             @include mq-max('xl') {
@@ -237,6 +248,10 @@
             font-size: 20px;
             font-weight: 200;
             padding-left: calc(48px + 24px);
+            
+            @include mq-max('xxl') {
+                font-size: 16px;
+            }
         }
     }
 

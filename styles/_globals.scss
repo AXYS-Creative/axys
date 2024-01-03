@@ -94,6 +94,11 @@ header {
             height: 48px;
             transition: 0.4s $cubic-ease-back-dramatic, rotate 0.3s ease;
 
+            .burger-line-wrapper {
+                @include absolute-center;
+                transition: 0.3s ease;
+            }
+
             &-line {
                 @include absolute-center;
                 width: 28px;
@@ -112,6 +117,10 @@ header {
         }
 
         &.active {
+
+            .burger-line-wrapper {
+                rotate: 90deg;
+            }
 
             .burger-line {
 
