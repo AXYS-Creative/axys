@@ -147,6 +147,7 @@
 }
 
 #benefits-section {
+    // border: $test;
     // @include inset;
     margin-left: 128px;
     display: flex;
@@ -159,6 +160,7 @@
 
     @include mq-max('lg') {
         position: relative;
+        overflow: hidden;
     }
 
     & > div {
@@ -189,7 +191,7 @@
         text-align: left;
 
         @include mq-max('lg') {
-            padding-bottom: 420px;
+            padding-bottom: 320px;
         }
     }
 
@@ -199,72 +201,94 @@
         @include mq-max('xl') {
             margin-left: 0;
         }
-    }
 
-    .benefit-block {
-        width: 658px;
-        margin-bottom: 64px;
-        
-        @include mq-max('xxl') {
-            width: unset;
-        }
-
-        @include mq-max('lg') {
-            width: 640px;
-        }
-
-        &:last-of-type {
-            margin-bottom: 0;
-        }
-
-        h3 {
-            font-size: 48px;
-            font-weight: 200;
-            margin-bottom: 24px;
-            display: flex;
-            align-items: center;
-            gap: 24px;
-
-            @include mq-max('xxl') {
-                font-size: 36px;
-                margin-bottom: 12px;
-            }
-        
-            @include mq-max('xl') {
-                // font-size: 64px;
-            }
-        
-            @include mq-max('md') {
-                // font-size: 48px;
-            }
-        
-            @include mq-max('sm') {
-                // font-size: 36px;
-            }
-
-            svg {
-                width: 48px;
-            }
-        }
-        
-        p {
-            font-size: 20px;
-            font-weight: 200;
-            padding-left: calc(48px + 24px);
-            
-            @include mq-max('xxl') {
-                font-size: 16px;
-            }
+        @include mq-max('md') {
+            margin-left: 24px;
         }
     }
 
     .benefit-list {
+        padding: 128px 0;
 
         @include mq-max('lg') {
             // border: $test;
-            // position: absolute;
-            // top: 480px;
-            translate: -67% 28%;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            translate: 0 -40%;
+            display: flex;
+            gap: 64px;
+            z-index: -1;
+        }
+        
+        @include mq-max('md') {
+            translate: 0 -48%;
+        }
+
+        .benefit-block {
+            width: 658px;
+            margin-bottom: 128px;
+            
+            @include mq-max('xxl') {
+                width: unset;
+            }
+    
+            @include mq-max('lg') {
+                width: 520px;
+            }
+
+            @include mq-max('md') {
+                width: 420px;
+            }
+    
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+    
+            h3 {
+                font-size: 48px;
+                font-weight: 200;
+                margin-bottom: 24px;
+                display: flex;
+                align-items: center;
+                gap: 24px;
+    
+                @include mq-max('xxl') {
+                    font-size: 36px;
+                    margin-bottom: 12px;
+                }
+            
+                @include mq-max('md') {
+                    font-size: 32px;
+                    gap: 12px;
+                }
+            
+                @include mq-max('sm') {
+                    // font-size: 36px;
+                }
+    
+                svg {
+                    width: 48px;
+
+                    @include mq-max('md') {
+                        width: 24px;
+                    }
+                }
+            }
+            
+            p {
+                font-size: 20px;
+                font-weight: 200;
+                padding-left: calc(48px + 24px);
+                
+                @include mq-max('xxl') {
+                    font-size: 16px;
+                }
+    
+                @include mq-max('lg') {
+                    padding-left: 0;
+                }
+            }
         }
     }
 }

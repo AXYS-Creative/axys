@@ -226,9 +226,9 @@ button {
   border-color: #7EC1D4;
   translate: -24px 0;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   .cta-wrapper .cta-1:hover .ring, .cta-wrapper .cta-1:focus .ring {
-    scale: 0.6;
+    scale: 0.8;
     translate: -12px 0;
   }
 }
@@ -518,6 +518,7 @@ button {
 @media screen and (max-width: 1024px) {
   #benefits-section {
     position: relative;
+    overflow: hidden;
   }
 }
 #benefits-section > div {
@@ -547,7 +548,7 @@ button {
 }
 @media screen and (max-width: 1024px) {
   #benefits-section .section-headline {
-    padding-bottom: 420px;
+    padding-bottom: 320px;
   }
 }
 #benefits-section .cta-wrapper {
@@ -558,24 +559,53 @@ button {
     margin-left: 0;
   }
 }
-#benefits-section .benefit-block {
+@media screen and (max-width: 768px) {
+  #benefits-section .cta-wrapper {
+    margin-left: 24px;
+  }
+}
+#benefits-section .benefit-list {
+  padding: 128px 0;
+}
+@media screen and (max-width: 1024px) {
+  #benefits-section .benefit-list {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    translate: 0 -40%;
+    display: flex;
+    gap: 64px;
+    z-index: -1;
+  }
+}
+@media screen and (max-width: 768px) {
+  #benefits-section .benefit-list {
+    translate: 0 -48%;
+  }
+}
+#benefits-section .benefit-list .benefit-block {
   width: 658px;
-  margin-bottom: 64px;
+  margin-bottom: 128px;
 }
 @media screen and (max-width: 1440px) {
-  #benefits-section .benefit-block {
+  #benefits-section .benefit-list .benefit-block {
     width: unset;
   }
 }
 @media screen and (max-width: 1024px) {
-  #benefits-section .benefit-block {
-    width: 640px;
+  #benefits-section .benefit-list .benefit-block {
+    width: 520px;
   }
 }
-#benefits-section .benefit-block:last-of-type {
+@media screen and (max-width: 768px) {
+  #benefits-section .benefit-list .benefit-block {
+    width: 420px;
+  }
+}
+#benefits-section .benefit-list .benefit-block:last-of-type {
   margin-bottom: 0;
 }
-#benefits-section .benefit-block h3 {
+#benefits-section .benefit-list .benefit-block h3 {
   font-size: 48px;
   font-weight: 200;
   margin-bottom: 24px;
@@ -584,27 +614,38 @@ button {
   gap: 24px;
 }
 @media screen and (max-width: 1440px) {
-  #benefits-section .benefit-block h3 {
+  #benefits-section .benefit-list .benefit-block h3 {
     font-size: 36px;
     margin-bottom: 12px;
   }
 }
-#benefits-section .benefit-block h3 svg {
+@media screen and (max-width: 768px) {
+  #benefits-section .benefit-list .benefit-block h3 {
+    font-size: 32px;
+    gap: 12px;
+  }
+}
+#benefits-section .benefit-list .benefit-block h3 svg {
   width: 48px;
 }
-#benefits-section .benefit-block p {
+@media screen and (max-width: 768px) {
+  #benefits-section .benefit-list .benefit-block h3 svg {
+    width: 24px;
+  }
+}
+#benefits-section .benefit-list .benefit-block p {
   font-size: 20px;
   font-weight: 200;
   padding-left: 72px;
 }
 @media screen and (max-width: 1440px) {
-  #benefits-section .benefit-block p {
+  #benefits-section .benefit-list .benefit-block p {
     font-size: 16px;
   }
 }
 @media screen and (max-width: 1024px) {
-  #benefits-section .benefit-list {
-    translate: -67% 28%;
+  #benefits-section .benefit-list .benefit-block p {
+    padding-left: 0;
   }
 }
 

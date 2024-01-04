@@ -118,139 +118,41 @@ const gsapAnimations = () => {
     {
       screenSm: "(max-width: 480px)",
       screenMd: "(max-width: 768px)",
-      screenLg: "(min-width: 769px)",
+      screenLg: "(max-width: 1024px)",
+      screenXxl: "(min-width: 1441px)",
     },
     (context) => {
       let { screenSm, screenMd, screenLg } = context.conditions;
 
-      // Description - Pinning Benefits Headline
-      // gsap.to(".benefits-headline-full", {
-      //   scrollTrigger: {
-      //     trigger: ".benefits-headline-full",
-      //     start: screenLg ? "top center" : "top 16%",
-      //     // end: "+480%",
-      //     pin: true,
-      //     markers: whiteMarkers,
-      //   },
-      // });
+      // Description - Pinning Benefits Section (Lg screens and below)
+      gsap.to("#benefits-section", {
+        scrollTrigger: {
+          trigger: "#benefits-section",
+          start: screenMd ? "top 2%" : "top 6%",
+          end: "+400%",
+          pin: screenLg ? true : false,
+          // markers: true,
+        },
+      });
 
-      // // Description - Shifting project images in Work Section
-      // function workItemTimeline(itemNumber, scrubFactor) {
-      //   return gsap
-      //     .timeline({
-      //       scrollTrigger: {
-      //         trigger: ".work",
-      //         scrub: scrubFactor,
-      //         start: "top 70%",
-      //         end: "+580%",
-      //         ease: "linear",
-      //       },
-      //     })
-      //     .to(`.work-item-${itemNumber}`, {
-      //       x: screenSm ? "-570vw" : screenMd ? "-288vw" : "-140vw",
-      //     });
-      // }
-
-      // const workItems = document.querySelectorAll(".work-item");
-
-      // workItems.forEach((el, index) => {
-      //   workItemTimeline(index + 1, 0.12 * (index + 1));
-      // });
-      // END - Shifting project images
-
-      // Descriptiion - Animate the membership prcing cards
-      // const animateMembershipCards = (selector, trigger, delay) => {
-      //   gsap.fromTo(
-      //     selector,
-      //     {
-      //       opacity: 0,
-      //       x: screenMd ? 120 : 200,
-      //     },
-      //     {
-      //       opacity: 1,
-      //       x: 0,
-      //       duration: 1.25,
-      //       delay: delay,
-      //       ease: screenMd ? "elastic.out(1, 0.75)" : "elastic.out(1, 0.4)",
-      //       scrollTrigger: {
-      //         trigger: trigger,
-      //         start: "top 80%",
-      //         end: screenMd ? "80% top" : "64% top",
-      //         toggleActions: "restart reverse restart reverse",
-      //       },
-      //     }
-      //   );
-      // };
-
-      // animateMembershipCards(".membership-card-1", ".membership-options", 0);
-      // animateMembershipCards(".membership-card-2", ".membership-options", 0.25);
-
-      // Description - Question List animation
-      // gsap.fromTo(
-      //   ".faq-item",
-      //   {
-      //     x: screenMd ? -24 : -48,
-      //     opacity: 0,
-      //     pointerEvents: "none",
-      //   },
-      //   {
-      //     x: 0,
-      //     opacity: 1,
-      //     pointerEvents: "all",
-      //     stagger: 0.08,
-      //     ease: screenMd ? "back.out(1)" : "back.out(2)",
-      //     scrollTrigger: {
-      //       trigger: ".questions-list",
-      //       start: "top 80%",
-      //       end: screenMd ? "80% top" : "64% top",
-      //       toggleActions: "restart reverse restart reverse",
-      //     },
-      //   }
-      // );
+      gsap.fromTo(
+        ".benefit-list",
+        {
+          x: screenLg ? "1%" : null,
+        },
+        {
+          x: screenLg ? "-84.5%" : null,
+          scrollTrigger: {
+            trigger: "#benefits-section",
+            start: screenMd ? "top 2%" : "top 6%",
+            end: "+400%",
+            scrub: 1,
+            // markers: whiteMarkers,
+          },
+        }
+      );
     }
   );
-
-  // Query only for large screen animations (Shift Work Title)
-  responsiveGsap.add("(min-width: 768px)", () => {
-    // Shift Title Text for Work Section. Large screens only***
-    const shiftWorkTitle = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".work",
-        scrub: true,
-        start: "top 10%",
-        end: "+620%",
-      },
-    });
-
-    shiftWorkTitle.fromTo(
-      ".word-selected",
-      {
-        translateX: "35%",
-      },
-      {
-        translateX: 0,
-      }
-    );
-
-    const shiftWorkTitle2 = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".work",
-        scrub: true,
-        start: "top 10%",
-        end: "+620%",
-      },
-    });
-
-    shiftWorkTitle2.fromTo(
-      ".word-work",
-      {
-        translateX: "60%",
-      },
-      {
-        translateX: 0,
-      }
-    );
-  });
 };
 
 gsapAnimations();

@@ -229,8 +229,8 @@ button {
                 border-color: $blue;
                 translate: -24px 0;
 
-                @include mq-max('sm') {
-                    scale: 0.6;
+                @include mq-max('md') {
+                    scale: 0.8;
                     translate: -12px 0;
                 }
 
