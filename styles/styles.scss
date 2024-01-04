@@ -85,12 +85,12 @@
         
         @include mq-max('md') {
             translate: calc($content-padding-md * -1) 0;
-            }
+        }
 
         &-inner {
             display: flex;
             width: fit-content;
-            animation: marquee 24s linear infinite;
+            animation: marquee 16s linear infinite;
 
             @include mq-max('xl') {
                 animation-duration: 18s;

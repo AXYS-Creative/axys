@@ -27,8 +27,8 @@ const heroGlitchText = () => {
 
   function applyGlitchEffect(wordObj) {
     let glitchIterations = 0;
-    const maxIterations = wordObj.word.length * 4; // Increase value to increase length of glitch.
-    dynamicText.style.color = wordObj.color; // Set the color
+    const maxIterations = wordObj.word.length * 4;
+    dynamicText.style.color = wordObj.color;
 
     const glitchInterval = setInterval(() => {
       dynamicText.innerText = wordObj.word
@@ -44,7 +44,7 @@ const heroGlitchText = () => {
       glitchIterations++;
       if (glitchIterations >= maxIterations) {
         clearInterval(glitchInterval);
-        dynamicText.innerText = wordObj.word; // Ensure final word is set correctly
+        dynamicText.innerText = wordObj.word;
       }
     }, 25);
   }
@@ -54,9 +54,8 @@ const heroGlitchText = () => {
     index = (index + 1) % words.length;
   }
 
-  // Start the cycle and glitch effect
   updateText();
-  setInterval(updateText, 5000); // Adjust timing as needed
+  setInterval(updateText, 5000);
 };
 
 heroGlitchText();
@@ -95,64 +94,50 @@ const magnetEffect = () => {
 
 magnetEffect();
 
-const gsapAnimations = () => {
-  gsap.registerPlugin(ScrollTrigger);
+// const marquee = () => {
+//   document.addEventListener("DOMContentLoaded", function () {
+//     const marqueeInner = document.querySelector(".marquee .marquee-inner");
+//     const content = marqueeInner.innerHTML;
+//     marqueeInner.innerHTML = content.repeat(2);
 
-  // Detailed markers for debugging
+//     let lastScrollTop =
+//       window.pageYOffset || document.documentElement.scrollTop;
+//     let position = 0;
+//     let direction = -1; // Start moving in a negative direction
+//     let speed = 6;
+//     const originalContentWidth = marqueeInner.offsetWidth / 2;
 
-  let whiteMarkers = {
-    startColor: "white",
-    endColor: "white",
-    indent: 128,
-  };
+//     function updateMarquee() {
+//       position += speed * direction;
 
-  let navyMarkers = {
-    startColor: "navy",
-    endColor: "navy",
-    indent: 24,
-  };
+//       if (direction === -1 && position <= -originalContentWidth) {
+//         position += originalContentWidth;
+//       } else if (direction === 1 && position >= 0) {
+//         position -= originalContentWidth;
+//       }
 
-  let responsiveGsap = gsap.matchMedia();
+//       marqueeInner.style.transform = `translateX(${position}px)`;
+//       requestAnimationFrame(updateMarquee);
+//     }
 
-  responsiveGsap.add(
-    {
-      screenSm: "(max-width: 480px)",
-      screenMd: "(max-width: 768px)",
-      screenLg: "(max-width: 1024px)",
-      screenXxl: "(min-width: 1441px)",
-    },
-    (context) => {
-      let { screenSm, screenMd, screenLg } = context.conditions;
+//     window.addEventListener(
+//       "scroll",
+//       function () {
+//         let st = window.pageYOffset || document.documentElement.scrollTop;
+//         if (st > lastScrollTop) {
+//           // Scrolling down, continue in negative direction
+//           direction = -1;
+//         } else if (st < lastScrollTop) {
+//           // Scrolling up, reverse to positive direction
+//           direction = 1;
+//         }
+//         lastScrollTop = st <= 0 ? 0 : st;
+//       },
+//       false
+//     );
 
-      // Description - Pinning Benefits Section (Lg screens and below)
-      gsap.to("#benefits-section", {
-        scrollTrigger: {
-          trigger: "#benefits-section",
-          start: screenMd ? "top 2%" : "top 6%",
-          end: "+400%",
-          pin: screenLg ? true : false,
-          // markers: true,
-        },
-      });
+//     requestAnimationFrame(updateMarquee);
+//   });
+// };
 
-      gsap.fromTo(
-        ".benefit-list",
-        {
-          x: screenLg ? "1%" : null,
-        },
-        {
-          x: screenLg ? "-84.5%" : null,
-          scrollTrigger: {
-            trigger: "#benefits-section",
-            start: screenMd ? "top 2%" : "top 6%",
-            end: "+400%",
-            scrub: 1,
-            // markers: whiteMarkers,
-          },
-        }
-      );
-    }
-  );
-};
-
-gsapAnimations();
+// marquee();

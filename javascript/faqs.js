@@ -2,7 +2,7 @@ const questionsData = [
   {
     question: "What services do you offer?",
     answer:
-      "We primarily focus on design and development for websites. We also offer a wide range of design work such as: user experience (UX), graphics, motion, and interaction. We specialize in front-end development, accessibility, and search engine optimization.",
+      "We primarily focus on design and development for websites. We also offer a wide range of design work such as: user experience (UX), graphics, motion, and interaction.",
   },
   {
     question: "Why wouldn't I just hire a full-time creator?",
