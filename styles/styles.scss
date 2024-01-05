@@ -82,64 +82,68 @@
         scroll-margin-top: -24px;
     }
 
-    .marquee {
-        overflow: hidden;
-        width: 100vw;
-        max-width: $content-width;
-        translate: calc($content-padding * -1) 0;
-        margin-bottom: 248px;
+    // See about having this be a global style since there are two marquees on the site.
+    // .marquee {
+    //     overflow: hidden;
+    //     width: 100vw;
+    //     max-width: $content-width;
+    //     translate: calc($content-padding * -1) 0;
+    //     margin-bottom: 248px;
         
-        @include mq-max('xxl') {
-            margin-bottom: 96px;
-        }
+    //     @include mq-max('xxl') {
+    //         margin-bottom: 96px;
+    //     }
 
-        @include mq-max('md') {
-            translate: calc($content-padding-md * -1) 0;
-        }
+    //     @include mq-max('md') {
+    //         translate: calc($content-padding-md * -1) 0;
+    //     }
 
-        &-inner {
-            display: flex;
-            width: fit-content;
-            animation: marquee 16s linear infinite;
+    //     &-inner {
+    //         display: flex;
+    //         width: fit-content;
+    //         animation: marquee 16s linear infinite;
 
-            @include mq-max('xl') {
-                animation-duration: 18s;
-            }
+    //         @include mq-max('xl') {
+    //             animation-duration: 18s;
+    //         }
 
-            @include mq-max('sm') {
-                animation-duration: 6s;
-            }
+    //         @include mq-max('sm') {
+    //             animation-duration: 12s;
+    //         }
 
-            &:nth-of-type(2) {
-                
-                animation-name: marquee-reverse;   
-            }
-        }
+    //         &:nth-of-type(2) { 
+    //             animation-name: marquee-reverse;   
+    //         }
 
-        @keyframes marquee {
-            to {
-                translate: -50% 0;
-            }
-        }
+    //         h2 {
+    //             margin: 0;
+    //         }
+    //     }
 
-        @keyframes marquee-reverse {
-            from {
-                translate: -50% 0;
-            }
-            to {
-                translate: 0 0;
-            }
-        }
+    //     @keyframes marquee {
+    //         to {
+    //             translate: -50% 0;
+    //         }
+    //     }
 
-        h2 {
-            display: inline-flex;
-            gap: 24px;
+    //     @keyframes marquee-reverse {
+    //         from {
+    //             translate: -50% 0;
+    //         }
+    //         to {
+    //             translate: 0 0;
+    //         }
+    //     }
 
-            @include mq-max('sm') {
-                gap: 12px;
-            }
-        }
-    }
+    //     h2 {
+    //         display: inline-flex;
+    //         gap: 24px;
+
+    //         @include mq-max('sm') {
+    //             gap: 12px;
+    //         }
+    //     }
+    // }
 
     .work-showcase {
         @include row-between;
@@ -170,7 +174,8 @@
             transition: 0.3s ease;
             opacity: 0.75;
                 
-            &:hover {
+            &:hover,
+            &:focus {
                 opacity: 1;
             }
             
@@ -220,6 +225,9 @@
         height: unset;
         padding: 264px 0;
     }
+    @include mq-max('sm') {
+        height: unset;
+    }
     
     h3 {
         font-size: 48px;
@@ -253,7 +261,6 @@
         flex-direction: column;
         align-items: center;
         position: relative;
-        overflow: hidden;
     }
 
     .headline-full {
@@ -288,6 +295,9 @@
     }
 
     .benefit-list {
+        display: flex;
+        flex-direction: column;
+        gap: 128px;
         width: 54%;
         padding: 128px 0;
         
@@ -304,22 +314,18 @@
             z-index: -1;
         }
 
-        @include mq-max('lg') {
+        @include mq-max('md') {
             width: 100%;
+            gap: 96px;
+        }
+
+        @include mq-max('sm') {
+            gap: 64px;
         }
         
         .benefit-block {
             width: 100%;
-            max-width: 658px;
-            margin-bottom: 128px;
-            
-            @include mq-max('md') {
-                margin-bottom: 96px;
-            }
-    
-            &:last-of-type {
-                margin-bottom: 0;
-            }
+            max-width: 672px;
     
             h3 {
                 font-size: 48px;
@@ -358,7 +364,7 @@
                 line-height: 120%;
                 padding-left: calc(48px + 24px);
                 
-                @include mq-max('xxl') {
+                @include mq-max('xl') {
                     font-size: 16px;
                 }
     
@@ -366,11 +372,31 @@
                     padding-left: 0;
                 }
 
-                @include mq-max('lg') {
+                @include mq-max('md') {
                     font-size: 14px;
-                    letter-spacing: 0.5px;
+                    letter-spacing: 0.25px;
+                }
+
+                .business-days {
+                    font-size: 16px;
+
+                    @include mq-max('xl') {
+                        font-size: 14px;
+                    }
+
+                    @include mq-max('md') {
+                        font-size: 12px;
+                    }
                 }
             }
+        }
+    }
+
+    & > .cta-wrapper.lg-screen-and-below {
+        align-self: flex-start;
+
+        @include mq-min('md') {
+            margin-left: 80px;
         }
     }
 }
