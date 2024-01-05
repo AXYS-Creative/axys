@@ -29,19 +29,6 @@
     translate: -50% -50%;
 }
 
-// Was using for hero cta wrapper and benefits headline
-// @mixin inset {
-//     margin-left: 224px;
-    
-//     @include mq-max('xl') {
-//         margin-left: 96px;
-//     }
-
-//     @include mq-max('md') {
-//         margin-left: 0;
-//     }
-// }
-
 $max-breakpoints: (
   'xs': 390px,
   'sm': 480px,

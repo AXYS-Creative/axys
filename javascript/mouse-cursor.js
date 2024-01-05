@@ -4,6 +4,7 @@ const cursor = document.querySelector(".mouse-cursor"),
   burger = document.querySelector(".burger"),
   cta1 = document.querySelectorAll(".cta-1"),
   cta2 = document.querySelectorAll(".cta-2"),
+  workItems = document.querySelectorAll(".showcase-link"),
   faqItems = document.querySelectorAll(".faq-item");
 
 let followMouse = true;
@@ -18,13 +19,20 @@ document.addEventListener("mousemove", function (e) {
   }
 });
 
-logo.addEventListener("mouseenter", () => {
-  cursor.classList.add("logo-active");
-});
+// Toggle vanish class to mouse cursor
+const addCursorEvents = (elem) => {
+  elem.addEventListener("mouseenter", () => {
+    cursor.classList.add("vanish-mouse-cursor");
+  });
+  elem.addEventListener("mouseleave", () => {
+    cursor.classList.remove("vanish-mouse-cursor");
+  });
+};
 
-logo.addEventListener("mouseleave", () => {
-  cursor.classList.remove("logo-active");
-});
+// Attach events to individual elements
+addCursorEvents(logo);
+// Attach events to NodeList items
+[...cta1, ...workItems, ...faqItems].forEach(addCursorEvents);
 
 menuBtn.addEventListener("mousemove", () => {
   const burgerRect = burger.getBoundingClientRect();
@@ -37,16 +45,6 @@ menuBtn.addEventListener("mousemove", () => {
 menuBtn.addEventListener("mouseleave", () => {
   cursor.classList.remove("burger-active");
   followMouse = true;
-});
-
-cta1.forEach((cta) => {
-  cta.addEventListener("mouseenter", () => {
-    cursor.classList.add("cta1-active");
-  });
-
-  cta.addEventListener("mouseleave", () => {
-    cursor.classList.remove("cta1-active");
-  });
 });
 
 cta2.forEach((cta) => {
@@ -62,22 +60,5 @@ cta2.forEach((cta) => {
   cta.addEventListener("mouseleave", () => {
     followMouse = true;
     cursor.classList.remove("cta2-active");
-  });
-});
-
-faqItems.forEach((item) => {
-  item.addEventListener("mousemove", (e) => {
-    // const faqItemArrow = item
-    //   .querySelector(".angle-arrow-wrapper")
-    //   .getBoundingClientRect();
-    // cursor.style.top = faqItemArrow.top + faqItemArrow.height / 2 + "px";
-    // cursor.style.left = faqItemArrow.left + faqItemArrow.width / 2 + "px";
-    cursor.classList.add("faq-item-active");
-    // followMouse = false;
-  });
-
-  item.addEventListener("mouseleave", () => {
-    cursor.classList.remove("faq-item-active");
-    // followMouse = true;
   });
 });

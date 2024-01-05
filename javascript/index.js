@@ -1,6 +1,5 @@
 import "./nav.js";
 import "./faqs.js";
-import "./benefits.js";
 import "./animations.js";
 import "./mouse-cursor.js";
 // import "./lenis.js"; // Screws with mouse div for some reason.
