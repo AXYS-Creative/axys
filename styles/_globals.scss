@@ -76,7 +76,7 @@ header {
         text-transform: uppercase;
         @include row-center;
         gap: 12px;
-        margin-right: -10px; // Account for spacing
+        margin-right: -10px; // Alignment for page spacing
         cursor: pointer;
 
         &:hover {
@@ -91,6 +91,10 @@ header {
         .menu-btn-text {
             transition: 0.3s ease;
             width: 36px;
+
+            @include mq-max('sm') {
+                width: 24px;
+            }
         }
 
         .burger {
@@ -148,6 +152,10 @@ section {
 
     @include mq-max('xxl') {
         padding: 124px 0;
+    }
+
+    @include mq-max('md') {
+        padding: 64px 0;
     }
 
     .section-headline {
@@ -387,6 +395,19 @@ img {
     }
 }
 
+// Utility
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
 .coral-text {
     color: $coral;
 }
@@ -399,17 +420,8 @@ img {
     color: $green;
 }
 
-// Utility
-
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0,0,0,0);
-    border: 0;
+.lowercase-text {
+    text-transform: lowercase;
 }
 
 .lg-screen-and-up {
@@ -425,5 +437,21 @@ img {
 
     @include mq-max('lg') {
         display: flex;
+    }
+}
+
+.sm-screen-and-up {
+    display: none;
+
+    @include mq-min('sm') {
+        display: flex; // Flex for cta-wrapper
+    }
+}
+
+.sm-screen-and-below {
+    display: none;
+
+    @include mq-max('sm') {
+        display: flex; // Flex for cta-wrapper
     }
 }

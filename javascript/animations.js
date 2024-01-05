@@ -55,7 +55,7 @@ const heroGlitchText = () => {
   }
 
   updateText();
-  setInterval(updateText, 5000);
+  setInterval(updateText, 4000);
 };
 
 heroGlitchText();

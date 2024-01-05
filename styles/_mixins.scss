@@ -62,3 +62,15 @@ $min-breakpoints: (
       @content;
     }
 }
+
+@mixin mq-touch {
+  @media (hover: none) {
+    @content;
+  }
+}
+
+@mixin mq-mouse {
+  @media (hover: hover) {
+    @content;
+  }
+}

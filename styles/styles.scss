@@ -158,7 +158,10 @@
         &:hover {
 
             .showcase-link {
-                opacity: 0.5;
+                
+                @include mq-mouse {
+                    opacity: 0.5;
+                }
             }
         }
 
@@ -166,8 +169,12 @@
             width: 24%;
             transition: 0.3s ease;
             opacity: 0.75;
-
+                
             &:hover {
+                opacity: 1;
+            }
+            
+            @include mq-touch {
                 opacity: 1;
             }
 
@@ -236,7 +243,7 @@
     margin-left: 128px;
     display: flex;
     align-items: flex-start;
-    gap: 64px;
+    justify-content: space-between;
     
     @include mq-max('xxl') {
         margin-left: 0;
@@ -254,12 +261,13 @@
         top: 33%;
         width: 50%;
 
-        @include mq-max('xxl') {
-            width: 100%;
-        }
-
         @include mq-max('lg') {
             position: static;
+            width: 80%;
+        }
+        
+        @include mq-max('md') {
+            width: 100%;
         }
 
         .section-headline {
@@ -280,12 +288,11 @@
     }
 
     .benefit-list {
-        width: 50%;
+        width: 54%;
         padding: 128px 0;
         
         @include mq-max('xxl') {
-            // width: 46%;
-            translate: -48px 0;
+            width: 50%;
         }
         
         @include mq-max('xl') {
@@ -294,25 +301,20 @@
         
         @include mq-max('lg') {
             width: 80%;
-            translate: 0 0;
-            padding: 0;
             z-index: -1;
+        }
+
+        @include mq-max('lg') {
+            width: 100%;
         }
         
         .benefit-block {
-            width: 658px;
+            width: 100%;
+            max-width: 658px;
             margin-bottom: 128px;
             
-            @include mq-max('xxl') {
-                width: 548px;
-            }
-
-            @include mq-max('lg') {
-                width: 100%;
-            }
-
             @include mq-max('md') {
-                width: 420px;
+                margin-bottom: 96px;
             }
     
             &:last-of-type {
@@ -332,13 +334,13 @@
                     margin-bottom: 12px;
                 }
             
-                @include mq-max('md') {
+                @include mq-max('xl') {
                     font-size: 32px;
                     gap: 12px;
                 }
             
-                @include mq-max('sm') {
-                    // font-size: 36px;
+                @include mq-max('md') {
+                    font-size: 24px;
                 }
     
                 svg {
@@ -363,6 +365,11 @@
                 @include mq-max('lg') {
                     padding-left: 0;
                 }
+
+                @include mq-max('lg') {
+                    font-size: 14px;
+                    letter-spacing: 0.5px;
+                }
             }
         }
     }
@@ -383,6 +390,7 @@
 
         @include mq-max('md') {
             width: 100%;
+            margin: 48px 0 64px;
         }
         
         .faq-item {
@@ -483,6 +491,7 @@
             line-height: 150%;
             transition: 0.2s ease 0s;
             cursor: pointer;
+            z-index: -1;
 
             @include mq-max('xxl') {
                 font-size: 16px;
@@ -529,4 +538,18 @@
             }
         }
     }  
+
+    .faq-headline-cta {
+        
+        @include mq-max('sm') {
+            text-align: left;
+        }
+
+        .headline-description {
+
+            @include mq-max('md') {
+                margin-bottom: 48px;
+            }
+        }
+    }
 }
