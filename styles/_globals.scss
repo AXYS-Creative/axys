@@ -167,16 +167,19 @@ section {
     }
 
     .headline-description {
-        font-size: 16px;
+        font-size: 18px;
+        letter-spacing: 0.25px;
+        line-height: 120%;
         margin-bottom: 64px;
         
         @include mq-max('md') {
             margin-bottom: 24px;
+            font-size: 16px;
         }
 
         @include mq-max('sm') {
             font-size: 14px;
-            letter-spacing: 0.25px;
+            // letter-spacing: 0.25px;
         }
     }
 }
@@ -438,7 +441,7 @@ img {
         }
     }
 
-    &-inner-slow {
+    &-inner-logos {
         animation: marquee 32s linear infinite;
         
         &:nth-of-type(2) { 
@@ -473,15 +476,24 @@ img {
     svg {
         width: 124px;
         height: 48px;
+
+        @include mq-max('md'){
+            width: 96px;
+        }
     }
 
     .marquee-dot {
         font-size: 36px;
         color: $grey;
         margin: 0 56px;
+        user-select: none;
+
+        @include mq-max('md') {
+            font-size: 24px;
+            margin: 0 24px;
+        }
     }
 }
-
 // Utility
 
 .sr-only {
@@ -509,6 +521,10 @@ img {
 
 .lowercase-text {
     text-transform: lowercase;
+}
+
+.bold-text {
+    font-weight: 700;
 }
 
 .lg-screen-and-up {

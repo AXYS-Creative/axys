@@ -158,18 +158,20 @@ section .section-headline h2 {
   margin-bottom: 24px;
 }
 section .headline-description {
-  font-size: 16px;
+  font-size: 18px;
+  letter-spacing: 0.25px;
+  line-height: 120%;
   margin-bottom: 64px;
 }
 @media screen and (max-width: 768px) {
   section .headline-description {
     margin-bottom: 24px;
+    font-size: 16px;
   }
 }
 @media screen and (max-width: 480px) {
   section .headline-description {
     font-size: 14px;
-    letter-spacing: 0.25px;
   }
 }
 
@@ -407,10 +409,10 @@ img {
 .marquee-inner h2 {
   margin: 0;
 }
-.marquee-inner-slow {
+.marquee-inner-logos {
   animation: marquee 32s linear infinite;
 }
-.marquee-inner-slow:nth-of-type(2) {
+.marquee-inner-logos:nth-of-type(2) {
   animation: marquee-reverse 32s linear infinite;
 }
 @keyframes marquee {
@@ -439,10 +441,22 @@ img {
   width: 124px;
   height: 48px;
 }
+@media screen and (max-width: 768px) {
+  .marquee svg {
+    width: 96px;
+  }
+}
 .marquee .marquee-dot {
   font-size: 36px;
   color: #3D3D3D;
   margin: 0 56px;
+  user-select: none;
+}
+@media screen and (max-width: 768px) {
+  .marquee .marquee-dot {
+    font-size: 24px;
+    margin: 0 24px;
+  }
 }
 
 .sr-only {
@@ -470,6 +484,10 @@ img {
 
 .lowercase-text {
   text-transform: lowercase;
+}
+
+.bold-text {
+  font-weight: 700;
 }
 
 .lg-screen-and-up {
@@ -545,6 +563,7 @@ img {
 }
 #hero-section .section-headline p {
   font-size: 14px;
+  letter-spacing: 0.25px;
   line-height: 148%;
   color: #F0F0F0;
   translate: 0 -64px;
@@ -851,6 +870,119 @@ img {
   #benefits-section > .cta-wrapper.lg-screen-and-below {
     margin-left: 80px;
   }
+}
+
+#plans-section .plan-options {
+  display: flex;
+  gap: 36px;
+}
+#plans-section .plan-options .segment {
+  width: 33%;
+}
+#plans-section .plan-options .segment.last-segment {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+#plans-section .plan-options .card {
+  background: #1E1E1E;
+  padding: 32px 24px;
+}
+#plans-section .plan-options .price-card h3,
+#plans-section .plan-options .price-card h5 {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+#plans-section .plan-options .price-card .card-title {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+@media screen and (max-width: 1440px) {
+  #plans-section .plan-options .price-card .card-title {
+    font-size: 32px;
+  }
+}
+#plans-section .plan-options .price-card .card-title .most-popular {
+  font-size: 14px;
+  font-weight: 700;
+  color: #909090;
+  vertical-align: middle;
+}
+#plans-section .plan-options .price-card .card-price {
+  font-size: 36px;
+}
+@media screen and (max-width: 1440px) {
+  #plans-section .plan-options .price-card .card-price {
+    font-size: 24px;
+  }
+}
+#plans-section .plan-options .price-card .card-price .pause-or-cancel {
+  font-size: 14px;
+  letter-spacing: 0.25px;
+  color: #909090;
+  vertical-align: middle;
+}
+#plans-section .plan-options .price-card .divider {
+  height: 4px;
+  border: none;
+  margin: 64px 0;
+}
+@media screen and (max-width: 1440px) {
+  #plans-section .plan-options .price-card .divider {
+    margin: 42px 0;
+  }
+}
+#plans-section .plan-options .price-card .divider-coral {
+  background: #E48C66;
+}
+#plans-section .plan-options .price-card .divider-green {
+  background: #A4D1A2;
+}
+#plans-section .plan-options .price-card .benefits-title {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+#plans-section .plan-options .price-card .benefits-list {
+  translate: 24px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 96px;
+}
+@media screen and (max-width: 1440px) {
+  #plans-section .plan-options .price-card .benefits-list {
+    gap: 12px;
+    margin-bottom: 64px;
+  }
+}
+#plans-section .plan-options .price-card .benefits-list li {
+  font-size: 16px;
+}
+@media screen and (max-width: 1440px) {
+  #plans-section .plan-options .price-card .benefits-list li {
+    font-size: 14px;
+    letter-spacing: 0.25px;
+  }
+}
+#plans-section .cta-wrapper {
+  translate: 16px 0;
+  width: unset;
+  justify-content: flex-start;
+}
+@media screen and (max-width: 1440px) {
+  #plans-section .cta-wrapper {
+    translate: 12px 0;
+  }
+}
+@media screen and (max-width: 1440px) {
+  #plans-section .cta-wrapper .cta-1,
+  #plans-section .cta-wrapper .cta-2 {
+    font-size: 16px;
+  }
+}
+#plans-section .cta-wrapper .cta-text {
+  background: #1E1E1E;
 }
 
 #faq-section {

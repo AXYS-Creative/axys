@@ -44,6 +44,7 @@
     
         p {
             font-size: 14px;
+            letter-spacing: 0.25px;
             line-height: 148%;
             color: $white;
             translate: 0 -64px;
@@ -397,6 +398,137 @@
 
         @include mq-min('md') {
             margin-left: 80px;
+        }
+    }
+}
+
+#plans-section {
+    
+    .plan-options {
+        // @include row-between;
+        display: flex;
+        gap: 36px;
+
+        .segment {
+            width: 33%;
+
+            &.last-segment {
+                display: flex;
+                flex-direction: column;
+                gap: 36px;
+            }
+        }
+
+        .card {
+            background: $grey-dark;
+            padding: 32px 24px;
+        }
+
+        .price-card {
+
+            h3,
+            h5 {
+                text-transform: uppercase;
+                font-weight: 700;
+            }
+            
+            .card-title {
+                font-size: 48px;
+                margin-bottom: 16px;
+
+                @include mq-max('xxl') {
+                    font-size: 32px;
+                }
+                
+                .most-popular {
+                    font-size: 14px;
+                    font-weight: 700;
+                    color: $grey-light;
+                    vertical-align: middle;
+                }
+            }
+
+            .card-price {
+                font-size: 36px;
+
+
+                @include mq-max('xxl') {
+                    font-size: 24px;
+                }
+
+                .pause-or-cancel {
+                    font-size: 14px;
+                    letter-spacing: 0.25px;
+                    color: $grey-light;
+                    vertical-align: middle;
+                }
+            }
+
+            .divider {
+                height: 4px;
+                border: none;
+                margin: 64px 0;
+                
+                @include mq-max('xxl') {
+                    margin: 42px 0;
+                }
+
+                &-coral {
+                    background: $coral;
+                }
+                &-green {
+                    background: $green;
+                }
+            }
+
+            .benefits-title {
+                font-size: 24px;
+                margin-bottom: 16px;
+            }
+
+            .benefits-list {
+                translate: 24px 0;
+                @include column-left;
+                gap: 16px;
+                margin-bottom: 96px;
+                
+                @include mq-max('xxl') {
+                    gap: 12px;
+                    margin-bottom: 64px;
+                }
+
+                li {
+                    font-size: 16px;
+                    
+                    @include mq-max('xxl') {
+                        font-size: 14px;
+                        letter-spacing: 0.25px;
+                    }
+                }
+            }
+        }
+    }
+
+    .cta-wrapper {
+        translate: 16px 0;
+        width: unset;
+        justify-content: flex-start;
+        
+        @include mq-max('xxl') {
+            translate: 12px 0;
+        }
+
+        .cta-1,
+        .cta-2 {
+            
+            @include mq-max('xxl') {
+                font-size: 16px;
+            }
+        }
+
+
+        .cta-text {
+            background: $grey-dark;
         }
     }
 }
