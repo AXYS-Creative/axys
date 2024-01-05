@@ -22,6 +22,8 @@ const heroGlitchText = () => {
     },
   ];
 
+  let intervalId = null;
+
   const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
   let index = 0;
 
@@ -54,8 +56,36 @@ const heroGlitchText = () => {
     index = (index + 1) % words.length;
   }
 
-  updateText();
-  setInterval(updateText, 4000);
+  function startAnimation() {
+    updateText();
+    intervalId = setInterval(updateText, 4000);
+  }
+
+  function stopAnimation() {
+    clearInterval(intervalId);
+  }
+
+  // Intersection Observer to check if element is in view
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        startAnimation();
+      } else {
+        stopAnimation();
+      }
+    });
+  });
+
+  observer.observe(dynamicText);
+
+  // Page Visibility API to check if user switches tabs
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible") {
+      startAnimation();
+    } else {
+      stopAnimation();
+    }
+  });
 };
 
 heroGlitchText();
