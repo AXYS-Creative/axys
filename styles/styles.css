@@ -224,14 +224,7 @@ img {
 
 .cta-wrapper {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 360px;
-}
-@media screen and (max-width: 768px) {
-  .cta-wrapper {
-    width: 264px;
-  }
+  gap: 12px;
 }
 .cta-wrapper .cta-1,
 .cta-wrapper .cta-2 {
@@ -240,6 +233,12 @@ img {
   align-items: center;
   font-size: 24px;
   text-transform: uppercase;
+}
+@media screen and (max-width: 1440px) {
+  .cta-wrapper .cta-1,
+  .cta-wrapper .cta-2 {
+    font-size: 20px;
+  }
 }
 @media screen and (max-width: 768px) {
   .cta-wrapper .cta-1,
@@ -250,6 +249,10 @@ img {
 .cta-wrapper .cta-1 .cta-text,
 .cta-wrapper .cta-2 .cta-text {
   transition: 0.3s ease, background 0s;
+}
+.cta-wrapper .cta-1 .cta-text span,
+.cta-wrapper .cta-2 .cta-text span {
+  transition: 0.3s ease;
 }
 .cta-wrapper .cta-1:hover .ring, .cta-wrapper .cta-1:focus .ring {
   border-color: #7EC1D4;
@@ -269,6 +272,9 @@ img {
   translate: -12px 0;
   color: #7EC1D4;
   background-color: transparent;
+}
+.cta-wrapper .cta-1:hover .cta-text span, .cta-wrapper .cta-1:focus .cta-text span {
+  color: #7EC1D4;
 }
 .cta-wrapper .cta-1 .ring {
   display: flex;
@@ -350,6 +356,11 @@ img {
   width: 72px;
   height: 72px;
   transition: 0.4s cubic-bezier(0.02, 0.35, 0.39, 1.12), border 0.3s ease;
+}
+.mouse-cursor.mail-form-active {
+  scale: 0.8;
+  border-color: #7EC1D4;
+  transition: 0.6s cubic-bezier(0.02, 0.35, 0.39, 1.12), border 0.4s ease, background 0.28s ease 0.5s;
 }
 
 .stripes-bg {
@@ -682,6 +693,11 @@ img {
   text-align: center;
   height: 80vh;
 }
+@media screen and (max-width: 1440px) {
+  #statement-section {
+    height: 64vh;
+  }
+}
 @media screen and (max-width: 1200px) {
   #statement-section {
     height: unset;
@@ -877,6 +893,11 @@ img {
   }
 }
 
+@media screen and (max-width: 1440px) {
+  #plans-section .section-headline {
+    margin-bottom: 128px;
+  }
+}
 #plans-section .plan-options {
   display: flex;
   justify-content: space-between;
@@ -894,12 +915,23 @@ img {
     flex-wrap: wrap;
   }
 }
+@media screen and (max-width: 1024px) {
+  #plans-section .plan-options {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 #plans-section .plan-options .segment {
   width: 33%;
 }
 @media screen and (max-width: 1200px) {
   #plans-section .plan-options .segment {
     width: 49%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  #plans-section .plan-options .segment {
+    width: 80%;
   }
 }
 #plans-section .plan-options .segment.last-segment {
@@ -918,13 +950,32 @@ img {
     flex-direction: row;
   }
 }
+@media screen and (max-width: 1024px) {
+  #plans-section .plan-options .segment.last-segment {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 #plans-section .plan-options .segment.last-segment .half-card {
   height: 50%;
+}
+@media screen and (max-width: 1440px) {
+  #plans-section .plan-options .segment.last-segment .half-card:last-of-type {
+    height: 56%;
+  }
 }
 @media screen and (max-width: 1200px) {
   #plans-section .plan-options .segment.last-segment .half-card {
     width: 50%;
-    height: 100%;
+    height: 124%;
+  }
+  #plans-section .plan-options .segment.last-segment .half-card:last-of-type {
+    height: 124%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  #plans-section .plan-options .segment.last-segment .half-card {
+    width: 80%;
   }
 }
 #plans-section .plan-options .card {
@@ -949,6 +1000,11 @@ img {
     font-size: 32px;
   }
 }
+@media screen and (max-width: 1200px) {
+  #plans-section .plan-options .price-card .card-title {
+    font-size: 36px;
+  }
+}
 #plans-section .plan-options .price-card .card-title .most-popular {
   font-size: 12px;
   font-weight: 700;
@@ -959,12 +1015,22 @@ img {
     font-size: 10px;
   }
 }
+@media screen and (max-width: 1200px) {
+  #plans-section .plan-options .price-card .card-title .most-popular {
+    font-size: 14px;
+  }
+}
 #plans-section .plan-options .price-card .card-price {
   font-size: 36px;
 }
 @media screen and (max-width: 1440px) {
   #plans-section .plan-options .price-card .card-price {
     font-size: 24px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  #plans-section .plan-options .price-card .card-price {
+    font-size: 32px;
   }
 }
 #plans-section .plan-options .price-card .card-price .pause-or-cancel {
@@ -1047,69 +1113,116 @@ img {
     letter-spacing: 0.25px;
   }
 }
+@media screen and (max-width: 1024px) {
+  #plans-section .plan-options .half-card .half-card-description:last-of-type {
+    margin-bottom: 64px;
+  }
+}
+#plans-section .plan-options .half-card .half-card-description:last-of-type {
+  margin-top: -8px;
+}
 #plans-section .plan-options .mail-form {
   position: relative;
   width: 100%;
-  height: 64px;
+  height: 56px;
   flex-shrink: 0;
 }
-#plans-section .plan-options .mail-form .form-input-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
+@media screen and (max-width: 1440px) {
+  #plans-section .plan-options .mail-form {
+    height: 36px;
+  }
 }
-#plans-section .plan-options .mail-form .form-input-wrapper .input,
-#plans-section .plan-options .mail-form .form-input-wrapper .label {
+#plans-section .plan-options .mail-form:hover .input {
+  border-color: #7EC1D4;
+}
+#plans-section .plan-options .mail-form:hover .label {
+  color: #3D3D3D;
+}
+#plans-section .plan-options .mail-form:hover .submit-btn {
+  scale: 0.8;
+}
+#plans-section .plan-options .mail-form:hover .submit-btn svg path {
+  fill: #7EC1D4;
+}
+#plans-section .plan-options .mail-form .input,
+#plans-section .plan-options .mail-form .label {
   position: absolute;
   left: 0;
   width: 100%;
   height: 100%;
   font-size: 24px;
 }
-#plans-section .plan-options .mail-form .form-input-wrapper .input {
+@media screen and (max-width: 1440px) {
+  #plans-section .plan-options .mail-form .input,
+  #plans-section .plan-options .mail-form .label {
+    font-size: 16px;
+  }
+}
+#plans-section .plan-options .mail-form .input {
   bottom: 0;
   color: #F0F0F0;
   background: transparent;
   border: none;
   border-bottom: 2px solid #909090;
-  transition: border 0.2s ease;
+  transition: border 0.36s ease;
 }
-#plans-section .plan-options .mail-form .form-input-wrapper .input:hover, #plans-section .plan-options .mail-form .form-input-wrapper .input:focus {
-  border-bottom: 2px solid #7EC1D4;
+#plans-section .plan-options .mail-form .input:focus {
+  border-color: #7EC1D4;
 }
-#plans-section .plan-options .mail-form .form-input-wrapper .label {
+#plans-section .plan-options .mail-form .label {
   top: 32%;
   color: #909090;
   pointer-events: none;
   transition: 0.24s ease;
 }
-#plans-section .plan-options .mail-form .form-input-wrapper .input:focus ~ .label,
-#plans-section .plan-options .mail-form .form-input-wrapper .input:not(:placeholder-shown).input:not(focus) ~ .label {
+#plans-section .plan-options .mail-form .input:focus ~ .label,
+#plans-section .plan-options .mail-form .input:not(:placeholder-shown).input:not(focus) ~ .label {
   transform: translate(0, -68%);
-  opacity: 0.8;
+  color: #7EC1D4;
   font-size: 16px;
+}
+@media screen and (max-width: 1440px) {
+  #plans-section .plan-options .mail-form .input:focus ~ .label,
+  #plans-section .plan-options .mail-form .input:not(:placeholder-shown).input:not(focus) ~ .label {
+    transform: translate(0, -80%);
+    font-size: 12px;
+  }
 }
 #plans-section .plan-options .mail-form .submit-btn {
   position: absolute;
   top: 50%;
   right: 0;
-  translate: 0 -16px;
+  translate: 0 -12px;
+  transition: 0.4s cubic-bezier(0.05, 1.75, 0.75, 1.75);
 }
 #plans-section .plan-options .mail-form .submit-btn svg {
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
+}
+@media screen and (max-width: 1440px) {
+  #plans-section .plan-options .mail-form .submit-btn svg {
+    width: 20px;
+    height: 20px;
+  }
 }
 #plans-section .plan-options .mail-form .submit-btn svg path {
   fill: #909090;
+  transition: 0.36s ease;
 }
 #plans-section .cta-wrapper {
   translate: 16px 0;
   width: unset;
   justify-content: flex-start;
+  gap: 0;
 }
 @media screen and (max-width: 1440px) {
   #plans-section .cta-wrapper {
     translate: 12px 0;
+  }
+}
+@media screen and (max-width: 1440px) {
+  #plans-section .cta-wrapper {
+    gap: 12px;
   }
 }
 @media screen and (max-width: 1440px) {
@@ -1290,4 +1403,9 @@ img {
   #faq-section .faq-headline-cta .headline-description {
     margin-bottom: 48px;
   }
+}
+#faq-section .faq-headline-cta .cta-wrapper {
+  width: unset;
+  justify-content: center;
+  gap: 16px;
 }/*# sourceMappingURL=styles.css.map */

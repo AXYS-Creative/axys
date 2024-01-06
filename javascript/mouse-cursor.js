@@ -5,6 +5,8 @@ const cursor = document.querySelector(".mouse-cursor"),
   cta1 = document.querySelectorAll(".cta-1"),
   cta2 = document.querySelectorAll(".cta-2"),
   workItems = document.querySelectorAll(".showcase-link"),
+  mailForm = document.querySelector(".mail-form"),
+  submitFormBtn = document.querySelector(".submit-btn"),
   faqItems = document.querySelectorAll(".faq-item");
 
 let followMouse = true;
@@ -61,4 +63,30 @@ cta2.forEach((cta) => {
     followMouse = true;
     cursor.classList.remove("cta2-active");
   });
+});
+
+mailForm.addEventListener("mouseenter", () => {
+  followMouse = false;
+  const submitBtnRect = submitFormBtn.getBoundingClientRect();
+  cursor.style.left = submitBtnRect.left + submitBtnRect.width / 2 + "px";
+  cursor.style.top = submitBtnRect.top + submitBtnRect.height / 2.2 + "px";
+  cursor.classList.add("mail-form-active");
+});
+
+mailForm.addEventListener("mouseleave", () => {
+  followMouse = true;
+  cursor.classList.remove("mail-form-active");
+});
+
+submitFormBtn.addEventListener("mousemove", () => {
+  const submitBtnRect = submitFormBtn.getBoundingClientRect();
+  cursor.style.left = submitBtnRect.left + submitBtnRect.width / 2 + "px";
+  cursor.style.top = submitBtnRect.top + submitBtnRect.height / 2.2 + "px";
+  // cursor.classList.add("burger-active");
+  followMouse = false;
+});
+
+submitFormBtn.addEventListener("mouseleave", () => {
+  // cursor.classList.remove("burger-active");
+  followMouse = true;
 });

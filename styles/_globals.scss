@@ -224,25 +224,35 @@ img {
 }
 
 .cta-wrapper {
-    @include row-between;
-    width: 360px;
+    // @include row-between;
+    display: flex;
+    gap: 12px;
+    // width: 360px;
     
-    @include mq-max('md') {
-        width: 264px;
-    }
+    // @include mq-max('md') {
+    //     width: 264px;
+    // }
 
     .cta-1,
     .cta-2 {
         @include row-center;
         font-size: 24px;
         text-transform: uppercase;
-        
+
+        @include mq-max('xxl') {
+            font-size: 20px;
+        }
+
         @include mq-max('md') {
             font-size: 16px;
         }
 
         .cta-text {
             transition: 0.3s ease, background 0s;
+
+            span {
+                transition: 0.3s ease;
+            }
         }
 
     }
@@ -271,6 +281,10 @@ img {
                 translate: -12px 0;
                 color: $blue;
                 background-color: transparent;
+
+                span {
+                    color: $blue;
+                }
             }
         }
 
@@ -294,6 +308,7 @@ img {
                 }
             }
         }
+
         .cta-text {
             background-color: $black;
             translate: -24px 0;
@@ -338,20 +353,16 @@ img {
 
 .mouse-cursor {
     border: 2px solid $grey;
-    // border: 2px solid rgba($white, 0.8);
     position: fixed;
-    translate: -50% -50%; // Essential for centering mouse-div
+    translate: -50% -50%;
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    // transition: 0.6s cubic-bezier(.02,.35,.39,1.12),
     transition: 0.8s cubic-bezier(0,.49,.4,1.19),
       border 0.4s ease,
       width 0.48s ease,
       height 0.48s ease;
       pointer-events: none;
-    // z-index: -1;
-    // mix-blend-mode: difference;
 
     @media (hover: none) {
         display: none;
@@ -381,6 +392,15 @@ img {
         // backdrop-filter: blur(1px);
         transition: 0.4s cubic-bezier(.02,.35,.39,1.12), border 0.3s ease;
         // z-index: 3;
+    }
+
+    &.mail-form-active {
+        scale: 0.8;
+        // border-width: 3px;
+        border-color: $blue;
+        transition: 0.6s cubic-bezier(.02,.35,.39,1.12),
+          border 0.4s ease,
+          background 0.28s ease 0.5s;
     }
 }
 
