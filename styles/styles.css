@@ -490,6 +490,11 @@ img {
   font-weight: 700;
 }
 
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .lg-screen-and-up {
   display: none;
 }
@@ -874,15 +879,53 @@ img {
 
 #plans-section .plan-options {
   display: flex;
-  gap: 36px;
+  justify-content: space-between;
+  align-items: center;
+  align-items: stretch;
+  gap: 32px;
+}
+@media screen and (max-width: 1440px) {
+  #plans-section .plan-options {
+    gap: 16px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  #plans-section .plan-options {
+    flex-wrap: wrap;
+  }
 }
 #plans-section .plan-options .segment {
   width: 33%;
+}
+@media screen and (max-width: 1200px) {
+  #plans-section .plan-options .segment {
+    width: 49%;
+  }
 }
 #plans-section .plan-options .segment.last-segment {
   display: flex;
   flex-direction: column;
   gap: 36px;
+}
+@media screen and (max-width: 1440px) {
+  #plans-section .plan-options .segment.last-segment {
+    gap: 16px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  #plans-section .plan-options .segment.last-segment {
+    width: 100%;
+    flex-direction: row;
+  }
+}
+#plans-section .plan-options .segment.last-segment .half-card {
+  height: 50%;
+}
+@media screen and (max-width: 1200px) {
+  #plans-section .plan-options .segment.last-segment .half-card {
+    width: 50%;
+    height: 100%;
+  }
 }
 #plans-section .plan-options .card {
   background: #1E1E1E;
@@ -894,6 +937,10 @@ img {
   font-weight: 700;
 }
 #plans-section .plan-options .price-card .card-title {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
   font-size: 48px;
   margin-bottom: 16px;
 }
@@ -903,10 +950,14 @@ img {
   }
 }
 #plans-section .plan-options .price-card .card-title .most-popular {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 700;
   color: #909090;
-  vertical-align: middle;
+}
+@media screen and (max-width: 1440px) {
+  #plans-section .plan-options .price-card .card-title .most-popular {
+    font-size: 10px;
+  }
 }
 #plans-section .plan-options .price-card .card-price {
   font-size: 36px;
@@ -921,6 +972,11 @@ img {
   letter-spacing: 0.25px;
   color: #909090;
   vertical-align: middle;
+}
+@media screen and (max-width: 1440px) {
+  #plans-section .plan-options .price-card .card-price .pause-or-cancel {
+    font-size: 12px;
+  }
 }
 #plans-section .plan-options .price-card .divider {
   height: 4px;
@@ -964,6 +1020,87 @@ img {
     font-size: 14px;
     letter-spacing: 0.25px;
   }
+}
+#plans-section .plan-options .half-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+#plans-section .plan-options .half-card h4 {
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+@media screen and (max-width: 1440px) {
+  #plans-section .plan-options .half-card h4 {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+}
+#plans-section .plan-options .half-card .half-card-description {
+  font-size: 16px;
+}
+@media screen and (max-width: 1440px) {
+  #plans-section .plan-options .half-card .half-card-description {
+    font-size: 14px;
+    letter-spacing: 0.25px;
+  }
+}
+#plans-section .plan-options .mail-form {
+  position: relative;
+  width: 100%;
+  height: 64px;
+  flex-shrink: 0;
+}
+#plans-section .plan-options .mail-form .form-input-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+#plans-section .plan-options .mail-form .form-input-wrapper .input,
+#plans-section .plan-options .mail-form .form-input-wrapper .label {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 24px;
+}
+#plans-section .plan-options .mail-form .form-input-wrapper .input {
+  bottom: 0;
+  color: #F0F0F0;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #909090;
+  transition: border 0.2s ease;
+}
+#plans-section .plan-options .mail-form .form-input-wrapper .input:hover, #plans-section .plan-options .mail-form .form-input-wrapper .input:focus {
+  border-bottom: 2px solid #7EC1D4;
+}
+#plans-section .plan-options .mail-form .form-input-wrapper .label {
+  top: 32%;
+  color: #909090;
+  pointer-events: none;
+  transition: 0.24s ease;
+}
+#plans-section .plan-options .mail-form .form-input-wrapper .input:focus ~ .label,
+#plans-section .plan-options .mail-form .form-input-wrapper .input:not(:placeholder-shown).input:not(focus) ~ .label {
+  transform: translate(0, -68%);
+  opacity: 0.8;
+  font-size: 16px;
+}
+#plans-section .plan-options .mail-form .submit-btn {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  translate: 0 -16px;
+}
+#plans-section .plan-options .mail-form .submit-btn svg {
+  width: 40px;
+  height: 40px;
+}
+#plans-section .plan-options .mail-form .submit-btn svg path {
+  fill: #909090;
 }
 #plans-section .cta-wrapper {
   translate: 16px 0;

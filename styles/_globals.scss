@@ -527,6 +527,11 @@ img {
     font-weight: 700;
 }
 
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
 .lg-screen-and-up {
     display: none;
 
