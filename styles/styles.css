@@ -772,10 +772,10 @@ img {
 @media screen and (max-width: 1024px) {
   #benefits-section .headline-full {
     position: static;
-    width: 80%;
+    width: 92%;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 480px) {
   #benefits-section .headline-full {
     width: 100%;
   }
@@ -789,11 +789,6 @@ img {
 @media screen and (max-width: 1200px) {
   #benefits-section .headline-full .cta-wrapper {
     margin-left: 0;
-  }
-}
-@media screen and (max-width: 768px) {
-  #benefits-section .headline-full .cta-wrapper {
-    margin-left: 24px;
   }
 }
 #benefits-section .benefit-list {
@@ -815,18 +810,17 @@ img {
 }
 @media screen and (max-width: 1024px) {
   #benefits-section .benefit-list {
-    width: 80%;
-    z-index: -1;
+    width: 92%;
   }
 }
 @media screen and (max-width: 768px) {
   #benefits-section .benefit-list {
-    width: 100%;
     gap: 96px;
   }
 }
 @media screen and (max-width: 480px) {
   #benefits-section .benefit-list {
+    width: 100%;
     gap: 64px;
   }
 }
@@ -902,11 +896,9 @@ img {
     font-size: 12px;
   }
 }
-#benefits-section > .cta-wrapper.lg-screen-and-below {
-  align-self: flex-start;
-}
 @media screen and (min-width: 769px) {
   #benefits-section > .cta-wrapper.lg-screen-and-below {
+    align-self: flex-start;
     margin-left: 80px;
   }
 }
@@ -1006,6 +998,11 @@ img {
     font-size: 36px;
   }
 }
+@media screen and (max-width: 480px) {
+  #plans-section .plan-options .price-card .card-title {
+    font-size: 32px;
+  }
+}
 #plans-section .plan-options .price-card .card-title .most-popular {
   font-size: 12px;
   font-weight: 700;
@@ -1019,6 +1016,11 @@ img {
 @media screen and (max-width: 1200px) {
   #plans-section .plan-options .price-card .card-title .most-popular {
     font-size: 14px;
+  }
+}
+@media screen and (max-width: 480px) {
+  #plans-section .plan-options .price-card .card-title .most-popular {
+    font-size: 10px;
   }
 }
 #plans-section .plan-options .price-card .card-price {
@@ -1190,6 +1192,7 @@ img {
   background: transparent;
   border: none;
   border-bottom: 2px solid #909090;
+  border-radius: 0;
   transition: border 0.36s ease;
 }
 #plans-section .plan-options .half-card .mail-form .input:focus {
@@ -1244,11 +1247,12 @@ img {
 @media screen and (max-width: 1440px) {
   #plans-section .cta-wrapper {
     translate: 12px 0;
+    gap: 12px;
   }
 }
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 480px) {
   #plans-section .cta-wrapper {
-    gap: 12px;
+    translate: 0 0;
   }
 }
 @media screen and (max-width: 1440px) {
@@ -1327,6 +1331,7 @@ img {
   top: 0;
   width: 100%;
   padding: 16px 0;
+  z-index: 2;
 }
 @media screen and (max-width: 1440px) {
   #faq-section .faq-list .question {
@@ -1423,17 +1428,22 @@ img {
   fill: #F0F0F0;
 }
 @media screen and (max-width: 480px) {
-  #faq-section .faq-headline-cta {
+  #faq-section .faq-cta {
     text-align: left;
   }
 }
 @media screen and (max-width: 768px) {
-  #faq-section .faq-headline-cta .headline-description {
+  #faq-section .faq-cta .headline-description {
     margin-bottom: 48px;
   }
 }
-#faq-section .faq-headline-cta .cta-wrapper {
+#faq-section .faq-cta .cta-wrapper {
   width: unset;
   justify-content: center;
   gap: 16px;
+}
+@media screen and (max-width: 480px) {
+  #faq-section .faq-cta .cta-wrapper {
+    justify-content: left;
+  }
 }/*# sourceMappingURL=styles.css.map */
