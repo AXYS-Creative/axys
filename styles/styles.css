@@ -301,14 +301,6 @@ img {
   translate: -24px 0;
   padding: 2px 0;
 }
-.cta-wrapper .cta-2 .dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: #3D3D3D;
-  margin-right: 12px;
-  transition: 0.3s ease;
-}
 .cta-wrapper .cta-2:hover .cta-text, .cta-wrapper .cta-2:focus .cta-text {
   color: #E48C66;
   translate: 10px 0;
@@ -323,6 +315,14 @@ img {
     width: 16px;
     height: 16px;
   }
+}
+.cta-wrapper .cta-2 .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #3D3D3D;
+  margin-right: 12px;
+  transition: 0.3s ease;
 }
 
 .mouse-cursor {
@@ -520,6 +520,24 @@ img {
 }
 @media screen and (max-width: 1024px) {
   .lg-screen-and-below {
+    display: flex;
+  }
+}
+
+.md-screen-and-up {
+  display: none;
+}
+@media screen and (min-width: 769px) {
+  .md-screen-and-up {
+    display: flex;
+  }
+}
+
+.md-screen-and-below {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .md-screen-and-below {
     display: flex;
   }
 }
@@ -934,6 +952,11 @@ img {
     width: 80%;
   }
 }
+@media screen and (max-width: 768px) {
+  #plans-section .plan-options .segment {
+    width: 100%;
+  }
+}
 #plans-section .plan-options .segment.last-segment {
   display: flex;
   flex-direction: column;
@@ -954,28 +977,6 @@ img {
   #plans-section .plan-options .segment.last-segment {
     flex-direction: column;
     align-items: center;
-  }
-}
-#plans-section .plan-options .segment.last-segment .half-card {
-  height: 50%;
-}
-@media screen and (max-width: 1440px) {
-  #plans-section .plan-options .segment.last-segment .half-card:last-of-type {
-    height: 56%;
-  }
-}
-@media screen and (max-width: 1200px) {
-  #plans-section .plan-options .segment.last-segment .half-card {
-    width: 50%;
-    height: 124%;
-  }
-  #plans-section .plan-options .segment.last-segment .half-card:last-of-type {
-    height: 124%;
-  }
-}
-@media screen and (max-width: 1024px) {
-  #plans-section .plan-options .segment.last-segment .half-card {
-    width: 80%;
   }
 }
 #plans-section .plan-options .card {
@@ -1092,6 +1093,31 @@ img {
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
+  height: 50%;
+}
+@media screen and (max-width: 1440px) {
+  #plans-section .plan-options .half-card:last-of-type {
+    height: 60%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  #plans-section .plan-options .half-card {
+    width: 50%;
+    height: 124%;
+  }
+  #plans-section .plan-options .half-card:last-of-type {
+    height: 124%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  #plans-section .plan-options .half-card {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 768px) {
+  #plans-section .plan-options .half-card {
+    width: 100%;
+  }
 }
 #plans-section .plan-options .half-card h4 {
   font-size: 24px;
@@ -1121,31 +1147,31 @@ img {
 #plans-section .plan-options .half-card .half-card-description:last-of-type {
   margin-top: -8px;
 }
-#plans-section .plan-options .mail-form {
+#plans-section .plan-options .half-card .mail-form {
   position: relative;
   width: 100%;
   height: 56px;
   flex-shrink: 0;
 }
 @media screen and (max-width: 1440px) {
-  #plans-section .plan-options .mail-form {
+  #plans-section .plan-options .half-card .mail-form {
     height: 36px;
   }
 }
-#plans-section .plan-options .mail-form:hover .input {
+#plans-section .plan-options .half-card .mail-form:hover .input {
   border-color: #7EC1D4;
 }
-#plans-section .plan-options .mail-form:hover .label {
+#plans-section .plan-options .half-card .mail-form:hover .label {
   color: #3D3D3D;
 }
-#plans-section .plan-options .mail-form:hover .submit-btn {
+#plans-section .plan-options .half-card .mail-form:hover .submit-btn {
   scale: 0.8;
 }
-#plans-section .plan-options .mail-form:hover .submit-btn svg path {
+#plans-section .plan-options .half-card .mail-form:hover .submit-btn svg path {
   fill: #7EC1D4;
 }
-#plans-section .plan-options .mail-form .input,
-#plans-section .plan-options .mail-form .label {
+#plans-section .plan-options .half-card .mail-form .input,
+#plans-section .plan-options .half-card .mail-form .label {
   position: absolute;
   left: 0;
   width: 100%;
@@ -1153,12 +1179,12 @@ img {
   font-size: 24px;
 }
 @media screen and (max-width: 1440px) {
-  #plans-section .plan-options .mail-form .input,
-  #plans-section .plan-options .mail-form .label {
+  #plans-section .plan-options .half-card .mail-form .input,
+  #plans-section .plan-options .half-card .mail-form .label {
     font-size: 16px;
   }
 }
-#plans-section .plan-options .mail-form .input {
+#plans-section .plan-options .half-card .mail-form .input {
   bottom: 0;
   color: #F0F0F0;
   background: transparent;
@@ -1166,46 +1192,46 @@ img {
   border-bottom: 2px solid #909090;
   transition: border 0.36s ease;
 }
-#plans-section .plan-options .mail-form .input:focus {
+#plans-section .plan-options .half-card .mail-form .input:focus {
   border-color: #7EC1D4;
 }
-#plans-section .plan-options .mail-form .label {
+#plans-section .plan-options .half-card .mail-form .label {
   top: 32%;
   color: #909090;
   pointer-events: none;
   transition: 0.24s ease;
 }
-#plans-section .plan-options .mail-form .input:focus ~ .label,
-#plans-section .plan-options .mail-form .input:not(:placeholder-shown).input:not(focus) ~ .label {
+#plans-section .plan-options .half-card .mail-form .input:focus ~ .label,
+#plans-section .plan-options .half-card .mail-form .input:not(:placeholder-shown).input:not(focus) ~ .label {
   transform: translate(0, -68%);
   color: #7EC1D4;
   font-size: 16px;
 }
 @media screen and (max-width: 1440px) {
-  #plans-section .plan-options .mail-form .input:focus ~ .label,
-  #plans-section .plan-options .mail-form .input:not(:placeholder-shown).input:not(focus) ~ .label {
+  #plans-section .plan-options .half-card .mail-form .input:focus ~ .label,
+  #plans-section .plan-options .half-card .mail-form .input:not(:placeholder-shown).input:not(focus) ~ .label {
     transform: translate(0, -80%);
     font-size: 12px;
   }
 }
-#plans-section .plan-options .mail-form .submit-btn {
+#plans-section .plan-options .half-card .mail-form .submit-btn {
   position: absolute;
   top: 50%;
   right: 0;
   translate: 0 -12px;
   transition: 0.4s cubic-bezier(0.05, 1.75, 0.75, 1.75);
 }
-#plans-section .plan-options .mail-form .submit-btn svg {
+#plans-section .plan-options .half-card .mail-form .submit-btn svg {
   width: 32px;
   height: 32px;
 }
 @media screen and (max-width: 1440px) {
-  #plans-section .plan-options .mail-form .submit-btn svg {
+  #plans-section .plan-options .half-card .mail-form .submit-btn svg {
     width: 20px;
     height: 20px;
   }
 }
-#plans-section .plan-options .mail-form .submit-btn svg path {
+#plans-section .plan-options .half-card .mail-form .submit-btn svg path {
   fill: #909090;
   transition: 0.36s ease;
 }
@@ -1277,6 +1303,21 @@ img {
 }
 #faq-section .faq-list .faq-item.active {
   grid-template-rows: 1fr;
+}
+#faq-section .faq-list .faq-item.active .question .angle-arrow {
+  rotate: 180deg;
+}
+#faq-section .faq-list .faq-item.active .answer {
+  opacity: 1;
+  pointer-events: all;
+  padding: 32px 0 16px;
+  translate: 0 0;
+  transition: 0.3s ease 0.12s;
+}
+@media screen and (max-width: 1440px) {
+  #faq-section .faq-list .faq-item.active .answer {
+    padding: 16px 0 8px;
+  }
 }
 #faq-section .faq-list .question {
   display: flex;
@@ -1351,7 +1392,6 @@ img {
   line-height: 150%;
   transition: 0.2s ease 0s;
   cursor: pointer;
-  z-index: -1;
 }
 @media screen and (max-width: 1440px) {
   #faq-section .faq-list .answer {
@@ -1361,18 +1401,6 @@ img {
 @media screen and (max-width: 768px) {
   #faq-section .faq-list .answer {
     font-size: 14px;
-  }
-}
-#faq-section .faq-list .answer.active {
-  opacity: 1;
-  pointer-events: all;
-  padding: 32px 0 16px;
-  translate: 0 0;
-  transition: 0.3s ease 0.12s;
-}
-@media screen and (max-width: 1440px) {
-  #faq-section .faq-list .answer.active {
-    padding: 16px 0 8px;
   }
 }
 #faq-section .faq-list .answer .answer-indicator {

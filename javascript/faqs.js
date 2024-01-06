@@ -1,24 +1,24 @@
-const faqItems = document.querySelectorAll(".faq-item");
+document.addEventListener("DOMContentLoaded", () => {
+  const faqList = document.querySelector(".faq-list");
 
-faqItems.forEach((item, index) => {
-  const questionButton = item.querySelector(".question");
-  const answerDiv = item.querySelector(".answer");
-  const angleArrow = item.querySelector(".angle-arrow");
+  faqList.addEventListener("click", function (event) {
+    const clickedElement = event.target;
+    const isQuestionOrAnswer =
+      clickedElement.closest(".question") || clickedElement.closest(".answer");
 
-  const toggleFAQItem = () => {
-    faqItems.forEach((otherItem, otherIndex) => {
-      if (otherIndex !== index) {
-        otherItem.querySelector(".answer").classList.remove("active");
-        otherItem.querySelector(".angle-arrow").classList.remove("active");
-        otherItem.classList.remove("active");
+    if (isQuestionOrAnswer) {
+      const faqItem = clickedElement.closest(".faq-item");
+      toggleFAQItem(faqItem);
+    }
+  });
+
+  function toggleFAQItem(faqItem) {
+    faqItem.classList.toggle("active");
+
+    document.querySelectorAll(".faq-item").forEach((item) => {
+      if (item !== faqItem) {
+        item.classList.remove("active");
       }
     });
-
-    item.classList.toggle("active");
-    answerDiv.classList.toggle("active");
-    angleArrow.classList.toggle("active");
-  };
-
-  questionButton.addEventListener("click", toggleFAQItem);
-  answerDiv.addEventListener("click", toggleFAQItem);
+  }
 });

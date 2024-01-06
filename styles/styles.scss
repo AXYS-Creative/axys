@@ -444,6 +444,10 @@
                 width: 80%;
             }
 
+            @include mq-max('md') {
+                width: 100%;
+            }
+
             &.last-segment {
                 display: flex;
                 flex-direction: column;
@@ -461,30 +465,6 @@
                 @include mq-max('lg') {
                     flex-direction: column;
                     align-items: center;
-                }
-
-                .half-card {
-                    height: 50%;
-
-                    @include mq-max('xxl') {
-                        
-                        &:last-of-type {
-                            height: 56%;
-                        }
-                    }
-
-                    @include mq-max('xl') {
-                        width: 50%;
-                        height: 124%;
-
-                        &:last-of-type {
-                            height: 124%;
-                        }
-                    }
-
-                    @include mq-max('lg') {
-                        width: 80%;
-                    }
                 }
             }
         }
@@ -604,6 +584,31 @@
         .half-card {
             @include column-left;
             justify-content: space-between;
+            height: 50%;
+
+            @include mq-max('xxl') {
+                        
+                &:last-of-type {
+                    height: 60%;
+                }
+            }
+
+            @include mq-max('xl') {
+                width: 50%;
+                height: 124%;
+
+                &:last-of-type {
+                    height: 124%;
+                }
+            }
+
+            @include mq-max('lg') {
+                width: 80%;
+            }
+
+            @include mq-max('md') {
+                width: 100%;
+            }
 
             h4 {
                 font-size: 24px;
@@ -635,104 +640,104 @@
                     margin-top: -8px;
                 }
             }
-        }
 
-        .mail-form {
-            position: relative;
-            width: 100%;
-            height: 56px;
-            flex-shrink: 0;
-            
-            @include mq-max('xxl') {
-                height: 36px;
-            }
-
-            &:hover {
-
-                .input {
-                    border-color: $blue;
+            .mail-form {
+                position: relative;
+                width: 100%;
+                height: 56px;
+                flex-shrink: 0;
+                
+                @include mq-max('xxl') {
+                    height: 36px;
                 }
-
-                .label {
-                    color: $grey;
-                }
-
-                .submit-btn {
-                    scale: 0.8;
-                    
-                    svg {
-
-                        path {
-                            fill: $blue;
+    
+                &:hover {
+    
+                    .input {
+                        border-color: $blue;
+                    }
+    
+                    .label {
+                        color: $grey;
+                    }
+    
+                    .submit-btn {
+                        scale: 0.8;
+                        
+                        svg {
+    
+                            path {
+                                fill: $blue;
+                            }
                         }
                     }
                 }
-            }
-
-            .input,
-            .label {
-                position: absolute;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                font-size: 24px;
-
-                @include mq-max('xxl') {
+    
+                .input,
+                .label {
+                    position: absolute;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    font-size: 24px;
+    
+                    @include mq-max('xxl') {
+                        font-size: 16px;
+                    }
+                }
+    
+                .input {
+                    bottom: 0;
+                    color: $white;
+                    background: transparent;
+                    border: none;
+                    border-bottom: 2px solid $grey-light;
+                    transition: border 0.36s ease;
+    
+                    &:focus {
+                        border-color: $blue;
+                    }
+                }
+    
+                .label {
+                    top: 32%;
+                    color: $grey-light;
+                    pointer-events: none;
+                    transition: 0.24s ease;
+                }
+    
+                .input:focus ~ .label,
+                .input:not(:placeholder-shown).input:not(focus) ~ .label {
+                    transform: translate(0, -68%);
+                    color: $blue;
                     font-size: 16px;
-                }
-            }
-
-            .input {
-                bottom: 0;
-                color: $white;
-                background: transparent;
-                border: none;
-                border-bottom: 2px solid $grey-light;
-                transition: border 0.36s ease;
-
-                &:focus {
-                    border-color: $blue;
-                }
-            }
-
-            .label {
-                top: 32%;
-                color: $grey-light;
-                pointer-events: none;
-                transition: 0.24s ease;
-            }
-
-            .input:focus ~ .label,
-            .input:not(:placeholder-shown).input:not(focus) ~ .label {
-                transform: translate(0, -68%);
-                color: $blue;
-                font-size: 16px;
-                
-                @include mq-max('xxl') {
-                    transform: translate(0, -80%);
-                    font-size: 12px;
-                }
-            }
-              
-            .submit-btn {
-                position: absolute;
-                top: 50%;
-                right: 0;
-                translate: 0 -12px;
-                transition: 0.4s $cubic-ease-back-dramatic;
-
-                svg {
-                    width: 32px;
-                    height: 32px;
                     
                     @include mq-max('xxl') {
-                        width: 20px;
-                        height: 20px;
+                        transform: translate(0, -80%);
+                        font-size: 12px;
                     }
-
-                    path {
-                        fill: $grey-light;
-                        transition: 0.36s ease;
+                }
+                  
+                .submit-btn {
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    translate: 0 -12px;
+                    transition: 0.4s $cubic-ease-back-dramatic;
+    
+                    svg {
+                        width: 32px;
+                        height: 32px;
+                        
+                        @include mq-max('xxl') {
+                            width: 20px;
+                            height: 20px;
+                        }
+    
+                        path {
+                            fill: $grey-light;
+                            transition: 0.36s ease;
+                        }
                     }
                 }
             }
@@ -805,6 +810,25 @@
 
             &.active {
                 grid-template-rows: 1fr;
+
+                .question {
+
+                    .angle-arrow {
+                        rotate: 180deg;
+                    }
+                }
+
+                .answer {
+                    opacity: 1;
+                    pointer-events: all;
+                    padding: 32px 0 16px;
+                    translate: 0 0;
+                    transition: 0.3s ease 0.12s;
+                    
+                    @include mq-max('xxl') {
+                        padding: 16px 0 8px;
+                    }
+                }
             }
         }
 
@@ -818,8 +842,7 @@
             @include mq-max('xxl') {
                 padding: 4px 0;
             }
-
-            
+    
             h3 {
                 color: $white;
                 font-size: 20px;
@@ -869,7 +892,6 @@
                     }
                 }    
             }
-
         }
 
         .answer {
@@ -883,7 +905,6 @@
             line-height: 150%;
             transition: 0.2s ease 0s;
             cursor: pointer;
-            z-index: -1;
 
             @include mq-max('xxl') {
                 font-size: 16px;
@@ -892,21 +913,8 @@
             @include mq-max('md') {
                 font-size: 14px;
             }
-            
-            &.active {
-                opacity: 1;
-                pointer-events: all;
-                padding: 32px 0 16px;
-                translate: 0 0;
-                transition: 0.3s ease 0.12s;
-                
-                @include mq-max('xxl') {
-                    padding: 16px 0 8px;
-                    // padding: 8px 0 4px;
-                }
-            }
 
-            .answer-indicator {                
+            .answer-indicator {
                 padding-right: 12px;
                 
                 @include mq-max('xxl') {

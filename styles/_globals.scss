@@ -224,14 +224,8 @@ img {
 }
 
 .cta-wrapper {
-    // @include row-between;
     display: flex;
     gap: 12px;
-    // width: 360px;
-    
-    // @include mq-max('md') {
-    //     width: 264px;
-    // }
 
     .cta-1,
     .cta-2 {
@@ -317,15 +311,6 @@ img {
     }
 
     .cta-2 {
-
-        .dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background-color: $grey;
-            margin-right: 12px;
-            transition: 0.3s ease;
-        }
         
         &:hover,
         &:focus {
@@ -345,6 +330,15 @@ img {
                     height: 16px;
                 }
             }
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: $grey;
+            margin-right: 12px;
+            transition: 0.3s ease;
         }
     }
 }
@@ -565,6 +559,22 @@ img {
 
     @include mq-max('lg') {
         display: flex;
+    }
+}
+
+.md-screen-and-up {
+    display: none;
+
+    @include mq-min('md') {
+        display: flex; // Flex for cta-wrapper
+    }
+}
+
+.md-screen-and-below {
+    display: none;
+
+    @include mq-max('md') {
+        display: flex; // Flex for cta-wrapper
     }
 }
 
