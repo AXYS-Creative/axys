@@ -1,4 +1,5 @@
 import "./nav.js";
+import "./form.js";
 import "./faqs.js";
 import "./animations.js";
 import "./mouse-cursor.js";
