@@ -395,6 +395,10 @@ img {
         transition: 0.6s cubic-bezier(.02,.35,.39,1.12),
           border 0.4s ease,
           background 0.28s ease 0.5s;
+
+          @include mq-max('xxl') {
+            scale: 0.6;
+          }
     }
 }
 
