@@ -169,10 +169,14 @@ nav {
     }
 
     .nav-links {
+        @include column-left;
+        gap: 24px;
+        list-style: none;
 
         .nav-link {
+            text-transform: uppercase;
+            font-size: 64px;
             cursor: pointer;
-            font-size: 24px;
         }
     }
 }
