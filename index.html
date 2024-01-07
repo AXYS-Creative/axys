@@ -22,7 +22,12 @@
             </svg>                
             <p aria-hidden="true">Creative</p>
         </a>
-        <button class="menu-btn">
+        <button 
+          class="menu-btn"
+          aria-controls="site-navigation"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+        >
             <p class="menu-btn-text">Menu</p>
             <div class="burger magnet magnet-strong">
                 <div class="burger-line-wrapper">
@@ -32,6 +37,22 @@
             </div>
         </button>
     </header>
+
+    <nav 
+      class="nav-menu"
+      id="site-navigation"
+      aria-label="Main navigation"
+      aria-hidden="true"
+    >
+        <ul class="nav-links">
+            <li><a class="nav-link tab-element-nav" href="#hero-section" tabindex="-1">Home</a></li>
+            <li><a class="nav-link tab-element-nav" href="#work-section" tabindex="-1">Work</a></li>
+            <li><a class="nav-link tab-element-nav" href="#benefits-section" tabindex="-1">Benefits</a></li>
+            <li><a class="nav-link tab-element-nav" href="#plans-section" tabindex="-1">Plans</a></li>
+            <li><a class="nav-link tab-element-nav" href="#faq-section" tabindex="-1">FAQ<span class="lowercase-text">s</span></a></li>
+        </ul>
+    </nav>
+
     <main>
         <section id="hero-section">
             <div class="section-headline">
@@ -46,13 +67,13 @@
             </div>
 
             <div class="cta-wrapper">
-                <a href="#plans-section" class="cta-1">
+                <a href="#plans-section" class="cta-1 tab-element-page">
                     <div class="ring">
                         <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path opacity="1" fill="#1E3050" d="M435.3 267.3L446.6 256l-11.3-11.3-168-168L256 65.4 233.4 88l11.3 11.3L385.4 240 16 240 0 240l0 32 16 0 369.4 0L244.7 412.7 233.4 424 256 446.6l11.3-11.3 168-168z"/></svg>
                     </div>
                     <p class="cta-text">View plans</p>
                 </a>
-                <a href="#work-section" class="cta-2">
+                <a href="#work-section" class="cta-2 tab-element-page">
                     <div class="dot"></div>
                     <p class="cta-text">Our work</p>
                 </a>
@@ -76,25 +97,25 @@
             </div>
 
             <div class="work-showcase">
-                <a class="showcase-link" href="">
+                <a class="showcase-link tab-element-page" href="https://joinsunder.com/" target="_blank">
                     <figure class="showcase-item">
                         <img class="showcase-img" src="./assets/images/sunder.png" alt="" loading="lazy">
                         <figcaption class="showcase-caption">Join Sunder &nbsp;&nbsp;•&nbsp;&nbsp; Development</figcaption>
                     </figure>
                 </a>
-                <a class="showcase-link" href="">
+                <a class="showcase-link tab-element-page" href="https://bonniesdanceschool.com/" target="_blank">
                     <figure class="showcase-item">
                         <img class="showcase-img" src="./assets/images/bonnies-dance-school.png" alt="" loading="lazy">
                         <figcaption class="showcase-caption">Bonnie’s Dance School &nbsp;&nbsp;•&nbsp;&nbsp; Design + Development</figcaption>
                     </figure>
                 </a>
-                <a class="showcase-link" href="">
+                <a class="showcase-link tab-element-page" href="" target="_blank">
                     <figure class="showcase-item">
                         <img class="showcase-img" src="./assets/images/cinexia.png" alt="" loading="lazy">
                         <figcaption class="showcase-caption">Cinexia &nbsp;&nbsp;•&nbsp;&nbsp; Design + Development</figcaption>
                     </figure>
                 </a>
-                <a class="showcase-link" href="">
+                <a class="showcase-link tab-element-page" href="https://honeysuckle-studios.netlify.app/" target="_blank">
                     <figure class="showcase-item">
                         <img class="showcase-img" src="./assets/images/honeysucklestudios.png" alt="" loading="lazy">
                         <figcaption class="showcase-caption">Honeysuckle Studios &nbsp;&nbsp;•&nbsp;&nbsp; Design + Development</figcaption>
@@ -102,7 +123,7 @@
                 </a>
             </div>
 
-            <p class="made-with-care">[ Always made with care <svg class="heart-svg" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.11562 8.89813L7.35078 12.7511C7.52656 12.9109 7.75859 13 8 13C8.24141 13 8.47344 12.9109 8.64922 12.7511L12.8844 8.89813C13.5969 8.25179 14 7.34508 14 6.39727V6.2648C14 4.66836 12.8164 3.30716 11.2016 3.04452C10.1328 2.87094 9.04531 3.21124 8.28125 3.95579L8 4.22986L7.71875 3.95579C6.95469 3.21124 5.86719 2.87094 4.79844 3.04452C3.18359 3.30716 2 4.66836 2 6.2648V6.39727C2 7.34508 2.40312 8.25179 3.11562 8.89813Z" fill="#E1A7B4"/></svg>]</p>
+            <p class="made-with-care">[ Made with care <svg class="heart-svg" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.11562 8.89813L7.35078 12.7511C7.52656 12.9109 7.75859 13 8 13C8.24141 13 8.47344 12.9109 8.64922 12.7511L12.8844 8.89813C13.5969 8.25179 14 7.34508 14 6.39727V6.2648C14 4.66836 12.8164 3.30716 11.2016 3.04452C10.1328 2.87094 9.04531 3.21124 8.28125 3.95579L8 4.22986L7.71875 3.95579C6.95469 3.21124 5.86719 2.87094 4.79844 3.04452C3.18359 3.30716 2 4.66836 2 6.2648V6.39727C2 7.34508 2.40312 8.25179 3.11562 8.89813Z" fill="#E1A7B4"/></svg>]</p>
         </section>
 
         <section id="statement-section">
@@ -116,13 +137,13 @@
                     <p class="headline-description">Unlock these perks and so much more.</p>
                 </div>
                 <div class="cta-wrapper lg-screen-and-up">
-                    <a href="#plans-section" class="cta-1">
+                    <a href="#plans-section" class="cta-1 tab-element-page">
                         <div class="ring">
                             <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path opacity="1" fill="#1E3050" d="M435.3 267.3L446.6 256l-11.3-11.3-168-168L256 65.4 233.4 88l11.3 11.3L385.4 240 16 240 0 240l0 32 16 0 369.4 0L244.7 412.7 233.4 424 256 446.6l11.3-11.3 168-168z"/></svg>
                         </div>
                         <p class="cta-text">View plans</p>
                     </a>
-                    <a href="#work-section" class="cta-2">
+                    <a href="#work-section" class="cta-2 tab-element-page">
                         <div class="dot"></div>
                         <p class="cta-text">Our work</p>
                     </a>
@@ -173,13 +194,13 @@
                 </div>
             </div>
             <div class="cta-wrapper lg-screen-and-below">
-                <a href="#plans-section" class="cta-1">
+                <a href="#plans-section" class="cta-1 tab-element-page">
                     <div class="ring">
                         <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path opacity="1" fill="#1E3050" d="M435.3 267.3L446.6 256l-11.3-11.3-168-168L256 65.4 233.4 88l11.3 11.3L385.4 240 16 240 0 240l0 32 16 0 369.4 0L244.7 412.7 233.4 424 256 446.6l11.3-11.3 168-168z"/></svg>
                     </div>
                     <p class="cta-text">View plans</p>
                 </a>
-                <a href="#work-section" class="cta-2">
+                <a href="#work-section" class="cta-2 tab-element-page">
                     <div class="dot"></div>
                     <p class="cta-text">Our work</p>
                 </a>
@@ -870,13 +891,13 @@
                         <li>Pause or cancel anytime</li>
                     </ul>
                     <div class="cta-wrapper">
-                        <a href="https://buy.stripe.com/6oEcNCe6B5zq6o8dQQ" target="_blank" class="cta-1">
+                        <a href="https://buy.stripe.com/6oEcNCe6B5zq6o8dQQ" target="_blank" class="cta-1 tab-element-page">
                             <div class="ring">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path opacity="1" fill="#1E3050" d="M435.3 267.3L446.6 256l-11.3-11.3-168-168L256 65.4 233.4 88l11.3 11.3L385.4 240 16 240 0 240l0 32 16 0 369.4 0L244.7 412.7 233.4 424 256 446.6l11.3-11.3 168-168z"/></svg>
                             </div>
                             <p class="cta-text">Get started</p>
                         </a>
-                        <a href="https://calendly.com/axyscreativeagency/15-min-intro" target="_blank" class="cta-2">
+                        <a href="https://calendly.com/axyscreativeagency/15-min-intro" target="_blank" class="cta-2 tab-element-page">
                             <div class="dot"></div>
                             <p class="cta-text">Book call</p>
                         </a>
@@ -897,13 +918,13 @@
                         <li>Seamless management</li>
                         <li>Pause or cancel anytime</li>                    </ul>
                     <div class="cta-wrapper">
-                        <a href="https://buy.stripe.com/cN26pe1jPe5WfYIdQR" target="_blank" class="cta-1">
+                        <a href="https://buy.stripe.com/cN26pe1jPe5WfYIdQR" target="_blank" class="cta-1 tab-element-page">
                             <div class="ring">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path opacity="1" fill="#1E3050" d="M435.3 267.3L446.6 256l-11.3-11.3-168-168L256 65.4 233.4 88l11.3 11.3L385.4 240 16 240 0 240l0 32 16 0 369.4 0L244.7 412.7 233.4 424 256 446.6l11.3-11.3 168-168z"/></svg>
                             </div>
                             <p class="cta-text">Get started</p>
                         </a>
-                        <a href="https://calendly.com/axyscreativeagency/15-min-intro" target="_blank" class="cta-2">
+                        <a href="https://calendly.com/axyscreativeagency/15-min-intro" target="_blank" class="cta-2 tab-element-page">
                             <div class="dot"></div>
                             <p class="cta-text">Book call</p>
                         </a>
@@ -917,13 +938,13 @@
                             <p class="half-card-description">We’re happy to answer all of your questions. Feel free to visit the FAQs below to get answers to common questions, or book a 15min zoom call for an in-person virtual tour.</p>
                         </div>
                         <div class="cta-wrapper">
-                            <a href="#faq-section" class="cta-1">
+                            <a href="#faq-section" class="cta-1 tab-element-page">
                                 <div class="ring">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M55.2 1.7c-7.9-4-17.5-.7-21.5 7.2s-.7 17.5 7.2 21.5l64 32c7.9 4 17.5 .7 21.5-7.2s.7-17.5-7.2-21.5l-64-32zm544 28.6c7.9-4 11.1-13.6 7.2-21.5s-13.6-11.1-21.5-7.2l-64 32c-7.9 4-11.1 13.6-7.2 21.5s13.6 11.1 21.5 7.2l64-32zM16 160c-8.8 0-16 7.2-16 16s7.2 16 16 16H80c8.8 0 16-7.2 16-16s-7.2-16-16-16H16zm544 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h64c8.8 0 16-7.2 16-16s-7.2-16-16-16H560zM119.2 318.3c7.9-4 11.1-13.6 7.2-21.5s-13.6-11.1-21.5-7.2l-64 32c-7.9 4-11.1 13.6-7.2 21.5s13.6 11.1 21.5 7.2l64-32zm416-28.6c-7.9-4-17.5-.7-21.5 7.2s-.7 17.5 7.2 21.5l64 32c7.9 4 17.5 .7 21.5-7.2s.7-17.5-7.2-21.5l-64-32zM464 176c0 30.6-9.5 58.8-25.7 82.1c-4.1 5.9-8.7 12.3-13.6 19c-12.7 17.5-27.1 37.2-38 57.1c-8.9 16.2-13.7 33.3-16.2 49.9H403c2.2-12 5.9-23.7 11.8-34.5c9.9-18 22.2-34.9 34.5-51.8l0 0 0 0 0 0c5.2-7.1 10.4-14.2 15.4-21.4c19.8-28.5 31.4-63 31.4-100.3C496 78.8 417.2 0 320 0S144 78.8 144 176c0 37.3 11.6 71.9 31.4 100.3c5 7.2 10.2 14.3 15.4 21.4l0 0 0 0 0 0c12.3 16.8 24.6 33.7 34.5 51.8c5.9 10.8 9.6 22.5 11.8 34.5h32.4c-2.5-16.6-7.3-33.7-16.2-49.9c-10.9-20-25.3-39.7-38-57.1l0 0c-4.9-6.7-9.5-13-13.6-19C185.5 234.8 176 206.6 176 176c0-79.5 64.5-144 144-144s144 64.5 144 144zm-224 0c0-44.2 35.8-80 80-80c8.8 0 16-7.2 16-16s-7.2-16-16-16c-61.9 0-112 50.1-112 112c0 8.8 7.2 16 16 16s16-7.2 16-16zm80 304c-20.9 0-38.7-13.4-45.3-32h90.5c-6.6 18.6-24.4 32-45.3 32zm-80-53.3V432c0 44.2 35.8 80 80 80s80-35.8 80-80v-5.3c0-5.9-4.8-10.7-10.7-10.7H250.7c-5.9 0-10.7 4.8-10.7 10.7z"/></svg>
                                 </div>
                                 <p class="cta-text">Visit FAQ<span class="lowercase-text">s</span></p>
                             </a>
-                            <a href="https://calendly.com/axyscreativeagency/15-min-intro" target="_blank" class="cta-2">
+                            <a href="https://calendly.com/axyscreativeagency/15-min-intro" target="_blank" class="cta-2 tab-element-page">
                                 <div class="dot"></div>
                                 <p class="cta-text">Book call</p>
                             </a>
@@ -947,7 +968,7 @@
                         >
                             <input type="hidden" name="axys-mail" value="axys-mail">
                             <input 
-                              class="input" 
+                              class="input tab-element-page" 
                               type="email" 
                               name="email" 
                               id="email" 
@@ -956,7 +977,7 @@
                               required
                             />
                             <label for="email" class="label">Email address</label>
-                            <button type="submit" class="submit-btn magnet magnet-strong">
+                            <button type="submit" class="submit-btn magnet magnet-strong tab-element-page">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path opacity="1" fill="#1E3050" d="M435.3 267.3L446.6 256l-11.3-11.3-168-168L256 65.4 233.4 88l11.3 11.3L385.4 240 16 240 0 240l0 32 16 0 369.4 0L244.7 412.7 233.4 424 256 446.6l11.3-11.3 168-168z"/></svg>
                             </button>
                             <p class="confirmation-message" aria-hidden="true">Got it, thank you! We'll keep you posted. <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path opacity="1" fill="#1E3050" d="M448.1 118.2L437 129.7 173.6 404l-11.5 12-11.5-12L11.1 258.8 0 247.2l23.1-22.2 11.1 11.5L162.1 369.8 414 107.5 425 96l23.1 22.2z"/></svg></p>
@@ -975,7 +996,7 @@
 
             <div class="faq-list">
                 <div class="faq-item">
-                    <button class="question page-link">
+                    <button class="question tab-element-page">
                         <h3>
                           <span class="question-indicator">Q.</span>
                           What services do you offer?
@@ -990,7 +1011,7 @@
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="question page-link">
+                    <button class="question tab-element-page">
                         <h3>
                             <span class="question-indicator">Q.</span>
                             Why wouldn't I just hire a full-time creator?
@@ -1005,7 +1026,7 @@
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="question page-link">
+                    <button class="question tab-element-page">
                         <h3>
                             <span class="question-indicator">Q.</span>
                             What happens after I sign up?
@@ -1020,7 +1041,7 @@
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="question page-link">
+                    <button class="question tab-element-page">
                         <h3>
                             <span class="question-indicator">Q.</span>
                             Do I have a limited number of requests?
@@ -1035,7 +1056,7 @@
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="question page-link">
+                    <button class="question tab-element-page">
                         <h3>
                             <span class="question-indicator">Q.</span>
                             What if I only have a single request?
@@ -1050,7 +1071,7 @@
                     </div>
                 </div>                
                 <div class="faq-item">
-                    <button class="question page-link">
+                    <button class="question tab-element-page">
                         <h3>
                             <span class="question-indicator">Q.</span>
                             How does the pause feature work?
@@ -1065,7 +1086,7 @@
                     </div>
                 </div>                
                 <div class="faq-item">
-                    <button class="question page-link">
+                    <button class="question tab-element-page">
                         <h3>
                             <span class="question-indicator">Q.</span>
                             How quickly do you deliver?
@@ -1080,7 +1101,7 @@
                     </div>
                 </div>                
                 <div class="faq-item">
-                    <button class="question page-link">
+                    <button class="question tab-element-page">
                         <h3>
                             <span class="question-indicator">Q.</span>
                             How do I make a request and track progress?
@@ -1091,11 +1112,11 @@
                     </button>
                     <div class="answer" id="answer-${index}">
                         <span class="answer-indicator">A.</span>
-                        <p>This is done with <a class='page-link faq-inner-link' href='https://trello.com/' target='_blank'>Trello <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path opacity="1" fill="#1E3050" d="M392.3 32H56.1C25.1 32 0 57.1 0 88c-.1 0 0-4 0 336 0 30.9 25.1 56 56 56h336.2c30.8-.2 55.7-25.2 55.7-56V88c.1-30.8-24.8-55.8-55.6-56zM197 371.3c-.2 14.7-12.1 26.6-26.9 26.6H87.4c-14.8 .1-26.9-11.8-27-26.6V117.1c0-14.8 12-26.9 26.9-26.9h82.9c14.8 0 26.9 12 26.9 26.9v254.2zm193.1-112c0 14.8-12 26.9-26.9 26.9h-81c-14.8 0-26.9-12-26.9-26.9V117.2c0-14.8 12-26.9 26.8-26.9h81.1c14.8 0 26.9 12 26.9 26.9v142.1z"/></svg></a>, a user-friendly managing tool that makes communication and collaboration simple. In addition to describing the work needed, you can also upload images, videos, documents, or links to other resources.</p>
+                        <p>This is done with <a class='tab-element-page faq-inner-link' href='https://trello.com/' target='_blank'>Trello <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path opacity="1" fill="#1E3050" d="M392.3 32H56.1C25.1 32 0 57.1 0 88c-.1 0 0-4 0 336 0 30.9 25.1 56 56 56h336.2c30.8-.2 55.7-25.2 55.7-56V88c.1-30.8-24.8-55.8-55.6-56zM197 371.3c-.2 14.7-12.1 26.6-26.9 26.6H87.4c-14.8 .1-26.9-11.8-27-26.6V117.1c0-14.8 12-26.9 26.9-26.9h82.9c14.8 0 26.9 12 26.9 26.9v254.2zm193.1-112c0 14.8-12 26.9-26.9 26.9h-81c-14.8 0-26.9-12-26.9-26.9V117.2c0-14.8 12-26.9 26.8-26.9h81.1c14.8 0 26.9 12 26.9 26.9v142.1z"/></svg></a>, a user-friendly managing tool that makes communication and collaboration simple. In addition to describing the work needed, you can also upload images, videos, documents, or links to other resources.</p>
                     </div>
                 </div>                
                 <div class="faq-item">
-                    <button class="question page-link">
+                    <button class="question tab-element-page">
                         <h3>
                             <span class="question-indicator">Q.</span>
                             Who are the designers and developers?
@@ -1110,7 +1131,7 @@
                     </div>
                 </div>                
                 <div class="faq-item">
-                    <button class="question page-link">
+                    <button class="question tab-element-page">
                         <h3>
                             <span class="question-indicator">Q.</span>
                             Are there limits to your services?
@@ -1125,7 +1146,7 @@
                     </div>
                 </div>                
                 <div class="faq-item">
-                    <button class="question page-link">
+                    <button class="question tab-element-page">
                         <h3>
                             <span class="question-indicator">Q.</span>
                             What if I'm unsatisfied with the work?
@@ -1140,7 +1161,7 @@
                     </div>
                 </div>                
                 <div class="faq-item">
-                    <button class="question page-link">
+                    <button class="question tab-element-page">
                         <h3>
                             <span class="question-indicator">Q.</span>
                             Do you offer refunds?
@@ -1159,13 +1180,13 @@
             <div class="section-headline faq-cta">
                 <p class="headline-description">Still have questions or concerns? <br class="sm-screen-and-below"> We’re happy to address <br class="sm-screen-and-up">these! Please reach out so we can clear up any confusion.</p>
                 <div class="cta-wrapper">
-                    <a href="mailto:info@axyscreative.com" target="_blank" class="cta-1">
+                    <a href="mailto:info@axyscreative.com" target="_blank" class="cta-1 tab-element-page">
                         <div class="ring">
                             <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><path opacity="1" fill="#1E3050" d="M32 159.2l224 154 224-154V96H32v63.2zM480 198L256 352 32 198V416H480V198zM0 416V176 96 64H32 480h32V96v80V416v32H480 32 0V416z"/></svg>
                         </div>
                         <p class="cta-text">Email us</p>
                     </a>
-                    <a href="https://calendly.com/axyscreativeagency/15-min-intro" target="_blank" class="cta-2">
+                    <a href="https://calendly.com/axyscreativeagency/15-min-intro" target="_blank" class="cta-2 tab-element-page">
                         <div class="dot"></div>
                         <p class="cta-text">Book call</p>
                     </a>
@@ -1173,6 +1194,7 @@
             </div>
         </section>
 
+        
         <div class="mouse-cursor"></div>
         <div class="stripes-bg">
             <div class="stripe"></div>
@@ -1180,6 +1202,7 @@
             <div class="stripe"></div>
         </div>
     </main>
+
     <footer></footer>
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js" integrity="sha512-EZI2cBcGPnmR89wTgVnN3602Yyi7muWo8y1B3a8WmIv1J9tYG+udH4LvmYjLiGp37yHB7FfaPBo8ly178m9g4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->

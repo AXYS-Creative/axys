@@ -21,6 +21,7 @@ body {
 }
 
 header,
+nav,
 main,
 footer {
     padding: 24px $content-padding;
@@ -143,6 +144,35 @@ header {
                     rotate: -45deg;
                 }
             }
+        }
+    }
+}
+
+nav {
+    @include column-left;
+    justify-content: center;
+    background: rgba($grey-dark, 0.99);
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh; // Fallback value for dvh
+    height: 100dvh;
+    z-index: 2;
+    
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+
+    &.active {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .nav-links {
+
+        .nav-link {
+            cursor: pointer;
+            font-size: 24px;
         }
     }
 }
@@ -352,6 +382,7 @@ img {
     width: 48px;
     height: 48px;
     border-radius: 50%;
+    z-index: 4;
     transition: 0.8s cubic-bezier(0,.49,.4,1.19),
       border 0.4s ease,
       width 0.48s ease,
@@ -549,6 +580,8 @@ img {
     opacity: 0;
     pointer-events: none;
 }
+
+// Media query classes
 
 .lg-screen-and-up {
     display: none;
