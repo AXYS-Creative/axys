@@ -6,10 +6,6 @@
   font-family: "Archivo", sans-serif;
   font-weight: 300;
 }
-*::-moz-selection {
-  color: #F0F0F0;
-  background-color: rgba(228, 140, 102, 0.75);
-}
 *::selection {
   color: #F0F0F0;
   background-color: rgba(228, 140, 102, 0.75);
@@ -152,23 +148,33 @@ nav {
   width: 100vw;
   height: 100vh;
   height: 100dvh;
+  min-height: 620px;
+  overflow: auto;
   z-index: 2;
-  opacity: 0;
-  pointer-events: none;
   transition: opacity 0.3s ease;
 }
 nav.active {
   opacity: 1;
   pointer-events: all;
 }
+@media screen and (max-width: 768px) {
+  nav {
+    min-height: 520px;
+  }
+}
 nav .width-constraint {
   position: relative;
-  height: 100vh;
-  height: 100dvh;
+  width: 100%;
+  height: 100%;
 }
 nav .width-constraint > * {
   position: absolute;
   width: calc(100% - 96px);
+}
+@media screen and (max-width: 768px) {
+  nav .width-constraint > * {
+    width: calc(100% - 48px);
+  }
 }
 nav .nav-links {
   display: flex;
@@ -177,6 +183,11 @@ nav .nav-links {
   top: 50%;
   translate: 0 -50%;
   gap: 24px;
+}
+@media screen and (max-width: 768px) {
+  nav .nav-links {
+    gap: 16px;
+  }
 }
 nav .nav-links .nav-link {
   text-transform: uppercase;
@@ -188,11 +199,21 @@ nav .nav-links .nav-link {
     font-size: 48px;
   }
 }
+@media screen and (max-width: 768px) {
+  nav .nav-links .nav-link {
+    font-size: 36px;
+  }
+}
 nav .nav-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   bottom: 36px;
+}
+@media screen and (max-width: 768px) {
+  nav .nav-footer {
+    flex-direction: row-reverse;
+  }
 }
 nav .nav-footer-links {
   display: flex;
@@ -201,17 +222,46 @@ nav .nav-footer-links {
   align-self: flex-end;
   gap: 56px;
 }
+@media screen and (max-width: 1440px) {
+  nav .nav-footer-links {
+    gap: 24px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  nav .nav-footer-links {
+    gap: 4px;
+  }
+}
+@media screen and (max-width: 768px) {
+  nav .nav-footer-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+}
 nav .nav-footer-links .nav-footer-link {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   font-size: 16px;
   gap: 4px;
   text-transform: uppercase;
   transition: 0.3s ease;
 }
+@media screen and (max-width: 768px) {
+  nav .nav-footer-links .nav-footer-link {
+    font-size: 14px;
+    width: 148px;
+    flex-direction: row-reverse;
+  }
+}
 nav .nav-footer-links .nav-footer-link:hover .icon-wrapper, nav .nav-footer-links .nav-footer-link:focus .icon-wrapper {
   margin-right: 8px;
+}
+@media screen and (max-width: 768px) {
+  nav .nav-footer-links .nav-footer-link:hover .icon-wrapper, nav .nav-footer-links .nav-footer-link:focus .icon-wrapper {
+    margin-right: unset;
+  }
 }
 nav .nav-footer-links .nav-footer-link:focus .icon-wrapper {
   border: 2px solid #F0F0F0;
@@ -226,6 +276,13 @@ nav .nav-footer-links .nav-footer-link .icon-wrapper {
   border: 2px solid transparent;
   margin-right: -4px;
   transition: 0.3s ease;
+}
+@media screen and (max-width: 768px) {
+  nav .nav-footer-links .nav-footer-link .icon-wrapper {
+    margin-right: unset;
+    width: 32px;
+    height: 32px;
+  }
 }
 nav .nav-footer-links .nav-footer-link svg {
   width: 20px;
@@ -242,14 +299,26 @@ nav .nav-footer-links li:nth-of-type(2) .nav-footer-link:hover, nav .nav-footer-
   color: #A4D1A2;
 }
 nav .nav-footer-links li:nth-of-type(2) .nav-footer-link svg {
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
+}
+@media screen and (min-width: 769px) {
+  nav .nav-footer-links li:nth-of-type(2) .nav-footer-link svg {
+    width: 24px;
+    height: 24px;
+  }
 }
 nav .nav-footer-links li:nth-of-type(3) .nav-footer-link:hover, nav .nav-footer-links li:nth-of-type(3) .nav-footer-link:focus {
   color: #FBFAA2;
 }
 nav .nav-footer .nav-social {
+  translate: 0 -16px;
   transition: 0.3s ease;
+}
+@media screen and (max-width: 768px) {
+  nav .nav-footer .nav-social {
+    translate: 0 6px;
+  }
 }
 nav .nav-footer .nav-social:hover .social-media-title, nav .nav-footer .nav-social:focus-within .social-media-title {
   translate: 0 0;
@@ -271,17 +340,17 @@ nav .nav-footer .nav-social:hover .social-media-links li:nth-of-type(4) .social-
   transition-delay: 0.2s;
 }
 nav .nav-footer .nav-social .social-media-title {
-  font-size: 24px;
+  font-size: 20px;
   text-transform: uppercase;
   text-align: right;
   margin-bottom: 24px;
-  translate: 0 42px;
+  translate: 0 44px;
   transition: 0.3s ease;
 }
 nav .nav-footer .nav-social .social-media-title svg {
   margin-left: 12px;
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
 }
 nav .nav-footer .nav-social .social-media-links {
   display: flex;
@@ -443,8 +512,7 @@ button {
 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 ul {
@@ -586,6 +654,11 @@ ul {
   border-width: 2px;
   scale: 1;
 }
+@media screen and (max-width: 768px) {
+  .mouse-cursor.nav-footer-link-active {
+    scale: 0.68;
+  }
+}
 .mouse-cursor.burger-active {
   width: 72px;
   height: 72px;
@@ -640,7 +713,6 @@ ul {
 .marquee-inner {
   display: flex;
   align-items: center;
-  width: -moz-fit-content;
   width: fit-content;
   animation: marquee 16s linear infinite;
 }
@@ -701,9 +773,7 @@ ul {
   font-size: 36px;
   color: #3D3D3D;
   margin: 0 56px;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 @media screen and (max-width: 768px) {
   .marquee .marquee-dot {
@@ -1526,11 +1596,6 @@ ul {
   pointer-events: none;
   transition: 0.24s ease;
 }
-#plans-section .plan-options .half-card .mail-form .input:not(:-moz-placeholder-shown).input:not(focus) ~ .label {
-  transform: translate(0, -68%);
-  color: #7EC1D4;
-  font-size: 16px;
-}
 #plans-section .plan-options .half-card .mail-form .input:focus ~ .label,
 #plans-section .plan-options .half-card .mail-form .input:not(:placeholder-shown).input:not(focus) ~ .label {
   transform: translate(0, -68%);
@@ -1538,10 +1603,6 @@ ul {
   font-size: 16px;
 }
 @media screen and (max-width: 1440px) {
-  #plans-section .plan-options .half-card .mail-form .input:not(:-moz-placeholder-shown).input:not(focus) ~ .label {
-    transform: translate(0, -80%);
-    font-size: 12px;
-  }
   #plans-section .plan-options .half-card .mail-form .input:focus ~ .label,
   #plans-section .plan-options .half-card .mail-form .input:not(:placeholder-shown).input:not(focus) ~ .label {
     transform: translate(0, -80%);

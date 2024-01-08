@@ -157,9 +157,11 @@ nav {
     width: 100vw;
     height: 100vh;
     height: 100dvh;
+    min-height: 620px;
+    overflow: auto;
     z-index: 2;
-    opacity: 0;
-    pointer-events: none;
+    // opacity: 0;
+    // pointer-events: none;
     transition: opacity 0.3s ease;
 
     &.active {
@@ -167,14 +169,23 @@ nav {
         pointer-events: all;
     }
 
+    @include mq-max('md') {
+        min-height: 520px;
+    }
+
     .width-constraint {
         position: relative;
-        height: 100vh;
-        height: 100dvh;
+        width: 100%;
+        height: 100%;
+        
 
         & > * {
             position: absolute;
             width: calc(100% - $content-padding * 2);
+
+            @include mq-max('md') {
+                width: calc(100% - $content-padding-md * 2);
+            }
         }
     }
 
@@ -183,6 +194,10 @@ nav {
         top: 50%;
         translate: 0 -50%;
         gap: 24px;
+        
+        @include mq-max('md') {
+            gap: 16px;
+        }
 
         .nav-link {
             text-transform: uppercase;
@@ -192,30 +207,63 @@ nav {
             @include mq-max('xxl') {
                 font-size: 48px;
             }
+ 
+            @include mq-max('md') {
+                font-size: 36px;
+            }
         }
     }
 
     .nav-footer {
+        // border: $test;
         @include row-between;
         bottom: 36px;
+
+        @include mq-max('md') {
+            flex-direction: row-reverse;
+        }
 
         &-links {
             @include row-between;
             align-self: flex-end;
             gap: 56px;
+            
+            @include mq-max('xxl') {
+                gap: 24px;
+            }
+
+            @include mq-max('lg') {
+                gap: 4px;
+            }
+            
+            @include mq-max('md') {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0;
+            }
 
             .nav-footer-link {
-                @include row-center;
+                @include row-between;
                 font-size: 16px;
                 gap: 4px;
                 text-transform: uppercase;
                 transition: 0.3s ease;
+                
+                @include mq-max('md') {
+                    font-size: 14px;
+                    width: 148px;
+                    flex-direction: row-reverse;
+                }
 
                 &:hover,
                 &:focus {
                     
                     .icon-wrapper {
                         margin-right: 8px;
+                        
+                        @include mq-max('md') {
+                            margin-right: unset;
+                        }
                     }
                 }
 
@@ -234,6 +282,12 @@ nav {
                     border: 2px solid transparent;
                     margin-right: -4px;
                     transition: 0.3s ease;
+
+                    @include mq-max('md') {
+                        margin-right: unset;
+                        width: 32px;
+                        height: 32px;
+                    }
                 }
 
                 svg {
@@ -267,8 +321,13 @@ nav {
                         }
         
                         svg {
-                            width: 24px;
-                            height: 24px;
+                            width: 18px;
+                            height: 18px;
+                            
+                            @include mq-min('md') {
+                                width: 24px;
+                                height: 24px;
+                            }
                         }
                     }
                 }
@@ -287,7 +346,12 @@ nav {
         }
 
         .nav-social {
+            translate: 0 -16px;
             transition: 0.3s ease;
+
+            @include mq-max('md') {
+                translate: 0 6px;
+            }
             
             &:hover,
             &:focus-within {
@@ -337,17 +401,17 @@ nav {
             }
 
             .social-media-title {
-                font-size: 24px;
+                font-size: 20px;
                 text-transform: uppercase;
                 text-align: right;
                 margin-bottom: 24px;
-                translate: 0 42px;
+                translate: 0 44px;
                 transition: 0.3s ease;
 
                 svg {
                     margin-left: 12px;
-                    width: 16px;
-                    height: 16px;
+                    width: 18px;
+                    height: 18px;
                 }
             }
 
@@ -668,6 +732,10 @@ ul {
     &.nav-footer-link-active {
         border-width: 2px;
         scale: 1;
+
+        @include mq-max('md') {
+            scale: 0.68;
+        }
     }
 
     &.burger-active {
