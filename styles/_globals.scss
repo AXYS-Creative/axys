@@ -407,6 +407,64 @@ section {
     }
 }
 
+footer {
+    @include row-between;
+    
+    @include mq-max('md') {
+        font-size: 8px;
+    }
+    @include mq-max('sm') {
+        padding-bottom: 48px;
+    }
+
+    p, a {
+        text-transform: uppercase;
+
+        @include mq-max('md') {
+            font-size: 10px;
+        }
+    }
+
+    .return {
+        @include row-between;
+        gap: 10px;
+
+        @include mq-max('sm') {
+            gap: 4px;
+        }
+
+        a {
+            display: flex;
+        }
+
+        svg {
+            @include mq-max('sm') {
+                width: 10px;
+            }
+        }
+    }
+
+    .copyright {
+        @include row-between;
+        gap: 10px;
+
+        .copy-text {
+            h3 {
+                @include row-between;
+                gap: 4px;
+            }
+
+            .copy-symbol {
+                font-weight: 100;
+
+                @include mq-max('md') {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
+
 h1,
 h2 {
     font-size: 96px;

@@ -6,6 +6,10 @@
   font-family: "Archivo", sans-serif;
   font-weight: 300;
 }
+*::-moz-selection {
+  color: #F0F0F0;
+  background-color: rgba(228, 140, 102, 0.75);
+}
 *::selection {
   color: #F0F0F0;
   background-color: rgba(228, 140, 102, 0.75);
@@ -332,6 +336,69 @@ section .headline-description {
   }
 }
 
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (max-width: 768px) {
+  footer {
+    font-size: 8px;
+  }
+}
+@media screen and (max-width: 480px) {
+  footer {
+    padding-bottom: 48px;
+  }
+}
+footer p, footer a {
+  text-transform: uppercase;
+}
+@media screen and (max-width: 768px) {
+  footer p, footer a {
+    font-size: 10px;
+  }
+}
+footer .return {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+@media screen and (max-width: 480px) {
+  footer .return {
+    gap: 4px;
+  }
+}
+footer .return a {
+  display: flex;
+}
+@media screen and (max-width: 480px) {
+  footer .return svg {
+    width: 10px;
+  }
+}
+footer .copyright {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+footer .copyright .copy-text h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+}
+footer .copyright .copy-text .copy-symbol {
+  font-weight: 100;
+}
+@media screen and (max-width: 768px) {
+  footer .copyright .copy-text .copy-symbol {
+    font-size: 20px;
+  }
+}
+
 h1,
 h2 {
   font-size: 96px;
@@ -376,7 +443,8 @@ button {
 img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 ul {
@@ -572,6 +640,7 @@ ul {
 .marquee-inner {
   display: flex;
   align-items: center;
+  width: -moz-fit-content;
   width: fit-content;
   animation: marquee 16s linear infinite;
 }
@@ -632,7 +701,9 @@ ul {
   font-size: 36px;
   color: #3D3D3D;
   margin: 0 56px;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 @media screen and (max-width: 768px) {
   .marquee .marquee-dot {
@@ -1455,6 +1526,11 @@ ul {
   pointer-events: none;
   transition: 0.24s ease;
 }
+#plans-section .plan-options .half-card .mail-form .input:not(:-moz-placeholder-shown).input:not(focus) ~ .label {
+  transform: translate(0, -68%);
+  color: #7EC1D4;
+  font-size: 16px;
+}
 #plans-section .plan-options .half-card .mail-form .input:focus ~ .label,
 #plans-section .plan-options .half-card .mail-form .input:not(:placeholder-shown).input:not(focus) ~ .label {
   transform: translate(0, -68%);
@@ -1462,6 +1538,10 @@ ul {
   font-size: 16px;
 }
 @media screen and (max-width: 1440px) {
+  #plans-section .plan-options .half-card .mail-form .input:not(:-moz-placeholder-shown).input:not(focus) ~ .label {
+    transform: translate(0, -80%);
+    font-size: 12px;
+  }
   #plans-section .plan-options .half-card .mail-form .input:focus ~ .label,
   #plans-section .plan-options .half-card .mail-form .input:not(:placeholder-shown).input:not(focus) ~ .label {
     transform: translate(0, -80%);
@@ -1733,4 +1813,54 @@ ul {
   #faq-section .faq-cta .cta-wrapper {
     justify-content: left;
   }
+}
+
+#pre-footer-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+#pre-footer-section .unlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+@media screen and (max-width: 768px) {
+  #pre-footer-section .unlock {
+    gap: 10px;
+    align-items: flex-start;
+  }
+}
+@media screen and (max-width: 390px) {
+  #pre-footer-section .unlock h2 {
+    font-size: 30px;
+  }
+}
+#pre-footer-section .unlock span {
+  font-weight: bold;
+}
+@media screen and (max-width: 1024px) {
+  #pre-footer-section .unlock svg {
+    width: 30px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #pre-footer-section .unlock svg {
+    width: 18px;
+  }
+}
+@media screen and (max-width: 390px) {
+  #pre-footer-section .unlock svg {
+    width: 14px;
+  }
+}
+@media screen and (max-width: 390px) {
+  #pre-footer-section p {
+    font-size: 14px;
+  }
+}
+#pre-footer-section .cta-wrapper {
+  padding-top: 30px;
 }/*# sourceMappingURL=styles.css.map */

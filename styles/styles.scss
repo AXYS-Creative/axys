@@ -1069,3 +1069,50 @@
         }
     }
 }
+
+#pre-footer-section {
+    @include column-center;
+    gap: 40px;
+
+    .unlock {
+        @include row-between;
+        gap: 20px;
+
+        @include mq-max('md') {
+            gap: 10px;
+            align-items: flex-start;
+        }
+
+        h2 {
+            @include mq-max('xs') {
+                font-size: 30px;
+            }
+        }
+
+        span {
+            font-weight: bold;
+        }
+
+        svg {
+            @include mq-max('lg') {
+                width: 30px;
+            }
+            @include mq-max('md') {
+                width: 18px;
+            }
+            @include mq-max('xs') {
+                width: 14px;
+            }
+        }
+    }
+
+    p {
+        @include mq-max('xs') {
+            font-size: 14px;
+        }
+    }
+
+    .cta-wrapper {
+        padding-top: 30px;
+    }
+}
