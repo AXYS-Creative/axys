@@ -4,6 +4,8 @@ const navMenu = document.querySelector(".nav-menu"),
   tabElementsPage = document.querySelectorAll(".tab-element-page"),
   tabElementsNav = document.querySelectorAll(".tab-element-nav");
 
+tabElementsNav.forEach((elem) => elem.setAttribute("tabIndex", "-1"));
+
 function toggleNav() {
   const isNavOpen = navMenu.classList.contains("active");
   navMenu.classList.toggle("active");

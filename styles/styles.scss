@@ -576,10 +576,11 @@
             }
 
             .benefits-list {
-                translate: 24px 0;
                 @include column-left;
                 gap: 16px;
+                translate: 24px 0;
                 margin-bottom: 96px;
+                list-style: circle;
                 
                 @include mq-max('xxl') {
                     gap: 12px;
@@ -701,6 +702,12 @@
                     .submit-btn {
                         scale: 0.8;
                         
+                        @include mq-max('sm') {
+                            scale: 1;
+                            border: 1px solid $blue;
+                            translate: 0 -20px;
+                        }
+                        
                         svg {
     
                             path {
@@ -818,7 +825,6 @@
                     }
                 }
             }
-
         }
     }
 

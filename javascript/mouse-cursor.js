@@ -82,11 +82,9 @@ submitFormBtn.addEventListener("mousemove", () => {
   const submitBtnRect = submitFormBtn.getBoundingClientRect();
   cursor.style.left = submitBtnRect.left + submitBtnRect.width / 2 + "px";
   cursor.style.top = submitBtnRect.top + submitBtnRect.height / 2.2 + "px";
-  // cursor.classList.add("burger-active");
   followMouse = false;
 });
 
 submitFormBtn.addEventListener("mouseleave", () => {
-  // cursor.classList.remove("burger-active");
   followMouse = true;
 });
