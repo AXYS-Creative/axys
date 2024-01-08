@@ -1099,9 +1099,22 @@ ul {
     scroll-margin-top: -248px;
   }
 }
+#plans-section .marquee {
+  margin-bottom: 324px;
+}
+@media screen and (max-width: 1440px) {
+  #plans-section .marquee {
+    margin-bottom: 248px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #plans-section .marquee {
+    margin-bottom: 164px;
+  }
+}
 @media screen and (max-width: 1440px) {
   #plans-section .section-headline {
-    margin-bottom: 128px;
+    margin-bottom: 64px;
   }
 }
 #plans-section .plan-options {
@@ -1239,6 +1252,11 @@ ul {
     font-size: 32px;
   }
 }
+@media screen and (max-width: 480px) {
+  #plans-section .plan-options .price-card .card-price {
+    font-size: 28px;
+  }
+}
 #plans-section .plan-options .price-card .card-price .pause-or-cancel {
   font-size: 14px;
   letter-spacing: 0.25px;
@@ -1258,6 +1276,11 @@ ul {
 @media screen and (max-width: 1440px) {
   #plans-section .plan-options .price-card .divider {
     margin: 42px 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  #plans-section .plan-options .price-card .divider {
+    margin: 36px 0;
   }
 }
 #plans-section .plan-options .price-card .divider-coral {

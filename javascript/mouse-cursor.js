@@ -82,7 +82,7 @@ cta2.forEach((cta) => {
   });
 });
 
-mailForm.addEventListener("mouseenter", () => {
+mailForm.addEventListener("mousemove", () => {
   followMouse = false;
   const submitBtnRect = submitFormBtn.getBoundingClientRect();
   cursor.style.left = submitBtnRect.left + submitBtnRect.width / 2 + "px";
