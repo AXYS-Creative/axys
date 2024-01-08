@@ -2,6 +2,7 @@ const cursor = document.querySelector(".mouse-cursor"),
   logo = document.querySelector(".logo"),
   menuBtn = document.querySelector(".menu-btn"),
   burger = document.querySelector(".burger"),
+  navFooterLinks = document.querySelectorAll(".nav-footer-link"),
   cta1 = document.querySelectorAll(".cta-1"),
   cta2 = document.querySelectorAll(".cta-2"),
   workItems = document.querySelectorAll(".showcase-link"),
@@ -47,6 +48,22 @@ menuBtn.addEventListener("mousemove", () => {
 menuBtn.addEventListener("mouseleave", () => {
   cursor.classList.remove("burger-active");
   followMouse = true;
+});
+
+navFooterLinks.forEach((link) => {
+  link.addEventListener("mouseenter", () => {
+    followMouse = false;
+    const icon = link.querySelector(".icon");
+    const iconRect = icon.getBoundingClientRect();
+    cursor.style.left = iconRect.left + iconRect.width / 2 + "px";
+    cursor.style.top = iconRect.top + iconRect.height / 2 + "px";
+    cursor.classList.add("nav-footer-link-active");
+  });
+
+  link.addEventListener("mouseleave", () => {
+    followMouse = true;
+    cursor.classList.remove("nav-footer-link-active");
+  });
 });
 
 cta2.forEach((cta) => {

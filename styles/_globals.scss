@@ -5,6 +5,7 @@
     color: $white;
     font-family: 'Archivo', sans-serif;
     font-weight: 300;
+    // outline: none;
 
     &::selection {
         color: $white;
@@ -157,8 +158,8 @@ nav {
     height: 100vh;
     height: 100dvh;
     z-index: 2;
-    // opacity: 0;
-    // pointer-events: none;
+    opacity: 0;
+    pointer-events: none;
     transition: opacity 0.3s ease;
 
     &.active {
@@ -172,7 +173,6 @@ nav {
         height: 100dvh;
 
         & > * {
-            // border: $test;
             position: absolute;
             width: calc(100% - $content-padding * 2);
         }
@@ -211,9 +211,35 @@ nav {
                 text-transform: uppercase;
                 transition: 0.3s ease;
 
+                &:hover,
+                &:focus {
+                    
+                    .icon-wrapper {
+                        margin-right: 8px;
+                    }
+                }
+
+                &:focus {
+
+                    .icon-wrapper {
+                        border: 2px solid $white;
+                    }
+                }
+
+                .icon-wrapper {
+                    @include row-center;
+                    width: 48px;
+                    height: 48px;
+                    border-radius: 50%;
+                    border: 2px solid transparent;
+                    margin-right: -4px;
+                    transition: 0.3s ease;
+                }
+
                 svg {
                     width: 20px;
                     height: 20px;
+                    transition: 0.3s ease;
                 }
             }
 
@@ -331,7 +357,7 @@ nav {
                 margin-left: 48px;
 
                 li {
-                    transition: 0.4s $cubic-ease-back-dramatic
+                    transition: 0.4s $cubic-ease-back-dramatic;
                 }
 
                 .social-media-link {
@@ -571,13 +597,19 @@ ul {
         border: 0px solid transparent;
     }
 
-    &.cta2-active {
+    &.cta2-active,
+    &.nav-footer-link-active {
         scale: 0.8;
         border-width: 4px;
         border-color: $white;
         transition: 0.6s cubic-bezier(.02,.35,.39,1.12),
           border 0.4s ease,
           background 0.28s ease 0.5s;
+    }
+
+    &.nav-footer-link-active {
+        border-width: 2px;
+        scale: 1;
     }
 
     &.burger-active {
