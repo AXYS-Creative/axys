@@ -899,6 +899,7 @@ ul {
             border-radius: 50%;
             opacity: 0;
             pointer-events: none;
+            transition: 0.3s ease;
             // transition is set above (:hover) to allow for individual delay
 
             &:hover,

@@ -761,6 +761,7 @@ ul {
   border-radius: 50%;
   opacity: 0;
   pointer-events: none;
+  transition: 0.3s ease;
 }
 .social-media-container .social-media-links .social-media-link:hover, .social-media-container .social-media-links .social-media-link:focus {
   color: #7EC1D4;
@@ -2072,7 +2073,7 @@ ul {
   }
 }
 #pre-footer-section .unlock span {
-  font-weight: bold;
+  font-weight: 900;
 }
 @media screen and (max-width: 1024px) {
   #pre-footer-section .unlock svg {
