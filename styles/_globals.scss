@@ -527,7 +527,7 @@ section {
 
 footer {
     @include row-between;
-    
+
     @include mq-max('md') {
         flex-direction: row-reverse;
     }
@@ -536,10 +536,14 @@ footer {
     }
 
     p, a {
+        @include row-between;
         text-transform: uppercase;
 
-        @include mq-max('md') {
-            font-size: 14px;
+        @include mq-max('sm') {
+            font-size: 12px;
+        }
+        @include mq-max('xs') {
+            font-size: 10px;
         }
     }
 
@@ -551,10 +555,6 @@ footer {
             gap: 4px;
         }
 
-        a {
-            display: flex;
-        }
-
         svg {
             @include mq-max('sm') {
                 width: 10px;
@@ -563,23 +563,7 @@ footer {
     }
 
     .copyright {
-        @include row-between;
         gap: 10px;
-
-        .copy-text {
-            h3 {
-                @include row-between;
-                gap: 4px;
-            }
-
-            .copy-symbol {
-                font-weight: 100;
-
-                @include mq-max('md') {
-                    font-size: 20px;
-                }
-            }
-        }
     }
 
     .footer-social {
