@@ -263,7 +263,6 @@ nav {
     }
 
     .nav-footer {
-        // border: $test;
         @include row-between;
         bottom: 36px;
 
@@ -423,58 +422,18 @@ nav {
                         translate: 0 12px;
                     }
                 }
-
-                .social-media-links {
-
-                    .social-media-link {
-                        opacity: 1;
-                        pointer-events: all;
-                    }
-
-                    li {
-
-                        &:nth-of-type(1) {
-    
-                            .social-media-link {
-                                transition: opacity 0.3s ease 0.05s, border 0.3s ease;
-                            }
-                        }
-    
-                        &:nth-of-type(2) {
-    
-                            .social-media-link {
-                                transition: opacity 0.3s ease 0.1s, border 0.3s ease;
-                            }
-                        }
-
-                        &:nth-of-type(3) {
-    
-                            .social-media-link {
-                                transition: opacity 0.3s ease 0.15s, border 0.3s ease;
-                            }
-                        }
-
-                        &:nth-of-type(4) {
-    
-                            .social-media-link {
-                                transition: opacity 0.3s ease 0.2s, border 0.3s ease;
-                            }
-                        }
-                    }
-                }
             }
 
             .social-media-title {
-                display: flex;
-                align-items: center;
-                justify-content: flex-end;
-                text-transform: uppercase;
-                margin-bottom: 24px;
+                // display: flex;
+                // align-items: center;
+                // justify-content: flex-end;
+                // text-transform: uppercase;
+                // margin-bottom: 24px;
                 translate: 0 52px;
-                transition: 0.3s ease;
+                // transition: 0.3s ease;
                 
                 @include mq-max('md') {
-                    text-align: left;
                     translate: 0 12px;
                 }
                 
@@ -482,64 +441,64 @@ nav {
                     translate: 0 12px;
                 }
 
-                .blue-text {
-                    margin: 0 6px;
-                }
+                // .blue-text {
+                //     margin: 0 6px;
+                // }
 
-                svg {
-                    margin-left: 12px;
-                    width: 18px;
-                    height: 18px;
-                }
+                // svg {
+                //     margin-left: 12px;
+                //     width: 18px;
+                //     height: 18px;
+                // }
             }
 
             .social-media-links {
-                @include row-between;
-                gap: 24px;
+                // @include row-between;
+                // gap: 24px;
                 
-                @include mq-max('xxl') {
-                    gap: 16px;
-                }
+                // @include mq-max('xxl') {
+                //     gap: 16px;
+                // }
 
-                @include mq-max('lg') {
-                    gap: 0;
-                }
+                // @include mq-max('lg') {
+                //     gap: 0;
+                // }
 
                 @include mq-max('md') {
                     translate: -12px 0;
                 }
 
-                li {
-                    transition: 0.4s $cubic-ease-back-dramatic;
-                }
+                // li {
+                //     transition: 0.4s $cubic-ease-back-dramatic;
+                // }
 
-                .social-media-link {
-                    border: 2px solid transparent;
-                    @include row-center;
-                    width: 36px;
-                    height: 36px;
-                    border-radius: 50%;
-                    opacity: 0;
-                    pointer-events: none;
+                // .social-media-link {
+                    // border: 2px solid transparent;
+                    // @include row-center;
+                    // width: 36px;
+                    // height: 36px;
+                    // border-radius: 50%;
+                    // opacity: 0;
+                    // pointer-events: none;
                     // transition: 0.3s ease; overidden above
 
-                    &:hover,
-                    &:focus {
-                        color: $blue;
-                    }
+                    // &:hover,
+                    // &:focus {
+                    //     color: $blue;
+                    // }
 
-                    &:focus {
-                        border-color: $blue;
-                    }
+                    // &:focus {
+                    //     border-color: $blue;
+                    // }
 
-                    @include mq-max('md') {
-                        opacity: 1;
-                    }
+                    // @include mq-max('md') {
+                    //     opacity: 1;
+                    // }
 
-                    @include mq-touch {
-                        opacity: 1;
-                    }
-                }
+                    // @include mq-touch {
+                    //     opacity: 1;
+                    // }
+                // }
             }
         }
     }
@@ -635,6 +594,45 @@ footer {
                 @include mq-max('md') {
                     font-size: 20px;
                 }
+            }
+        }
+    }
+
+    .footer-social {
+        // see global class '.social-media-container' for full shared styles
+        translate: 0 -8px; // Change me
+
+        @include mq-max('md') {
+            translate: 0 10px; // Change me
+        }
+        
+        &:hover,
+        &:focus-within {
+            
+            .social-media-title {
+                // translate: 0 0; // Might be needed for specificity
+
+                @include mq-max('md') {
+                    translate: 0 12px; // Change me
+                }
+            }
+        }
+
+        .social-media-title {
+            translate: 0 52px; // change me
+            
+            @include mq-max('md') {
+                translate: 0 12px;
+            }
+            @include mq-touch {
+                translate: 0 12px;
+            }
+        }
+
+        .social-media-links {
+
+            @include mq-max('md') {
+                translate: -12px 0;
             }
         }
     }
@@ -804,7 +802,6 @@ ul {
 }
 
 .social-media-container {
-    border: $test;
     // translate: 0 -8px;
     // opacity: 0;
     // transition: 0.3s ease, opacity 0.3s ease 0.4s;
@@ -819,9 +816,9 @@ ul {
         .social-media-title {
             translate: 0 0;
 
-            @include mq-max('md') {
-                translate: 0 12px;
-            }
+            // @include mq-max('md') {
+            //     translate: 0 12px;
+            // }
         }
 
         .social-media-links {
@@ -870,14 +867,12 @@ ul {
         justify-content: flex-end;
         text-transform: uppercase;
         margin-bottom: 24px;
-        // translate: 0 52px;
         transition: 0.3s ease;
+        // translate: unique per instance
         
         @include mq-max('md') {
-            text-align: left;
             translate: 0 12px;
         }
-        
         @include mq-touch {
             translate: 0 12px;
         }
@@ -887,7 +882,6 @@ ul {
         }
 
         svg {
-            margin-left: 12px;
             width: 18px;
             height: 18px;
         }
@@ -905,9 +899,9 @@ ul {
             gap: 0;
         }
 
-        @include mq-max('md') {
-            translate: -12px 0;
-        }
+        // @include mq-max('md') {
+            // translate: -12px 0;
+        // }
 
         li {
             transition: 0.4s $cubic-ease-back-dramatic;
@@ -919,9 +913,9 @@ ul {
             width: 36px;
             height: 36px;
             border-radius: 50%;
-            // opacity: 0;
-            // pointer-events: none;
-            // transition: 0.3s ease; overidden above
+            opacity: 0;
+            pointer-events: none;
+            // transition is set above (:hover) to allow for individual delay
 
             &:hover,
             &:focus {
