@@ -3,6 +3,7 @@ const cursor = document.querySelector(".mouse-cursor"),
   menuBtn = document.querySelector(".menu-btn"),
   burger = document.querySelector(".burger"),
   navFooterLinks = document.querySelectorAll(".nav-footer-link"),
+  socialMediaLinks = document.querySelectorAll(".social-media-link"),
   cta1 = document.querySelectorAll(".cta-1"),
   cta2 = document.querySelectorAll(".cta-2"),
   workItems = document.querySelectorAll(".showcase-link"),
@@ -37,6 +38,21 @@ addCursorEvents(logo);
 // Attach events to NodeList items
 [...cta1, ...workItems, ...faqItems].forEach(addCursorEvents);
 
+socialMediaLinks.forEach((link) => {
+  link.addEventListener("mousemove", () => {
+    const linkRect = link.getBoundingClientRect();
+    cursor.style.top = linkRect.top + linkRect.height / 2 + "px";
+    cursor.style.left = linkRect.left + linkRect.width / 2 + "px";
+    cursor.classList.add("social-link-active");
+    followMouse = false;
+  });
+
+  link.addEventListener("mouseleave", () => {
+    cursor.classList.remove("social-link-active");
+    followMouse = true;
+  });
+});
+
 menuBtn.addEventListener("mousemove", () => {
   const burgerRect = burger.getBoundingClientRect();
   cursor.style.top = burgerRect.top + burgerRect.height / 2 + "px";
@@ -53,10 +69,10 @@ menuBtn.addEventListener("mouseleave", () => {
 navFooterLinks.forEach((link) => {
   link.addEventListener("mouseenter", () => {
     followMouse = false;
-    const icon = link.querySelector(".icon");
-    const iconRect = icon.getBoundingClientRect();
-    cursor.style.left = iconRect.left + iconRect.width / 2 + "px";
-    cursor.style.top = iconRect.top + iconRect.height / 2 + "px";
+    const sibling = link.querySelector(".icon");
+    const siblingRef = sibling.getBoundingClientRect();
+    cursor.style.left = siblingRef.left + siblingRef.width / 2 + "px";
+    cursor.style.top = siblingRef.top + siblingRef.height / 2 + "px";
     cursor.classList.add("nav-footer-link-active");
   });
 
@@ -69,10 +85,10 @@ navFooterLinks.forEach((link) => {
 cta2.forEach((cta) => {
   cta.addEventListener("mouseenter", () => {
     followMouse = false;
-    const dot = cta.querySelector(".dot");
-    const dotRect = dot.getBoundingClientRect();
-    cursor.style.left = dotRect.left + dotRect.width / 2 + "px";
-    cursor.style.top = dotRect.top + dotRect.height / 2 + "px";
+    const sibling = cta.querySelector(".dot");
+    const siblingRef = sibling.getBoundingClientRect();
+    cursor.style.left = siblingRef.left + siblingRef.width / 2 + "px";
+    cursor.style.top = siblingRef.top + siblingRef.height / 2 + "px";
     cursor.classList.add("cta2-active");
   });
 

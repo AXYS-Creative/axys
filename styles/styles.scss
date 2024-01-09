@@ -404,10 +404,14 @@
 }
 
 #plans-section {
-    scroll-margin-top: -428px;
+    scroll-margin-top: -520px;
     
     @include mq-max('xxl') {
-        scroll-margin-top: -248px;
+        scroll-margin-top: -360px;
+    }
+
+    @include mq-max('md') {
+        scroll-margin-top: -256px;
     }
 
     .marquee {
@@ -1084,8 +1088,13 @@
         }
 
         h2 {
+ 
+            @include mq-max('md') {
+                font-size: 36px;
+            }
+ 
             @include mq-max('xs') {
-                font-size: 30px;
+                font-size: 32px;
             }
         }
 
