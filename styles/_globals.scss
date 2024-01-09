@@ -425,13 +425,7 @@ nav {
             }
 
             .social-media-title {
-                // display: flex;
-                // align-items: center;
-                // justify-content: flex-end;
-                // text-transform: uppercase;
-                // margin-bottom: 24px;
                 translate: 0 52px;
-                // transition: 0.3s ease;
                 
                 @include mq-max('md') {
                     translate: 0 12px;
@@ -440,16 +434,6 @@ nav {
                 @include mq-touch {
                     translate: 0 12px;
                 }
-
-                // .blue-text {
-                //     margin: 0 6px;
-                // }
-
-                // svg {
-                //     margin-left: 12px;
-                //     width: 18px;
-                //     height: 18px;
-                // }
             }
 
             .social-media-links {
@@ -545,7 +529,7 @@ footer {
     @include row-between;
     
     @include mq-max('md') {
-        font-size: 8px;
+        flex-direction: row-reverse;
     }
     @include mq-max('sm') {
         padding-bottom: 48px;
@@ -555,7 +539,7 @@ footer {
         text-transform: uppercase;
 
         @include mq-max('md') {
-            font-size: 10px;
+            font-size: 14px;
         }
     }
 
@@ -603,7 +587,7 @@ footer {
         translate: 0 -8px; // Change me
 
         @include mq-max('md') {
-            translate: 0 10px; // Change me
+            display: none;
         }
         
         &:hover,

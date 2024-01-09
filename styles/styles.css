@@ -447,7 +447,7 @@ footer {
 }
 @media screen and (max-width: 768px) {
   footer {
-    font-size: 8px;
+    flex-direction: row-reverse;
   }
 }
 @media screen and (max-width: 480px) {
@@ -460,7 +460,7 @@ footer p, footer a {
 }
 @media screen and (max-width: 768px) {
   footer p, footer a {
-    font-size: 10px;
+    font-size: 14px;
   }
 }
 footer .return {
@@ -507,7 +507,7 @@ footer .footer-social {
 }
 @media screen and (max-width: 768px) {
   footer .footer-social {
-    translate: 0 10px;
+    display: none;
   }
 }
 @media screen and (max-width: 768px) {
