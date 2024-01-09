@@ -562,14 +562,14 @@ footer {
     }
 
     .return {
-        @include row-between;
-        gap: 10px;
 
         @include mq-max('sm') {
             gap: 4px;
         }
 
         svg {
+            margin-right: 8px;
+            
             @include mq-max('sm') {
                 width: 10px;
             }
