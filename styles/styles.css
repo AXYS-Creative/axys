@@ -6,10 +6,6 @@
   font-family: "Archivo", sans-serif;
   font-weight: 300;
 }
-*::-moz-selection {
-  color: #F0F0F0;
-  background-color: rgba(228, 140, 102, 0.75);
-}
 *::selection {
   color: #F0F0F0;
   background-color: rgba(228, 140, 102, 0.75);
@@ -229,6 +225,7 @@ nav .nav-links .nav-link {
   text-transform: uppercase;
   font-size: 64px;
   cursor: pointer;
+  transition: 0.3s ease;
 }
 @media screen and (max-width: 1440px) {
   nav .nav-links .nav-link {
@@ -245,16 +242,32 @@ nav .nav-links .nav-link {
     font-size: 24px;
   }
 }
-nav .nav-links .nav-link::before {
-  content: "";
+nav .nav-links .nav-link:hover, nav .nav-links .nav-link:focus {
+  padding-left: 28px;
+}
+nav .nav-links .nav-link:hover svg, nav .nav-links .nav-link:focus svg {
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+}
+nav .nav-links .nav-link:hover svg path, nav .nav-links .nav-link:focus svg path {
+  opacity: 1;
+}
+nav .nav-links .nav-link svg {
   position: absolute;
   top: 50%;
   left: 0;
   translate: -24px -50%;
-  width: 8px;
-  height: 8px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   border: 2px solid #E48C66;
+  transition: 0.3s ease;
+}
+nav .nav-links .nav-link svg path {
+  fill: #E48C66;
+  opacity: 0;
+  transition: 0.3s ease;
 }
 nav .nav-footer {
   display: flex;
@@ -580,8 +593,7 @@ button {
 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 ul {
@@ -699,16 +711,16 @@ ul {
   pointer-events: all;
 }
 .social-media-container:hover .social-media-links li:nth-of-type(1) .social-media-link, .social-media-container:focus-within .social-media-links li:nth-of-type(1) .social-media-link {
-  transition: opacity 0.3s ease 0.05s, border 0.3s ease;
+  transition: 0.3s ease, opacity 0.3s ease 0.05s;
 }
 .social-media-container:hover .social-media-links li:nth-of-type(2) .social-media-link, .social-media-container:focus-within .social-media-links li:nth-of-type(2) .social-media-link {
-  transition: opacity 0.3s ease 0.1s, border 0.3s ease;
+  transition: 0.3s ease, opacity 0.3s ease 0.1s;
 }
 .social-media-container:hover .social-media-links li:nth-of-type(3) .social-media-link, .social-media-container:focus-within .social-media-links li:nth-of-type(3) .social-media-link {
-  transition: opacity 0.3s ease 0.15s, border 0.3s ease;
+  transition: 0.3s ease, opacity 0.3s ease 0.15s;
 }
 .social-media-container:hover .social-media-links li:nth-of-type(4) .social-media-link, .social-media-container:focus-within .social-media-links li:nth-of-type(4) .social-media-link {
-  transition: opacity 0.3s ease 0.2s, border 0.3s ease;
+  transition: 0.3s ease, opacity 0.3s ease 0.2s;
 }
 .social-media-container .social-media-title {
   display: flex;
@@ -879,7 +891,6 @@ ul {
 .marquee-inner {
   display: flex;
   align-items: center;
-  width: -moz-fit-content;
   width: fit-content;
   animation: marquee 16s linear infinite;
 }
@@ -940,9 +951,7 @@ ul {
   font-size: 36px;
   color: #3D3D3D;
   margin: 0 56px;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 @media screen and (max-width: 768px) {
   .marquee .marquee-dot {
@@ -1770,11 +1779,6 @@ ul {
   pointer-events: none;
   transition: 0.24s ease;
 }
-#plans-section .plan-options .half-card .mail-form .input:not(:-moz-placeholder-shown).input:not(focus) ~ .label {
-  transform: translate(0, -68%);
-  color: #7EC1D4;
-  font-size: 16px;
-}
 #plans-section .plan-options .half-card .mail-form .input:focus ~ .label,
 #plans-section .plan-options .half-card .mail-form .input:not(:placeholder-shown).input:not(focus) ~ .label {
   transform: translate(0, -68%);
@@ -1782,10 +1786,6 @@ ul {
   font-size: 16px;
 }
 @media screen and (max-width: 1440px) {
-  #plans-section .plan-options .half-card .mail-form .input:not(:-moz-placeholder-shown).input:not(focus) ~ .label {
-    transform: translate(0, -80%);
-    font-size: 12px;
-  }
   #plans-section .plan-options .half-card .mail-form .input:focus ~ .label,
   #plans-section .plan-options .half-card .mail-form .input:not(:placeholder-shown).input:not(focus) ~ .label {
     transform: translate(0, -80%);
