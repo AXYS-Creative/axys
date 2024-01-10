@@ -1,6 +1,7 @@
 const navMenu = document.querySelector(".nav-menu"),
   menuBtn = document.querySelector(".menu-btn"),
   navLinks = document.querySelectorAll(".nav-link"),
+  navFooterLinks = document.querySelectorAll(".nav-footer-link"),
   tabElementsPage = document.querySelectorAll(".tab-element-page"),
   tabElementsNav = document.querySelectorAll(".tab-element-nav");
 
@@ -34,8 +35,10 @@ function closeNav() {
   tabElementsNav.forEach((el) => el.setAttribute("tabindex", "-1"));
 }
 
-navLinks.forEach((link) => {
-  link.addEventListener("click", closeNav);
+[...navLinks, ...navFooterLinks].forEach((link) => {
+  if (!link.classList.contains("prevent-nav-close")) {
+    link.addEventListener("click", closeNav);
+  }
 });
 
 menuBtn.addEventListener("click", toggleNav);

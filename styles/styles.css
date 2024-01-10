@@ -192,6 +192,11 @@ nav .nav-links {
   top: 50%;
   translate: 16px -50%;
 }
+@media screen and (max-width: 480px) {
+  nav .nav-links {
+    translate: 0 -50%;
+  }
+}
 nav .nav-links li {
   padding: 12px 0;
   opacity: 0;
@@ -267,6 +272,11 @@ nav .nav-links .nav-link .icon-wrapper {
   nav .nav-links .nav-link .icon-wrapper {
     width: 24px;
     height: 24px;
+  }
+}
+@media screen and (max-width: 480px) {
+  nav .nav-links .nav-link .icon-wrapper {
+    display: none;
   }
 }
 nav .nav-links .nav-link svg {
@@ -424,6 +434,11 @@ nav .nav-footer .nav-social {
 @media screen and (max-width: 768px) {
   nav .nav-footer .nav-social {
     translate: 0 10px;
+  }
+}
+@media screen and (max-width: 480px) {
+  nav .nav-footer .nav-social {
+    display: none;
   }
 }
 nav .nav-footer .nav-social:hover .social-media-title, nav .nav-footer .nav-social:focus-within .social-media-title {

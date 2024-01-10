@@ -214,6 +214,10 @@ nav {
     .nav-links {
         top: 50%;
         translate: 16px -50%;
+        
+        @include mq-max('sm') {
+            translate: 0 -50%;            
+        }
 
         // Main nav links
         li {
@@ -290,6 +294,10 @@ nav {
                 @include mq-max('md'){
                     width: 24px;
                     height: 24px;
+                }
+
+                @include mq-max('sm') {
+                    display: none;
                 }
             }
 
@@ -465,6 +473,10 @@ nav {
 
             @include mq-max('md') {
                 translate: 0 10px;
+            }
+
+            @include mq-max('sm') {
+                display: none;
             }
             
             &:hover,
