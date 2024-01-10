@@ -2,6 +2,7 @@ const cursor = document.querySelector(".mouse-cursor"),
   logo = document.querySelector(".logo"),
   menuBtn = document.querySelector(".menu-btn"),
   burger = document.querySelector(".burger"),
+  navLinks = document.querySelectorAll(".nav-link"),
   navFooterLinks = document.querySelectorAll(".nav-footer-link"),
   socialMediaLinks = document.querySelectorAll(".social-media-link"),
   cta1 = document.querySelectorAll(".cta-1"),
@@ -24,7 +25,7 @@ document.addEventListener("mousemove", function (e) {
 });
 
 // Toggle vanish class to mouse cursor
-const addCursorEvents = (elem) => {
+const cursorHoverVanish = (elem) => {
   elem.addEventListener("mouseenter", () => {
     cursor.classList.add("vanish-mouse-cursor");
   });
@@ -33,10 +34,33 @@ const addCursorEvents = (elem) => {
   });
 };
 
-// Attach events to individual elements
-addCursorEvents(logo);
-// Attach events to NodeList items
-[...cta1, ...workItems, ...faqItems].forEach(addCursorEvents);
+// Attaching event to individual elements
+cursorHoverVanish(logo);
+// Attaching events to NodeList items
+[...cta1, ...workItems, ...faqItems].forEach(cursorHoverVanish);
+
+// Toggle sibling selector (dot, icon, etc...)
+const cursorHoverSibling = (elements, querySelector, activeClass) => {
+  elements.forEach((element) => {
+    element.addEventListener("mouseenter", () => {
+      followMouse = false;
+      const sibling = element.querySelector(querySelector);
+      const siblingRef = sibling.getBoundingClientRect();
+      cursor.style.left = siblingRef.left + siblingRef.width / 2 + "px";
+      cursor.style.top = siblingRef.top + siblingRef.height / 2 + "px";
+      cursor.classList.add(activeClass);
+    });
+
+    element.addEventListener("mouseleave", () => {
+      followMouse = true;
+      cursor.classList.remove(activeClass);
+    });
+  });
+};
+
+cursorHoverSibling(navLinks, ".nav-link-svg", "nav-link-active");
+cursorHoverSibling(navFooterLinks, ".icon", "nav-link-active");
+cursorHoverSibling(cta2, ".dot", "cta2-active");
 
 socialMediaLinks.forEach((link) => {
   link.addEventListener("mousemove", () => {
@@ -64,38 +88,6 @@ menuBtn.addEventListener("mousemove", () => {
 menuBtn.addEventListener("mouseleave", () => {
   cursor.classList.remove("burger-active");
   followMouse = true;
-});
-
-navFooterLinks.forEach((link) => {
-  link.addEventListener("mouseenter", () => {
-    followMouse = false;
-    const sibling = link.querySelector(".icon");
-    const siblingRef = sibling.getBoundingClientRect();
-    cursor.style.left = siblingRef.left + siblingRef.width / 2 + "px";
-    cursor.style.top = siblingRef.top + siblingRef.height / 2 + "px";
-    cursor.classList.add("nav-footer-link-active");
-  });
-
-  link.addEventListener("mouseleave", () => {
-    followMouse = true;
-    cursor.classList.remove("nav-footer-link-active");
-  });
-});
-
-cta2.forEach((cta) => {
-  cta.addEventListener("mouseenter", () => {
-    followMouse = false;
-    const sibling = cta.querySelector(".dot");
-    const siblingRef = sibling.getBoundingClientRect();
-    cursor.style.left = siblingRef.left + siblingRef.width / 2 + "px";
-    cursor.style.top = siblingRef.top + siblingRef.height / 2 + "px";
-    cursor.classList.add("cta2-active");
-  });
-
-  cta.addEventListener("mouseleave", () => {
-    followMouse = true;
-    cursor.classList.remove("cta2-active");
-  });
 });
 
 mailForm.addEventListener("mousemove", () => {
