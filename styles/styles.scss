@@ -1076,62 +1076,85 @@
 
 #pre-footer-section {
     @include column-center;
-    gap: 40px;
 
     .pre-footer-title {
-        @include row-center;
+        @include row-between;
         gap: 20px;
+        margin-bottom: 40px;
 
-        @include mq-max('md') {
-            gap: 10px;
-        }
-
-        .icon-wrapper {
-            @include row-center;
-            width: 100%;
-    
-            svg {
-                border: $test;
-                width: 52px;
-                height: 52px;
-    
-                @include mq-max('lg') {
-                    width: 30px;
-                    height: 30px;
-                }
-                @include mq-max('md') {
-                    width: 18px;
-                    height: 18px;
-                }
-                // @include mq-max('xs') {
-                //     width: 14px;
-                // }
-            }
-        }
-        
-        
         span {
             font-weight: 900;
         }
-        
-        h2 {
-            @include mq-max('md') {
-                font-size: 36px;
-            }
- 
-            @include mq-max('xs') {
-                font-size: 24px;
-            }
+
+        svg {
+            height: 48px;
+            width: 48px;
         }
     }
 
-    p {
-        @include mq-max('xs') {
-            font-size: 14px;
-        }
-    }
-
-    .cta-wrapper {
-        padding-top: 30px;
-    }
+   .cta-wrapper {
+    margin-top: 80px;
+   }
 }
+
+// #pre-footer-section {
+//     @include column-center;
+//     gap: 40px;
+
+//     .pre-footer-title {
+//         @include row-center;
+//         gap: 20px;
+
+//         @include mq-max('md') {
+//             gap: 10px;
+//         }
+
+//         .icon-wrapper {
+//             @include row-center;
+//             width: 100%;
+    
+//             svg {
+//                 border: $test;
+//                 width: 52px;
+//                 height: 52px;
+    
+//                 @include mq-max('lg') {
+//                     width: 30px;
+//                     height: 30px;
+//                 }
+//                 @include mq-max('md') {
+//                     width: 18px;
+//                     height: 18px;
+//                 }
+//                 // @include mq-max('xs') {
+//                 //     width: 14px;
+//                 // }
+//             }
+//         }
+        
+        
+//         span {
+//             font-weight: 900;
+//         }
+
+//         h2 {
+//             @include mq-max('md') {
+//                 font-size: 36px;
+//             }
+ 
+//             @include mq-max('xs') {
+//                 font-size: 24px;
+//             }
+//         }
+//     }
+
+//     p {
+//         @include mq-max('xs') {
+//             font-size: 14px;
+//         }
+//     }
+
+//     .cta-wrapper {
+//         padding-top: 30px;
+//     }
+// }

@@ -6,6 +6,10 @@
   font-family: "Archivo", sans-serif;
   font-weight: 300;
 }
+*::-moz-selection {
+  color: #F0F0F0;
+  background-color: rgba(228, 140, 102, 0.75);
+}
 *::selection {
   color: #F0F0F0;
   background-color: rgba(228, 140, 102, 0.75);
@@ -593,7 +597,8 @@ button {
 img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 ul {
@@ -891,6 +896,7 @@ ul {
 .marquee-inner {
   display: flex;
   align-items: center;
+  width: -moz-fit-content;
   width: fit-content;
   animation: marquee 16s linear infinite;
 }
@@ -951,7 +957,9 @@ ul {
   font-size: 36px;
   color: #3D3D3D;
   margin: 0 56px;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 @media screen and (max-width: 768px) {
   .marquee .marquee-dot {
@@ -1779,6 +1787,11 @@ ul {
   pointer-events: none;
   transition: 0.24s ease;
 }
+#plans-section .plan-options .half-card .mail-form .input:not(:-moz-placeholder-shown).input:not(focus) ~ .label {
+  transform: translate(0, -68%);
+  color: #7EC1D4;
+  font-size: 16px;
+}
 #plans-section .plan-options .half-card .mail-form .input:focus ~ .label,
 #plans-section .plan-options .half-card .mail-form .input:not(:placeholder-shown).input:not(focus) ~ .label {
   transform: translate(0, -68%);
@@ -1786,6 +1799,10 @@ ul {
   font-size: 16px;
 }
 @media screen and (max-width: 1440px) {
+  #plans-section .plan-options .half-card .mail-form .input:not(:-moz-placeholder-shown).input:not(focus) ~ .label {
+    transform: translate(0, -80%);
+    font-size: 12px;
+  }
   #plans-section .plan-options .half-card .mail-form .input:focus ~ .label,
   #plans-section .plan-options .half-card .mail-form .input:not(:placeholder-shown).input:not(focus) ~ .label {
     transform: translate(0, -80%);
@@ -2063,60 +2080,21 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
 }
 #pre-footer-section .pre-footer-title {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 20px;
-}
-@media screen and (max-width: 768px) {
-  #pre-footer-section .pre-footer-title {
-    gap: 10px;
-  }
-}
-#pre-footer-section .pre-footer-title .icon-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-#pre-footer-section .pre-footer-title .icon-wrapper svg {
-  border: 2px dashed rgba(50, 205, 50, 0.5);
-  width: 52px;
-  height: 52px;
-}
-@media screen and (max-width: 1024px) {
-  #pre-footer-section .pre-footer-title .icon-wrapper svg {
-    width: 30px;
-    height: 30px;
-  }
-}
-@media screen and (max-width: 768px) {
-  #pre-footer-section .pre-footer-title .icon-wrapper svg {
-    width: 18px;
-    height: 18px;
-  }
+  margin-bottom: 40px;
 }
 #pre-footer-section .pre-footer-title span {
   font-weight: 900;
 }
-@media screen and (max-width: 768px) {
-  #pre-footer-section .pre-footer-title h2 {
-    font-size: 36px;
-  }
-}
-@media screen and (max-width: 390px) {
-  #pre-footer-section .pre-footer-title h2 {
-    font-size: 24px;
-  }
-}
-@media screen and (max-width: 390px) {
-  #pre-footer-section p {
-    font-size: 14px;
-  }
+#pre-footer-section .pre-footer-title svg {
+  height: 48px;
+  width: 48px;
 }
 #pre-footer-section .cta-wrapper {
-  padding-top: 30px;
+  margin-top: 80px;
 }/*# sourceMappingURL=styles.css.map */
