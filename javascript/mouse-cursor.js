@@ -11,6 +11,7 @@ const cursor = document.querySelector(".mouse-cursor"),
   mailForm = document.querySelector(".mail-form"),
   submitFormBtn = document.querySelector(".submit-btn"),
   faqItems = document.querySelectorAll(".faq-item"),
+  returnToTop = document.querySelectorAll(".return-to-top"),
   emailUsLink = document.querySelector(".email-us-link");
 
 let followMouse = true;
@@ -63,6 +64,7 @@ const cursorHoverSibling = (elements, querySelector, activeClass) => {
 cursorHoverSibling(navLinks, ".nav-link-svg", "nav-link-active");
 cursorHoverSibling(navFooterLinks, ".icon", "nav-link-active");
 cursorHoverSibling(cta2, ".dot", "cta2-active");
+cursorHoverSibling(returnToTop, ".return-to-top-icon", "return-to-top-active");
 
 socialMediaLinks.forEach((link) => {
   link.addEventListener("mousemove", () => {
