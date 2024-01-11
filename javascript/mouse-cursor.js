@@ -10,7 +10,8 @@ const cursor = document.querySelector(".mouse-cursor"),
   workItems = document.querySelectorAll(".showcase-link"),
   mailForm = document.querySelector(".mail-form"),
   submitFormBtn = document.querySelector(".submit-btn"),
-  faqItems = document.querySelectorAll(".faq-item");
+  faqItems = document.querySelectorAll(".faq-item"),
+  emailUsLink = document.querySelector(".email-us-link");
 
 let followMouse = true;
 cursor.style.opacity = 0; // Initially hide when loading the site
@@ -34,8 +35,9 @@ const cursorHoverVanish = (elem) => {
   });
 };
 
-// Attaching event to individual elements
+// Attaching vanish to individual elements
 cursorHoverVanish(logo);
+cursorHoverVanish(emailUsLink);
 // Attaching events to NodeList items
 [...cta1, ...workItems, ...faqItems].forEach(cursorHoverVanish);
 

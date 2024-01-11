@@ -5,7 +5,6 @@
     color: $white;
     font-family: 'Archivo', sans-serif;
     font-weight: 300;
-    // outline: none;
 
     &::selection {
         color: $white;
@@ -593,52 +592,102 @@ section {
 }
 
 footer {
+    position: relative;
     @include row-between;
 
-    @include mq-max('md') {
-        flex-direction: row-reverse;
-    }
-    @include mq-max('sm') {
-        padding-bottom: 48px;
+    @include mq-max('lg') {
+        @include column-center;
     }
 
-    p, a {
-        @include row-between;
+    .return-to-top {
+        @include row-center;
         text-transform: uppercase;
 
-        @include mq-max('sm') {
-            font-size: 12px;
-        }
-        @include mq-max('xs') {
-            font-size: 10px;
-        }
-    }
-
-    .return {
-
-        @include mq-max('sm') {
-            gap: 4px;
+        @include mq-max('lg') {
+            display: none;
         }
 
         svg {
+            width: 32px;
+            height: 32px;
+            margin-bottom: -4px;
             margin-right: 8px;
-            
-            @include mq-max('sm') {
-                width: 10px;
+        }
+    }
+
+    .email-us {
+        display: none;
+
+        @include mq-max('lg'){
+            @include column-left;
+            translate: -36px 0;
+            gap: 24px;
+            margin-bottom: 64px;
+        }
+
+        @include mq-max('md'){
+            margin: 96px 0;
+        }
+
+        @include mq-max('sm'){
+            margin: 48px 0 96px;
+        }
+
+        .email-us-text {
+            @include row-center;
+            gap: 6px;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+
+        .email-us-link {
+            font-size: 20px;
+            transition: 0.3s ease;
+
+            &:hover {
+                color: $green;
             }
+        }
+
+        .email-us-icon {
+            margin-left: 8px;
+            width: 24px;
+            height: 24px;
         }
     }
 
     .copyright {
+        @include row-center;
         gap: 10px;
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        transform: translate(calc(-50% - 13.5px), 50%);
+        font-size: 16px;
+        text-transform: uppercase;
+        
+        @include mq-max('lg') {
+            width: 100%;
+            bottom: $content-padding;
+            transform: translate(calc(-50% - 13.5px), 0);
+        }
+
+        @include mq-max('md') {
+            font-size: 14px;
+        }
     }
 
     .footer-social {
         // see global class '.social-media-container' for full shared styles
-        translate: 0 -8px; // Change me
+        translate: 0 -22px;
+        
+        @include mq-max('lg') {
+            translate: -36px 0;
+            margin-bottom: 128px;
+        }
 
-        @include mq-max('md') {
-            display: none;
+        @include mq-max('md'){
+            margin-bottom: 196px;
         }
         
         &:hover,
@@ -654,20 +703,34 @@ footer {
         }
 
         .social-media-title {
-            translate: 0 52px; // change me
+            translate: 0 52px;
             
+            @include mq-max('lg') {
+                font-size: 24px;
+            }
+
             @include mq-max('md') {
                 translate: 0 12px;
             }
             @include mq-touch {
                 translate: 0 12px;
             }
+
+            svg {
+
+                @include mq-max('lg') {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
         }
 
         .social-media-links {
 
-            @include mq-max('md') {
-                translate: -12px 0;
+            @include mq-max('lg') {
+                justify-content: flex-start;
+                gap: 4px;
+                translate: -8px 0;
             }
         }
     }
@@ -837,23 +900,12 @@ ul {
 }
 
 .social-media-container {
-    // translate: 0 -8px;
-    // opacity: 0;
-    // transition: 0.3s ease, opacity 0.3s ease 0.4s;
-
-    // @include mq-max('md') {
-    //     translate: 0 10px;
-    // }
     
     &:hover,
     &:focus-within {
         
         .social-media-title {
             translate: 0 0;
-
-            // @include mq-max('md') {
-            //     translate: 0 12px;
-            // }
         }
 
         .social-media-links {
@@ -934,10 +986,6 @@ ul {
             gap: 0;
         }
 
-        // @include mq-max('md') {
-            // translate: -12px 0;
-        // }
-
         li {
             transition: 0.4s $cubic-ease-back-dramatic;
         }
@@ -945,6 +993,7 @@ ul {
         .social-media-link {
             border: 2px solid transparent;
             @include row-center;
+            text-transform: uppercase;
             width: 36px;
             height: 36px;
             border-radius: 50%;

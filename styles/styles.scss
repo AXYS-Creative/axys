@@ -1052,13 +1052,18 @@
     .faq-cta {
         
         @include mq-max('sm') {
-            text-align: left;
+            @include column-center;
         }
 
         .headline-description {
+            text-align: center;
 
             @include mq-max('md') {
                 margin-bottom: 48px;
+            }
+
+            @include mq-max('sm') {
+                width: 86%;
             }
         }
 
@@ -1066,10 +1071,6 @@
             width: unset;
             justify-content: center;
             gap: 16px;
-
-            @include mq-max('sm') {
-                justify-content: left;
-            }
         }
     }
 }
@@ -1079,20 +1080,22 @@
 
     .pre-footer-title {
         @include row-center;
-        gap: 20px;
+        gap: 16px;
         margin-bottom: 40px;
-        flex-wrap: wrap;
 
         @include mq-max('md') {
-            gap: 10px;
+            gap: 12px;
         }
 
         h2 {
+
             @include mq-max('md') {
                 font-size: 40px;
+                margin-bottom: 0;
             }
+
             @include mq-max('sm') {
-                font-size: 30px;
+                font-size: 28px;
             }
         }
 
@@ -1104,31 +1107,32 @@
             height: 40px;
             width: 40px;
 
-            svg {
-                height: 40px;
-                width: 40px;
+            @include mq-max('xxl') {
+                width: 36px;
+                height: 36px;
+            }
+        
+            @include mq-max('xl') {
+                width: 32px;
+                height: 32px;
+            }
 
-                @include mq-max('md') {
-                    height: 24px;
-                    width: 24px;
-                }
-                @include mq-max('sm') {
-                    height: 16px;
-                    width: 16px;
-                }
+            @include mq-max('md') {
+                height: 24px;
+                width: 24px;
+            }
+
+            @include mq-max('sm') {
+                height: 16px;
+                width: 16px;
+            }
+
+            svg {
+                width: 100%;
+                height: 100%;
             }
         }
     }
-
-    p {
-        @include mq-max('sm') {
-            font-size: 14px;
-        }
-    }
-
-   .cta-wrapper {
-    margin-top: 80px;
-   }
 }
 
 
