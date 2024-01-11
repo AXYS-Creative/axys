@@ -6,6 +6,10 @@
   font-family: "Archivo", sans-serif;
   font-weight: 300;
 }
+*::-moz-selection {
+  color: #F0F0F0;
+  background-color: rgba(228, 140, 102, 0.75);
+}
 *::selection {
   color: #F0F0F0;
   background-color: rgba(228, 140, 102, 0.75);
@@ -697,7 +701,8 @@ button {
 img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 ul {
@@ -1000,6 +1005,7 @@ ul {
 .marquee-inner {
   display: flex;
   align-items: center;
+  width: -moz-fit-content;
   width: fit-content;
   animation: marquee 16s linear infinite;
 }
@@ -1060,7 +1066,9 @@ ul {
   font-size: 36px;
   color: #3D3D3D;
   margin: 0 56px;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 @media screen and (max-width: 768px) {
   .marquee .marquee-dot {
@@ -1888,6 +1896,11 @@ ul {
   pointer-events: none;
   transition: 0.24s ease;
 }
+#plans-section .plan-options .half-card .mail-form .input:not(:-moz-placeholder-shown).input:not(focus) ~ .label {
+  transform: translate(0, -68%);
+  color: #7EC1D4;
+  font-size: 16px;
+}
 #plans-section .plan-options .half-card .mail-form .input:focus ~ .label,
 #plans-section .plan-options .half-card .mail-form .input:not(:placeholder-shown).input:not(focus) ~ .label {
   transform: translate(0, -68%);
@@ -1895,6 +1908,10 @@ ul {
   font-size: 16px;
 }
 @media screen and (max-width: 1440px) {
+  #plans-section .plan-options .half-card .mail-form .input:not(:-moz-placeholder-shown).input:not(focus) ~ .label {
+    transform: translate(0, -80%);
+    font-size: 12px;
+  }
   #plans-section .plan-options .half-card .mail-form .input:focus ~ .label,
   #plans-section .plan-options .half-card .mail-form .input:not(:placeholder-shown).input:not(focus) ~ .label {
     transform: translate(0, -80%);
