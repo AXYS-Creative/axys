@@ -5,10 +5,7 @@ const handleSubmit = (event) => {
   event.preventDefault();
 
   const myForm = event.target;
-  console.log("event target:", myForm);
-
   const formData = new FormData(myForm);
-  console.log("form data:", formData);
 
   fetch("/", {
     method: "POST",
@@ -24,7 +21,10 @@ const handleSubmit = (event) => {
         confirmation.classList.remove("active");
       }, 5000);
     })
-    .catch((error) => alert(error));
+    .catch((error) => {
+      console.error("Fetch error:", error);
+      alert(error);
+    });
 };
 
 mailForm.addEventListener("submit", handleSubmit);
