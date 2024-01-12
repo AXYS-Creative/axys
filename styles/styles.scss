@@ -83,69 +83,6 @@
         scroll-margin-top: -24px;
     }
 
-    // See about having this be a global style since there are two marquees on the site.
-    // .marquee {
-    //     overflow: hidden;
-    //     width: 100vw;
-    //     max-width: $content-width;
-    //     translate: calc($content-padding * -1) 0;
-    //     margin-bottom: 248px;
-        
-    //     @include mq-max('xxl') {
-    //         margin-bottom: 96px;
-    //     }
-
-    //     @include mq-max('md') {
-    //         translate: calc($content-padding-md * -1) 0;
-    //     }
-
-    //     &-inner {
-    //         display: flex;
-    //         width: fit-content;
-    //         animation: marquee 16s linear infinite;
-
-    //         @include mq-max('xl') {
-    //             animation-duration: 18s;
-    //         }
-
-    //         @include mq-max('sm') {
-    //             animation-duration: 12s;
-    //         }
-
-    //         &:nth-of-type(2) { 
-    //             animation-name: marquee-reverse;   
-    //         }
-
-    //         h2 {
-    //             margin: 0;
-    //         }
-    //     }
-
-    //     @keyframes marquee {
-    //         to {
-    //             translate: -50% 0;
-    //         }
-    //     }
-
-    //     @keyframes marquee-reverse {
-    //         from {
-    //             translate: -50% 0;
-    //         }
-    //         to {
-    //             translate: 0 0;
-    //         }
-    //     }
-
-    //     h2 {
-    //         display: inline-flex;
-    //         gap: 24px;
-
-    //         @include mq-max('sm') {
-    //             gap: 12px;
-    //         }
-    //     }
-    // }
-
     .work-showcase {
         @include row-between;
         margin-bottom: 96px;
@@ -233,9 +170,10 @@
     }
     @include mq-max('sm') {
         height: unset;
+        padding: 180px 0;
     }
     
-    h3 {
+    .mission-statement {
         font-size: 48px;
 
         @include mq-max('xxl') {
@@ -247,8 +185,30 @@
         }
 
         @include mq-max('sm') {
-            font-size: 16px;
+            font-size: 18px;
         }
+
+        .text {
+            opacity: 0.1;
+            transition: 0.3s ease;
+            filter: blur(3px);
+
+            @for $i from 2 through 14 {
+                &:nth-child(#{$i}) {
+                    transition-delay: 0.036s * ($i - 1);
+                }
+            }
+        }
+
+        &.animate {
+
+            .text {
+                opacity: 1;
+                filter: blur(0);
+            }
+        }
+
+
     }
 
 }
@@ -327,6 +287,9 @@
         .benefit-block {
             width: 100%;
             max-width: 672px;
+            opacity: 0.1;
+            filter: blur(3px);
+            transition: 0.3s ease;
     
             h3 {
                 font-size: 48px;
@@ -348,7 +311,6 @@
             
                 @include mq-max('md') {
                     font-size: 24px;
-                    // justify-content: center;
                 }
     
                 svg {
@@ -390,6 +352,11 @@
                         font-size: 12px;
                     }
                 }
+            }
+
+            &.animate {
+                opacity: 1;
+                filter: blur(0);
             }
         }
     }

@@ -6,10 +6,6 @@
   font-family: "Archivo", sans-serif;
   font-weight: 300;
 }
-*::-moz-selection {
-  color: #F0F0F0;
-  background-color: rgba(228, 140, 102, 0.75);
-}
 *::selection {
   color: #F0F0F0;
   background-color: rgba(228, 140, 102, 0.75);
@@ -701,8 +697,7 @@ button {
 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 ul {
@@ -1005,7 +1000,6 @@ ul {
 .marquee-inner {
   display: flex;
   align-items: center;
-  width: -moz-fit-content;
   width: fit-content;
   animation: marquee 16s linear infinite;
 }
@@ -1066,9 +1060,7 @@ ul {
   font-size: 36px;
   color: #3D3D3D;
   margin: 0 56px;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 @media screen and (max-width: 768px) {
   .marquee .marquee-dot {
@@ -1349,25 +1341,74 @@ ul {
 @media screen and (max-width: 480px) {
   #statement-section {
     height: unset;
+    padding: 180px 0;
   }
 }
-#statement-section h3 {
+#statement-section .mission-statement {
   font-size: 48px;
 }
 @media screen and (max-width: 1440px) {
-  #statement-section h3 {
+  #statement-section .mission-statement {
     font-size: 36px;
   }
 }
 @media screen and (max-width: 768px) {
-  #statement-section h3 {
+  #statement-section .mission-statement {
     font-size: 20px;
   }
 }
 @media screen and (max-width: 480px) {
-  #statement-section h3 {
-    font-size: 16px;
+  #statement-section .mission-statement {
+    font-size: 18px;
   }
+}
+#statement-section .mission-statement .text {
+  opacity: 0.1;
+  transition: 0.3s ease;
+  filter: blur(3px);
+}
+#statement-section .mission-statement .text:nth-child(2) {
+  transition-delay: 0.036s;
+}
+#statement-section .mission-statement .text:nth-child(3) {
+  transition-delay: 0.072s;
+}
+#statement-section .mission-statement .text:nth-child(4) {
+  transition-delay: 0.108s;
+}
+#statement-section .mission-statement .text:nth-child(5) {
+  transition-delay: 0.144s;
+}
+#statement-section .mission-statement .text:nth-child(6) {
+  transition-delay: 0.18s;
+}
+#statement-section .mission-statement .text:nth-child(7) {
+  transition-delay: 0.216s;
+}
+#statement-section .mission-statement .text:nth-child(8) {
+  transition-delay: 0.252s;
+}
+#statement-section .mission-statement .text:nth-child(9) {
+  transition-delay: 0.288s;
+}
+#statement-section .mission-statement .text:nth-child(10) {
+  transition-delay: 0.324s;
+}
+#statement-section .mission-statement .text:nth-child(11) {
+  transition-delay: 0.36s;
+}
+#statement-section .mission-statement .text:nth-child(12) {
+  transition-delay: 0.396s;
+}
+#statement-section .mission-statement .text:nth-child(13) {
+  transition-delay: 0.432s;
+}
+#statement-section .mission-statement .text:nth-child(14) {
+  transition-delay: 0.468s;
+}
+#statement-section .mission-statement.animate .text {
+  opacity: 1;
+  filter: blur(0);
 }
 
 #benefits-section {
@@ -1451,6 +1492,9 @@ ul {
 #benefits-section .benefit-list .benefit-block {
   width: 100%;
   max-width: 672px;
+  opacity: 0.1;
+  filter: blur(3px);
+  transition: 0.3s ease;
 }
 #benefits-section .benefit-list .benefit-block h3 {
   font-size: 48px;
@@ -1519,6 +1563,10 @@ ul {
   #benefits-section .benefit-list .benefit-block p .business-days {
     font-size: 12px;
   }
+}
+#benefits-section .benefit-list .benefit-block.animate {
+  opacity: 1;
+  filter: blur(0);
 }
 @media screen and (min-width: 769px) {
   #benefits-section > .cta-wrapper.lg-screen-and-below {
@@ -1896,11 +1944,6 @@ ul {
   pointer-events: none;
   transition: 0.24s ease;
 }
-#plans-section .plan-options .half-card .mail-form .input:not(:-moz-placeholder-shown).input:not(focus) ~ .label {
-  transform: translate(0, -68%);
-  color: #7EC1D4;
-  font-size: 16px;
-}
 #plans-section .plan-options .half-card .mail-form .input:focus ~ .label,
 #plans-section .plan-options .half-card .mail-form .input:not(:placeholder-shown).input:not(focus) ~ .label {
   transform: translate(0, -68%);
@@ -1908,10 +1951,6 @@ ul {
   font-size: 16px;
 }
 @media screen and (max-width: 1440px) {
-  #plans-section .plan-options .half-card .mail-form .input:not(:-moz-placeholder-shown).input:not(focus) ~ .label {
-    transform: translate(0, -80%);
-    font-size: 12px;
-  }
   #plans-section .plan-options .half-card .mail-form .input:focus ~ .label,
   #plans-section .plan-options .half-card .mail-form .input:not(:placeholder-shown).input:not(focus) ~ .label {
     transform: translate(0, -80%);

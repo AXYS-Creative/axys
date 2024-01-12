@@ -503,52 +503,10 @@ nav {
             }
 
             .social-media-links {
-                // @include row-between;
-                // gap: 24px;
-                
-                // @include mq-max('xxl') {
-                //     gap: 16px;
-                // }
-
-                // @include mq-max('lg') {
-                //     gap: 0;
-                // }
 
                 @include mq-max('md') {
                     translate: -12px 0;
                 }
-
-                // li {
-                //     transition: 0.4s $cubic-ease-back-dramatic;
-                // }
-
-                // .social-media-link {
-                    // border: 2px solid transparent;
-                    // @include row-center;
-                    // width: 36px;
-                    // height: 36px;
-                    // border-radius: 50%;
-                    // opacity: 0;
-                    // pointer-events: none;
-                    // transition: 0.3s ease; overidden above
-
-                    // &:hover,
-                    // &:focus {
-                    //     color: $blue;
-                    // }
-
-                    // &:focus {
-                    //     border-color: $blue;
-                    // }
-
-                    // @include mq-max('md') {
-                    //     opacity: 1;
-                    // }
-
-                    // @include mq-touch {
-                    //     opacity: 1;
-                    // }
-                // }
             }
         }
     }
@@ -586,7 +544,6 @@ section {
 
         @include mq-max('sm') {
             font-size: 14px;
-            // letter-spacing: 0.25px;
         }
     }
 }
@@ -694,10 +651,9 @@ footer {
         &:focus-within {
             
             .social-media-title {
-                // translate: 0 0; // Might be needed for specificity
 
                 @include mq-max('md') {
-                    translate: 0 12px; // Change me
+                    translate: 0 12px;
                 }
             }
         }
@@ -1090,7 +1046,6 @@ ul {
 
     &.mail-form-active {
         scale: 0.8;
-        // border-width: 3px;
         border-color: $blue;
         transition: 0.6s cubic-bezier(.02,.35,.39,1.12),
           border 0.4s ease,
@@ -1212,6 +1167,7 @@ ul {
         }
     }
 }
+
 // Utility
 
 .sr-only {
@@ -1292,7 +1248,7 @@ ul {
     display: none;
 
     @include mq-min('md') {
-        display: flex; // Flex for cta-wrapper
+        display: flex;
     }
 }
 
@@ -1300,7 +1256,7 @@ ul {
     display: none;
 
     @include mq-max('md') {
-        display: flex; // Flex for cta-wrapper
+        display: flex;
     }
 }
 
@@ -1308,7 +1264,7 @@ ul {
     display: none;
 
     @include mq-min('sm') {
-        display: flex; // Flex for cta-wrapper
+        display: flex;
     }
 }
 
@@ -1316,6 +1272,6 @@ ul {
     display: none;
 
     @include mq-max('sm') {
-        display: flex; // Flex for cta-wrapper
+        display: flex;
     }
 }

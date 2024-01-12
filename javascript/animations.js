@@ -1,4 +1,5 @@
-// let mqMaxSm = window.matchMedia("(max-width: 480px)");
+let mqMaxXxl = window.matchMedia("(max-width: 1440px)");
+let mqMaxSm = window.matchMedia("(max-width: 480px)");
 let mqMouse = window.matchMedia("(hover: hover)");
 
 const heroGlitchText = () => {
@@ -124,50 +125,62 @@ const magnetEffect = () => {
 
 magnetEffect();
 
-// const marquee = () => {
-//   document.addEventListener("DOMContentLoaded", function () {
-//     const marqueeInner = document.querySelector(".marquee .marquee-inner");
-//     const content = marqueeInner.innerHTML;
-//     marqueeInner.innerHTML = content.repeat(2);
+const scrollAnimations = () => {
+  function throttle(func, limit) {
+    let lastFunc;
+    let lastRan;
 
-//     let lastScrollTop =
-//       window.pageYOffset || document.documentElement.scrollTop;
-//     let position = 0;
-//     let direction = -1; // Start moving in a negative direction
-//     let speed = 6;
-//     const originalContentWidth = marqueeInner.offsetWidth / 2;
+    return function () {
+      const context = this;
+      const args = arguments;
 
-//     function updateMarquee() {
-//       position += speed * direction;
+      if (!lastRan) {
+        func.apply(context, args);
+        lastRan = Date.now();
+      } else {
+        clearTimeout(lastFunc);
+        lastFunc = setTimeout(function () {
+          if (Date.now() - lastRan >= limit) {
+            func.apply(context, args);
+            lastRan = Date.now();
+          }
+        }, limit - (Date.now() - lastRan));
+      }
+    };
+  }
 
-//       if (direction === -1 && position <= -originalContentWidth) {
-//         position += originalContentWidth;
-//       } else if (direction === 1 && position >= 0) {
-//         position -= originalContentWidth;
-//       }
+  function isElementInView(element, offset = 0) {
+    const rect = element.getBoundingClientRect();
 
-//       marqueeInner.style.transform = `translateX(${position}px)`;
-//       requestAnimationFrame(updateMarquee);
-//     }
+    const windowHeight =
+      window.innerHeight || document.documentElement.clientHeight;
 
-//     window.addEventListener(
-//       "scroll",
-//       function () {
-//         let st = window.pageYOffset || document.documentElement.scrollTop;
-//         if (st > lastScrollTop) {
-//           // Scrolling down, continue in negative direction
-//           direction = -1;
-//         } else if (st < lastScrollTop) {
-//           // Scrolling up, reverse to positive direction
-//           direction = 1;
-//         }
-//         lastScrollTop = st <= 0 ? 0 : st;
-//       },
-//       false
-//     );
+    const isTopInView = rect.top <= windowHeight - offset;
+    const isBottomPassedTop = rect.top < 0 + offset;
+    return isTopInView && !isBottomPassedTop;
+  }
 
-//     requestAnimationFrame(updateMarquee);
-//   });
-// };
+  let pixelSpacer = 80;
 
-// marquee();
+  if (mqMaxXxl.matches) {
+    pixelSpacer = 64;
+  } else if (mqMaxSm.matches) {
+    pixelSpacer = 32;
+  }
+
+  const handleScroll = () => {
+    document.querySelectorAll(".scroll-animate").forEach((el) => {
+      if (isElementInView(el, pixelSpacer)) {
+        el.classList.add("animate");
+      } else {
+        el.classList.remove("animate");
+      }
+    });
+  };
+
+  // Adjust the throttle with the second argument below. The smaller the number, the quicker the function calls (milliseconds)
+  const throttledScroll = throttle(handleScroll, 100);
+  window.addEventListener("scroll", throttledScroll);
+};
+
+scrollAnimations();

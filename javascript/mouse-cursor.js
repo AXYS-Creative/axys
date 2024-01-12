@@ -2,17 +2,18 @@ const cursor = document.querySelector(".mouse-cursor"),
   logo = document.querySelector(".logo"),
   menuBtn = document.querySelector(".menu-btn"),
   burger = document.querySelector(".burger"),
-  navLinks = document.querySelectorAll(".nav-link"),
+  mailForm = document.querySelector(".mail-form"),
+  submitFormBtn = document.querySelector(".submit-btn"),
+  emailUsLink = document.querySelector(".email-us-link");
+
+const navLinks = document.querySelectorAll(".nav-link"),
   navFooterLinks = document.querySelectorAll(".nav-footer-link"),
   socialMediaLinks = document.querySelectorAll(".social-media-link"),
   cta1 = document.querySelectorAll(".cta-1"),
   cta2 = document.querySelectorAll(".cta-2"),
   workItems = document.querySelectorAll(".showcase-link"),
-  mailForm = document.querySelector(".mail-form"),
-  submitFormBtn = document.querySelector(".submit-btn"),
   faqItems = document.querySelectorAll(".faq-item"),
-  returnToTop = document.querySelectorAll(".return-to-top"),
-  emailUsLink = document.querySelector(".email-us-link");
+  returnToTop = document.querySelectorAll(".return-to-top");
 
 let followMouse = true;
 cursor.style.opacity = 0; // Initially hide when loading the site
