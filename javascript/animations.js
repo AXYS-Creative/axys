@@ -91,6 +91,8 @@ const heroGlitchText = () => {
 
 heroGlitchText();
 
+//
+
 const magnetEffect = () => {
   if (mqMouse.matches) {
     document.querySelectorAll(".magnet").forEach((el) =>
@@ -124,6 +126,8 @@ const magnetEffect = () => {
 };
 
 magnetEffect();
+
+//
 
 const scrollAnimations = () => {
   function throttle(func, limit) {
