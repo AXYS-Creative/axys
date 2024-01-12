@@ -55,22 +55,13 @@ header .logo p {
   font-size: 16px;
   font-weight: 900;
   text-transform: uppercase;
-}
-@media screen and (max-width: 480px) {
-  header .logo p {
-    animation: hide-logo 0.36s ease 2s forwards;
-  }
+  transition: 0.3s ease;
 }
 header .logo p:first-of-type {
   width: 48px;
 }
 header .logo p:last-of-type {
   width: 96px;
-}
-@keyframes hide-logo {
-  to {
-    width: 0;
-  }
 }
 header .logo svg {
   margin: 0 4px;
@@ -138,6 +129,12 @@ header .menu-btn.active .burger-line:first-of-type {
 header .menu-btn.active .burger-line:last-of-type {
   translate: -50% -50%;
   rotate: -45deg;
+}
+header.away-from-top .logo p {
+  width: 0;
+}
+header.away-from-top .menu-btn .menu-btn-text {
+  opacity: 0;
 }
 
 nav {
@@ -600,6 +597,7 @@ footer .copyright {
 @media screen and (max-width: 768px) {
   footer .copyright {
     font-size: 14px;
+    transform: translate(calc(-50% - 12px), 0);
   }
 }
 footer .footer-social {

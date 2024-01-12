@@ -48,22 +48,13 @@ header {
             font-size: 16px;
             font-weight: 900;
             text-transform: uppercase;
-            
-            @include mq-max('sm') {
-                    animation: hide-logo 0.36s ease 2s forwards;
-            }
+            transition: 0.3s ease;
 
             &:first-of-type {
                 width: 48px;
             }
             &:last-of-type {
                 width: 96px;
-            }
-        }
-
-        @keyframes hide-logo {
-            to {
-                width: 0;
             }
         }
 
@@ -143,6 +134,23 @@ header {
                     translate: -50% -50%;
                     rotate: -45deg;
                 }
+            }
+        }
+    }
+
+    &.away-from-top {
+
+        .logo {
+
+            p {
+                width: 0;
+            }
+        }
+
+        .menu-btn {
+
+            .menu-btn-text {
+                opacity: 0;
             }
         }
     }
@@ -631,6 +639,7 @@ footer {
 
         @include mq-max('md') {
             font-size: 14px;
+            transform: translate(calc(-50% - 12px), 0);
         }
     }
 
