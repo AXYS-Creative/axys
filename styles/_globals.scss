@@ -233,7 +233,7 @@ nav {
             transition: opacity 0.2s ease;
             
             @include mq-max('md') {
-                padding: 4px 0;
+                padding: 8px 0;
             }
 
             &:nth-of-type(1) {
@@ -258,7 +258,7 @@ nav {
             text-transform: uppercase;
             font-size: 64px;
             padding: 12px 0;
-            padding-left: 28px;
+            padding-left: 20px;
             cursor: pointer;
             transition: 0.3s ease;
 
@@ -268,7 +268,8 @@ nav {
  
             @include mq-max('md') {
                 font-size: 36px;
-                padding: 4px 0;
+                padding: 8px 0;
+                padding-left: 12px;
             }
 
             &:hover,
@@ -276,11 +277,11 @@ nav {
                 padding-left: 36px;
                 
                 @include mq-max('md'){
-                    padding-left: 12px;
+                    padding-left: 24px;
                 }
 
                 svg {
-                    scale: 1.2;
+                    scale: 1.5;
                     border-width: 2px;
 
                     path {
@@ -295,8 +296,8 @@ nav {
                 top: 50%;
                 left: 0;
                 translate: -24px -50%;
-                width: 40px;
-                height: 40px;
+                width: 32px;
+                height: 32px;
 
                 @include mq-max('md'){
                     width: 24px;
@@ -572,11 +573,22 @@ footer {
             display: none;
         }
 
+        &:focus {
+
+            svg {
+                border: 2px solid $green;
+            }
+        }
+
+
         svg {
-            width: 32px;
-            height: 32px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 2px solid transparent;
             margin-bottom: -4px;
             margin-right: 8px;
+            transition: 0.3s ease;
         }
     }
 

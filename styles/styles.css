@@ -201,7 +201,7 @@ nav .nav-links li {
 }
 @media screen and (max-width: 768px) {
   nav .nav-links li {
-    padding: 4px 0;
+    padding: 8px 0;
   }
 }
 nav .nav-links li:nth-of-type(1) {
@@ -224,7 +224,7 @@ nav .nav-links .nav-link {
   text-transform: uppercase;
   font-size: 64px;
   padding: 12px 0;
-  padding-left: 28px;
+  padding-left: 20px;
   cursor: pointer;
   transition: 0.3s ease;
 }
@@ -236,7 +236,8 @@ nav .nav-links .nav-link {
 @media screen and (max-width: 768px) {
   nav .nav-links .nav-link {
     font-size: 36px;
-    padding: 4px 0;
+    padding: 8px 0;
+    padding-left: 12px;
   }
 }
 nav .nav-links .nav-link:hover, nav .nav-links .nav-link:focus {
@@ -244,11 +245,11 @@ nav .nav-links .nav-link:hover, nav .nav-links .nav-link:focus {
 }
 @media screen and (max-width: 768px) {
   nav .nav-links .nav-link:hover, nav .nav-links .nav-link:focus {
-    padding-left: 12px;
+    padding-left: 24px;
   }
 }
 nav .nav-links .nav-link:hover svg, nav .nav-links .nav-link:focus svg {
-  scale: 1.2;
+  scale: 1.5;
   border-width: 2px;
 }
 nav .nav-links .nav-link:hover svg path, nav .nav-links .nav-link:focus svg path {
@@ -262,8 +263,8 @@ nav .nav-links .nav-link .icon-wrapper {
   top: 50%;
   left: 0;
   translate: -24px -50%;
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
 }
 @media screen and (max-width: 768px) {
   nav .nav-links .nav-link .icon-wrapper {
@@ -526,11 +527,17 @@ footer .return-to-top {
     display: none;
   }
 }
+footer .return-to-top:focus svg {
+  border: 2px solid #A4D1A2;
+}
 footer .return-to-top svg {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid transparent;
   margin-bottom: -4px;
   margin-right: 8px;
+  transition: 0.3s ease;
 }
 footer .email-us {
   display: none;
