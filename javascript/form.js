@@ -5,11 +5,16 @@ const mailForm = document.querySelector(".mail-form"),
 const handleSubmit = (event) => {
   event.preventDefault();
 
-  if (localStorage.getItem("submittedEmail") === emailInputField.value) {
+  const email = emailInputField.value;
+  let submittedEmails =
+    JSON.parse(localStorage.getItem("submittedEmails")) || [];
+
+  if (submittedEmails.includes(email)) {
     alert("This email has already been submitted.");
     return;
   } else {
-    localStorage.setItem("submittedEmail", emailInputField.value);
+    submittedEmails.push(email);
+    localStorage.setItem("submittedEmails", JSON.stringify(submittedEmails));
   }
 
   const myForm = event.target;
