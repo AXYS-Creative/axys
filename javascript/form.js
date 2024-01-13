@@ -38,12 +38,12 @@ const handleSubmit = (event) => {
     .then(() => {
       mailForm.classList.add("active");
       confirmation.classList.add("active");
-      confirmation.setAttribute("aria-hidden", true);
+      confirmation.setAttribute("aria-hidden", false);
 
       setTimeout(function () {
         mailForm.classList.remove("active");
         confirmation.classList.remove("active");
-        confirmation.setAttribute("aria-hidden", false);
+        confirmation.setAttribute("aria-hidden", true);
       }, 5000);
     })
     .catch((error) => {
