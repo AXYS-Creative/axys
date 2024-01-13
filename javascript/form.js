@@ -1,8 +1,16 @@
-const mailForm = document.querySelector(".mail-form");
-const confirmation = document.querySelector(".confirmation-message");
+const mailForm = document.querySelector(".mail-form"),
+  confirmation = document.querySelector(".confirmation-message"),
+  emailInputField = document.querySelector(".email-input-field");
 
 const handleSubmit = (event) => {
   event.preventDefault();
+
+  if (localStorage.getItem("submittedEmail") === emailInputField.value) {
+    alert("This email has already been submitted.");
+    return;
+  } else {
+    localStorage.setItem("submittedEmail", emailInputField.value);
+  }
 
   const myForm = event.target;
   const formData = new FormData(myForm);
