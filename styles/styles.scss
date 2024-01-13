@@ -643,6 +643,10 @@
                     font-size: 20px;
                     margin-bottom: 16px;
                 }
+
+                @include mq-max('sm') {
+                    font-size: 18px;
+                }
             }
 
             .half-card-description {
@@ -792,6 +796,10 @@
                     opacity: 0;
                     pointer-events: none;
                     transition: 0.24s ease 0.12s;
+
+                    @include mq-max('sm') {
+                        font-size: 13px;
+                    }
                     
                     &.active {
                         opacity: 1;
@@ -844,10 +852,11 @@
         
         @include mq-max('xxl') {
             translate: 12px 0;
-            gap: 12px;
+            gap: 12px; // global default restored
         }
-
-        @include mq-max('sm') {
+        
+        @include mq-max('md') {
+            gap: 0;
             translate: 0 0;
         }
 

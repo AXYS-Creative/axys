@@ -726,6 +726,12 @@ ul {
     font-size: 16px;
   }
 }
+@media screen and (max-width: 480px) {
+  .cta-wrapper .cta-1,
+  .cta-wrapper .cta-2 {
+    font-size: 14px;
+  }
+}
 .cta-wrapper .cta-1 .cta-text,
 .cta-wrapper .cta-2 .cta-text {
   transition: 0.3s ease, background 0s;
@@ -1859,6 +1865,11 @@ ul {
     margin-bottom: 16px;
   }
 }
+@media screen and (max-width: 480px) {
+  #plans-section .plan-options .half-card h4 {
+    font-size: 18px;
+  }
+}
 #plans-section .plan-options .half-card .half-card-description {
   font-size: 16px;
 }
@@ -1994,6 +2005,12 @@ ul {
   pointer-events: none;
   transition: 0.24s ease 0.12s;
 }
+@media screen and (max-width: 480px) {
+  #plans-section .plan-options .half-card .mail-form .confirmation-message,
+  #plans-section .plan-options .half-card .mail-form .error-message {
+    font-size: 13px;
+  }
+}
 #plans-section .plan-options .half-card .mail-form .confirmation-message.active,
 #plans-section .plan-options .half-card .mail-form .error-message.active {
   opacity: 1;
@@ -2046,8 +2063,9 @@ ul {
     gap: 12px;
   }
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   #plans-section .cta-wrapper {
+    gap: 0;
     translate: 0 0;
   }
 }
