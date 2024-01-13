@@ -780,7 +780,8 @@
                     }
                 }
 
-                .confirmation-message {
+                .confirmation-message,
+                .error-message {
                     position: absolute;
                     bottom: 0;
                     translate: 0 148%;
@@ -796,12 +797,14 @@
                         opacity: 1;
                         pointer-events: all;
 
-                        .check-icon {
+                        .check-icon,
+                        .error-icon {
                             scale: 1.2;
                         }
                     }
     
-                    .check-icon {
+                    .check-icon,
+                    .error-icon {
                         width: 24px;
                         height: 24px;
                         border: 1px solid $green;
@@ -812,6 +815,20 @@
     
                         path {
                             fill: $green;
+                        }
+                    }
+                }
+
+                .error-message {
+                    color: $yellow;
+
+                    .error-icon {
+                        border-color: transparent;
+                        border-radius: 0;
+                        margin-right: -6px;
+
+                        path {
+                            fill: $yellow;
                         }
                     }
                 }

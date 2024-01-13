@@ -1979,7 +1979,8 @@ ul {
   fill: #909090;
   transition: 0.36s ease;
 }
-#plans-section .plan-options .half-card .mail-form .confirmation-message {
+#plans-section .plan-options .half-card .mail-form .confirmation-message,
+#plans-section .plan-options .half-card .mail-form .error-message {
   position: absolute;
   bottom: 0;
   translate: 0 148%;
@@ -1993,14 +1994,21 @@ ul {
   pointer-events: none;
   transition: 0.24s ease 0.12s;
 }
-#plans-section .plan-options .half-card .mail-form .confirmation-message.active {
+#plans-section .plan-options .half-card .mail-form .confirmation-message.active,
+#plans-section .plan-options .half-card .mail-form .error-message.active {
   opacity: 1;
   pointer-events: all;
 }
-#plans-section .plan-options .half-card .mail-form .confirmation-message.active .check-icon {
+#plans-section .plan-options .half-card .mail-form .confirmation-message.active .check-icon,
+#plans-section .plan-options .half-card .mail-form .confirmation-message.active .error-icon,
+#plans-section .plan-options .half-card .mail-form .error-message.active .check-icon,
+#plans-section .plan-options .half-card .mail-form .error-message.active .error-icon {
   scale: 1.2;
 }
-#plans-section .plan-options .half-card .mail-form .confirmation-message .check-icon {
+#plans-section .plan-options .half-card .mail-form .confirmation-message .check-icon,
+#plans-section .plan-options .half-card .mail-form .confirmation-message .error-icon,
+#plans-section .plan-options .half-card .mail-form .error-message .check-icon,
+#plans-section .plan-options .half-card .mail-form .error-message .error-icon {
   width: 24px;
   height: 24px;
   border: 1px solid #A4D1A2;
@@ -2009,8 +2017,22 @@ ul {
   scale: 0.5;
   transition: 0.3s ease 0.24s;
 }
-#plans-section .plan-options .half-card .mail-form .confirmation-message .check-icon path {
+#plans-section .plan-options .half-card .mail-form .confirmation-message .check-icon path,
+#plans-section .plan-options .half-card .mail-form .confirmation-message .error-icon path,
+#plans-section .plan-options .half-card .mail-form .error-message .check-icon path,
+#plans-section .plan-options .half-card .mail-form .error-message .error-icon path {
   fill: #A4D1A2;
+}
+#plans-section .plan-options .half-card .mail-form .error-message {
+  color: #FBFAA2;
+}
+#plans-section .plan-options .half-card .mail-form .error-message .error-icon {
+  border-color: transparent;
+  border-radius: 0;
+  margin-right: -6px;
+}
+#plans-section .plan-options .half-card .mail-form .error-message .error-icon path {
+  fill: #FBFAA2;
 }
 #plans-section .cta-wrapper {
   translate: 16px 0;
