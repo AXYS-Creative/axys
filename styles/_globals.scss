@@ -381,7 +381,7 @@ nav {
                     transition-delay: 0.32s;
 
                     .nav-footer-link {
-                        gap: 8px;
+                        gap: 4px;
 
                         &:hover,
                         &:focus {
@@ -418,7 +418,6 @@ nav {
                 font-size: 16px;
                 gap: 4px;
                 text-transform: uppercase;
-                transition: 0.3s ease;
                 
                 @include mq-max('md') {
                     font-size: 14px;
@@ -433,12 +432,22 @@ nav {
 
                 &:hover,
                 &:focus {
-                    
+
+                    .link-text {
+                        translate: 12px 0;
+
+                        @include mq-max('md'){
+                            translate: 0 0;
+                        }
+                    }
+
                     .icon-wrapper {
-                        margin-right: 8px;
-                        
-                        @include mq-max('md') {
-                            margin-right: unset;
+
+                        svg {
+
+                            @include mq-max('md'){
+                                scale: 0.8;
+                            }
                         }
                     }
                 }
@@ -448,6 +457,10 @@ nav {
                     .icon-wrapper {
                         border: 2px solid $white;
                     }
+                }
+
+                .link-text {
+                    transition: 0.3s ease;
                 }
 
                 .icon-wrapper {
@@ -554,6 +567,18 @@ section {
         @include mq-max('sm') {
             font-size: 14px;
         }
+    }
+}
+
+aside {
+    padding: 196px 0;
+
+    @include mq-max('xxl') {
+        padding: 124px 0;
+    }
+
+    @include mq-max('md') {
+        padding: 96px 0;
     }
 }
 
@@ -1106,11 +1131,11 @@ ul {
     width: 100vw;
     max-width: $content-width;
     translate: calc($content-padding * -1) 0;
-    margin-bottom: 248px;
+    // margin-bottom: 248px;
     
-    @include mq-max('xxl') {
-        margin-bottom: 96px;
-    }
+    // @include mq-max('xxl') {
+    //     margin-bottom: 96px;
+    // }
 
     @include mq-max('md') {
         translate: calc($content-padding-md * -1) 0;
