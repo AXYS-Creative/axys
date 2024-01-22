@@ -6,20 +6,24 @@ const heroGlitchText = () => {
   const dynamicText = document.querySelector(".dynamic-text");
   const words = [
     {
-      word: "Creative",
+      word: "Creative", // Robust
       color: "#E48C66", // Coral
-    },
-    {
-      word: "Responsive",
-      color: "#7EC1D4", // Blue
     },
     {
       word: "Accessible",
       color: "#A4D1A2", // Green
     },
     {
-      word: "Performant",
+      word: "Responsive",
+      color: "#7EC1D4", // Blue
+    },
+    {
+      word: "Efficient", // Performant, Optimized, Innovative
       color: "#FBFAA2", // Yellow
+    },
+    {
+      word: "Intuitive", // Secure, Agile, Reliable, Engaging
+      color: "#E1A7B4", // Pink
     },
   ];
 
