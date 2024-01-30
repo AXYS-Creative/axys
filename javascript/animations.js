@@ -10,19 +10,19 @@ const heroGlitchText = () => {
       color: "#E48C66", // Coral
     },
     {
-      word: "Accessible",
-      color: "#A4D1A2", // Green
-    },
-    {
       word: "Responsive",
       color: "#7EC1D4", // Blue
     },
     {
-      word: "Efficient", // Performant, Optimized, Innovative
+      word: "Accessible",
+      color: "#A4D1A2", // Green
+    },
+    {
+      word: "Innovative", // Performant, Optimized, Innovative
       color: "#FBFAA2", // Yellow
     },
     {
-      word: "Intuitive", // Secure, Agile, Reliable, Engaging
+      word: "Engaging", // Secure, Agile, Reliable, Engaging
       color: "#E1A7B4", // Pink
     },
   ];

@@ -368,6 +368,30 @@
                     letter-spacing: 0.25px;
                 }
 
+                .benefit-link {
+                    position: relative;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 0%;
+                        height: 2px;
+                        background-color: $yellow;
+                        transition: 0.3s ease;
+                    }
+                    
+
+                    &:hover,
+                    &:focus {
+                        
+                        &::before {
+                            width: 100%;
+                        }
+                    }
+                }
+
                 .business-days {
                     font-size: 16px;
 
@@ -722,7 +746,7 @@
                     }
     
                     .submit-btn {
-                        scale: 0.8;
+                        
                         
                         @include mq-max('sm') {
                             scale: 1;
@@ -731,6 +755,7 @@
                         }
                         
                         svg {
+                            scale: 0.8;
     
                             path {
                                 fill: $blue;
@@ -798,6 +823,7 @@
                     svg {
                         width: 32px;
                         height: 32px;
+                        transition: 0.3s ease;
                         
                         @include mq-max('xxl') {
                             width: 20px;

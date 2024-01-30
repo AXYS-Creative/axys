@@ -12,6 +12,7 @@ const navLinks = document.querySelectorAll(".nav-link"),
   cta1 = document.querySelectorAll(".cta-1"),
   cta2 = document.querySelectorAll(".cta-2"),
   workItems = document.querySelectorAll(".showcase-link"),
+  benefitLinks = document.querySelectorAll(".benefit-link"),
   faqItems = document.querySelectorAll(".faq-item"),
   returnToTop = document.querySelectorAll(".return-to-top");
 
@@ -41,12 +42,14 @@ const cursorHoverVanish = (elem) => {
 cursorHoverVanish(logo);
 cursorHoverVanish(emailUsLink);
 // Attaching events to NodeList items
-[...cta1, ...workItems, ...faqItems].forEach(cursorHoverVanish);
+[...cta1, ...workItems, ...benefitLinks, ...faqItems].forEach(
+  cursorHoverVanish
+);
 
 // Toggle sibling selector (dot, icon, etc...)
 const cursorHoverSibling = (elements, querySelector, activeClass) => {
   elements.forEach((element) => {
-    element.addEventListener("mouseenter", () => {
+    element.addEventListener("mousemove", () => {
       followMouse = false;
       const sibling = element.querySelector(querySelector);
       const siblingRef = sibling.getBoundingClientRect();

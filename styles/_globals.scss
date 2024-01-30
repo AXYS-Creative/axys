@@ -593,7 +593,7 @@ footer {
     .return-to-top {
         @include row-center;
         text-transform: uppercase;
-
+        
         @include mq-max('lg') {
             display: none;
         }
@@ -613,7 +613,7 @@ footer {
             border: 2px solid transparent;
             margin-bottom: -4px;
             margin-right: 8px;
-            transition: 0.3s ease;
+            transition: 0.4s $cubic-ease-back-dramatic, border 0.3s ease;
         }
     }
 

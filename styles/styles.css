@@ -558,7 +558,7 @@ footer .return-to-top svg {
   border: 2px solid transparent;
   margin-bottom: -4px;
   margin-right: 8px;
-  transition: 0.3s ease;
+  transition: 0.4s cubic-bezier(0.05, 1.75, 0.75, 1.75), border 0.3s ease;
 }
 footer .email-us {
   display: none;
@@ -1616,6 +1616,22 @@ ul {
     letter-spacing: 0.25px;
   }
 }
+#benefits-section .benefit-list .benefit-block p .benefit-link {
+  position: relative;
+}
+#benefits-section .benefit-list .benefit-block p .benefit-link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #FBFAA2;
+  transition: 0.3s ease;
+}
+#benefits-section .benefit-list .benefit-block p .benefit-link:hover::before, #benefits-section .benefit-list .benefit-block p .benefit-link:focus::before {
+  width: 100%;
+}
 #benefits-section .benefit-list .benefit-block p .business-days {
   font-size: 16px;
 }
@@ -1969,15 +1985,15 @@ ul {
 #plans-section .plan-options .half-card .mail-form:hover .label {
   color: #3D3D3D;
 }
-#plans-section .plan-options .half-card .mail-form:hover .submit-btn {
-  scale: 0.8;
-}
 @media screen and (max-width: 480px) {
   #plans-section .plan-options .half-card .mail-form:hover .submit-btn {
     scale: 1;
     border: 1px solid #7EC1D4;
     translate: 0 -20px;
   }
+}
+#plans-section .plan-options .half-card .mail-form:hover .submit-btn svg {
+  scale: 0.8;
 }
 #plans-section .plan-options .half-card .mail-form:hover .submit-btn svg path {
   fill: #7EC1D4;
@@ -2040,6 +2056,7 @@ ul {
 #plans-section .plan-options .half-card .mail-form .submit-btn svg {
   width: 32px;
   height: 32px;
+  transition: 0.3s ease;
 }
 @media screen and (max-width: 1440px) {
   #plans-section .plan-options .half-card .mail-form .submit-btn svg {
