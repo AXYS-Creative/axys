@@ -1165,10 +1165,10 @@ ul {
     }
 
     &-inner-logos {
-        animation: marquee 32s linear infinite;
+        animation: marquee 40s linear infinite;
         
         &:nth-of-type(2) { 
-            animation: marquee-reverse 32s linear infinite;
+            animation: marquee-reverse 40s linear infinite;
         }
     }
 
