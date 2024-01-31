@@ -272,6 +272,10 @@ nav {
                 padding-left: 12px;
             }
 
+            @include mq-max('sm') {
+                padding-left: unset;
+            }
+
             &:hover,
             &:focus {
                 padding-left: 36px;

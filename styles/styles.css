@@ -240,6 +240,11 @@ nav .nav-links .nav-link {
     padding-left: 12px;
   }
 }
+@media screen and (max-width: 480px) {
+  nav .nav-links .nav-link {
+    padding-left: unset;
+  }
+}
 nav .nav-links .nav-link:hover, nav .nav-links .nav-link:focus {
   padding-left: 36px;
 }
