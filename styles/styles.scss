@@ -130,7 +130,33 @@
         }
 
         .showcase-item {
+            position: relative;
             aspect-ratio: 3 / 2;
+
+            &:hover {
+
+                &.coming-soon::before {
+                    opacity: 1;
+                }
+            }
+
+            &.coming-soon::before {
+                content: "Website Coming Soon";
+                @include row-center;
+                position: absolute;
+                top: 0;
+                left: 0;
+                color: $white;
+                font-size: 24px;
+                font-weight: 700;
+                text-transform: uppercase;
+                width: 100%;
+                height: calc(100% - 31px);
+                background: rgba($black, 0.95);
+                // backdrop-filter: blur(3px);
+                opacity: 0;
+                transition: 0.3s ease;
+            }
 
             .showcase-caption {
                 margin-top: 8px;

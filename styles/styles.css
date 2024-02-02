@@ -1327,7 +1327,29 @@ ul {
   }
 }
 #work-section .work-showcase .showcase-item {
+  position: relative;
   aspect-ratio: 3/2;
+}
+#work-section .work-showcase .showcase-item:hover.coming-soon::before {
+  opacity: 1;
+}
+#work-section .work-showcase .showcase-item.coming-soon::before {
+  content: "Website Coming Soon";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #F0F0F0;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  width: 100%;
+  height: calc(100% - 31px);
+  background: rgba(16, 16, 16, 0.95);
+  opacity: 0;
+  transition: 0.3s ease;
 }
 #work-section .work-showcase .showcase-item .showcase-caption {
   margin-top: 8px;
