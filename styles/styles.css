@@ -1392,7 +1392,17 @@ ul {
   translate: 0 24px;
   filter: blur(4px);
 }
+@media screen and (max-width: 1200px) {
+  #work-section .work-showcase .showcase-item.coming-soon::after {
+    font-size: 16px;
+  }
+}
 @media screen and (max-width: 768px) {
+  #work-section .work-showcase .showcase-item.coming-soon::after {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 480px) {
   #work-section .work-showcase .showcase-item.coming-soon::after {
     font-size: 16px;
   }
