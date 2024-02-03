@@ -121,3 +121,44 @@ submitFormBtn.addEventListener("mousemove", () => {
 submitFormBtn.addEventListener("mouseleave", () => {
   followMouse = true;
 });
+
+// Statement Section
+
+const statementSection = document.querySelector("#statement-section");
+
+statementSection.addEventListener(
+  "mouseenter",
+  () => (cursor.style.zIndex = -1)
+);
+statementSection.addEventListener(
+  "mouseleave",
+  () => (cursor.style.zIndex = 4)
+);
+
+const statementElements = [
+  { word: ".statement-websites", icon: ".icon-globe" },
+  { word: ".statement-a11y", icon: ".icon-person" },
+  { word: ".statement-seo", icon: ".icon-magnifying-glass" },
+];
+
+const activateMouseIcon = (cursor, icon) => {
+  cursor.classList.add("statement-active");
+  icon.classList.add("active");
+};
+
+const deactivateMouseIcon = (cursor, icon) => {
+  cursor.classList.remove("statement-active");
+  icon.classList.remove("active");
+};
+
+statementElements.forEach(({ word, icon }) => {
+  const statementElement = document.querySelector(word);
+  const iconElement = document.querySelector(icon);
+
+  statementElement.addEventListener("mousemove", () =>
+    activateMouseIcon(cursor, iconElement)
+  );
+  statementElement.addEventListener("mouseleave", () =>
+    deactivateMouseIcon(cursor, iconElement)
+  );
+});

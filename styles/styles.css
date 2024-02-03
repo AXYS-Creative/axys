@@ -998,6 +998,30 @@ ul {
     scale: 0.6;
   }
 }
+.mouse-cursor.statement-active {
+  border-color: transparent;
+  width: 8vw;
+  height: 8vw;
+}
+.mouse-cursor .icon-globe,
+.mouse-cursor .icon-person,
+.mouse-cursor .icon-magnifying-glass {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 8vw;
+  height: 8vw;
+  fill: #3D3D3D;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.mouse-cursor .icon-globe.active,
+.mouse-cursor .icon-person.active,
+.mouse-cursor .icon-magnifying-glass.active {
+  display: block;
+  opacity: 0.5;
+}
 
 .stripes-bg {
   position: fixed;
@@ -1316,6 +1340,16 @@ ul {
 #work-section .work-showcase .showcase-link:hover, #work-section .work-showcase .showcase-link:focus {
   opacity: 1;
 }
+#work-section .work-showcase .showcase-link:hover .coming-soon::before,
+#work-section .work-showcase .showcase-link:hover .coming-soon::after, #work-section .work-showcase .showcase-link:focus .coming-soon::before,
+#work-section .work-showcase .showcase-link:focus .coming-soon::after {
+  opacity: 1;
+}
+#work-section .work-showcase .showcase-link:hover .coming-soon::after, #work-section .work-showcase .showcase-link:focus .coming-soon::after {
+  translate: 0 0;
+  filter: blur(0);
+  transition: 0.4s ease;
+}
 @media (hover: none) {
   #work-section .work-showcase .showcase-link {
     opacity: 1;
@@ -1332,14 +1366,6 @@ ul {
 #work-section .work-showcase .showcase-item {
   position: relative;
   aspect-ratio: 3/2;
-}
-#work-section .work-showcase .showcase-item:hover.coming-soon::before, #work-section .work-showcase .showcase-item:hover.coming-soon::after {
-  opacity: 1;
-}
-#work-section .work-showcase .showcase-item:hover.coming-soon::after {
-  translate: 0 0;
-  filter: blur(0);
-  transition: 0.4s ease;
 }
 #work-section .work-showcase .showcase-item.coming-soon::before, #work-section .work-showcase .showcase-item.coming-soon::after {
   display: flex;
@@ -1365,6 +1391,11 @@ ul {
   text-transform: uppercase;
   translate: 0 24px;
   filter: blur(4px);
+}
+@media screen and (max-width: 768px) {
+  #work-section .work-showcase .showcase-item.coming-soon::after {
+    font-size: 16px;
+  }
 }
 #work-section .work-showcase .showcase-item .showcase-caption {
   margin-top: 8px;

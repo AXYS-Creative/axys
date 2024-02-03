@@ -118,6 +118,17 @@
             &:hover,
             &:focus {
                 opacity: 1;
+
+                .coming-soon::before,
+                .coming-soon::after {
+                    opacity: 1;
+                }
+
+                .coming-soon::after {
+                    translate: 0 0;
+                    filter: blur(0);
+                    transition: 0.4s ease;
+                }
             }
             
             @include mq-touch {
@@ -136,21 +147,6 @@
         .showcase-item {
             position: relative;
             aspect-ratio: 3 / 2;
-
-            &:hover {
-
-                &.coming-soon::before,
-                &.coming-soon::after {
-                    opacity: 1;
-                }
-
-                &.coming-soon::after {
-                    translate: 0 0;
-                    filter: blur(0);
-                    transition: 0.4s ease;
-                }
-
-            }
 
             &.coming-soon::before,
             &.coming-soon::after {
@@ -176,6 +172,10 @@
                 text-transform: uppercase;
                 translate: 0 24px;
                 filter: blur(4px);
+
+                @include mq-max('md') {
+                    font-size: 16px;
+                }
             }
 
             .showcase-caption {

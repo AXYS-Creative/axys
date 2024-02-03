@@ -1109,6 +1109,31 @@ ul {
             scale: 0.6;
           }
     }
+
+    // mission statement mouse animations
+
+    &.statement-active {
+        border-color: transparent;
+        width: 8vw;
+        height: 8vw;
+    }
+
+    // use each class so that we can style each unique 'active'
+    .icon-globe,
+    .icon-person,
+    .icon-magnifying-glass {
+        @include absolute-center;
+        width: 8vw;
+        height: 8vw;
+        fill: $grey;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    
+        &.active {
+            display: block;
+            opacity: 0.5;
+        }
+    }
 }
 
 .stripes-bg {
