@@ -1326,6 +1326,9 @@ ul {
     width: 100%;
   }
 }
+#work-section .work-showcase .showcase-link[aria-disabled=true] {
+  cursor: not-allowed;
+}
 #work-section .work-showcase .showcase-item {
   position: relative;
   aspect-ratio: 3/2;

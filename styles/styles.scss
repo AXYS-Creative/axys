@@ -129,6 +129,10 @@
             }
         }
 
+        .showcase-link[aria-disabled="true"] {
+            cursor: not-allowed;
+        }
+
         .showcase-item {
             position: relative;
             aspect-ratio: 3 / 2;
