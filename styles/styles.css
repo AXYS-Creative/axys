@@ -1330,26 +1330,38 @@ ul {
   position: relative;
   aspect-ratio: 3/2;
 }
-#work-section .work-showcase .showcase-item:hover.coming-soon::before {
+#work-section .work-showcase .showcase-item:hover.coming-soon::before, #work-section .work-showcase .showcase-item:hover.coming-soon::after {
   opacity: 1;
 }
-#work-section .work-showcase .showcase-item.coming-soon::before {
-  content: "Website Coming Soon";
+#work-section .work-showcase .showcase-item:hover.coming-soon::after {
+  translate: 0 0;
+  filter: blur(0);
+  transition: 0.4s ease;
+}
+#work-section .work-showcase .showcase-item.coming-soon::before, #work-section .work-showcase .showcase-item.coming-soon::after {
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  aspect-ratio: 3/2;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+#work-section .work-showcase .showcase-item.coming-soon::before {
+  content: "";
+  background: rgba(16, 16, 16, 0.95);
+}
+#work-section .work-showcase .showcase-item.coming-soon::after {
+  content: "Coming Soon";
   color: #F0F0F0;
   font-size: 24px;
   font-weight: 700;
   text-transform: uppercase;
-  width: 100%;
-  height: calc(100% - 31px);
-  background: rgba(16, 16, 16, 0.95);
-  opacity: 0;
-  transition: 0.3s ease;
+  translate: 0 24px;
+  filter: blur(4px);
 }
 #work-section .work-showcase .showcase-item .showcase-caption {
   margin-top: 8px;

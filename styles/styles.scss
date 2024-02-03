@@ -135,27 +135,43 @@
 
             &:hover {
 
-                &.coming-soon::before {
+                &.coming-soon::before,
+                &.coming-soon::after {
                     opacity: 1;
                 }
+
+                &.coming-soon::after {
+                    translate: 0 0;
+                    filter: blur(0);
+                    transition: 0.4s ease;
+                }
+
             }
 
-            &.coming-soon::before {
-                content: "Website Coming Soon";
+            &.coming-soon::before,
+            &.coming-soon::after {
                 @include row-center;
                 position: absolute;
                 top: 0;
                 left: 0;
+                width: 100%;
+                aspect-ratio: 3 / 2;
+                opacity: 0;
+                transition: 0.3s ease;
+            }
+
+            &.coming-soon::before {
+                content: "";
+                background: rgba($black, 0.95);
+            }
+            &.coming-soon::after {
+                content: "Coming Soon";
                 color: $white;
                 font-size: 24px;
                 font-weight: 700;
                 text-transform: uppercase;
-                width: 100%;
-                height: calc(100% - 31px);
-                background: rgba($black, 0.95);
-                // backdrop-filter: blur(3px);
-                opacity: 0;
-                transition: 0.3s ease;
+                translate: 0 24px;
+                filter: blur(4px);
             }
 
             .showcase-caption {
