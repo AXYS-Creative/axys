@@ -1,159 +1,159 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color: $white;
-    font-family: 'Archivo', sans-serif;
-    font-weight: 300;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: $white;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 300;
 
-    &::selection {
-        color: $white;
-        background-color: rgba($coral, 0.75);
-    }
+  &::selection {
+    color: $white;
+    background-color: rgba($coral, 0.75);
+  }
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    background-color: $black;
+  background-color: $black;
 }
 
 header,
 main,
 footer,
 .width-constraint {
-    padding: 24px $content-padding;
-    max-width: $content-width;
-    margin: auto;
+  padding: 24px $content-padding;
+  max-width: $content-width;
+  margin: auto;
 
-    @include mq-max('md') {
-        padding: $content-padding-md;
-    }
+  @include mq-max('md') {
+    padding: $content-padding-md;
+  }
 }
 
 header {
-    position: sticky;
-    top: 0;
-    width: 100vw;
-    @include row-between;
-    z-index: 3;
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  @include row-between;
+  z-index: 3;
 
-    .logo {
-        @include row-center;
+  .logo {
+      @include row-center;
 
-        p {
-            overflow: hidden;
-            font-size: 16px;
-            font-weight: 900;
-            text-transform: uppercase;
-            transition: 0.3s ease;
+      p {
+          overflow: hidden;
+          font-size: 16px;
+          font-weight: 900;
+          text-transform: uppercase;
+          transition: 0.3s ease;
 
-            &:first-of-type {
-                width: 48px;
-            }
-            &:last-of-type {
-                width: 96px;
-            }
-        }
+          &:first-of-type {
+              width: 48px;
+          }
+          &:last-of-type {
+              width: 96px;
+          }
+      }
 
-        svg {
-            margin: 0 4px;
-            height: 12px;
-        }
-    }
+      svg {
+          margin: 0 4px;
+          height: 12px;
+      }
+  }
 
-    .menu-btn {
-        text-transform: uppercase;
-        @include row-center;
-        gap: 12px;
-        margin-right: -10px; // Alignment for page spacing
-        cursor: pointer;
+  .menu-btn {
+      text-transform: uppercase;
+      @include row-center;
+      gap: 12px;
+      margin-right: -10px; // Alignment for page spacing
+      cursor: pointer;
 
-        &:hover {
-            
-            @include mq-min('sm') {
-                .menu-btn-text {
-                    translate: -12px 0;
-                }
-            }
-        }
+      &:hover {
+          
+          @include mq-min('sm') {
+              .menu-btn-text {
+                  translate: -12px 0;
+              }
+          }
+      }
 
-        .menu-btn-text {
-            transition: 0.3s ease;
-            width: 36px;
+      .menu-btn-text {
+          transition: 0.3s ease;
+          width: 36px;
 
-            @include mq-max('sm') {
-                width: 24px;
-            }
-        }
+          @include mq-max('sm') {
+              width: 24px;
+          }
+      }
 
-        .burger {
-            position: relative;
-            width: 48px;
-            height: 48px;
-            transition: 0.4s $cubic-ease-back-dramatic, rotate 0.3s ease;
+      .burger {
+          position: relative;
+          width: 48px;
+          height: 48px;
+          transition: 0.4s $cubic-ease-back-dramatic, rotate 0.3s ease;
 
-            .burger-line-wrapper {
-                @include absolute-center;
-                transition: 0.3s ease;
-            }
+          .burger-line-wrapper {
+              @include absolute-center;
+              transition: 0.3s ease;
+          }
 
-            &-line {
-                @include absolute-center;
-                width: 28px;
-                height: 3px;
-                background-color: $white;
-                transition: 0.3s ease;
+          &-line {
+              @include absolute-center;
+              width: 28px;
+              height: 3px;
+              background-color: $white;
+              transition: 0.3s ease;
 
-                &:first-of-type {
-                    translate: -50% calc(-50% - 4px);
-                }
+              &:first-of-type {
+                  translate: -50% calc(-50% - 4px);
+              }
 
-                &:last-of-type {
-                    translate: -50% calc(-50% + 4px);
-                }
-            }
-        }
+              &:last-of-type {
+                  translate: -50% calc(-50% + 4px);
+              }
+          }
+      }
 
-        &.active {
+      &.active {
 
-            .burger-line-wrapper {
-                rotate: 90deg;
-            }
+          .burger-line-wrapper {
+              rotate: 90deg;
+          }
 
-            .burger-line {
+          .burger-line {
 
-                &:first-of-type {
-                    translate: -50% -50%;
-                    rotate: 45deg;
-                }
+              &:first-of-type {
+                  translate: -50% -50%;
+                  rotate: 45deg;
+              }
 
-                &:last-of-type {
-                    translate: -50% -50%;
-                    rotate: -45deg;
-                }
-            }
-        }
-    }
+              &:last-of-type {
+                  translate: -50% -50%;
+                  rotate: -45deg;
+              }
+          }
+      }
+  }
 
-    &.away-from-top {
+  &.away-from-top {
 
-        .logo {
+      .logo {
 
-            p {
-                width: 0;
-            }
-        }
+          p {
+              width: 0;
+          }
+      }
 
-        .menu-btn {
+      .menu-btn {
 
-            .menu-btn-text {
-                opacity: 0;
-            }
-        }
-    }
+          .menu-btn-text {
+              opacity: 0;
+          }
+      }
+  }
 }
 
 nav {
@@ -766,23 +766,23 @@ h2 {
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 button {
-    background: none;
-    border: none;
-    cursor: pointer;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover
+  width: 100%;
+  height: 100%;
+  object-fit: cover
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 .cta-wrapper {
