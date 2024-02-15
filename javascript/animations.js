@@ -29,7 +29,7 @@ const heroGlitchText = () => {
 
   let intervalId = null;
 
-  const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?><{}:;";
   let index = 0;
 
   function applyGlitchEffect(wordObj) {

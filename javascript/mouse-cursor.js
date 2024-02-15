@@ -19,7 +19,7 @@ const navLinks = document.querySelectorAll(".nav-link"),
 let followMouse = true;
 cursor.style.opacity = 0; // Initially hide when loading the site
 
-document.addEventListener("mousemove", function (e) {
+document.addEventListener("mousemove", (e) => {
   cursor.style.opacity = 1;
 
   if (followMouse) {
