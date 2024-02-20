@@ -2370,9 +2370,6 @@ ul {
 #faq-section .faq-list .question .angle-arrow-wrapper .angle-arrow path {
   fill: #A4D1A2;
 }
-#faq-section .faq-list .question .angle-arrow-wrapper .angle-arrow.active {
-  rotate: 180deg;
-}
 @media screen and (max-width: 480px) {
   #faq-section .faq-list .question .angle-arrow-wrapper .angle-arrow {
     width: 2rem;

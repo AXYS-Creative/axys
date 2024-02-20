@@ -1093,10 +1093,6 @@
             fill: $green;
           }
 
-          &.active {
-            rotate: 180deg;
-          }
-
           @include mq-max('sm') {
             width: 2rem;
           }
