@@ -1760,19 +1760,6 @@ ul {
     scroll-margin-top: unset;
   }
 }
-#plans-section .marquee {
-  margin-bottom: 324px;
-}
-@media screen and (max-width: 1512px) {
-  #plans-section .marquee {
-    margin-bottom: 248px;
-  }
-}
-@media screen and (max-width: 768px) {
-  #plans-section .marquee {
-    margin-bottom: 164px;
-  }
-}
 @media screen and (max-width: 1512px) {
   #plans-section .section-headline {
     margin-bottom: 64px;
