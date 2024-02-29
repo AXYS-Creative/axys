@@ -723,6 +723,23 @@ a {
   text-decoration: none;
 }
 
+.classic-link {
+  position: relative;
+}
+.classic-link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #fbfaa2;
+  animation: classic-link-default 0.4s ease forwards;
+}
+.classic-link:hover::before, .classic-link:focus::before {
+  animation: classic-link-hover 0.4s ease forwards;
+}
+
 button {
   background: none;
   border: none;
@@ -1086,22 +1103,6 @@ ul {
 .marquee-inner-logos:nth-of-type(2) {
   animation: marquee-reverse 40s linear infinite;
 }
-@keyframes marquee {
-  from {
-    translate: 0 0;
-  }
-  to {
-    translate: -50% 0;
-  }
-}
-@keyframes marquee-reverse {
-  from {
-    translate: -50% 0;
-  }
-  to {
-    translate: 0 0;
-  }
-}
 .marquee h2 {
   display: inline-flex;
   gap: 24px;
@@ -1241,6 +1242,56 @@ ul {
   }
 }
 
+@keyframes marquee {
+  from {
+    translate: 0 0;
+  }
+  to {
+    translate: -50% 0;
+  }
+}
+@keyframes marquee-reverse {
+  from {
+    translate: -50% 0;
+  }
+  to {
+    translate: 0 0;
+  }
+}
+@keyframes classic-link-default {
+  0% {
+    right: auto;
+    left: 0;
+    width: 100%;
+  }
+  50% {
+    right: 0;
+    left: auto;
+    width: 100%;
+  }
+  100% {
+    right: 0;
+    left: auto;
+    width: 0;
+  }
+}
+@keyframes classic-link-hover {
+  0% {
+    right: auto;
+    left: 0;
+    width: 0;
+  }
+  50% {
+    right: auto;
+    left: 0;
+    width: 100%;
+  }
+  100% {
+    right: 0;
+    left: auto;
+    width: 100%;
+  }
+}
 #hero-section {
   padding: 196px 0;
 }
@@ -1709,22 +1760,6 @@ ul {
     font-size: 14px;
     letter-spacing: 0.25px;
   }
-}
-#benefits-section .benefit-list .benefit-block p .benefit-link {
-  position: relative;
-}
-#benefits-section .benefit-list .benefit-block p .benefit-link::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background-color: #fbfaa2;
-  transition: 0.3s ease;
-}
-#benefits-section .benefit-list .benefit-block p .benefit-link:hover::before, #benefits-section .benefit-list .benefit-block p .benefit-link:focus::before {
-  width: 100%;
 }
 #benefits-section .benefit-list .benefit-block p .business-days {
   font-size: 16px;
@@ -2404,12 +2439,6 @@ ul {
   #faq-section .faq-list .answer .answer-indicator {
     padding-right: 6px;
   }
-}
-#faq-section .faq-list .answer .faq-inner-link {
-  text-decoration: underline;
-}
-#faq-section .faq-list .answer .faq-inner-link svg path {
-  fill: #f0f0f0;
 }
 @media screen and (max-width: 480px) {
   #faq-section .faq-cta {

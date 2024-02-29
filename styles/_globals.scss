@@ -745,6 +745,29 @@ a {
   text-decoration: none;
 }
 
+.classic-link {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: $yellow;
+    // transition: 0.3s ease;
+    animation: classic-link-default 0.4s ease forwards;
+  }
+
+  &:hover,
+  &:focus {
+    &::before {
+      animation: classic-link-hover 0.4s ease forwards;
+    }
+  }
+}
+
 button {
   background: none;
   border: none;
@@ -1118,11 +1141,6 @@ ul {
   width: 100vw;
   max-width: $content-width;
   translate: calc($content-padding * -1) 0;
-  // margin-bottom: 248px;
-
-  // @include mq-max('xxl') {
-  //     margin-bottom: 96px;
-  // }
 
   @include mq-max("md") {
     translate: calc($content-padding-md * -1) 0;
@@ -1156,24 +1174,6 @@ ul {
 
     &:nth-of-type(2) {
       animation: marquee-reverse 40s linear infinite;
-    }
-  }
-
-  @keyframes marquee {
-    from {
-      translate: 0 0;
-    }
-    to {
-      translate: -50% 0;
-    }
-  }
-
-  @keyframes marquee-reverse {
-    from {
-      translate: -50% 0;
-    }
-    to {
-      translate: 0 0;
     }
   }
 
