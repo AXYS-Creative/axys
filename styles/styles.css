@@ -1087,6 +1087,9 @@ ul {
   animation: marquee-reverse 40s linear infinite;
 }
 @keyframes marquee {
+  from {
+    translate: 0 0;
+  }
   to {
     translate: -50% 0;
   }
