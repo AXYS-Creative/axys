@@ -12,7 +12,7 @@ const navLinks = document.querySelectorAll(".nav-link"),
   cta1 = document.querySelectorAll(".cta-1"),
   cta2 = document.querySelectorAll(".cta-2"),
   workItems = document.querySelectorAll(".showcase-link"),
-  benefitLinks = document.querySelectorAll(".benefit-link"),
+  classicLinks = document.querySelectorAll(".classic-link"),
   faqItems = document.querySelectorAll(".faq-item"),
   returnToTop = document.querySelectorAll(".return-to-top");
 
@@ -42,7 +42,7 @@ const cursorHoverVanish = (elem) => {
 cursorHoverVanish(logo);
 cursorHoverVanish(emailUsLink);
 // Attaching events to NodeList items
-[...cta1, ...workItems, ...benefitLinks, ...faqItems].forEach(
+[...cta1, ...workItems, ...classicLinks, ...faqItems].forEach(
   cursorHoverVanish
 );
 
