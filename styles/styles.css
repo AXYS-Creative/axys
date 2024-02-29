@@ -1941,6 +1941,11 @@ ul {
   font-size: 24px;
   margin-bottom: 16px;
 }
+@media screen and (max-width: 1512px) {
+  #plans-section .plan-options .price-card .benefits-title {
+    font-size: 20px;
+  }
+}
 #plans-section .plan-options .price-card .benefits-list {
   display: flex;
   flex-direction: column;
