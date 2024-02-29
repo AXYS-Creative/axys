@@ -1,513 +1,497 @@
-@import 'variables.scss',
-'mixins.scss',
-'globals.scss';
+@import "variables.scss", "mixins.scss", "globals.scss";
 
 #hero-section {
-    padding: 196px 0;
-    
-    @include mq-max('xxl') {
-        padding: 124px 0;
+  padding: 196px 0;
+
+  @include mq-max("xxl") {
+    padding: 124px 0;
+  }
+
+  .section-headline {
+    text-align: left;
+    margin-bottom: 128px;
+
+    @include mq-max("xxl") {
+      margin-bottom: 96px;
     }
 
-    .section-headline {
-        text-align: left;
-        margin-bottom: 128px;
+    h1 {
+      // see 'h1, h2' in _globals.scss
 
-        @include mq-max('xxl') {
-            margin-bottom: 96px;
-        }
+      @include mq-max("md") {
+        margin-bottom: 12px;
+      }
 
-    
-        h1 {
-            // see 'h1, h2' in _globals.scss
-    
-            @include mq-max('md') {
-                margin-bottom: 12px;
-            }
-    
-            span {
-    
-                &:last-of-type {
-                    padding-left: 240px;
-    
-                    @include mq-max('xl') {
-                        padding-left: 160px;
-                    }
-    
-                    @include mq-max('md') {
-                        padding-left: 0;
-                    }
-                }
-            }
-    
+      span {
+        &:last-of-type {
+          padding-left: 240px;
+
+          @include mq-max("xl") {
+            padding-left: 160px;
+          }
+
+          @include mq-max("md") {
+            padding-left: 0;
+          }
         }
-    
-        p {
-            font-size: 14px;
-            letter-spacing: 0.25px;
-            line-height: 148%;
-            color: $white;
-            translate: 0 -64px;
-            
-            @include mq-max('xl') {
-                font-size: 12px;
-                translate: 0 -48px;
-            }
- 
-                @include mq-max('md') {
- 
-                translate: 0 0;
-                line-height: 112%;
-            }
-        }
+      }
     }
 
-    .cta-wrapper {
-        // see  'cta-wrapper' in _globals.scss
-        margin-left: 224px;
-    
-        @include mq-max('xl') {
-            margin-left: 96px;
-        }
-    
-        @include mq-max('md') {
-            margin-left: 0;
-        }
+    p {
+      font-size: 14px;
+      letter-spacing: 0.25px;
+      line-height: 148%;
+      color: $white;
+      translate: 0 -64px;
+
+      @include mq-max("xl") {
+        font-size: 12px;
+        translate: 0 -48px;
+      }
+
+      @include mq-max("md") {
+        translate: 0 0;
+        line-height: 112%;
+      }
     }
+  }
+
+  .cta-wrapper {
+    // see  'cta-wrapper' in _globals.scss
+    margin-left: 224px;
+
+    @include mq-max("xl") {
+      margin-left: 96px;
+    }
+
+    @include mq-max("md") {
+      margin-left: 0;
+    }
+  }
 }
 
 #work-section {
-    scroll-margin-top: -96px;
-    
-    @include mq-max('xxl') {
-        scroll-margin-top: -24px;
+  scroll-margin-top: -96px;
+
+  @include mq-max("xxl") {
+    scroll-margin-top: -24px;
+  }
+
+  .work-showcase {
+    @include row-center;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin: 96px auto;
+    width: 80%;
+
+    @include mq-max("xxl") {
+      margin: 64px auto;
+      width: 92%;
     }
 
-    .work-showcase {
+    @include mq-max("md") {
+      width: 100%;
+      gap: 48px;
+    }
+
+    &:hover {
+      .showcase-link {
+        @include mq-mouse {
+          opacity: 0.5;
+        }
+      }
+    }
+
+    .showcase-link {
+      width: 48%;
+      transition: 0.3s ease;
+      opacity: 0.9;
+
+      &:hover,
+      &:focus {
+        opacity: 1;
+
+        .coming-soon::before,
+        .coming-soon::after {
+          opacity: 1;
+        }
+
+        .coming-soon::after {
+          translate: 0 0;
+          filter: blur(0);
+          transition: 0.4s ease;
+        }
+      }
+
+      @include mq-touch {
+        opacity: 1;
+      }
+
+      @include mq-max("md") {
+        width: 100%;
+      }
+    }
+
+    .showcase-link[aria-disabled="true"] {
+      cursor: not-allowed;
+    }
+
+    .showcase-item {
+      position: relative;
+      aspect-ratio: 3 / 2;
+
+      &.coming-soon::before,
+      &.coming-soon::after {
         @include row-center;
-        flex-wrap: wrap;
-        gap: 24px;
-        margin: 96px auto;
-        width: 80%;
-        
-        @include mq-max('xxl') {
-            margin: 64px auto;
-            width: 92%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        aspect-ratio: 3 / 2;
+        opacity: 0;
+        transition: 0.3s ease;
+      }
+
+      &.coming-soon::before {
+        content: "";
+        background: rgba($black, 0.95);
+      }
+      &.coming-soon::after {
+        content: "Coming Soon";
+        color: $white;
+        font-size: 24px;
+        font-weight: 700;
+        text-transform: uppercase;
+        translate: 0 24px;
+        filter: blur(4px);
+
+        @include mq-max("xl") {
+          font-size: 16px;
         }
 
-        @include mq-max('md') {
-            width: 100%;
-            gap: 48px;
+        @include mq-max("md") {
+          font-size: 24px;
         }
 
-        &:hover {
+        @include mq-max("sm") {
+          font-size: 16px;
+        }
+      }
 
-            .showcase-link {
-                
-                @include mq-mouse {
-                    opacity: 0.5;
-                }
-            }
+      .showcase-caption {
+        margin-top: 8px;
+        font-size: 18px;
+
+        @include mq-max("xxl") {
+          font-size: 16px;
         }
 
-        .showcase-link {
-            width: 48%;
-            transition: 0.3s ease;
-            opacity: 0.9;
-                
-            &:hover,
-            &:focus {
-                opacity: 1;
-
-                .coming-soon::before,
-                .coming-soon::after {
-                    opacity: 1;
-                }
-
-                .coming-soon::after {
-                    translate: 0 0;
-                    filter: blur(0);
-                    transition: 0.4s ease;
-                }
-            }
-            
-            @include mq-touch {
-                opacity: 1;
-            }
-
-            @include mq-max('md') {
-                width: 100%;
-            }
+        @include mq-max("xl") {
+          font-size: 14px;
         }
 
-        .showcase-link[aria-disabled="true"] {
-            cursor: not-allowed;
+        @include mq-max("lg") {
+          font-size: 12px;
         }
 
-        .showcase-item {
-            position: relative;
-            aspect-ratio: 3 / 2;
-
-            &.coming-soon::before,
-            &.coming-soon::after {
-                @include row-center;
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                aspect-ratio: 3 / 2;
-                opacity: 0;
-                transition: 0.3s ease;
-            }
-
-            &.coming-soon::before {
-                content: "";
-                background: rgba($black, 0.95);
-            }
-            &.coming-soon::after {
-                content: "Coming Soon";
-                color: $white;
-                font-size: 24px;
-                font-weight: 700;
-                text-transform: uppercase;
-                translate: 0 24px;
-                filter: blur(4px);
-
-                @include mq-max('xl') {
-                    font-size: 16px;
-                }
-                
-                @include mq-max('md') {
-                    font-size: 24px;
-                }
-                
-                @include mq-max('sm') {
-                    font-size: 16px;
-                }
-            }
-
-            .showcase-caption {
-                margin-top: 8px;
-                font-size: 18px;
-
-                @include mq-max('xxl') {
-                    font-size: 16px;
-                }
-
-                @include mq-max('xl') {
-                    font-size: 14px;
-                }
-
-                @include mq-max('lg') {
-                    font-size: 12px;
-                }
-
-                @include mq-max('md') {
-                    font-size: 16px;
-                }
-
-                @include mq-max('sm') {
-                    font-size: 14px;
-                }
-            }
+        @include mq-max("md") {
+          font-size: 16px;
         }
+
+        @include mq-max("sm") {
+          font-size: 14px;
+        }
+      }
     }
+  }
 
-    .made-with-care {
-        @include row-center;
-        font-size: 14px;
+  .made-with-care {
+    @include row-center;
+    font-size: 14px;
 
-        .heart-svg {
-            margin-left: 4px;
-            margin-bottom: -1px;
-        }        
+    .heart-svg {
+      margin-left: 4px;
+      margin-bottom: -1px;
     }
+  }
 }
 
 #statement-section {
-    @include row-center;
-    text-align: center;
-    height: 80vh;
-    
-    @include mq-max('xxl') {
-        height: 64vh;
+  @include row-center;
+  text-align: center;
+  height: 80vh;
+
+  @include mq-max("xxl") {
+    height: 64vh;
+  }
+
+  @include mq-max("xl") {
+    height: unset;
+    padding: 264px 0;
+  }
+  @include mq-max("sm") {
+    height: unset;
+    padding: 180px 0;
+  }
+
+  .mission-statement {
+    font-size: 48px;
+
+    @include mq-max("xxl") {
+      font-size: 36px;
     }
 
-    @include mq-max('xl') {
-        height: unset;
-        padding: 264px 0;
-    }
-    @include mq-max('sm') {
-        height: unset;
-        padding: 180px 0;
-    }
-    
-    .mission-statement {
-        font-size: 48px;
-
-        @include mq-max('xxl') {
-            font-size: 36px;
-        }
-
-        @include mq-max('xl') {
-            font-size: 32px;
-        }
-
-        @include mq-max('lg') {
-            font-size: 24px;
-        }
-
-        @include mq-max('md') {
-            font-size: 20px;
-        }
-
-        @include mq-max('sm') {
-            font-size: 16px;
-        }
-
-        @include mq-max('xs') {
-            font-size: 15px;
-        }
-
-        .text {
-            opacity: 0.1;
-            transition: 0.3s ease;
-            filter: blur(3px);
-
-            @for $i from 2 through 16 {
-                &:nth-child(#{$i}) {
-                    transition-delay: 0.036s * ($i - 1);
-                }
-            }
-        }
-
-        &.animate {
-
-            .text {
-                opacity: 1;
-                filter: blur(0);
-            }
-        }
-
-
+    @include mq-max("xl") {
+      font-size: 32px;
     }
 
+    @include mq-max("lg") {
+      font-size: 24px;
+    }
+
+    @include mq-max("md") {
+      font-size: 20px;
+    }
+
+    @include mq-max("sm") {
+      font-size: 16px;
+    }
+
+    @include mq-max("xs") {
+      font-size: 15px;
+    }
+
+    .text {
+      opacity: 0.1;
+      transition: 0.3s ease;
+      filter: blur(3px);
+
+      @for $i from 2 through 16 {
+        &:nth-child(#{$i}) {
+          transition-delay: 0.036s * ($i - 1);
+        }
+      }
+    }
+
+    &.animate {
+      .text {
+        opacity: 1;
+        filter: blur(0);
+      }
+    }
+  }
 }
 
 #benefits-section {
-    margin-left: 128px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    
-    @include mq-max('xxl') {
+  margin-left: 128px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  @include mq-max("xxl") {
+    margin-left: 0;
+  }
+
+  @include mq-max("lg") {
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  .headline-full {
+    position: sticky;
+    top: 33%;
+    width: 50%;
+
+    @include mq-max("lg") {
+      position: static;
+      width: 92%;
+    }
+
+    @include mq-max("sm") {
+      width: 100%;
+    }
+
+    .section-headline {
+      text-align: left;
+    }
+
+    .cta-wrapper {
+      margin-left: 64px;
+
+      @include mq-max("xl") {
         margin-left: 0;
+      }
+    }
+  }
+
+  .benefit-list {
+    display: flex;
+    flex-direction: column;
+    gap: 128px;
+    width: 54%;
+    padding: 128px 0;
+
+    @include mq-max("xxl") {
+      width: 50%;
     }
 
-    @include mq-max('lg') {
-        flex-direction: column;
-        align-items: center;
-        position: relative;
+    @include mq-max("xl") {
+      padding: 64px 0 96px;
     }
 
-    .headline-full {
-        position: sticky;   
-        top: 33%;
-        width: 50%;
-
-        @include mq-max('lg') {
-            position: static;
-            width: 92%;
-        }
-        
-        @include mq-max('sm') {
-            width: 100%;
-        }
-
-        .section-headline {
-            text-align: left;
-        }
-    
-        .cta-wrapper {
-            margin-left: 64px;
-    
-            @include mq-max('xl') {
-                margin-left: 0;
-            }
-        }
+    @include mq-max("lg") {
+      width: 92%;
     }
 
-    .benefit-list {
+    @include mq-max("md") {
+      gap: 96px;
+    }
+
+    @include mq-max("sm") {
+      width: 100%;
+      gap: 64px;
+    }
+
+    .benefit-block {
+      width: 100%;
+      max-width: 672px;
+      opacity: 0.1;
+      filter: blur(3px);
+      transition: 0.3s ease;
+
+      h3 {
+        font-size: 48px;
+        font-weight: 200;
+        margin-bottom: 24px;
         display: flex;
-        flex-direction: column;
-        gap: 128px;
-        width: 54%;
-        padding: 128px 0;
-        
-        @include mq-max('xxl') {
-            width: 50%;
-        }
-        
-        @include mq-max('xl') {
-            padding: 64px 0 96px;
-        }
-        
-        @include mq-max('lg') {
-            width: 92%;
+        align-items: center;
+        gap: 24px;
+
+        @include mq-max("xxl") {
+          font-size: 36px;
+          margin-bottom: 12px;
         }
 
-        @include mq-max('md') {
-            gap: 96px;
+        @include mq-max("xl") {
+          font-size: 32px;
+          gap: 12px;
         }
-        
-        @include mq-max('sm') {
-            width: 100%;
-            gap: 64px;
+
+        @include mq-max("md") {
+          font-size: 24px;
         }
-        
-        .benefit-block {
-            width: 100%;
-            max-width: 672px;
-            opacity: 0.1;
-            filter: blur(3px);
+
+        svg {
+          width: 48px;
+
+          @include mq-max("md") {
+            width: 24px;
+          }
+        }
+      }
+
+      p {
+        font-size: 20px;
+        font-weight: 200;
+        line-height: 120%;
+        padding-left: calc(48px + 24px);
+
+        @include mq-max("xl") {
+          font-size: 16px;
+        }
+
+        @include mq-max("lg") {
+          padding-left: 0;
+        }
+
+        @include mq-max("md") {
+          font-size: 14px;
+          letter-spacing: 0.25px;
+        }
+
+        .benefit-link {
+          position: relative;
+
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background-color: $yellow;
             transition: 0.3s ease;
-    
-            h3 {
-                font-size: 48px;
-                font-weight: 200;
-                margin-bottom: 24px;
-                display: flex;
-                align-items: center;
-                gap: 24px;
-    
-                @include mq-max('xxl') {
-                    font-size: 36px;
-                    margin-bottom: 12px;
-                }
-            
-                @include mq-max('xl') {
-                    font-size: 32px;
-                    gap: 12px;
-                }
-            
-                @include mq-max('md') {
-                    font-size: 24px;
-                }
-    
-                svg {
-                    width: 48px;
+          }
 
-                    @include mq-max('md') {
-                        width: 24px;
-                    }
-                }
+          &:hover,
+          &:focus {
+            &::before {
+              width: 100%;
             }
-            
-            p {
-                font-size: 20px;
-                font-weight: 200;
-                line-height: 120%;
-                padding-left: calc(48px + 24px);
-                
-                @include mq-max('xl') {
-                    font-size: 16px;
-                }
-    
-                @include mq-max('lg') {
-                    padding-left: 0;
-                }
-
-                @include mq-max('md') {
-                    font-size: 14px;
-                    letter-spacing: 0.25px;
-                }
-
-                .benefit-link {
-                    position: relative;
-
-                    &::before {
-                        content: "";
-                        position: absolute;
-                        bottom: 0;
-                        left: 0;
-                        width: 0%;
-                        height: 2px;
-                        background-color: $yellow;
-                        transition: 0.3s ease;
-                    }
-                    
-
-                    &:hover,
-                    &:focus {
-                        
-                        &::before {
-                            width: 100%;
-                        }
-                    }
-                }
-
-                .business-days {
-                    font-size: 16px;
-
-                    @include mq-max('xl') {
-                        font-size: 14px;
-                    }
-
-                    @include mq-max('md') {
-                        font-size: 12px;
-                    }
-                }
-            }
-
-            &.animate {
-                opacity: 1;
-                filter: blur(0);
-            }
+          }
         }
-    }
 
-    & > .cta-wrapper.lg-screen-and-below {
-        
-        @include mq-min('md') {
-            align-self: flex-start;
-            margin-left: 80px;
+        .business-days {
+          font-size: 16px;
+
+          @include mq-max("xl") {
+            font-size: 14px;
+          }
+
+          @include mq-max("md") {
+            font-size: 12px;
+          }
         }
+      }
+
+      &.animate {
+        opacity: 1;
+        filter: blur(0);
+      }
     }
+  }
+
+  & > .cta-wrapper.lg-screen-and-below {
+    @include mq-min("md") {
+      align-self: flex-start;
+      margin-left: 80px;
+    }
+  }
 }
 
 #plans-section {
   scroll-margin-top: -96px;
-  
-  @include mq-max('xxl') {
+
+  @include mq-max("xxl") {
     scroll-margin-top: -64px;
   }
 
-  @include mq-max('md') {
+  @include mq-max("md") {
     scroll-margin-top: unset;
   }
 
   .section-headline {
-
-    @include mq-max('xxl') {
+    @include mq-max("xxl") {
       margin-bottom: 64px;
     }
   }
-  
+
   .plan-options {
     @include row-between;
     align-items: stretch;
     gap: 32px;
 
-    @include mq-max('xxl') {
+    @include mq-max("xxl") {
       gap: 16px;
     }
-    
-    @include mq-max('xl') {
+
+    @include mq-max("xl") {
       flex-wrap: wrap;
       gap: 24px;
     }
 
-    @include mq-max('lg') {
+    @include mq-max("lg") {
       flex-direction: column;
       align-items: center;
     }
@@ -515,15 +499,15 @@
     .segment {
       width: 33%;
 
-      @include mq-max('xl') {
+      @include mq-max("xl") {
         width: unset;
       }
 
-      @include mq-max('lg') {
+      @include mq-max("lg") {
         width: 80%;
       }
 
-      @include mq-max('md') {
+      @include mq-max("md") {
         width: 100%;
       }
 
@@ -532,17 +516,17 @@
         flex-direction: column;
         gap: 32px;
 
-        @include mq-max('xxl') {
+        @include mq-max("xxl") {
           gap: 16px;
         }
-        
-        @include mq-max('xl') {
+
+        @include mq-max("xl") {
           gap: 24px;
           width: 100%;
           flex-direction: row;
         }
 
-        @include mq-max('lg') {
+        @include mq-max("lg") {
           flex-direction: column;
           align-items: center;
         }
@@ -555,8 +539,7 @@
     }
 
     .price-card {
-
-      @include mq-max('xl') {
+      @include mq-max("xl") {
         flex: 1;
       }
 
@@ -565,7 +548,7 @@
         text-transform: uppercase;
         font-weight: 700;
       }
-      
+
       .card-title {
         display: flex;
         align-items: center;
@@ -574,32 +557,32 @@
         font-size: 48px;
         margin-bottom: 16px;
 
-        @include mq-max('xxl') {
+        @include mq-max("xxl") {
           font-size: 32px;
         }
 
-        @include mq-max('xl') {
+        @include mq-max("xl") {
           font-size: 36px;
         }
 
-        @include mq-max('sm') {
+        @include mq-max("sm") {
           font-size: 32px;
         }
-        
+
         .most-popular {
           font-size: 12px;
           font-weight: 700;
           color: $grey-light;
-          
-          @include mq-max('xxl') {
+
+          @include mq-max("xxl") {
             font-size: 10px;
           }
 
-          @include mq-max('xl') {
+          @include mq-max("xl") {
             font-size: 14px;
           }
 
-          @include mq-max('sm') {
+          @include mq-max("sm") {
             font-size: 10px;
           }
         }
@@ -608,15 +591,15 @@
       .card-price {
         font-size: 36px;
 
-        @include mq-max('xxl') {
+        @include mq-max("xxl") {
           font-size: 24px;
         }
 
-        @include mq-max('xl') {
+        @include mq-max("xl") {
           font-size: 32px;
         }
 
-        @include mq-max('sm') {
+        @include mq-max("sm") {
           font-size: 28px;
         }
 
@@ -626,7 +609,7 @@
           color: $grey-light;
           vertical-align: middle;
 
-          @include mq-max('xxl') {
+          @include mq-max("xxl") {
             font-size: 12px;
           }
         }
@@ -636,12 +619,12 @@
         height: 4px;
         border: none;
         margin: 64px 0;
-        
-        @include mq-max('xxl') {
+
+        @include mq-max("xxl") {
           margin: 42px 0;
         }
 
-        @include mq-max('sm') {
+        @include mq-max("sm") {
           margin: 36px 0;
         }
 
@@ -657,7 +640,7 @@
         font-size: 24px;
         margin-bottom: 16px;
 
-        @include mq-max('xxl') {
+        @include mq-max("xxl") {
           font-size: 20px;
         }
       }
@@ -668,16 +651,16 @@
         translate: 24px 0;
         margin-bottom: 96px;
         list-style: circle;
-        
-        @include mq-max('xxl') {
+
+        @include mq-max("xxl") {
           gap: 12px;
           margin-bottom: 64px;
         }
 
         li {
           font-size: 16px;
-          
-          @include mq-max('xxl') {
+
+          @include mq-max("xxl") {
             font-size: 14px;
             letter-spacing: 0.25px;
           }
@@ -685,16 +668,16 @@
       }
 
       .cta-wrapper {
-          // accessible keyboard tabbing
+        // accessible keyboard tabbing
 
         .cta-1 {
           scroll-margin-top: 820px;
-          
-          @include mq-max('xxl') {
+
+          @include mq-max("xxl") {
             scroll-margin-top: 496px;
           }
 
-          @include mq-max('md') {
+          @include mq-max("md") {
             scroll-margin-top: 360px;
           }
         }
@@ -706,14 +689,13 @@
       justify-content: space-between;
       height: 50%;
 
-      @include mq-max('xxl') {
-                  
+      @include mq-max("xxl") {
         &:last-of-type {
           height: 64%;
         }
       }
 
-      @include mq-max('xl') {
+      @include mq-max("xl") {
         width: 50%;
         height: 124%;
 
@@ -722,11 +704,11 @@
         }
       }
 
-      @include mq-max('lg') {
+      @include mq-max("lg") {
         width: 80%;
       }
 
-      @include mq-max('md') {
+      @include mq-max("md") {
         width: 100%;
       }
 
@@ -734,13 +716,13 @@
         font-size: 24px;
         text-transform: uppercase;
         margin-bottom: 28px;
-        
-        @include mq-max('xxl') {
+
+        @include mq-max("xxl") {
           font-size: 20px;
           margin-bottom: 16px;
         }
 
-        @include mq-max('sm') {
+        @include mq-max("sm") {
           font-size: 18px;
         }
       }
@@ -748,13 +730,12 @@
       .half-card-description {
         font-size: 16px;
 
-        @include mq-max('xxl') {
+        @include mq-max("xxl") {
           font-size: 14px;
           letter-spacing: 0.25px;
         }
 
-        @include mq-max('lg') {
-
+        @include mq-max("lg") {
           &:last-of-type {
             margin-bottom: 64px;
           }
@@ -771,17 +752,16 @@
         height: 56px;
         flex-shrink: 0;
         transition: 0.3s ease;
-        
-        @include mq-max('xxl') {
+
+        @include mq-max("xxl") {
           height: 48px;
         }
-        
+
         &.active {
           translate: 0 -24px;
         }
 
         &:hover {
-
           .input {
             border-color: $blue;
           }
@@ -791,13 +771,12 @@
           }
 
           .submit-btn {
-              
-            @include mq-max('sm') {
+            @include mq-max("sm") {
               scale: 1;
               border: 1px solid $blue;
               translate: 0 -20px;
             }
-            
+
             svg {
               scale: 0.8;
 
@@ -816,7 +795,7 @@
           height: 100%;
           font-size: 24px;
 
-          @include mq-max('xxl') {
+          @include mq-max("xxl") {
             font-size: 16px;
           }
         }
@@ -847,13 +826,13 @@
           transform: translate(0, -68%);
           color: $blue;
           font-size: 16px;
-          
-          @include mq-max('xxl') {
+
+          @include mq-max("xxl") {
             transform: translate(0, -80%);
             font-size: 12px;
           }
         }
-          
+
         .submit-btn {
           position: absolute;
           top: 50%;
@@ -868,8 +847,8 @@
             width: 32px;
             height: 32px;
             transition: 0.3s ease;
-            
-            @include mq-max('xxl') {
+
+            @include mq-max("xxl") {
               width: 20px;
               height: 20px;
             }
@@ -894,10 +873,10 @@
           pointer-events: none;
           transition: 0.24s ease 0.12s;
 
-          @include mq-max('sm') {
+          @include mq-max("sm") {
             font-size: 13px;
           }
-          
+
           &.active {
             opacity: 1;
             pointer-events: all;
@@ -946,21 +925,20 @@
     width: unset;
     justify-content: flex-start;
     gap: 0;
-    
-    @include mq-max('xxl') {
+
+    @include mq-max("xxl") {
       translate: 12px 0;
       gap: 12px; // global default restored
     }
-    
-    @include mq-max('md') {
+
+    @include mq-max("md") {
       gap: 0;
       translate: 0 0;
     }
 
     .cta-1,
     .cta-2 {
-        
-      @include mq-max('xxl') {
+      @include mq-max("xxl") {
         font-size: 16px;
       }
     }
@@ -979,16 +957,16 @@
     flex-direction: column;
     width: 58%;
     margin: 48px 0 124px;
-    
-    @include mq-max('xl') {
+
+    @include mq-max("xl") {
       width: 80%;
     }
 
-    @include mq-max('md') {
+    @include mq-max("md") {
       width: 100%;
       margin: 48px 0 64px;
     }
-    
+
     .faq-item {
       position: relative;
       border-bottom: 2px solid $grey;
@@ -1001,8 +979,8 @@
       &:hover {
         border-color: $green;
       }
-      
-      @include mq-max('xxl') {
+
+      @include mq-max("xxl") {
         margin-bottom: 12px;
         padding-top: 24px;
       }
@@ -1011,7 +989,6 @@
         grid-template-rows: 1fr;
 
         .question {
-
           .angle-arrow {
             rotate: 180deg;
           }
@@ -1023,8 +1000,8 @@
           padding: 32px 0 16px;
           translate: 0 0;
           transition: 0.3s ease 0.12s;
-          
-          @include mq-max('xxl') {
+
+          @include mq-max("xxl") {
             padding: 16px 0 8px;
           }
         }
@@ -1038,8 +1015,8 @@
       width: 100%;
       padding: 16px 0;
       z-index: 1;
-      
-      @include mq-max('xxl') {
+
+      @include mq-max("xxl") {
         padding: 4px 0;
       }
 
@@ -1051,21 +1028,21 @@
         gap: 12px;
         transition: 0.3s ease;
 
-        @include mq-max('xxl') {
+        @include mq-max("xxl") {
           font-size: 16px;
           gap: 8px;
         }
 
-        @include mq-max('md') {
+        @include mq-max("md") {
           font-size: 14px;
           gap: 4px;
         }
-        
+
         &-indicator {
           width: 24px;
         }
       }
-      
+
       .angle-arrow-wrapper {
         transition: 0.4s $cubic-ease-back-dramatic;
 
@@ -1073,8 +1050,8 @@
           width: 36px;
           height: 36px;
           transition: 0.3s ease;
-          
-          @include mq-max('xxl') {
+
+          @include mq-max("xxl") {
             width: 24px;
             height: 24px;
           }
@@ -1083,10 +1060,10 @@
             fill: $green;
           }
 
-          @include mq-max('sm') {
+          @include mq-max("sm") {
             width: 2rem;
           }
-        }    
+        }
       }
     }
 
@@ -1102,22 +1079,22 @@
       transition: 0.2s ease 0s;
       cursor: pointer;
 
-      @include mq-max('xxl') {
+      @include mq-max("xxl") {
         font-size: 16px;
       }
 
-      @include mq-max('md') {
+      @include mq-max("md") {
         font-size: 14px;
       }
 
       .answer-indicator {
         padding-right: 12px;
-        
-        @include mq-max('xxl') {
+
+        @include mq-max("xxl") {
           padding-right: 10px;
         }
 
-        @include mq-max('md') {
+        @include mq-max("md") {
           padding-right: 6px;
         }
       }
@@ -1126,29 +1103,27 @@
         text-decoration: underline;
 
         svg {
-
           path {
             fill: $white;
           }
         }
       }
     }
-  }  
+  }
 
   .faq-cta {
-    
-    @include mq-max('sm') {
+    @include mq-max("sm") {
       @include column-center;
     }
 
     .headline-description {
       text-align: center;
 
-      @include mq-max('md') {
+      @include mq-max("md") {
         margin-bottom: 48px;
       }
 
-      @include mq-max('sm') {
+      @include mq-max("sm") {
         width: 86%;
       }
     }
@@ -1162,61 +1137,60 @@
 }
 
 #pre-footer-section {
-    @include column-center;
+  @include column-center;
 
-    .pre-footer-title {
-        @include row-center;
-        gap: 16px;
-        margin-bottom: 40px;
+  .pre-footer-title {
+    @include row-center;
+    gap: 16px;
+    margin-bottom: 40px;
 
-        @include mq-max('md') {
-            gap: 12px;
-        }
-
-        h2 {
-
-            @include mq-max('md') {
-                font-size: 40px;
-                margin-bottom: 0;
-            }
-
-            @include mq-max('sm') {
-                font-size: 28px;
-            }
-        }
-
-        span {
-            font-weight: 900;
-        }
-
-        .icon-wrapper {
-            height: 40px;
-            width: 40px;
-
-            @include mq-max('xxl') {
-                width: 36px;
-                height: 36px;
-            }
-        
-            @include mq-max('xl') {
-                width: 32px;
-                height: 32px;
-            }
-
-            @include mq-max('md') {
-                height: 24px;
-                width: 24px;
-            }
-
-            @include mq-max('sm') {
-                height: 16px;
-                width: 16px;
-            }
-
-            svg {
-                width: 100%;
-                height: 100%;
-            }
-        }
+    @include mq-max("md") {
+      gap: 12px;
     }
+
+    h2 {
+      @include mq-max("md") {
+        font-size: 40px;
+        margin-bottom: 0;
+      }
+
+      @include mq-max("sm") {
+        font-size: 28px;
+      }
+    }
+
+    span {
+      font-weight: 900;
+    }
+
+    .icon-wrapper {
+      height: 40px;
+      width: 40px;
+
+      @include mq-max("xxl") {
+        width: 36px;
+        height: 36px;
+      }
+
+      @include mq-max("xl") {
+        width: 32px;
+        height: 32px;
+      }
+
+      @include mq-max("md") {
+        height: 24px;
+        width: 24px;
+      }
+
+      @include mq-max("sm") {
+        height: 16px;
+        width: 16px;
+      }
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
 }

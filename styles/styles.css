@@ -2,16 +2,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #F0F0F0;
+  color: #f0f0f0;
   font-family: "Archivo", sans-serif;
   font-weight: 300;
 }
 *::-moz-selection {
-  color: #F0F0F0;
+  color: #f0f0f0;
   background-color: rgba(228, 140, 102, 0.75);
 }
 *::selection {
-  color: #F0F0F0;
+  color: #f0f0f0;
   background-color: rgba(228, 140, 102, 0.75);
 }
 
@@ -114,7 +114,7 @@ header .menu-btn .burger-line {
   translate: -50% -50%;
   width: 28px;
   height: 3px;
-  background-color: #F0F0F0;
+  background-color: #f0f0f0;
   transition: 0.3s ease;
 }
 header .menu-btn .burger-line:first-of-type {
@@ -287,7 +287,7 @@ nav .nav-links .nav-link .icon-wrapper {
   }
 }
 nav .nav-links .nav-link svg {
-  border: 4px solid #E48C66;
+  border: 4px solid #e48c66;
   border-radius: 50%;
   width: 100%;
   height: 100%;
@@ -301,7 +301,7 @@ nav .nav-links .nav-link svg {
   }
 }
 nav .nav-links .nav-link svg path {
-  fill: #E48C66;
+  fill: #e48c66;
   opacity: 0;
   transition: 0.3s ease;
 }
@@ -350,7 +350,7 @@ nav .nav-footer-links li:nth-of-type(1) {
   transition-delay: 0.28s;
 }
 nav .nav-footer-links li:nth-of-type(1) .nav-footer-link:hover, nav .nav-footer-links li:nth-of-type(1) .nav-footer-link:focus {
-  color: #E48C66;
+  color: #e48c66;
 }
 nav .nav-footer-links li:nth-of-type(2) {
   transition-delay: 0.32s;
@@ -359,7 +359,7 @@ nav .nav-footer-links li:nth-of-type(2) .nav-footer-link {
   gap: 4px;
 }
 nav .nav-footer-links li:nth-of-type(2) .nav-footer-link:hover, nav .nav-footer-links li:nth-of-type(2) .nav-footer-link:focus {
-  color: #A4D1A2;
+  color: #a4d1a2;
 }
 nav .nav-footer-links li:nth-of-type(2) .nav-footer-link svg {
   width: 18px;
@@ -375,7 +375,7 @@ nav .nav-footer-links li:nth-of-type(3) {
   transition-delay: 0.36s;
 }
 nav .nav-footer-links li:nth-of-type(3) .nav-footer-link:hover, nav .nav-footer-links li:nth-of-type(3) .nav-footer-link:focus {
-  color: #FBFAA2;
+  color: #fbfaa2;
 }
 nav .nav-footer-links .nav-footer-link {
   display: flex;
@@ -412,7 +412,7 @@ nav .nav-footer-links .nav-footer-link:hover .link-text, nav .nav-footer-links .
   }
 }
 nav .nav-footer-links .nav-footer-link:focus .icon-wrapper {
-  border: 2px solid #F0F0F0;
+  border: 2px solid #f0f0f0;
 }
 nav .nav-footer-links .nav-footer-link .link-text {
   transition: 0.3s ease;
@@ -558,7 +558,7 @@ footer .return-to-top {
   }
 }
 footer .return-to-top:focus svg {
-  border: 2px solid #A4D1A2;
+  border: 2px solid #a4d1a2;
 }
 footer .return-to-top svg {
   width: 36px;
@@ -605,7 +605,7 @@ footer .email-us .email-us-link {
   transition: 0.3s ease;
 }
 footer .email-us .email-us-link:hover {
-  color: #A4D1A2;
+  color: #a4d1a2;
 }
 footer .email-us .email-us-icon {
   margin-left: 8px;
@@ -779,7 +779,7 @@ ul {
   transition: 0.3s ease;
 }
 .cta-wrapper .cta-1:hover .ring, .cta-wrapper .cta-1:focus .ring {
-  border-color: #7EC1D4;
+  border-color: #7ec1d4;
   translate: -24px 0;
 }
 @media screen and (max-width: 768px) {
@@ -794,17 +794,17 @@ ul {
 }
 .cta-wrapper .cta-1:hover .cta-text, .cta-wrapper .cta-1:focus .cta-text {
   translate: -12px 0;
-  color: #7EC1D4;
+  color: #7ec1d4;
   background-color: transparent;
 }
 .cta-wrapper .cta-1:hover .cta-text span, .cta-wrapper .cta-1:focus .cta-text span {
-  color: #7EC1D4;
+  color: #7ec1d4;
 }
 .cta-wrapper .cta-1 .ring {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid #3D3D3D;
+  border: 2px solid #3d3d3d;
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -818,7 +818,7 @@ ul {
   transition: 0.3s ease;
 }
 .cta-wrapper .cta-1 .ring svg path {
-  fill: #7EC1D4;
+  fill: #7ec1d4;
 }
 .cta-wrapper .cta-1 .cta-text {
   background-color: #101010;
@@ -826,12 +826,12 @@ ul {
   padding: 2px 0;
 }
 .cta-wrapper .cta-2:hover .cta-text, .cta-wrapper .cta-2:focus .cta-text {
-  color: #E48C66;
+  color: #e48c66;
   translate: 10px 0;
 }
 .cta-wrapper .cta-2:hover .dot, .cta-wrapper .cta-2:focus .dot {
   scale: 4;
-  background-color: #E48C66;
+  background-color: #e48c66;
 }
 @media screen and (max-width: 480px) {
   .cta-wrapper .cta-2:hover .dot, .cta-wrapper .cta-2:focus .dot {
@@ -844,7 +844,7 @@ ul {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: #3D3D3D;
+  background-color: #3d3d3d;
   margin-right: 12px;
   transition: 0.3s ease;
 }
@@ -926,10 +926,10 @@ ul {
   transition: 0.3s ease;
 }
 .social-media-container .social-media-links .social-media-link:hover, .social-media-container .social-media-links .social-media-link:focus {
-  color: #7EC1D4;
+  color: #7ec1d4;
 }
 .social-media-container .social-media-links .social-media-link:focus {
-  border-color: #7EC1D4;
+  border-color: #7ec1d4;
 }
 @media screen and (max-width: 768px) {
   .social-media-container .social-media-links .social-media-link {
@@ -943,7 +943,7 @@ ul {
 }
 
 .mouse-cursor {
-  border: 2px solid #3D3D3D;
+  border: 2px solid #3d3d3d;
   position: fixed;
   translate: -50% -50%;
   width: 48px;
@@ -967,7 +967,7 @@ ul {
 .mouse-cursor.cta2-active, .mouse-cursor.nav-link-active {
   scale: 0.8;
   border-width: 4px;
-  border-color: #F0F0F0;
+  border-color: #f0f0f0;
   transition: 0.6s cubic-bezier(0.02, 0.35, 0.39, 1.12), border 0.4s ease, background 0.28s ease 0.5s;
 }
 .mouse-cursor.nav-link-active {
@@ -987,15 +987,15 @@ ul {
 .mouse-cursor.social-link-active, .mouse-cursor.return-to-top-active {
   width: 36px;
   height: 36px;
-  border-color: #7EC1D4;
+  border-color: #7ec1d4;
 }
 .mouse-cursor.return-to-top-active {
-  border-color: #A4D1A2;
+  border-color: #a4d1a2;
   transition: 0.6s cubic-bezier(0.02, 0.35, 0.39, 1.12), border 0.4s ease, background 0.28s ease 0.5s;
 }
 .mouse-cursor.mail-form-active {
   scale: 0.8;
-  border-color: #7EC1D4;
+  border-color: #7ec1d4;
   transition: 0.6s cubic-bezier(0.02, 0.35, 0.39, 1.12), border 0.4s ease, background 0.28s ease 0.5s;
 }
 @media screen and (max-width: 1512px) {
@@ -1017,7 +1017,7 @@ ul {
   translate: -50% -50%;
   width: 8vw;
   height: 8vw;
-  fill: #3D3D3D;
+  fill: #3d3d3d;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -1122,7 +1122,7 @@ ul {
 }
 .marquee .marquee-dot {
   font-size: 36px;
-  color: #3D3D3D;
+  color: #3d3d3d;
   margin: 0 56px;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -1147,31 +1147,31 @@ ul {
 }
 
 .coral-text {
-  color: #E48C66;
+  color: #e48c66;
 }
 .coral-text path {
-  fill: #E48C66;
+  fill: #e48c66;
 }
 
 .blue-text {
-  color: #7EC1D4;
+  color: #7ec1d4;
 }
 .blue-text path {
-  fill: #7EC1D4;
+  fill: #7ec1d4;
 }
 
 .green-text {
-  color: #A4D1A2;
+  color: #a4d1a2;
 }
 .green-text path {
-  fill: #A4D1A2;
+  fill: #a4d1a2;
 }
 
 .yellow-text {
-  color: #FBFAA2;
+  color: #fbfaa2;
 }
 .yellow-text path {
-  fill: #FBFAA2;
+  fill: #fbfaa2;
 }
 
 .lowercase-text {
@@ -1280,7 +1280,7 @@ ul {
   font-size: 14px;
   letter-spacing: 0.25px;
   line-height: 148%;
-  color: #F0F0F0;
+  color: #f0f0f0;
   translate: 0 -64px;
 }
 @media screen and (max-width: 1200px) {
@@ -1396,7 +1396,7 @@ ul {
 }
 #work-section .work-showcase .showcase-item.coming-soon::after {
   content: "Coming Soon";
-  color: #F0F0F0;
+  color: #f0f0f0;
   font-size: 24px;
   font-weight: 700;
   text-transform: uppercase;
@@ -1720,7 +1720,7 @@ ul {
   left: 0;
   width: 0%;
   height: 2px;
-  background-color: #FBFAA2;
+  background-color: #fbfaa2;
   transition: 0.3s ease;
 }
 #benefits-section .benefit-list .benefit-block p .benefit-link:hover::before, #benefits-section .benefit-list .benefit-block p .benefit-link:focus::before {
@@ -1834,7 +1834,7 @@ ul {
   }
 }
 #plans-section .plan-options .card {
-  background: #1E1E1E;
+  background: #1e1e1e;
   padding: 32px 24px;
 }
 @media screen and (max-width: 1200px) {
@@ -1935,10 +1935,10 @@ ul {
   }
 }
 #plans-section .plan-options .price-card .divider-coral {
-  background: #E48C66;
+  background: #e48c66;
 }
 #plans-section .plan-options .price-card .divider-green {
-  background: #A4D1A2;
+  background: #a4d1a2;
 }
 #plans-section .plan-options .price-card .benefits-title {
   font-size: 24px;
@@ -2066,15 +2066,15 @@ ul {
   translate: 0 -24px;
 }
 #plans-section .plan-options .half-card .mail-form:hover .input {
-  border-color: #7EC1D4;
+  border-color: #7ec1d4;
 }
 #plans-section .plan-options .half-card .mail-form:hover .label {
-  color: #3D3D3D;
+  color: #3d3d3d;
 }
 @media screen and (max-width: 480px) {
   #plans-section .plan-options .half-card .mail-form:hover .submit-btn {
     scale: 1;
-    border: 1px solid #7EC1D4;
+    border: 1px solid #7ec1d4;
     translate: 0 -20px;
   }
 }
@@ -2082,7 +2082,7 @@ ul {
   scale: 0.8;
 }
 #plans-section .plan-options .half-card .mail-form:hover .submit-btn svg path {
-  fill: #7EC1D4;
+  fill: #7ec1d4;
 }
 #plans-section .plan-options .half-card .mail-form .input,
 #plans-section .plan-options .half-card .mail-form .label {
@@ -2100,7 +2100,7 @@ ul {
 }
 #plans-section .plan-options .half-card .mail-form .input {
   bottom: 0;
-  color: #F0F0F0;
+  color: #f0f0f0;
   background: transparent;
   border: none;
   border-bottom: 2px solid #909090;
@@ -2108,7 +2108,7 @@ ul {
   transition: border 0.36s ease;
 }
 #plans-section .plan-options .half-card .mail-form .input:focus {
-  border-color: #7EC1D4;
+  border-color: #7ec1d4;
 }
 #plans-section .plan-options .half-card .mail-form .label {
   top: 32%;
@@ -2118,13 +2118,13 @@ ul {
 }
 #plans-section .plan-options .half-card .mail-form .input:not(:-moz-placeholder-shown).input:not(focus) ~ .label {
   transform: translate(0, -68%);
-  color: #7EC1D4;
+  color: #7ec1d4;
   font-size: 16px;
 }
 #plans-section .plan-options .half-card .mail-form .input:focus ~ .label,
 #plans-section .plan-options .half-card .mail-form .input:not(:placeholder-shown).input:not(focus) ~ .label {
   transform: translate(0, -68%);
-  color: #7EC1D4;
+  color: #7ec1d4;
   font-size: 16px;
 }
 @media screen and (max-width: 1512px) {
@@ -2173,7 +2173,7 @@ ul {
   align-items: center;
   gap: 12px;
   font-size: 14px;
-  color: #A4D1A2;
+  color: #a4d1a2;
   opacity: 0;
   pointer-events: none;
   transition: 0.24s ease 0.12s;
@@ -2201,7 +2201,7 @@ ul {
 #plans-section .plan-options .half-card .mail-form .error-message .error-icon {
   width: 24px;
   height: 24px;
-  border: 1px solid #A4D1A2;
+  border: 1px solid #a4d1a2;
   border-radius: 50%;
   padding: 4px;
   scale: 0.5;
@@ -2211,10 +2211,10 @@ ul {
 #plans-section .plan-options .half-card .mail-form .confirmation-message .error-icon path,
 #plans-section .plan-options .half-card .mail-form .error-message .check-icon path,
 #plans-section .plan-options .half-card .mail-form .error-message .error-icon path {
-  fill: #A4D1A2;
+  fill: #a4d1a2;
 }
 #plans-section .plan-options .half-card .mail-form .error-message {
-  color: #FBFAA2;
+  color: #fbfaa2;
 }
 #plans-section .plan-options .half-card .mail-form .error-message .error-icon {
   border-color: transparent;
@@ -2222,7 +2222,7 @@ ul {
   margin-right: -6px;
 }
 #plans-section .plan-options .half-card .mail-form .error-message .error-icon path {
-  fill: #FBFAA2;
+  fill: #fbfaa2;
 }
 #plans-section .cta-wrapper {
   translate: 16px 0;
@@ -2249,7 +2249,7 @@ ul {
   }
 }
 #plans-section .cta-wrapper .cta-text {
-  background: #1E1E1E;
+  background: #1e1e1e;
 }
 
 #faq-section {
@@ -2276,7 +2276,7 @@ ul {
 }
 #faq-section .faq-list .faq-item {
   position: relative;
-  border-bottom: 2px solid #3D3D3D;
+  border-bottom: 2px solid #3d3d3d;
   margin-bottom: 24px;
   padding-top: 42px;
   display: grid;
@@ -2284,7 +2284,7 @@ ul {
   transition: all 0.3s ease, margin 0.4s ease;
 }
 #faq-section .faq-list .faq-item:hover {
-  border-color: #A4D1A2;
+  border-color: #a4d1a2;
 }
 @media screen and (max-width: 1512px) {
   #faq-section .faq-list .faq-item {
@@ -2326,7 +2326,7 @@ ul {
   }
 }
 #faq-section .faq-list .question h3 {
-  color: #F0F0F0;
+  color: #f0f0f0;
   font-size: 20px;
   text-align: left;
   display: flex;
@@ -2363,7 +2363,7 @@ ul {
   }
 }
 #faq-section .faq-list .question .angle-arrow-wrapper .angle-arrow path {
-  fill: #A4D1A2;
+  fill: #a4d1a2;
 }
 @media screen and (max-width: 480px) {
   #faq-section .faq-list .question .angle-arrow-wrapper .angle-arrow {
@@ -2409,7 +2409,7 @@ ul {
   text-decoration: underline;
 }
 #faq-section .faq-list .answer .faq-inner-link svg path {
-  fill: #F0F0F0;
+  fill: #f0f0f0;
 }
 @media screen and (max-width: 480px) {
   #faq-section .faq-cta {
