@@ -21,6 +21,7 @@ cursor.style.opacity = 0; // Initially hide when loading the site
 
 document.addEventListener("mousemove", (e) => {
   cursor.style.opacity = 1;
+  console.log("hello");
 
   if (followMouse) {
     cursor.style.top = e.clientY + "px";
