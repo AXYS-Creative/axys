@@ -620,21 +620,22 @@ footer .copyright {
   position: absolute;
   bottom: 50%;
   left: 50%;
-  transform: translate(calc(-50% - 13.5px), 50%);
-  font-size: 16px;
+  transform: translate(calc(-50% - 6px), 50%);
+  font-size: 12px;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
 }
 @media screen and (max-width: 1024px) {
   footer .copyright {
     width: 100%;
     bottom: 48px;
-    transform: translate(calc(-50% - 13.5px), 0);
+    transform: translate(calc(-50% - 6px), 0);
   }
 }
 @media screen and (max-width: 768px) {
   footer .copyright {
-    font-size: 14px;
-    transform: translate(calc(-50% - 12px), 0);
+    font-size: 10px;
+    transform: translate(calc(-50% - 5.5px), 0);
   }
 }
 footer .footer-social {
@@ -734,10 +735,10 @@ a {
   width: 0;
   height: 2px;
   background-color: #fbfaa2;
-  animation: classic-link-default 0.4s ease forwards;
+  animation: classic-link-default 0.3s ease forwards;
 }
 .classic-link:hover::before, .classic-link:focus::before {
-  animation: classic-link-hover 0.4s ease forwards;
+  animation: classic-link-hover 0.3s ease forwards;
 }
 
 button {
@@ -1057,10 +1058,34 @@ ul {
   justify-content: space-around;
   z-index: -5;
 }
+@media screen and (max-width: 480px) {
+  .stripes-bg {
+    width: 100vw;
+  }
+}
 .stripes-bg .stripe {
+  position: relative;
   width: 2px;
   height: 100%;
   background-color: rgba(30, 30, 30, 0.5);
+}
+.stripes-bg .stripe::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 0;
+  background: rgba(240, 240, 240, 0.05);
+}
+.stripes-bg .stripe:nth-of-type(1)::before {
+  animation: background-stripes 5s ease infinite;
+}
+.stripes-bg .stripe:nth-of-type(2)::before {
+  animation: background-stripes 5s ease 0.12s infinite;
+}
+.stripes-bg .stripe:nth-of-type(3)::before {
+  animation: background-stripes 5s ease 0.24s infinite;
 }
 
 .marquee {
@@ -1264,7 +1289,7 @@ ul {
     left: 0;
     width: 100%;
   }
-  50% {
+  20% {
     right: 0;
     left: auto;
     width: 100%;
@@ -1281,7 +1306,7 @@ ul {
     left: 0;
     width: 0;
   }
-  50% {
+  80% {
     right: auto;
     left: 0;
     width: 100%;
@@ -1290,6 +1315,33 @@ ul {
     right: 0;
     left: auto;
     width: 100%;
+  }
+}
+@keyframes background-stripes {
+  0% {
+    top: 0;
+    bottom: auto;
+    height: 0;
+  }
+  4% {
+    top: 0;
+    bottom: auto;
+    height: 100%;
+  }
+  8% {
+    top: auto;
+    bottom: 0;
+    height: 100%;
+  }
+  12% {
+    top: auto;
+    bottom: 0;
+    height: 0;
+  }
+  100% {
+    top: auto;
+    bottom: 0;
+    height: 0;
   }
 }
 #hero-section {
@@ -1564,6 +1616,22 @@ ul {
 @media screen and (max-width: 390px) {
   #statement-section .mission-statement {
     font-size: 15px;
+  }
+}
+@media (hover: hover) {
+  #statement-section .mission-statement:hover .text {
+    opacity: 0.2 !important;
+    transition: 0.3s ease !important;
+  }
+  #statement-section .mission-statement:hover .statement-websites,
+  #statement-section .mission-statement:hover .statement-a11y,
+  #statement-section .mission-statement:hover .statement-seo {
+    transition: 0.3s ease !important;
+  }
+  #statement-section .mission-statement:hover .statement-websites:hover,
+  #statement-section .mission-statement:hover .statement-a11y:hover,
+  #statement-section .mission-statement:hover .statement-seo:hover {
+    opacity: 1 !important;
   }
 }
 #statement-section .mission-statement .text {

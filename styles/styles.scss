@@ -261,6 +261,25 @@
       font-size: 15px;
     }
 
+    @include mq-mouse {
+      &:hover {
+        .text {
+          opacity: 0.2 !important;
+          transition: 0.3s ease !important;
+        }
+
+        .statement-websites,
+        .statement-a11y,
+        .statement-seo {
+          transition: 0.3s ease !important;
+
+          &:hover {
+            opacity: 1 !important;
+          }
+        }
+      }
+    }
+
     .text {
       opacity: 0.1;
       transition: 0.3s ease;

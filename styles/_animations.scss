@@ -22,7 +22,7 @@
     left: 0;
     width: 100%;
   }
-  50% {
+  20% {
     right: 0;
     left: auto;
     width: 100%;
@@ -40,7 +40,7 @@
     left: 0;
     width: 0;
   }
-  50% {
+  80% {
     right: auto;
     left: 0;
     width: 100%;
@@ -49,5 +49,33 @@
     right: 0;
     left: auto;
     width: 100%;
+  }
+}
+
+@keyframes background-stripes {
+  0% {
+    top: 0;
+    bottom: auto;
+    height: 0;
+  }
+  4% {
+    top: 0;
+    bottom: auto;
+    height: 100%;
+  }
+  8% {
+    top: auto;
+    bottom: 0;
+    height: 100%;
+  }
+  12% {
+    top: auto;
+    bottom: 0;
+    height: 0;
+  }
+  100% {
+    top: auto;
+    bottom: 0;
+    height: 0;
   }
 }

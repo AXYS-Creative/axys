@@ -648,19 +648,20 @@ footer {
     position: absolute;
     bottom: 50%;
     left: 50%;
-    transform: translate(calc(-50% - 13.5px), 50%);
-    font-size: 16px;
+    transform: translate(calc(-50% - 6px), 50%);
+    font-size: 12px;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
 
     @include mq-max("lg") {
       width: 100%;
       bottom: $content-padding;
-      transform: translate(calc(-50% - 13.5px), 0);
+      transform: translate(calc(-50% - 6px), 0);
     }
 
     @include mq-max("md") {
-      font-size: 14px;
-      transform: translate(calc(-50% - 12px), 0);
+      font-size: 10px;
+      transform: translate(calc(-50% - 5.5px), 0);
     }
   }
 
@@ -756,14 +757,13 @@ a {
     width: 0;
     height: 2px;
     background-color: $yellow;
-    // transition: 0.3s ease;
-    animation: classic-link-default 0.4s ease forwards;
+    animation: classic-link-default 0.3s ease forwards;
   }
 
   &:hover,
   &:focus {
     &::before {
-      animation: classic-link-hover 0.4s ease forwards;
+      animation: classic-link-hover 0.3s ease forwards;
     }
   }
 }
@@ -1129,10 +1129,41 @@ ul {
   justify-content: space-around;
   z-index: -5;
 
+  @include mq-max("sm") {
+    width: 100vw;
+  }
+
   .stripe {
+    position: relative;
     width: 2px;
     height: 100%;
     background-color: rgba($grey-dark, 0.5);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 2px;
+      height: 0;
+      background: rgba($white, 0.05);
+    }
+
+    &:nth-of-type(1) {
+      &::before {
+        animation: background-stripes 5s ease infinite;
+      }
+    }
+    &:nth-of-type(2) {
+      &::before {
+        animation: background-stripes 5s ease 0.12s infinite;
+      }
+    }
+    &:nth-of-type(3) {
+      &::before {
+        animation: background-stripes 5s ease 0.24s infinite;
+      }
+    }
   }
 }
 
