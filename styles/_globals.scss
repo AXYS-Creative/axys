@@ -729,25 +729,7 @@ footer {
 
 h1,
 h2 {
-  font-size: 96px;
-  text-transform: uppercase;
-
-  @include mq-max("xxl") {
-    font-size: 80px;
-  }
-
-  @include mq-max("xl") {
-    font-size: 64px;
-  }
-
-  @include mq-max("md") {
-    font-size: 48px;
-    margin-bottom: 12px;
-  }
-
-  @include mq-max("sm") {
-    font-size: 36px;
-  }
+  @include title-font;
 }
 
 a {
@@ -1036,11 +1018,21 @@ ul {
   height: 48px;
   border-radius: 50%;
   z-index: 4;
-  transition: 0.8s cubic-bezier(0, 0.49, 0.4, 1.19), border 0.4s ease,
-    width 0.48s ease, height 0.48s ease;
   pointer-events: none;
 
-  @media (hover: none) {
+  transition: 0.8s cubic-bezier(0, 0.49, 0.4, 1.19), border 0.4s ease,
+    width 0.48s ease, height 0.48s ease;
+  -webkit-transition: 0.8s cubic-bezier(0, 0.49, 0.4, 1.19), border 0.4s ease,
+    width 0.48s ease, height 0.48s ease;
+  -moz-transition: 0.8s cubic-bezier(0, 0.49, 0.4, 1.19), border 0.4s ease,
+    width 0.48s ease, height 0.48s ease;
+  -o-transition: 0.8s cubic-bezier(0, 0.49, 0.4, 1.19), border 0.4s ease,
+    width 0.48s ease, height 0.48s ease;
+
+  @include mq-touch {
+    display: none;
+  }
+  @include mq-motion-reduce {
     display: none;
   }
 
@@ -1192,21 +1184,48 @@ ul {
     width: fit-content;
     animation: marquee 20s linear infinite;
 
+    @include mq-motion-reduce {
+      animation: marquee 60s linear infinite;
+    }
+
     @include mq-max("xl") {
       animation-duration: 22s;
+
+      @include mq-motion-reduce {
+        animation-duration: 66s;
+      }
     }
 
     @include mq-max("sm") {
       padding-right: 12px;
       animation-duration: 14s;
+
+      @include mq-motion-reduce {
+        animation-duration: 36s;
+      }
     }
 
     &:nth-of-type(2) {
       animation-name: marquee-reverse;
     }
 
-    h2 {
+    .marquee-text {
+      @include title-font;
+      display: flex;
       margin: 0;
+      gap: 24px;
+
+      @include mq-max("xxl") {
+        gap: 18px;
+      }
+
+      @include mq-max("md") {
+        gap: 12px;
+      }
+
+      @include mq-max("sm") {
+        gap: 6px;
+      }
     }
   }
 
@@ -1214,8 +1233,16 @@ ul {
     padding-right: 0; // undo the offset above
     animation: marquee 40s linear infinite;
 
+    @include mq-motion-reduce {
+      animation: marquee 120s linear infinite;
+    }
+
     &:nth-of-type(even) {
       animation: marquee-reverse 40s linear infinite;
+
+      @include mq-motion-reduce {
+        animation: marquee-reverse 120s linear infinite;
+      }
     }
   }
 

@@ -364,7 +364,7 @@
         <div class="marquee">
           <h2 class="sr-only">Where design meets development</h2>
           <div class="marquee-inner" aria-hidden="true">
-            <h2>
+            <p class="marquee-text">
               <span>•</span>
               Where
               <span class="blue-text">design</span>
@@ -375,10 +375,10 @@
               <span class="blue-text">design</span>
               meets
               <span class="green-text">development</span>
-            </h2>
+            </p>
           </div>
           <div class="marquee-inner" aria-hidden="true">
-            <h2>
+            <p class="marquee-text">
               <span>•</span>
               Where
               <span class="blue-text">design</span>
@@ -389,7 +389,7 @@
               <span class="blue-text">design</span>
               meets
               <span class="green-text">development</span>
-            </h2>
+            </p>
           </div>
         </div>
       </aside>
@@ -507,14 +507,14 @@
           <span class="text">building</span>
           <span class="text">elegant,</span>
           <span class="text">responsive,</span>
-          <br />
+          <br class="sm-screen-and-up" />
           <span class="text">and</span>
           <span class="text">performant</span>
           <span class="text coral-text statement-websites">websites</span>
           <span class="text">optimized</span>
           <span class="text">for</span>
           <span class="text green-text statement-a11y"
-            >user <br />
+            >user <br class="sm-screen-and-up" />
             accessibility</span
           >
           <span class="text">and </span>
@@ -1005,7 +1005,9 @@
               FAQ<span class="lowercase-text green-text">s</span>
             </span>
           </h2>
-          <p class="headline-description">Any questions? We have answers.</p>
+          <p class="headline-description">
+            Have some questions? We have the answers.
+          </p>
         </div>
 
         <div class="faq-list">
@@ -1035,10 +1037,8 @@
               <span class="answer-indicator">A.</span>
               <p>
                 We specialize in designing and developing websites, focusing on
-                client-side engineering, accessibility, and search engine
-                optimization. We also offer a wide range of design work such as
-                user experience (UX), branding, graphics, motion, and
-                interaction.
+                the user experience, accessibility, and search engine
+                optimization.
               </p>
             </div>
           </div>
@@ -1072,9 +1072,8 @@
                 (around $8,333 per month), and this doesn't include any
                 benefits. In our model, we cover both of these disciplines at a
                 single cost. <br /><br />
-                With the monthly plan, you only pay for what you need, when you
-                need it, with the flexibility to pause or resume anytime your
-                workload decreases.
+                With the monthly plan, you only pay for what you need, with the
+                flexibility to pause and resume anytime.
               </p>
             </div>
           </div>
@@ -1170,14 +1169,14 @@
             <div class="answer">
               <span class="answer-indicator">A.</span>
               <p>
-                This is where the pause feature excels. At any given time, you
-                can pause your plan which prevents all charges and locks your
-                rate in, as opposed to cancelling. <br /><br />
-                Since memberships are billed monthly, we'll still be able to
-                provide services for however many remaining weekdays were left
-                in the month when you paused. These unused days are valid for
-                anytime in the future! If you need our services again, resuming
-                your plan is easy too.
+                This is where the pause feature excels. At any time, you can
+                pause your plan which prevents all charges. Since memberships
+                are billed monthly, we'll still be able to provide services for
+                however many remaining weekdays were left in the month when you
+                paused. These unused days are valid for anytime in the future!
+                Then when you do need our services, you can easily resume your
+                plan. Another benefit to pausing over cancelling is that your
+                rate is locked in.
               </p>
             </div>
           </div>
@@ -1621,7 +1620,7 @@
       </div>
     </footer>
 
-    <div class="mouse-cursor">
+    <div class="mouse-cursor" aria-hidden="true" role="complementary">
       <svg
         class="icon-globe"
         aria-hidden="true"

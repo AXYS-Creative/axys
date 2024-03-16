@@ -5,50 +5,37 @@ let mqMouse = window.matchMedia("(hover: hover)");
 const heroGlitchText = () => {
   const dynamicText = document.querySelector(".dynamic-text");
   const words = [
-    {
-      word: "Creative", // Robust
-      color: "#E48C66", // Coral
-    },
-    {
-      word: "Responsive",
-      color: "#7EC1D4", // Blue
-    },
-    {
-      word: "Accessible",
-      color: "#A4D1A2", // Green
-    },
-    {
-      word: "Innovative", // Performant, Optimized, Innovative
-      color: "#FBFAA2", // Yellow
-    },
-    {
-      word: "Engaging", // Secure, Agile, Reliable, Engaging
-      color: "#E1A7B4", // Pink
-    },
+    { word: "Creative", color: "#E48C66" },
+    { word: "Responsive", color: "#7EC1D4" },
+    { word: "Accessible", color: "#A4D1A2" },
+    { word: "Innovative", color: "#FBFAA2" },
+    { word: "Engaging", color: "#E1A7B4" },
   ];
 
-  let intervalId = null;
-
   const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?><:;";
+  const charLength = characters.length;
   let index = 0;
+  let glitchInterval; // Moved inside the applyGlitchEffect to ensure it's specific to each word
 
   function applyGlitchEffect(wordObj) {
+    if (glitchInterval) clearInterval(glitchInterval); // Ensure previous glitchInterval is cleared
+
     let glitchIterations = 0;
     const maxIterations = wordObj.word.length * 4;
     dynamicText.style.color = wordObj.color;
+    const wordArray = wordObj.word.split("");
 
-    const glitchInterval = setInterval(() => {
-      dynamicText.innerText = wordObj.word
-        .split("")
+    glitchInterval = setInterval(() => {
+      const glitchText = wordArray
         .map((char, idx) => {
-          if (glitchIterations / 3 > idx) {
-            return char;
-          }
-          return characters[Math.floor(Math.random() * characters.length)];
+          if (glitchIterations / 3 > idx) return char;
+          return characters.charAt(Math.floor(Math.random() * charLength));
         })
         .join("");
 
+      dynamicText.innerText = glitchText;
       glitchIterations++;
+
       if (glitchIterations >= maxIterations) {
         clearInterval(glitchInterval);
         dynamicText.innerText = wordObj.word;
@@ -62,39 +49,7 @@ const heroGlitchText = () => {
   }
 
   updateText();
-
-  setInterval(updateText, 4000);
-
-  // function startAnimation() {
-  //   updateText();
-  //   intervalId = setInterval(updateText, 4000);
-  // }
-
-  // function stopAnimation() {
-  //   clearInterval(intervalId);
-  // }
-
-  // // Intersection Observer to check if element is in view
-  // const observer = new IntersectionObserver((entries) => {
-  //   entries.forEach((entry) => {
-  //     if (entry.isIntersecting) {
-  //       startAnimation();
-  //     } else {
-  //       stopAnimation();
-  //     }
-  //   });
-  // });
-
-  // observer.observe(dynamicText);
-
-  // // Page Visibility API to check if user switches tabs
-  // document.addEventListener("visibilitychange", () => {
-  //   if (document.visibilityState === "visible") {
-  //     startAnimation();
-  //   } else {
-  //     stopAnimation();
-  //   }
-  // });
+  const updateInterval = setInterval(updateText, 4000); // Control the update of words separately
 };
 
 heroGlitchText();
