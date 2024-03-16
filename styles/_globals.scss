@@ -1214,7 +1214,7 @@ ul {
     padding-right: 0; // undo the offset above
     animation: marquee 40s linear infinite;
 
-    &:nth-of-type(2) {
+    &:nth-of-type(even) {
       animation: marquee-reverse 40s linear infinite;
     }
   }
@@ -1228,7 +1228,8 @@ ul {
     }
   }
 
-  svg {
+  img {
+    object-fit: contain;
     width: 124px;
     height: 48px;
 

@@ -3,6 +3,7 @@ import "./form.js";
 import "./faqs.js";
 import "./animations.js";
 import "./mouse-cursor.js";
+import "./marquee.js";
 
 // Clear focus from any element on mousemove (remove button :focus styles)
 (function clearFocusOnMouseMove() {

@@ -31,7 +31,7 @@ header,
 main,
 footer,
 .width-constraint {
-  padding: 24px 48px;
+  padding: 24px 64px;
   max-width: 1920px;
   margin: auto;
 }
@@ -186,7 +186,7 @@ nav .width-constraint {
 }
 nav .width-constraint > * {
   position: absolute;
-  width: calc(100% - 96px);
+  width: calc(100% - 128px);
 }
 @media screen and (max-width: 768px) {
   nav .width-constraint > * {
@@ -632,7 +632,7 @@ footer .copyright {
 @media screen and (max-width: 1024px) {
   footer .copyright {
     width: 100%;
-    bottom: 48px;
+    bottom: 64px;
     transform: translate(calc(-50% - 6px), 0);
   }
 }
@@ -1096,7 +1096,7 @@ ul {
   overflow: hidden;
   width: 100vw;
   max-width: 1920px;
-  translate: -48px 0;
+  translate: -64px 0;
 }
 @media screen and (max-width: 768px) {
   .marquee {
@@ -1132,7 +1132,7 @@ ul {
   padding-right: 0;
   animation: marquee 40s linear infinite;
 }
-.marquee-inner-logos:nth-of-type(2) {
+.marquee-inner-logos:nth-of-type(even) {
   animation: marquee-reverse 40s linear infinite;
 }
 .marquee h2 {
@@ -1144,12 +1144,14 @@ ul {
     gap: 12px;
   }
 }
-.marquee svg {
+.marquee img {
+  -o-object-fit: contain;
+     object-fit: contain;
   width: 124px;
   height: 48px;
 }
 @media screen and (max-width: 768px) {
-  .marquee svg {
+  .marquee img {
     width: 96px;
   }
 }
