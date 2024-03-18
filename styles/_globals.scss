@@ -92,7 +92,7 @@ header {
       width: 36px;
 
       @include mq-max("sm") {
-        width: 24px;
+        width: 20px;
       }
     }
 
@@ -113,6 +113,11 @@ header {
         height: 3px;
         background-color: $white;
         transition: 0.3s ease;
+
+        @include mq-max("sm") {
+          width: 24px;
+          height: 2px;
+        }
 
         &:first-of-type {
           translate: -50% calc(-50% - 4px);
@@ -1020,14 +1025,8 @@ ul {
   z-index: 4;
   pointer-events: none;
 
-  transition: 0.8s cubic-bezier(0, 0.49, 0.4, 1.19), border 0.4s ease,
-    width 0.48s ease, height 0.48s ease;
-  -webkit-transition: 0.8s cubic-bezier(0, 0.49, 0.4, 1.19), border 0.4s ease,
-    width 0.48s ease, height 0.48s ease;
-  -moz-transition: 0.8s cubic-bezier(0, 0.49, 0.4, 1.19), border 0.4s ease,
-    width 0.48s ease, height 0.48s ease;
-  -o-transition: 0.8s cubic-bezier(0, 0.49, 0.4, 1.19), border 0.4s ease,
-    width 0.48s ease, height 0.48s ease;
+  transition: 0.8s $cubic-ease-mouse, border 0.4s ease, width 0.48s ease,
+    height 0.48s ease;
 
   @include mq-touch {
     display: none;
@@ -1208,25 +1207,6 @@ ul {
     &:nth-of-type(2) {
       animation-name: marquee-reverse;
     }
-
-    .marquee-text {
-      @include title-font;
-      display: flex;
-      margin: 0;
-      gap: 24px;
-
-      @include mq-max("xxl") {
-        gap: 18px;
-      }
-
-      @include mq-max("md") {
-        gap: 12px;
-      }
-
-      @include mq-max("sm") {
-        gap: 6px;
-      }
-    }
   }
 
   &-inner-logos {
@@ -1246,12 +1226,25 @@ ul {
     }
   }
 
-  h2 {
-    display: inline-flex;
+  .marquee-text {
+    @include title-font;
+    line-height: 100%;
+    display: flex;
+    margin: 0;
     gap: 24px;
 
-    @include mq-max("sm") {
+    @include mq-max("xxl") {
+      gap: 18px;
+    }
+
+    @include mq-max("md") {
+      line-height: 86%;
       gap: 12px;
+    }
+
+    @include mq-max("sm") {
+      line-height: 80%;
+      gap: 6px;
     }
   }
 

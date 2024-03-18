@@ -95,7 +95,7 @@ header .menu-btn .menu-btn-text {
 }
 @media screen and (max-width: 480px) {
   header .menu-btn .menu-btn-text {
-    width: 24px;
+    width: 20px;
   }
 }
 header .menu-btn .burger {
@@ -120,6 +120,12 @@ header .menu-btn .burger-line {
   height: 3px;
   background-color: #f0f0f0;
   transition: 0.3s ease;
+}
+@media screen and (max-width: 480px) {
+  header .menu-btn .burger-line {
+    width: 24px;
+    height: 2px;
+  }
 }
 header .menu-btn .burger-line:first-of-type {
   translate: -50% calc(-50% - 4px);
@@ -713,7 +719,7 @@ h2 {
 @media screen and (max-width: 768px) {
   h1,
   h2 {
-    font-size: calc(12px + 6vw);
+    font-size: calc(12px + 6.4vw);
     margin-bottom: 12px;
   }
 }
@@ -968,9 +974,6 @@ ul {
   z-index: 4;
   pointer-events: none;
   transition: 0.8s cubic-bezier(0, 0.49, 0.4, 1.19), border 0.4s ease, width 0.48s ease, height 0.48s ease;
-  -webkit-transition: 0.8s cubic-bezier(0, 0.49, 0.4, 1.19), border 0.4s ease, width 0.48s ease, height 0.48s ease;
-  -moz-transition: 0.8s cubic-bezier(0, 0.49, 0.4, 1.19), border 0.4s ease, width 0.48s ease, height 0.48s ease;
-  -o-transition: 0.8s cubic-bezier(0, 0.49, 0.4, 1.19), border 0.4s ease, width 0.48s ease, height 0.48s ease;
 }
 @media (hover: none) and (pointer: coarse) {
   .mouse-cursor {
@@ -1142,44 +1145,6 @@ ul {
 .marquee-inner:nth-of-type(2) {
   animation-name: marquee-reverse;
 }
-.marquee-inner .marquee-text {
-  font-size: 96px;
-  text-transform: uppercase;
-  display: flex;
-  margin: 0;
-  gap: 24px;
-}
-@media screen and (max-width: 1512px) {
-  .marquee-inner .marquee-text {
-    font-size: 80px;
-  }
-}
-@media screen and (max-width: 1200px) {
-  .marquee-inner .marquee-text {
-    font-size: 64px;
-  }
-}
-@media screen and (max-width: 768px) {
-  .marquee-inner .marquee-text {
-    font-size: calc(12px + 6vw);
-    margin-bottom: 12px;
-  }
-}
-@media screen and (max-width: 1512px) {
-  .marquee-inner .marquee-text {
-    gap: 18px;
-  }
-}
-@media screen and (max-width: 768px) {
-  .marquee-inner .marquee-text {
-    gap: 12px;
-  }
-}
-@media screen and (max-width: 480px) {
-  .marquee-inner .marquee-text {
-    gap: 6px;
-  }
-}
 .marquee-inner-logos {
   padding-right: 0;
   animation: marquee 40s linear infinite;
@@ -1197,13 +1162,45 @@ ul {
     animation: marquee-reverse 120s linear infinite;
   }
 }
-.marquee h2 {
-  display: inline-flex;
+.marquee .marquee-text {
+  font-size: 96px;
+  text-transform: uppercase;
+  line-height: 100%;
+  display: flex;
+  margin: 0;
   gap: 24px;
 }
-@media screen and (max-width: 480px) {
-  .marquee h2 {
+@media screen and (max-width: 1512px) {
+  .marquee .marquee-text {
+    font-size: 80px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .marquee .marquee-text {
+    font-size: 64px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .marquee .marquee-text {
+    font-size: calc(12px + 6.4vw);
+    margin-bottom: 12px;
+  }
+}
+@media screen and (max-width: 1512px) {
+  .marquee .marquee-text {
+    gap: 18px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .marquee .marquee-text {
+    line-height: 86%;
     gap: 12px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .marquee .marquee-text {
+    line-height: 80%;
+    gap: 6px;
   }
 }
 .marquee img {
