@@ -108,7 +108,7 @@ mailForm.addEventListener("mousemove", () => {
   followMouse = false;
   const submitBtnRect = submitFormBtn.getBoundingClientRect();
   const centerX = submitBtnRect.left + submitBtnRect.width / 2;
-  const centerY = submitBtnRect.top + submitBtnRect.height / 2;
+  const centerY = submitBtnRect.top + submitBtnRect.height / 2.2;
   cursor.style.transform = `translate(${centerX - cursor.offsetWidth / 2}px, ${
     centerY - cursor.offsetHeight / 2
   }px)`;

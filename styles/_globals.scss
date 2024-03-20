@@ -28,10 +28,10 @@ body {
   background-color: $black;
 }
 
-header,
 main,
 footer,
 .width-constraint {
+  // border: $test;
   padding: 24px $content-padding;
   max-width: $content-width;
   margin: auto;
@@ -42,19 +42,30 @@ footer,
 }
 
 header {
-  position: sticky;
-  top: 0;
-  width: 100vw;
-  @include row-between;
-  z-index: 3;
+  & > * {
+    position: fixed;
+    top: 0;
+    z-index: 3;
+  }
 
   .logo {
-    @include row-center;
+    display: flex;
+    align-items: center;
+    top: 48px;
+    left: $content-padding;
+
+    @include mq-min("xxxl") {
+      left: calc(50% - $content-width / 2 + $content-padding);
+    }
+
+    @include mq-max("md") {
+      left: $content-padding-md;
+    }
 
     p {
       overflow: hidden;
       font-size: 16px;
-      font-weight: 900;
+      font-weight: 700;
       text-transform: uppercase;
       transition: 0.3s ease;
 
@@ -68,16 +79,31 @@ header {
 
     svg {
       margin: 0 4px;
+      translate: -2px -1px;
       height: 12px;
+
+      @include mq-max("xxl") {
+        translate: -2px 0;
+      }
     }
   }
 
   .menu-btn {
-    text-transform: uppercase;
     @include row-center;
-    gap: 12px;
+    top: 32px;
+    right: $content-padding;
     margin-right: -10px; // Alignment for page spacing
+    text-transform: uppercase;
+    gap: 12px;
     cursor: pointer;
+
+    @include mq-min("xxxl") {
+      right: calc(50% - $content-width / 2 + $content-padding);
+    }
+
+    @include mq-max("md") {
+      right: $content-padding-md;
+    }
 
     &:hover {
       @include mq-min("sm") {
@@ -872,7 +898,11 @@ ul {
     &:focus {
       .cta-text {
         color: $coral;
-        translate: 4px 0;
+        translate: 12px 0;
+
+        @include mq-max("md") {
+          translate: 8px 0;
+        }
       }
 
       .dot-wrapper {
@@ -890,11 +920,9 @@ ul {
     }
 
     .dot-wrapper {
-      // border: $test;
       @include row-center;
       width: 24px;
       height: 24px;
-      border-radius: 50%;
       margin-right: 4px;
 
       .dot {
@@ -1061,17 +1089,16 @@ ul {
   &.nav-link-active {
     border-width: 4px;
     border-color: $white;
-    // transition: 0.6s cubic-bezier(0.02, 0.35, 0.39, 1.12), border 0.4s ease,
-    //   background 0.28s ease 0.5s;
-    transition: 0.3s cubic-bezier(0.02, 0.35, 0.39, 1.12), border 0.4s ease;
+    transition: 0.4s cubic-bezier(0.02, 0.35, 0.39, 1.12), border 0.2s ease;
   }
 
   &.nav-link-active {
     border-width: 2px;
 
-    // @include mq-max("md") {
-    //   scale: 0.68;
-    // }
+    @include mq-max("md") {
+      width: 36px;
+      height: 36px;
+    }
   }
 
   &.burger-active,
@@ -1089,19 +1116,19 @@ ul {
   }
   &.return-to-top-active {
     border-color: $green;
-    transition: 0.6s cubic-bezier(0.02, 0.35, 0.39, 1.12), border 0.4s ease,
-      background 0.28s ease 0.5s;
+    transition: 0.6s cubic-bezier(0.02, 0.35, 0.39, 1.12), border 0.4s ease;
   }
 
   &.mail-form-active {
-    // scale: 0.8;
+    width: 40px;
+    height: 40px;
     border-color: $blue;
-    transition: 0.6s cubic-bezier(0.02, 0.35, 0.39, 1.12), border 0.4s ease,
-      background 0.28s ease 0.5s;
+    transition: 0.6s cubic-bezier(0.02, 0.35, 0.39, 1.12), border 0.4s ease;
 
-    // @include mq-max("xxl") {
-    //   scale: 0.6;
-    // }
+    @include mq-max("xxl") {
+      width: 36px;
+      height: 36px;
+    }
   }
 
   // mission statement mouse animations

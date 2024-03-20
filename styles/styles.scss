@@ -1,10 +1,15 @@
 @import "variables.scss", "mixins.scss", "globals.scss", "animations.scss";
 
 #hero-section {
+  margin-top: 124px;
   padding: 196px 0;
 
   @include mq-max("xxl") {
     padding: 124px 0;
+  }
+
+  @include mq-max("xl") {
+    margin-top: 96px;
   }
 
   .section-headline {
@@ -57,9 +62,7 @@
   }
 
   .cta-wrapper {
-    // see  'cta-wrapper' in _globals.scss
-    // margin-left: 224px;
-    margin-left: 64px;
+    margin-left: 112px;
 
     @include mq-max("xl") {
       margin-left: 96px;
