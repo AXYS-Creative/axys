@@ -764,7 +764,7 @@ ul {
 
 .cta-wrapper {
   display: flex;
-  gap: 12px;
+  gap: 8px;
 }
 .cta-wrapper .cta-1,
 .cta-wrapper .cta-2 {
@@ -869,7 +869,7 @@ ul {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  margin-right: 12px;
+  margin-right: 4px;
 }
 .cta-wrapper .cta-2 .dot-wrapper .dot {
   width: 8px;
@@ -1006,7 +1006,7 @@ ul {
 .mouse-cursor.cta2-active, .mouse-cursor.nav-link-active {
   border-width: 4px;
   border-color: #f0f0f0;
-  transition: 0.6s cubic-bezier(0.02, 0.35, 0.39, 1.12), border 0.4s ease, background 0.28s ease 0.5s;
+  transition: 0.3s cubic-bezier(0.02, 0.35, 0.39, 1.12), border 0.4s ease;
 }
 .mouse-cursor.nav-link-active {
   border-width: 2px;
@@ -1466,7 +1466,7 @@ ul {
   }
 }
 #hero-section .cta-wrapper {
-  margin-left: 224px;
+  margin-left: 64px;
 }
 @media screen and (max-width: 1200px) {
   #hero-section .cta-wrapper {

@@ -58,7 +58,8 @@
 
   .cta-wrapper {
     // see  'cta-wrapper' in _globals.scss
-    margin-left: 224px;
+    // margin-left: 224px;
+    margin-left: 64px;
 
     @include mq-max("xl") {
       margin-left: 96px;
