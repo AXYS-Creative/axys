@@ -849,25 +849,33 @@ ul {
 }
 .cta-wrapper .cta-2:hover .cta-text, .cta-wrapper .cta-2:focus .cta-text {
   color: #e48c66;
-  translate: 10px 0;
+  translate: 4px 0;
 }
-.cta-wrapper .cta-2:hover .dot, .cta-wrapper .cta-2:focus .dot {
-  scale: 4;
+.cta-wrapper .cta-2:hover .dot-wrapper .dot, .cta-wrapper .cta-2:focus .dot-wrapper .dot {
+  width: 24px;
+  height: 24px;
   background-color: #e48c66;
 }
 @media screen and (max-width: 480px) {
-  .cta-wrapper .cta-2:hover .dot, .cta-wrapper .cta-2:focus .dot {
-    scale: 1;
+  .cta-wrapper .cta-2:hover .dot-wrapper .dot, .cta-wrapper .cta-2:focus .dot-wrapper .dot {
     width: 16px;
     height: 16px;
   }
 }
-.cta-wrapper .cta-2 .dot {
+.cta-wrapper .cta-2 .dot-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+.cta-wrapper .cta-2 .dot-wrapper .dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
   background-color: #3d3d3d;
-  margin-right: 12px;
   transition: 0.3s ease;
 }
 
@@ -967,13 +975,13 @@ ul {
 .mouse-cursor {
   border: 2px solid #3d3d3d;
   position: fixed;
-  translate: -50% -50%;
+  top: 0;
   width: 48px;
   height: 48px;
   border-radius: 50%;
   z-index: 4;
   pointer-events: none;
-  transition: 0.8s cubic-bezier(0, 0.49, 0.4, 1.19), border 0.4s ease, width 0.48s ease, height 0.48s ease;
+  transition: 0.8s cubic-bezier(0, 0.49, 0.4, 1.19), border 0.4s ease, width 0.48s ease, height 0.48s ease, opacity 0.3s ease 0.3s;
 }
 @media (hover: none) and (pointer: coarse) {
   .mouse-cursor {
@@ -991,20 +999,17 @@ ul {
   height: 128px;
   border: 0px solid transparent;
 }
+.mouse-cursor.cta2-active {
+  width: 32px;
+  height: 32px;
+}
 .mouse-cursor.cta2-active, .mouse-cursor.nav-link-active {
-  scale: 0.8;
   border-width: 4px;
   border-color: #f0f0f0;
   transition: 0.6s cubic-bezier(0.02, 0.35, 0.39, 1.12), border 0.4s ease, background 0.28s ease 0.5s;
 }
 .mouse-cursor.nav-link-active {
   border-width: 2px;
-  scale: 1;
-}
-@media screen and (max-width: 768px) {
-  .mouse-cursor.nav-link-active {
-    scale: 0.68;
-  }
 }
 .mouse-cursor.burger-active, .mouse-cursor.social-link-active {
   width: 72px;
@@ -1021,14 +1026,8 @@ ul {
   transition: 0.6s cubic-bezier(0.02, 0.35, 0.39, 1.12), border 0.4s ease, background 0.28s ease 0.5s;
 }
 .mouse-cursor.mail-form-active {
-  scale: 0.8;
   border-color: #7ec1d4;
   transition: 0.6s cubic-bezier(0.02, 0.35, 0.39, 1.12), border 0.4s ease, background 0.28s ease 0.5s;
-}
-@media screen and (max-width: 1512px) {
-  .mouse-cursor.mail-form-active {
-    scale: 0.6;
-  }
 }
 .mouse-cursor.statement-active {
   border-color: transparent;

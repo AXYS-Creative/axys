@@ -3,8 +3,7 @@ const cursor = document.querySelector(".mouse-cursor"),
   menuBtn = document.querySelector(".menu-btn"),
   burger = document.querySelector(".burger"),
   mailForm = document.querySelector(".mail-form"),
-  submitFormBtn = document.querySelector(".submit-btn"),
-  emailUsLink = document.querySelector(".email-us-link");
+  submitFormBtn = document.querySelector(".submit-btn");
 
 const navLinks = document.querySelectorAll(".nav-link"),
   navFooterLinks = document.querySelectorAll(".nav-footer-link"),
@@ -23,8 +22,7 @@ document.addEventListener("mousemove", (e) => {
   cursor.style.opacity = 1;
 
   if (followMouse) {
-    cursor.style.top = e.clientY + "px";
-    cursor.style.left = e.clientX + "px";
+    cursor.style.transform = `translate(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%))`;
   }
 });
 
@@ -40,7 +38,6 @@ const cursorHoverVanish = (elem) => {
 
 // Attaching vanish to individual elements
 cursorHoverVanish(logo);
-cursorHoverVanish(emailUsLink);
 // Attaching events to NodeList items
 [...cta1, ...workItems, ...classicLinks, ...faqItems].forEach(
   cursorHoverVanish
@@ -53,8 +50,11 @@ const cursorHoverSibling = (elements, querySelector, activeClass) => {
       followMouse = false;
       const sibling = element.querySelector(querySelector);
       const siblingRef = sibling.getBoundingClientRect();
-      cursor.style.left = siblingRef.left + siblingRef.width / 2 + "px";
-      cursor.style.top = siblingRef.top + siblingRef.height / 2 + "px";
+      const centerX = siblingRef.left + siblingRef.width / 2;
+      const centerY = siblingRef.top + siblingRef.height / 2;
+      cursor.style.transform = `translate(${
+        centerX - cursor.offsetWidth / 2
+      }px, ${centerY - cursor.offsetHeight / 2}px)`;
       cursor.classList.add(activeClass);
     });
 
@@ -67,14 +67,17 @@ const cursorHoverSibling = (elements, querySelector, activeClass) => {
 
 cursorHoverSibling(navLinks, ".nav-link-svg", "nav-link-active");
 cursorHoverSibling(navFooterLinks, ".icon", "nav-link-active");
-cursorHoverSibling(cta2, ".dot", "cta2-active");
+cursorHoverSibling(cta2, ".dot-wrapper", "cta2-active");
 cursorHoverSibling(returnToTop, ".return-to-top-icon", "return-to-top-active");
 
 socialMediaLinks.forEach((link) => {
   link.addEventListener("mousemove", () => {
     const linkRect = link.getBoundingClientRect();
-    cursor.style.top = linkRect.top + linkRect.height / 2 + "px";
-    cursor.style.left = linkRect.left + linkRect.width / 2 + "px";
+    const centerX = linkRect.left + linkRect.width / 2;
+    const centerY = linkRect.top + linkRect.height / 2;
+    cursor.style.transform = `translate(${
+      centerX - cursor.offsetWidth / 2
+    }px, ${centerY - cursor.offsetHeight / 2}px)`;
     cursor.classList.add("social-link-active");
     followMouse = false;
   });
@@ -87,8 +90,11 @@ socialMediaLinks.forEach((link) => {
 
 menuBtn.addEventListener("mousemove", () => {
   const burgerRect = burger.getBoundingClientRect();
-  cursor.style.top = burgerRect.top + burgerRect.height / 2 + "px";
-  cursor.style.left = burgerRect.left + burgerRect.width / 2 + "px";
+  const centerX = burgerRect.left + burgerRect.width / 2;
+  const centerY = burgerRect.top + burgerRect.height / 2;
+  cursor.style.transform = `translate(${centerX - cursor.offsetWidth / 2}px, ${
+    centerY - cursor.offsetHeight / 2
+  }px)`;
   cursor.classList.add("burger-active");
   followMouse = false;
 });
@@ -101,8 +107,11 @@ menuBtn.addEventListener("mouseleave", () => {
 mailForm.addEventListener("mousemove", () => {
   followMouse = false;
   const submitBtnRect = submitFormBtn.getBoundingClientRect();
-  cursor.style.left = submitBtnRect.left + submitBtnRect.width / 2 + "px";
-  cursor.style.top = submitBtnRect.top + submitBtnRect.height / 2.2 + "px";
+  const centerX = submitBtnRect.left + submitBtnRect.width / 2;
+  const centerY = submitBtnRect.top + submitBtnRect.height / 2;
+  cursor.style.transform = `translate(${centerX - cursor.offsetWidth / 2}px, ${
+    centerY - cursor.offsetHeight / 2
+  }px)`;
   cursor.classList.add("mail-form-active");
 });
 
@@ -113,8 +122,11 @@ mailForm.addEventListener("mouseleave", () => {
 
 submitFormBtn.addEventListener("mousemove", () => {
   const submitBtnRect = submitFormBtn.getBoundingClientRect();
-  cursor.style.left = submitBtnRect.left + submitBtnRect.width / 2 + "px";
-  cursor.style.top = submitBtnRect.top + submitBtnRect.height / 2.2 + "px";
+  const centerX = submitBtnRect.left + submitBtnRect.width / 2;
+  const centerY = submitBtnRect.top + submitBtnRect.height / 2;
+  cursor.style.transform = `translate(${centerX - cursor.offsetWidth / 2}px, ${
+    centerY - cursor.offsetHeight / 2
+  }px)`;
   followMouse = false;
 });
 

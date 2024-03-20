@@ -872,28 +872,38 @@ ul {
     &:focus {
       .cta-text {
         color: $coral;
-        translate: 10px 0;
+        translate: 4px 0;
       }
 
-      .dot {
-        scale: 4;
-        background-color: $coral;
+      .dot-wrapper {
+        .dot {
+          width: 24px;
+          height: 24px;
+          background-color: $coral;
 
-        @include mq-max("sm") {
-          scale: 1;
-          width: 16px;
-          height: 16px;
+          @include mq-max("sm") {
+            width: 16px;
+            height: 16px;
+          }
         }
       }
     }
 
-    .dot {
-      width: 8px;
-      height: 8px;
+    .dot-wrapper {
+      // border: $test;
+      @include row-center;
+      width: 24px;
+      height: 24px;
       border-radius: 50%;
-      background-color: $grey;
       margin-right: 12px;
-      transition: 0.3s ease;
+
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: $grey;
+        transition: 0.3s ease;
+      }
     }
   }
 }
@@ -1018,7 +1028,7 @@ ul {
 .mouse-cursor {
   border: 2px solid $grey;
   position: fixed;
-  translate: -50% -50%;
+  top: 0;
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -1026,7 +1036,7 @@ ul {
   pointer-events: none;
 
   transition: 0.8s $cubic-ease-mouse, border 0.4s ease, width 0.48s ease,
-    height 0.48s ease;
+    height 0.48s ease, opacity 0.3s ease 0.3s;
 
   @include mq-touch {
     display: none;
@@ -1042,9 +1052,13 @@ ul {
     border: 0px solid transparent;
   }
 
+  &.cta2-active {
+    width: 32px;
+    height: 32px;
+  }
+
   &.cta2-active,
   &.nav-link-active {
-    scale: 0.8;
     border-width: 4px;
     border-color: $white;
     transition: 0.6s cubic-bezier(0.02, 0.35, 0.39, 1.12), border 0.4s ease,
@@ -1053,11 +1067,10 @@ ul {
 
   &.nav-link-active {
     border-width: 2px;
-    scale: 1;
 
-    @include mq-max("md") {
-      scale: 0.68;
-    }
+    // @include mq-max("md") {
+    //   scale: 0.68;
+    // }
   }
 
   &.burger-active,
@@ -1080,14 +1093,14 @@ ul {
   }
 
   &.mail-form-active {
-    scale: 0.8;
+    // scale: 0.8;
     border-color: $blue;
     transition: 0.6s cubic-bezier(0.02, 0.35, 0.39, 1.12), border 0.4s ease,
       background 0.28s ease 0.5s;
 
-    @include mq-max("xxl") {
-      scale: 0.6;
-    }
+    // @include mq-max("xxl") {
+    //   scale: 0.6;
+    // }
   }
 
   // mission statement mouse animations
