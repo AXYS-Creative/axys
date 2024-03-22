@@ -15,6 +15,9 @@ const marqueeData = [
   "fis",
   "blue-yonder",
   "snowflake",
+  "pokemon",
+  "samsara",
+  "sitecore",
 ];
 
 const marqueeContainers = document.querySelectorAll(".marquee-inner-logos");
