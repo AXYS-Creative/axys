@@ -118,7 +118,7 @@ header .menu-btn .menu-btn-text {
 }
 @media screen and (max-width: 480px) {
   header .menu-btn .menu-btn-text {
-    width: 20px;
+    width: 28px;
   }
 }
 header .menu-btn .burger {
