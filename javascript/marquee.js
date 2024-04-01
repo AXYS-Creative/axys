@@ -15,7 +15,6 @@ const marqueeData = [
   "fis",
   "blue-yonder",
   "snowflake",
-  "pokemon",
   "samsara",
   "sitecore",
 ];
@@ -38,3 +37,31 @@ function updateMarquee(data) {
 }
 
 updateMarquee(marqueeData);
+
+// const gsapMarquee = () => {
+//   let currentScroll = 0;
+//   let isScrollingDown = true;
+
+//   let marqueeTween = gsap
+//     .to(".marquee-inner", {
+//       xPercent: -50,
+//       repeat: -1,
+//       duration: 4,
+//       ease: "linear",
+//     })
+//     .totalProgress(0.5);
+
+//   window.addEventListener("scroll", function () {
+//     if (window.scrollY > currentScroll) {
+//       isScrollingDown = true;
+//     } else {
+//       isScrollingDown = false;
+//     }
+
+//     gsap.to(marqueeTween, {
+//       timeScale: isScrollingDown ? 1 : -1,
+//     });
+
+//     currentScroll = window.scrollY;
+//   });
+// };
