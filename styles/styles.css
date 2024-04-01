@@ -1639,7 +1639,6 @@ ul {
 }
 @media screen and (max-width: 480px) {
   #statement-section {
-    height: unset;
     padding: 180px 0;
   }
 }
@@ -1663,17 +1662,12 @@ ul {
 }
 @media screen and (max-width: 768px) {
   #statement-section .mission-statement {
-    font-size: 20px;
+    font-size: 5.4vw;
   }
 }
 @media screen and (max-width: 480px) {
   #statement-section .mission-statement {
-    font-size: 16px;
-  }
-}
-@media screen and (max-width: 390px) {
-  #statement-section .mission-statement {
-    font-size: 15px;
+    font-size: 5vw;
   }
 }
 @media (hover: hover) and (pointer: fine) {
@@ -1694,7 +1688,7 @@ ul {
 }
 #statement-section .mission-statement .text {
   opacity: 0.1;
-  transition: 0.3s ease;
+  transition: opacity 0.3s ease;
   filter: blur(3px);
 }
 #statement-section .mission-statement .text:nth-child(2) {

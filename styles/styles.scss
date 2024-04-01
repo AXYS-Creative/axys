@@ -233,8 +233,8 @@
     height: unset;
     padding: 264px 0;
   }
+
   @include mq-max("sm") {
-    height: unset;
     padding: 180px 0;
   }
 
@@ -254,15 +254,11 @@
     }
 
     @include mq-max("md") {
-      font-size: 20px;
+      font-size: 5.4vw;
     }
 
     @include mq-max("sm") {
-      font-size: 16px;
-    }
-
-    @include mq-max("xs") {
-      font-size: 15px;
+      font-size: 5vw;
     }
 
     @include mq-mouse {
@@ -286,7 +282,7 @@
 
     .text {
       opacity: 0.1;
-      transition: 0.3s ease;
+      transition: opacity 0.3s ease;
       filter: blur(3px);
 
       @for $i from 2 through 16 {

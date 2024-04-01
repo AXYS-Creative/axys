@@ -1,3 +1,5 @@
+import { handleMediaQueryChange } from "./defaults";
+
 const IMG_PATH = "../assets/graphics/company-logos/logo-";
 
 const marqueeData = [
@@ -38,30 +40,41 @@ function updateMarquee(data) {
 
 updateMarquee(marqueeData);
 
-// const gsapMarquee = () => {
-//   let currentScroll = 0;
-//   let isScrollingDown = true;
+const gsapMarquee = () => {
+  let currentScroll = 0;
 
-//   let marqueeTween = gsap
-//     .to(".marquee-inner", {
-//       xPercent: -50,
-//       repeat: -1,
-//       duration: 4,
-//       ease: "linear",
-//     })
-//     .totalProgress(0.5);
+  function initializeMarquee(selector, duration) {
+    return gsap.utils.toArray(selector).map((elem) =>
+      gsap
+        .to(elem, {
+          xPercent: -50,
+          repeat: -1,
+          duration: duration,
+          ease: "linear",
+        })
+        .totalProgress(0.5)
+    );
+  }
 
-//   window.addEventListener("scroll", function () {
-//     if (window.scrollY > currentScroll) {
-//       isScrollingDown = true;
-//     } else {
-//       isScrollingDown = false;
-//     }
+  const marqueeTweens = initializeMarquee(".marquee-inner", 16);
+  const marqueeTweensLogos = initializeMarquee(".marquee-inner-logos", 40);
 
-//     gsap.to(marqueeTween, {
-//       timeScale: isScrollingDown ? 1 : -1,
-//     });
+  window.addEventListener("scroll", () => {
+    const isScrollingDown = window.scrollY > currentScroll;
 
-//     currentScroll = window.scrollY;
-//   });
-// };
+    function adjustTimeScale(tweens) {
+      tweens.forEach((tween, index) =>
+        gsap.to(tween, {
+          timeScale: (index % 2 === 0) === isScrollingDown ? 1 : -1,
+        })
+      );
+    }
+
+    adjustTimeScale(marqueeTweens);
+    adjustTimeScale(marqueeTweensLogos);
+
+    currentScroll = window.scrollY;
+  });
+};
+
+gsapMarquee();
