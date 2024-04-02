@@ -14,10 +14,10 @@ const heroGlitchText = () => {
   const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?><:;";
   const charLength = characters.length;
   let index = 0;
-  let glitchInterval; // Moved inside the applyGlitchEffect to ensure it's specific to each word
+  let glitchInterval;
 
   function applyGlitchEffect(wordObj) {
-    if (glitchInterval) clearInterval(glitchInterval); // Ensure previous glitchInterval is cleared
+    if (glitchInterval) clearInterval(glitchInterval);
 
     let glitchIterations = 0;
     const maxIterations = wordObj.word.length * 4;
@@ -48,10 +48,60 @@ const heroGlitchText = () => {
   }
 
   updateText();
-  const updateInterval = setInterval(updateText, 4000); // Control the update of words separately
+  setInterval(updateText, 4000); // Control the update of words separately
 };
 
 heroGlitchText();
+
+//
+
+const title = document.querySelector(".section-title");
+const originalText = "Our Work"; // Use the text content directly
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+let passiveGlitch;
+
+const glitchAnimation = () => {
+  let titleIterations = 0;
+  clearInterval(passiveGlitch);
+
+  passiveGlitch = setInterval(() => {
+    const glitchedText = originalText
+      .split("")
+      .map((char, index) => {
+        if (index < titleIterations) {
+          return index < 3 ? char : `<span class="yellow-text">${char}</span>`;
+        }
+        return index < 3
+          ? char
+          : `<span class="yellow-text">${
+              letters[Math.floor(Math.random() * 36)]
+            }</span>`;
+      })
+      .join("");
+
+    title.innerHTML = glitchedText;
+
+    if (titleIterations >= originalText.length) {
+      clearInterval(passiveGlitch);
+      title.innerHTML = `Our <span class="yellow-text">Work</span>`;
+    }
+
+    titleIterations += 1 / 3;
+  }, 25);
+};
+
+const observer = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        glitchAnimation();
+      }
+    });
+  },
+  { threshold: 0.1 }
+);
+
+observer.observe(title);
 
 //
 

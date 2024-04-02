@@ -21,16 +21,16 @@
 })();
 
 // Media Queries
-const minMediaMD = window.matchMedia("(min-width: 768px)");
+// const minMediaMD = window.matchMedia("(min-width: 768px)");
 
-export function handleMediaQueryChange(e) {
-  if (e.matches) {
-    console.log("The screen is big.");
-  } else {
-    console.log("The screen is small.");
-  }
-}
+// function handleMediaQueryChange(e) {
+//   if (e.matches) {
+//     console.log("The screen is big.");
+//   } else {
+//     console.log("The screen is small.");
+//   }
+// }
 
-minMediaMD.addEventListener("change", handleMediaQueryChange);
+// minMediaMD.addEventListener("change", handleMediaQueryChange);
 
-handleMediaQueryChange(minMediaMD);
+// handleMediaQueryChange(minMediaMD);
