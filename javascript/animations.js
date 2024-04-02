@@ -1,7 +1,54 @@
 let mqMaxXxl = window.matchMedia("(max-width: 1440px)");
 let mqMaxSm = window.matchMedia("(max-width: 480px)");
 
-const heroGlitchText = () => {
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?><:;"; // Combined characters set
+
+// Reusable Glitch Effect Function
+function applyGlitchEffect({
+  element,
+  text,
+  iterations,
+  color,
+  isTitle = false,
+}) {
+  let glitchIterations = 0;
+  clearInterval(element.glitchInterval);
+
+  if (color) {
+    element.style.color = color; // Apply color if provided
+  }
+
+  element.glitchInterval = setInterval(() => {
+    const glitchText = text
+      .split("")
+      .map((char, index) => {
+        if (glitchIterations / 3 > index)
+          return isTitle && index >= 3
+            ? `<span class="yellow-text">${char}</span>`
+            : char;
+        return isTitle && index >= 3
+          ? `<span class="yellow-text">${letters.charAt(
+              Math.floor(Math.random() * letters.length)
+            )}</span>`
+          : letters.charAt(Math.floor(Math.random() * letters.length));
+      })
+      .join("");
+
+    element[isTitle ? "innerHTML" : "innerText"] = glitchText;
+
+    if (glitchIterations >= iterations) {
+      clearInterval(element.glitchInterval);
+      element[isTitle ? "innerHTML" : "innerText"] = isTitle
+        ? `Our <span class="yellow-text">Work</span>`
+        : text;
+    }
+
+    glitchIterations++;
+  }, 25);
+}
+
+// Hero Glitch Text Function
+function heroGlitchText() {
   const dynamicText = document.querySelector(".dynamic-text");
   const words = [
     { word: "Creative", color: "#E48C66" },
@@ -11,97 +58,51 @@ const heroGlitchText = () => {
     { word: "Engaging", color: "#E1A7B4" },
   ];
 
-  const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?><:;";
-  const charLength = characters.length;
   let index = 0;
-  let glitchInterval;
-
-  function applyGlitchEffect(wordObj) {
-    if (glitchInterval) clearInterval(glitchInterval);
-
-    let glitchIterations = 0;
-    const maxIterations = wordObj.word.length * 4;
-    dynamicText.style.color = wordObj.color;
-    const wordArray = wordObj.word.split("");
-
-    glitchInterval = setInterval(() => {
-      const glitchText = wordArray
-        .map((char, idx) => {
-          if (glitchIterations / 3 > idx) return char;
-          return characters.charAt(Math.floor(Math.random() * charLength));
-        })
-        .join("");
-
-      dynamicText.innerText = glitchText;
-      glitchIterations++;
-
-      if (glitchIterations >= maxIterations) {
-        clearInterval(glitchInterval);
-        dynamicText.innerText = wordObj.word;
-      }
-    }, 25);
-  }
 
   function updateText() {
-    applyGlitchEffect(words[index]);
+    const wordObj = words[index];
+    applyGlitchEffect({
+      element: dynamicText,
+      text: wordObj.word,
+      iterations: wordObj.word.length * 4,
+      color: wordObj.color,
+    });
+
     index = (index + 1) % words.length;
   }
 
   updateText();
   setInterval(updateText, 4000); // Control the update of words separately
-};
+}
 
 heroGlitchText();
 
-//
+// Title Glitch Animation
+function titleGlitchAnimation() {
+  const title = document.querySelector(".section-title");
+  const originalText = "Our Work"; // Use the text content directly
 
-const title = document.querySelector(".section-title");
-const originalText = "Our Work"; // Use the text content directly
-const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-let passiveGlitch;
-
-const glitchAnimation = () => {
-  let titleIterations = 0;
-  clearInterval(passiveGlitch);
-
-  passiveGlitch = setInterval(() => {
-    const glitchedText = originalText
-      .split("")
-      .map((char, index) => {
-        if (index < titleIterations) {
-          return index < 3 ? char : `<span class="yellow-text">${char}</span>`;
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          applyGlitchEffect({
+            element: title,
+            text: originalText,
+            iterations: originalText.length,
+            isTitle: true,
+          });
         }
-        return index < 3
-          ? char
-          : `<span class="yellow-text">${
-              letters[Math.floor(Math.random() * 36)]
-            }</span>`;
-      })
-      .join("");
+      });
+    },
+    { threshold: 0.1 }
+  );
 
-    title.innerHTML = glitchedText;
+  observer.observe(title);
+}
 
-    if (titleIterations >= originalText.length) {
-      clearInterval(passiveGlitch);
-      title.innerHTML = `Our <span class="yellow-text">Work</span>`;
-    }
-
-    titleIterations += 1 / 3;
-  }, 25);
-};
-
-const observer = new IntersectionObserver(
-  (entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        glitchAnimation();
-      }
-    });
-  },
-  { threshold: 0.1 }
-);
-
-observer.observe(title);
+titleGlitchAnimation();
 
 //
 
