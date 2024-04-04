@@ -1,46 +1,37 @@
 let mqMaxXxl = window.matchMedia("(max-width: 1440px)");
 let mqMaxSm = window.matchMedia("(max-width: 480px)");
 
-const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?><:;"; // Combined characters set
+const glitchCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?><:;";
 
-// Reusable Glitch Effect Function
-function applyGlitchEffect({
-  element,
-  text,
-  iterations,
-  color,
-  isTitle = false,
-}) {
+function applyGlitchEffect({ element, text, iterations, color }) {
   let glitchIterations = 0;
   clearInterval(element.glitchInterval);
 
   if (color) {
-    element.style.color = color; // Apply color if provided
+    element.style.color = color;
   }
+
+  const revealRate = iterations / text.length;
 
   element.glitchInterval = setInterval(() => {
     const glitchText = text
       .split("")
       .map((char, index) => {
-        if (glitchIterations / 3 > index)
-          return isTitle && index >= 3
-            ? `<span class="yellow-text">${char}</span>`
-            : char;
-        return isTitle && index >= 3
-          ? `<span class="yellow-text">${letters.charAt(
-              Math.floor(Math.random() * letters.length)
-            )}</span>`
-          : letters.charAt(Math.floor(Math.random() * letters.length));
+        if (glitchIterations / revealRate > index) {
+          return char;
+        }
+
+        return glitchCharacters.charAt(
+          Math.floor(Math.random() * glitchCharacters.length)
+        );
       })
       .join("");
 
-    element[isTitle ? "innerHTML" : "innerText"] = glitchText;
+    element.innerText = glitchText;
 
     if (glitchIterations >= iterations) {
       clearInterval(element.glitchInterval);
-      element[isTitle ? "innerHTML" : "innerText"] = isTitle
-        ? `Our <span class="yellow-text">Work</span>`
-        : text;
+      element.innerText = text;
     }
 
     glitchIterations++;
@@ -73,36 +64,10 @@ function heroGlitchText() {
   }
 
   updateText();
-  setInterval(updateText, 4000); // Control the update of words separately
+  setInterval(updateText, 4000);
 }
 
 heroGlitchText();
-
-// Title Glitch Animation
-function titleGlitchAnimation() {
-  const title = document.querySelector(".section-title");
-  const originalText = "Our Work"; // Use the text content directly
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          applyGlitchEffect({
-            element: title,
-            text: originalText,
-            iterations: originalText.length,
-            isTitle: true,
-          });
-        }
-      });
-    },
-    { threshold: 0.1 }
-  );
-
-  observer.observe(title);
-}
-
-titleGlitchAnimation();
 
 //
 
