@@ -1115,7 +1115,7 @@ ul {
   }
   &.return-to-top-active {
     border-color: $green;
-    transition: 0.6s cubic-bezier(0.02, 0.35, 0.39, 1.12), border 0.4s ease;
+    transition: 0.4s cubic-bezier(0.02, 0.35, 0.39, 1.12), border 0.3s ease;
   }
 
   &.mail-form-active {
@@ -1190,17 +1190,17 @@ ul {
 
     &:nth-of-type(1) {
       &::before {
-        animation: background-stripes 5s ease infinite;
+        animation: background-stripes 8s ease infinite;
       }
     }
     &:nth-of-type(2) {
       &::before {
-        animation: background-stripes 5s ease 0.12s infinite;
+        animation: background-stripes 8s ease 0.12s infinite;
       }
     }
     &:nth-of-type(3) {
       &::before {
-        animation: background-stripes 5s ease 0.24s infinite;
+        animation: background-stripes 8s ease 0.24s infinite;
       }
     }
   }
@@ -1216,61 +1216,27 @@ ul {
     translate: calc($content-padding-md * -1) 0;
   }
 
-  &-inner {
+  &-inner,
+  &-inner-logos {
     padding-right: 24px; // Offsets to allow a smooth marquee at 50%, instead of 50.3%
     display: flex;
     align-items: center;
     width: fit-content;
-    animation: marquee 20s linear infinite;
-
-    @include mq-motion-reduce {
-      animation: marquee 60s linear infinite;
-    }
-
-    @include mq-max("xl") {
-      animation-duration: 22s;
-
-      @include mq-motion-reduce {
-        animation-duration: 66s;
-      }
-    }
 
     @include mq-max("sm") {
       padding-right: 12px;
-      animation-duration: 14s;
-
-      @include mq-motion-reduce {
-        animation-duration: 36s;
-      }
-    }
-
-    &:nth-of-type(2) {
-      animation-name: marquee-reverse;
     }
   }
 
   &-inner-logos {
     padding-right: 0; // undo the offset above
-    animation: marquee 40s linear infinite;
-
-    @include mq-motion-reduce {
-      animation: marquee 120s linear infinite;
-    }
-
-    &:nth-of-type(even) {
-      animation: marquee-reverse 40s linear infinite;
-
-      @include mq-motion-reduce {
-        animation: marquee-reverse 120s linear infinite;
-      }
-    }
   }
 
   .marquee-text {
     @include title-font;
     line-height: 100%;
     display: flex;
-    margin: 0;
+    // margin: 0;
     gap: 24px;
 
     @include mq-max("xxl") {

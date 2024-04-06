@@ -1056,7 +1056,7 @@ ul {
 }
 .mouse-cursor.return-to-top-active {
   border-color: #a4d1a2;
-  transition: 0.6s cubic-bezier(0.02, 0.35, 0.39, 1.12), border 0.4s ease;
+  transition: 0.4s cubic-bezier(0.02, 0.35, 0.39, 1.12), border 0.3s ease;
 }
 .mouse-cursor.mail-form-active {
   width: 40px;
@@ -1128,13 +1128,13 @@ ul {
   background: rgba(240, 240, 240, 0.05);
 }
 .stripes-bg .stripe:nth-of-type(1)::before {
-  animation: background-stripes 5s ease infinite;
+  animation: background-stripes 8s ease infinite;
 }
 .stripes-bg .stripe:nth-of-type(2)::before {
-  animation: background-stripes 5s ease 0.12s infinite;
+  animation: background-stripes 8s ease 0.12s infinite;
 }
 .stripes-bg .stripe:nth-of-type(3)::before {
-  animation: background-stripes 5s ease 0.24s infinite;
+  animation: background-stripes 8s ease 0.24s infinite;
 }
 
 .marquee {
@@ -1148,66 +1148,26 @@ ul {
     translate: -24px 0;
   }
 }
-.marquee-inner {
+.marquee-inner, .marquee-inner-logos {
   padding-right: 24px;
   display: flex;
   align-items: center;
   width: -moz-fit-content;
   width: fit-content;
-  animation: marquee 20s linear infinite;
-}
-@media (prefers-reduced-motion: reduce) {
-  .marquee-inner {
-    animation: marquee 60s linear infinite;
-  }
-}
-@media screen and (max-width: 1200px) {
-  .marquee-inner {
-    animation-duration: 22s;
-  }
-}
-@media screen and (max-width: 1200px) and (prefers-reduced-motion: reduce) {
-  .marquee-inner {
-    animation-duration: 66s;
-  }
 }
 @media screen and (max-width: 480px) {
-  .marquee-inner {
+  .marquee-inner, .marquee-inner-logos {
     padding-right: 12px;
-    animation-duration: 14s;
   }
-}
-@media screen and (max-width: 480px) and (prefers-reduced-motion: reduce) {
-  .marquee-inner {
-    animation-duration: 36s;
-  }
-}
-.marquee-inner:nth-of-type(2) {
-  animation-name: marquee-reverse;
 }
 .marquee-inner-logos {
   padding-right: 0;
-  animation: marquee 40s linear infinite;
-}
-@media (prefers-reduced-motion: reduce) {
-  .marquee-inner-logos {
-    animation: marquee 120s linear infinite;
-  }
-}
-.marquee-inner-logos:nth-of-type(even) {
-  animation: marquee-reverse 40s linear infinite;
-}
-@media (prefers-reduced-motion: reduce) {
-  .marquee-inner-logos:nth-of-type(even) {
-    animation: marquee-reverse 120s linear infinite;
-  }
 }
 .marquee .marquee-text {
   font-size: 96px;
   text-transform: uppercase;
   line-height: 100%;
   display: flex;
-  margin: 0;
   gap: 24px;
 }
 @media screen and (max-width: 1512px) {
@@ -1375,22 +1335,6 @@ ul {
   }
 }
 
-@keyframes marquee {
-  from {
-    translate: 0 0;
-  }
-  to {
-    translate: -50% 0;
-  }
-}
-@keyframes marquee-reverse {
-  from {
-    translate: -50% 0;
-  }
-  to {
-    translate: 0 0;
-  }
-}
 @keyframes classic-link-default {
   0% {
     right: auto;
@@ -1695,7 +1639,6 @@ ul {
 }
 @media screen and (max-width: 480px) {
   #statement-section {
-    height: unset;
     padding: 180px 0;
   }
 }
@@ -1719,17 +1662,12 @@ ul {
 }
 @media screen and (max-width: 768px) {
   #statement-section .mission-statement {
-    font-size: 20px;
+    font-size: 5.4vw;
   }
 }
 @media screen and (max-width: 480px) {
   #statement-section .mission-statement {
-    font-size: 16px;
-  }
-}
-@media screen and (max-width: 390px) {
-  #statement-section .mission-statement {
-    font-size: 15px;
+    font-size: 5vw;
   }
 }
 @media (hover: hover) and (pointer: fine) {
@@ -1750,7 +1688,7 @@ ul {
 }
 #statement-section .mission-statement .text {
   opacity: 0.1;
-  transition: 0.3s ease;
+  transition: opacity 0.3s ease;
   filter: blur(3px);
 }
 #statement-section .mission-statement .text:nth-child(2) {
@@ -2629,9 +2567,6 @@ ul {
     align-items: center;
   }
 }
-#faq-section .faq-cta .headline-description {
-  text-align: center;
-}
 @media screen and (max-width: 768px) {
   #faq-section .faq-cta .headline-description {
     margin-bottom: 48px;
@@ -2710,4 +2645,7 @@ ul {
 #pre-footer-section .pre-footer-title .icon-wrapper svg {
   width: 100%;
   height: 100%;
+}
+#pre-footer-section .headline-description {
+  text-align: center;
 }/*# sourceMappingURL=styles.css.map */
