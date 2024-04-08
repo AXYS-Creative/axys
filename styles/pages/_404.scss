@@ -1,0 +1,24 @@
+#not-found-section {
+  @extend #pre-footer-section;
+  margin-top: 200px;
+
+  .not-found-title {
+    @extend .pre-footer-title;
+    @include column-center;
+
+    h1 {
+      color: $coral;
+      font-size: 64px;
+      font-weight: 800;
+
+      @include mq-max("md") {
+        font-size: 40px;
+        margin-bottom: 0;
+      }
+
+      @include mq-max("sm") {
+        font-size: 28px;
+      }
+    }
+  }
+}
