@@ -37,7 +37,7 @@
       name="twitter:image"
       content="https://axyscreative.com/public/axys-creative-og-alt.png"
     />
-    <title>AXYS Creative | Digital Design + Development</title>
+    <title>404 - Page Not Found</title>
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="icon" href="./public/axys-logo-192.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -48,9 +48,9 @@
     />
     <script src="javascript/index.js" type="module" defer></script>
   </head>
-  <body>
+  <body class="page-not-found">
     <header class="site-header" aria-label="Website header">
-      <a href="index.html" class="logo" aria-label="Axis Creative">
+      <a href="/" class="logo" aria-label="Axis Creative">
         <p aria-hidden="true">AXYS</p>
         <svg viewBox="0 0 82 44" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -89,7 +89,7 @@
       <div class="width-constraint">
         <ul class="nav-links">
           <li>
-            <a class="nav-link tab-element-nav" href="#">
+            <a class="nav-link tab-element-nav" href="/">
               <div class="icon-wrapper">
                 <svg
                   class="nav-link-svg"
@@ -109,7 +109,7 @@
             </a>
           </li>
           <li>
-            <a class="nav-link tab-element-nav" href="#work-section">
+            <a class="nav-link tab-element-nav" href="/#work-section">
               <div class="icon-wrapper">
                 <svg
                   class="nav-link-svg"
@@ -129,7 +129,7 @@
             </a>
           </li>
           <li>
-            <a class="nav-link tab-element-nav" href="#benefits-section">
+            <a class="nav-link tab-element-nav" href="/#benefits-section">
               <div class="icon-wrapper">
                 <svg
                   class="nav-link-svg"
@@ -149,7 +149,7 @@
             </a>
           </li>
           <li>
-            <a class="nav-link tab-element-nav" href="#plans-section">
+            <a class="nav-link tab-element-nav" href="/#plans-section">
               <div class="icon-wrapper">
                 <svg
                   class="nav-link-svg"
@@ -169,7 +169,7 @@
             </a>
           </li>
           <li>
-            <a class="nav-link tab-element-nav" href="#faq-section">
+            <a class="nav-link tab-element-nav" href="/#faq-section">
               <div class="icon-wrapper">
                 <svg
                   class="nav-link-svg"
@@ -217,7 +217,7 @@
               </a>
             </li>
             <li>
-              <a class="nav-footer-link tab-element-nav" href="#plans-section">
+              <a class="nav-footer-link tab-element-nav" href="/#plans-section">
                 <span class="icon-wrapper"
                   ><svg
                     class="icon green-text"
@@ -313,18 +313,18 @@
       </div>
     </nav>
 
-    <main aria-label="Main website content">
+    <main aria-label="404 Page Not Found">
       <section id="not-found-section">
         <div class="not-found-title">
-          <h1>404</h1>
-          <h2>page <span>not found</span></h2>
+          <h2 class="bold-text">404</h2>
+          <h1>page <span class="bold-text">not found</span></h1>
         </div>
         <p class="headline-description">
           The page you're looking for doesn't exist. <br />Click below to return
           home.
         </p>
         <div class="cta-wrapper">
-          <a href="#hero-section" class="cta-1 tab-element-page">
+          <a href="/" class="cta-1 tab-element-page">
             <div class="ring">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -346,7 +346,7 @@
     </main>
 
     <footer>
-      <a class="return-to-top tab-element-page" href="#">
+      <a class="return-to-top tab-element-page" href="/">
         <svg
           class="return-to-top-icon green-text magnet magnet-strong"
           width="18"
@@ -360,32 +360,8 @@
             fill="#A4D1A2"
           />
         </svg>
-        <span class="green-text">return &nbsp;</span>to top
+        <span class="green-text">return &nbsp;</span>home
       </a>
-
-      <div class="email-us">
-        <p class="email-us-text">
-          Email <span class="green-text">us</span
-          ><svg
-            class="email-us-icon green-text"
-            xmlns="http://www.w3.org/2000/svg"
-            height="16"
-            width="16"
-            viewBox="0 0 512 512"
-          >
-            <path
-              opacity="1"
-              fill="#1E3050"
-              d="M32 159.2l224 154 224-154V96H32v63.2zM480 198L256 352 32 198V416H480V198zM0 416V176 96 64H32 480h32V96v80V416v32H480 32 0V416z"
-            />
-          </svg>
-        </p>
-        <a
-          class="email-us-link tab-element-page"
-          href="mailto:hello@axyscreative.com"
-          >hello@axyscreative.com</a
-        >
-      </div>
 
       <p class="copyright">
         <span><span class="year-text"></span> Axys Creative, LLC</span>
@@ -442,7 +418,7 @@
       </div>
     </footer>
 
-    <div class="mouse-cursor" aria-hidden="true" role="complementary">
+    <div class="mouse-cursor" aria-hidden="true" role="presentation">
       <svg
         class="icon-globe"
         aria-hidden="true"
@@ -475,7 +451,7 @@
       </svg>
     </div>
 
-    <div class="stripes-bg" aria-hidden="true" role="complementary">
+    <div class="stripes-bg" aria-hidden="true" role="presentation">
       <div class="stripe"></div>
       <div class="stripe"></div>
       <div class="stripe"></div>

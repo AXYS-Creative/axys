@@ -50,7 +50,7 @@
   </head>
   <body>
     <header class="site-header" aria-label="Website header">
-      <a href="index.html" class="logo" aria-label="Axis Creative">
+      <a href="/" class="logo" aria-label="Axis Creative">
         <p aria-hidden="true">AXYS</p>
         <svg viewBox="0 0 82 44" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -318,9 +318,13 @@
       <section id="hero-section">
         <div class="section-headline">
           <h1>
-            <span class="sr-only">Creative</span>
-            <span class="dynamic-text" aria-hidden="true">Creative</span><br />
-            <span>Web design +</span><br />
+            <span class="sr-only">
+              Creative, Responsive, Accessible, Innovative, and Engaging
+            </span>
+            <span class="dynamic-text" aria-hidden="true"></span>
+            <br />
+            <span>Web design +</span>
+            <br />
             <span>Development</span>
           </h1>
 
@@ -354,10 +358,10 @@
         </div>
       </section>
 
-      <aside role="complementary">
+      <div class="presentation-content">
         <div class="marquee">
           <h2 class="sr-only">Where design meets development</h2>
-          <div class="marquee-inner" aria-hidden="true">
+          <div class="marquee-inner" aria-hidden="true" role="presentation">
             <p class="marquee-text">
               <span>•</span>
               Where
@@ -371,7 +375,7 @@
               <span class="green-text">development</span>
             </p>
           </div>
-          <div class="marquee-inner" aria-hidden="true">
+          <div class="marquee-inner" aria-hidden="true" role="presentation">
             <p class="marquee-text">
               <span>•</span>
               Where
@@ -386,7 +390,7 @@
             </p>
           </div>
         </div>
-      </aside>
+      </div>
 
       <section id="work-section">
         <div class="section-headline">
@@ -749,12 +753,16 @@
         </div>
       </section>
 
-      <aside role="complementary">
+      <div class="presentation-content">
         <div class="marquee">
           <div class="marquee-inner-logos"></div>
-          <div class="marquee-inner-logos"></div>
+          <div
+            class="marquee-inner-logos"
+            aria-hidden="true"
+            role="presentation"
+          ></div>
         </div>
-      </aside>
+      </div>
 
       <section id="plans-section">
         <div class="section-headline">
@@ -1624,7 +1632,7 @@
       </div>
     </footer>
 
-    <div class="mouse-cursor" aria-hidden="true" role="complementary">
+    <div class="mouse-cursor" aria-hidden="true" role="presentation">
       <svg
         class="icon-globe"
         aria-hidden="true"
@@ -1657,7 +1665,7 @@
       </svg>
     </div>
 
-    <div class="stripes-bg" aria-hidden="true" role="complementary">
+    <div class="stripes-bg" aria-hidden="true" role="presentation">
       <div class="stripe"></div>
       <div class="stripe"></div>
       <div class="stripe"></div>

@@ -1,6 +1,6 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const faqList = document.querySelector(".faq-list");
+const faqList = document.querySelector(".faq-list");
 
+if (faqList) {
   faqList.addEventListener("click", function (event) {
     const clickedElement = event.target;
     const isQuestionOrAnswer =
@@ -21,4 +21,4 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-});
+}

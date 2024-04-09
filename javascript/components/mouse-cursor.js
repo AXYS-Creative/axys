@@ -104,73 +104,77 @@ menuBtn.addEventListener("mouseleave", () => {
   followMouse = true;
 });
 
-mailForm.addEventListener("mousemove", () => {
-  followMouse = false;
-  const submitBtnRect = submitFormBtn.getBoundingClientRect();
-  const centerX = submitBtnRect.left + submitBtnRect.width / 2;
-  const centerY = submitBtnRect.top + submitBtnRect.height / 2.2;
-  cursor.style.transform = `translate(${centerX - cursor.offsetWidth / 2}px, ${
-    centerY - cursor.offsetHeight / 2
-  }px)`;
-  cursor.classList.add("mail-form-active");
-});
+if (mailForm) {
+  mailForm.addEventListener("mousemove", () => {
+    followMouse = false;
+    const submitBtnRect = submitFormBtn.getBoundingClientRect();
+    const centerX = submitBtnRect.left + submitBtnRect.width / 2;
+    const centerY = submitBtnRect.top + submitBtnRect.height / 2.2;
+    cursor.style.transform = `translate(${
+      centerX - cursor.offsetWidth / 2
+    }px, ${centerY - cursor.offsetHeight / 2}px)`;
+    cursor.classList.add("mail-form-active");
+  });
 
-mailForm.addEventListener("mouseleave", () => {
-  followMouse = true;
-  cursor.classList.remove("mail-form-active");
-});
+  mailForm.addEventListener("mouseleave", () => {
+    followMouse = true;
+    cursor.classList.remove("mail-form-active");
+  });
 
-submitFormBtn.addEventListener("mousemove", () => {
-  const submitBtnRect = submitFormBtn.getBoundingClientRect();
-  const centerX = submitBtnRect.left + submitBtnRect.width / 2;
-  const centerY = submitBtnRect.top + submitBtnRect.height / 2;
-  cursor.style.transform = `translate(${centerX - cursor.offsetWidth / 2}px, ${
-    centerY - cursor.offsetHeight / 2
-  }px)`;
-  followMouse = false;
-});
+  submitFormBtn.addEventListener("mousemove", () => {
+    const submitBtnRect = submitFormBtn.getBoundingClientRect();
+    const centerX = submitBtnRect.left + submitBtnRect.width / 2;
+    const centerY = submitBtnRect.top + submitBtnRect.height / 2;
+    cursor.style.transform = `translate(${
+      centerX - cursor.offsetWidth / 2
+    }px, ${centerY - cursor.offsetHeight / 2}px)`;
+    followMouse = false;
+  });
 
-submitFormBtn.addEventListener("mouseleave", () => {
-  followMouse = true;
-});
+  submitFormBtn.addEventListener("mouseleave", () => {
+    followMouse = true;
+  });
+}
 
 // Statement Section
 
 const statementSection = document.querySelector("#statement-section");
 
-statementSection.addEventListener(
-  "mouseenter",
-  () => (cursor.style.zIndex = -1)
-);
-statementSection.addEventListener(
-  "mouseleave",
-  () => (cursor.style.zIndex = 4)
-);
-
-const statementElements = [
-  { word: ".statement-websites", icon: ".icon-globe" },
-  { word: ".statement-a11y", icon: ".icon-person" },
-  { word: ".statement-seo", icon: ".icon-magnifying-glass" },
-];
-
-const activateMouseIcon = (cursor, icon) => {
-  cursor.classList.add("statement-active");
-  icon.classList.add("active");
-};
-
-const deactivateMouseIcon = (cursor, icon) => {
-  cursor.classList.remove("statement-active");
-  icon.classList.remove("active");
-};
-
-statementElements.forEach(({ word, icon }) => {
-  const statementElement = document.querySelector(word);
-  const iconElement = document.querySelector(icon);
-
-  statementElement.addEventListener("mousemove", () =>
-    activateMouseIcon(cursor, iconElement)
+if (statementSection) {
+  statementSection.addEventListener(
+    "mouseenter",
+    () => (cursor.style.zIndex = -1)
   );
-  statementElement.addEventListener("mouseleave", () =>
-    deactivateMouseIcon(cursor, iconElement)
+  statementSection.addEventListener(
+    "mouseleave",
+    () => (cursor.style.zIndex = 4)
   );
-});
+
+  const statementElements = [
+    { word: ".statement-websites", icon: ".icon-globe" },
+    { word: ".statement-a11y", icon: ".icon-person" },
+    { word: ".statement-seo", icon: ".icon-magnifying-glass" },
+  ];
+
+  const activateMouseIcon = (cursor, icon) => {
+    cursor.classList.add("statement-active");
+    icon.classList.add("active");
+  };
+
+  const deactivateMouseIcon = (cursor, icon) => {
+    cursor.classList.remove("statement-active");
+    icon.classList.remove("active");
+  };
+
+  statementElements.forEach(({ word, icon }) => {
+    const statementElement = document.querySelector(word);
+    const iconElement = document.querySelector(icon);
+
+    statementElement.addEventListener("mousemove", () =>
+      activateMouseIcon(cursor, iconElement)
+    );
+    statementElement.addEventListener("mouseleave", () =>
+      deactivateMouseIcon(cursor, iconElement)
+    );
+  });
+}

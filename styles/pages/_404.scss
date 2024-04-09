@@ -1,23 +1,58 @@
-#not-found-section {
-  @extend #pre-footer-section;
-  margin-top: 200px;
+.page-not-found {
+  position: relative;
 
-  .not-found-title {
-    @extend .pre-footer-title;
-    @include column-center;
+  main {
+    padding: 0;
+  }
 
-    h1 {
-      color: $coral;
-      font-size: 64px;
-      font-weight: 800;
+  #not-found-section {
+    @include row-center;
+    @extend #pre-footer-section;
+    padding: 0;
+    height: 100vh;
+    height: 100dvh;
+    min-height: 680px;
+
+    .not-found-title {
+      @extend .pre-footer-title;
+      @include column-center;
 
       @include mq-max("md") {
-        font-size: 40px;
-        margin-bottom: 0;
+        margin-bottom: 16px;
       }
 
-      @include mq-max("sm") {
-        font-size: 28px;
+      h2 {
+        color: $coral;
+        font-size: 64px;
+
+        @include mq-max("md") {
+          font-size: 40px;
+          margin-bottom: 0;
+        }
+
+        @include mq-max("sm") {
+          font-size: 28px;
+        }
+      }
+    }
+
+    .headline-description {
+      @include mq-max("md") {
+        margin-bottom: 48px;
+      }
+    }
+  }
+
+  footer {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    translate: -50% 0;
+    width: 100%;
+
+    @include mq-max("lg") {
+      .social-media-container {
+        display: none;
       }
     }
   }

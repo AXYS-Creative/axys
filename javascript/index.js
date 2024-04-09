@@ -1,8 +1,9 @@
-import "./nav.js";
-import "./form.js";
-import "./faqs.js";
-import "./animations.js";
-import "./magnet.js";
-import "./mouse-cursor.js";
-import "./marquee.js";
+import "./components/nav.js";
+import "./components/form.js";
+import "./components/faqs.js";
+import "./components/magnet.js";
+import "./components/mouse-cursor.js";
+import "./components/marquee.js";
+
 import "./defaults.js";
+import "./animations.js";
