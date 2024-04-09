@@ -81,11 +81,6 @@ header .logo svg {
   translate: -2px -1px;
   height: 12px;
 }
-@media screen and (max-width: 1512px) {
-  header .logo svg {
-    translate: -2px 0;
-  }
-}
 header .menu-btn {
   display: flex;
   justify-content: center;
@@ -511,7 +506,9 @@ nav .nav-footer .nav-social .social-media-title {
 }
 @media screen and (max-width: 768px) {
   nav .nav-footer .nav-social .social-media-links {
-    translate: -12px 0;
+    translate: -8px 0;
+    display: inline-flex;
+    gap: 4px;
   }
 }
 

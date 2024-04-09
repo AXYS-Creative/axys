@@ -80,10 +80,6 @@ header {
       margin: 0 4px;
       translate: -2px -1px;
       height: 12px;
-
-      @include mq-max("xxl") {
-        translate: -2px 0;
-      }
     }
   }
 
@@ -551,7 +547,9 @@ nav {
 
       .social-media-links {
         @include mq-max("md") {
-          translate: -12px 0;
+          translate: -8px 0;
+          display: inline-flex;
+          gap: $social-media-links-spacing-sm;
         }
       }
     }
@@ -750,7 +748,7 @@ footer {
     .social-media-links {
       @include mq-max("lg") {
         justify-content: flex-start;
-        gap: 4px;
+        gap: $social-media-links-spacing-sm;
         translate: -8px 0;
       }
     }
