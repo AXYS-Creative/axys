@@ -1264,7 +1264,8 @@ ul {
 
   .marquee-dot {
     font-size: 36px;
-    color: $grey;
+    color: $grey-light;
+    opacity: 0.25;
     margin: 0 56px;
     user-select: none;
 

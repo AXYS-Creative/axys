@@ -1213,7 +1213,8 @@ ul {
 }
 .marquee .marquee-dot {
   font-size: 36px;
-  color: #3d3d3d;
+  color: #909090;
+  opacity: 0.25;
   margin: 0 56px;
   -webkit-user-select: none;
      -moz-user-select: none;

@@ -30,7 +30,7 @@ if (gsap) {
     duplicatedData.forEach((business) => {
       marqueeContent += `
         <img src="${IMG_PATH + business}.svg" alt="${business}">
-        <span class="marquee-dot" aria-hidden="true">•</span>
+        <span class="marquee-dot" aria-hidden="true" role="presentation">•</span>
       `;
     });
 
