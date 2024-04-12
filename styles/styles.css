@@ -573,6 +573,7 @@ footer {
   footer {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
   }
 }
@@ -606,6 +607,7 @@ footer .email-us {
   footer .email-us {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: flex-start;
     translate: -36px 0;
     gap: 24px;
@@ -2105,6 +2107,7 @@ ul {
 #plans-section .plan-options .price-card .benefits-list {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: flex-start;
   gap: 16px;
   translate: 24px 0;
@@ -2142,6 +2145,7 @@ ul {
 #plans-section .plan-options .half-card {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: flex-start;
   justify-content: space-between;
   height: 50%;
@@ -2318,12 +2322,12 @@ ul {
 }
 #plans-section .plan-options .half-card .mail-form .confirmation-message,
 #plans-section .plan-options .half-card .mail-form .error-message {
-  position: absolute;
-  bottom: 0;
-  translate: 0 148%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: absolute;
+  bottom: 0;
+  translate: 0 148%;
   gap: 12px;
   font-size: 14px;
   color: #a4d1a2;
@@ -2408,6 +2412,7 @@ ul {
 #faq-section {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 #faq-section .faq-list {
@@ -2562,6 +2567,7 @@ ul {
   #faq-section .faq-cta {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
   }
 }
@@ -2584,6 +2590,7 @@ ul {
 #pre-footer-section, .page-not-found #not-found-section {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 #pre-footer-section .pre-footer-title, .page-not-found #not-found-section .pre-footer-title, .page-not-found #not-found-section .not-found-title {
@@ -2666,6 +2673,7 @@ ul {
 .page-not-found #not-found-section .not-found-title {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 @media screen and (max-width: 768px) {

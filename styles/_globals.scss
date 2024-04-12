@@ -319,7 +319,7 @@ nav {
       }
 
       .icon-wrapper {
-        @include row-between;
+        @include row-center(space-between);
         position: absolute;
         top: 50%;
         left: 0;
@@ -360,7 +360,7 @@ nav {
   }
 
   .nav-footer {
-    @include row-between;
+    @include row-center(space-between);
     bottom: 36px;
 
     @include mq-max("md") {
@@ -368,7 +368,7 @@ nav {
     }
 
     &-links {
-      @include row-between;
+      @include row-center(space-between);
       align-self: flex-end;
       gap: 56px;
       translate: -16px 0;
@@ -440,7 +440,7 @@ nav {
       }
 
       .nav-footer-link {
-        @include row-between;
+        @include row-center(space-between);
         font-size: 16px;
         gap: 4px;
         text-transform: uppercase;
@@ -606,7 +606,7 @@ section {
 
 footer {
   position: relative;
-  @include row-between;
+  @include row-center(space-between);
 
   @include mq-max("lg") {
     @include column-center;
@@ -641,7 +641,7 @@ footer {
     display: none;
 
     @include mq-max("lg") {
-      @include column-left;
+      @include column-start;
       translate: -36px 0;
       gap: 24px;
       margin-bottom: 64px;
@@ -1001,7 +1001,7 @@ ul {
   }
 
   .social-media-links {
-    @include row-between;
+    @include row-center(space-between);
     gap: 24px;
 
     @include mq-max("xxl") {

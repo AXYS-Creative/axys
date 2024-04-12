@@ -473,7 +473,7 @@
   }
 
   .plan-options {
-    @include row-between;
+    @include row-center(space-between);
     align-items: stretch;
     gap: 32px;
 
@@ -641,7 +641,7 @@
       }
 
       .benefits-list {
-        @include column-left;
+        @include column-start;
         gap: 16px;
         translate: 24px 0;
         margin-bottom: 96px;
@@ -680,7 +680,7 @@
     }
 
     .half-card {
-      @include column-left;
+      @include column-start;
       justify-content: space-between;
       height: 50%;
 
@@ -857,10 +857,10 @@
 
         .confirmation-message,
         .error-message {
+          @include row-center(space-between);
           position: absolute;
           bottom: 0;
           translate: 0 148%;
-          @include row-between;
           gap: 12px;
           font-size: 14px;
           color: $green;
@@ -1004,7 +1004,7 @@
     }
 
     .question {
-      @include row-between;
+      @include row-center(space-between);
       position: absolute;
       top: 0;
       width: 100%;
