@@ -2712,4 +2712,39 @@ ul {
   .page-not-found footer .social-media-container {
     display: none;
   }
+}
+
+.logo-collapse {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo-collapse svg {
+  width: 96px;
+  height: 96px;
+}
+.logo-collapse .logo-title {
+  width: 0;
+  text-align: center;
+  text-wrap: nowrap;
+  overflow: hidden;
+  font-size: 80px;
+  font-weight: 700;
+  animation: show-text 3s cubic-bezier(0.8, -0.5, 0.2, 1.49) 2s;
+}
+
+@keyframes show-text {
+  0% {
+    width: 0;
+  }
+  20% {
+    width: 38%;
+  }
+  80% {
+    width: 38%;
+  }
+  0% {
+    width: 0;
+  }
 }/*# sourceMappingURL=styles.css.map */
