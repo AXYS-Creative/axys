@@ -5,5 +5,5 @@ import "./components/magnet.js";
 import "./components/mouse-cursor.js";
 import "./components/marquee.js";
 
-import "./defaults.js";
+import "./utility.js";
 import "./animations.js";
