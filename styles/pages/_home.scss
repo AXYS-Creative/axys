@@ -18,7 +18,7 @@
       margin-bottom: 96px;
     }
 
-    h1 {
+    &__title {
       // see 'h1, h2' in _globals.scss
 
       @include mq-max("md") {

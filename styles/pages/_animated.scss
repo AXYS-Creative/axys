@@ -1,6 +1,27 @@
+.animated-page {
+  padding: 0;
+
+  main {
+    padding: 0;
+  }
+
+  section {
+    @include row-center;
+    height: 100vh;
+  }
+}
+
 .logo-collapse {
   height: 100vh;
   @include row-center;
+
+  .group-wrapper {
+    // border: $test;
+    width: 100vw;
+    @include row-center;
+    animation: rotate-wrapper 4s ease 1s forwards;
+    rotate: -180deg;
+  }
 
   svg {
     width: 96px;
@@ -16,7 +37,22 @@
     font-size: 80px;
     font-weight: 700;
 
-    animation: show-text 3s cubic-bezier(0.8, -0.5, 0.2, 1.49) 2s;
+    animation: show-text 3.6s cubic-bezier(0.8, -0.5, 0.2, 1.49) 1.2s;
+  }
+}
+
+@keyframes rotate-wrapper {
+  0% {
+    rotate: -180deg;
+  }
+  10% {
+    rotate: 0deg;
+  }
+  90% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 180deg;
   }
 }
 
@@ -24,13 +60,101 @@
   0% {
     width: 0;
   }
-  20% {
+  25% {
     width: 38%;
   }
-  80% {
+  75% {
     width: 38%;
   }
   0% {
     width: 0;
+  }
+}
+
+.hero-text-slide {
+  @extend #hero-section;
+  margin-top: 0 !important;
+
+  .section-headline {
+    @include row-center;
+    margin-bottom: unset;
+    animation: blur-title 4s ease forwards;
+
+    &__title {
+      @include column-start;
+      margin-bottom: unset;
+    }
+
+    // .line-1 {
+
+    // }
+
+    .line-2 {
+      @include row-center;
+
+      .plus-sign {
+        // border: $test;
+        @include row-center;
+        width: 56px;
+        height: 56px;
+        padding-left: unset;
+        padding-bottom: 12px;
+        translate: 24px -2px;
+        animation: rotate-plus-sign 2.6s ease 0.8s forwards;
+      }
+    }
+
+    .line-3 {
+      padding-left: 240px;
+      display: block;
+      translate: -240px 0;
+      animation: slide-title-text 0.6s ease 1.6s forwards;
+    }
+  }
+}
+
+@keyframes slide-title-text {
+  0% {
+    translate: -240px 0;
+  }
+  20% {
+    translate: -240px 0;
+  }
+  100% {
+    translate: 0 0;
+  }
+}
+
+@keyframes rotate-plus-sign {
+  0% {
+    rotate: 0deg;
+  }
+  30% {
+    rotate: 180deg;
+  }
+  70% {
+    rotate: 180deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+
+@keyframes blur-title {
+  0% {
+    filter: blur(12px);
+    opacity: 0;
+  }
+  12% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+  90% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+  100% {
+    filter: blur(12px);
+    opacity: 0;
   }
 }
