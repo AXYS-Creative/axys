@@ -1,0 +1,9 @@
+.policies-page {
+  .heading {
+    .heading-title {
+      @include row-end;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+}
