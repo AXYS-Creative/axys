@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -748,6 +749,10 @@ h2 {
 
 a {
   text-decoration: none;
+}
+
+strong {
+  font-weight: 900;
 }
 
 .classic-link {
@@ -2873,10 +2878,49 @@ ul {
     scale: 1;
   }
 }
+.policies-page {
+  margin: 100px 200px;
+}
+.policies-page span {
+  color: #fbfaa2;
+}
 .policies-page .heading .heading-title {
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
   align-items: center;
   gap: 20px;
+  padding-bottom: 40px;
+}
+.policies-page .heading .heading-title h1 {
+  font-family: "Archivo", sans-serif;
+}
+.policies-page .heading .heading-title svg {
+  translate: 0 8px;
+}
+.policies-page .heading .header-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 26px;
+  border-bottom: 3px solid #e48c66;
+}
+.policies-page .heading .header-text h3 {
+  text-transform: uppercase;
+}
+.policies-page .heading .header-text p {
+  padding-bottom: 40px;
+}
+.policies-page .policies-intro {
+  padding: 30px 0;
+}
+.policies-page .policies {
+  padding: 20px 0;
+}
+.policies-page .policies .policies-title {
+  font-size: 18px;
+  font-weight: 600;
+  padding-bottom: 14px;
+}
+.policies-page .policies p {
+  font-size: 16px;
 }/*# sourceMappingURL=styles.css.map */
