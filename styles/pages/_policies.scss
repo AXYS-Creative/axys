@@ -1,6 +1,18 @@
 .policies-page {
   margin: 100px 300px;
 
+  @include mq-max("xl") {
+    margin: 100px;
+  }
+
+  @include mq-max("lg") {
+    margin: 100px 50px;
+  }
+
+  @include mq-max("md") {
+    margin: 100px 20px;
+  }
+
   span {
     color: $yellow;
   }
@@ -14,10 +26,18 @@
 
       h1 {
         font-family: $primary-font;
+
+        @include mq-max("lg") {
+          font-size: 50px;
+        }
       }
 
       svg {
         translate: 0 8px;
+
+        @include mq-max("lg") {
+          translate: 0 -6px;
+        }
       }
     }
 
@@ -30,16 +50,28 @@
         all: unset;
         font-size: 24px;
         text-transform: uppercase;
+
+        @include mq-max("md") {
+          font-size: 20px;
+        }
       }
 
       p {
         padding-bottom: 40px;
+
+        @include mq-max("md") {
+          font-size: 14px;
+        }
       }
     }
   }
 
   .policies-intro {
     padding: 30px 0;
+
+    @include mq-max("md") {
+      font-size: 14px;
+    }
   }
 
   .policies {
@@ -53,6 +85,11 @@
 
     p {
       font-size: 16px;
+      line-height: 120%;
+
+      @include mq-max("md") {
+        font-size: 14px;
+      }
     }
   }
 }
