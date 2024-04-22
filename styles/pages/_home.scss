@@ -86,6 +86,15 @@
     margin: 96px auto;
     width: 80%;
 
+    &:hover,
+    &:focus-within {
+      @include mq-mouse {
+        .showcase-link {
+          opacity: 0.5;
+        }
+      }
+    }
+
     @include mq-max("xxl") {
       margin: 64px auto;
       width: 92%;
@@ -94,14 +103,6 @@
     @include mq-max("md") {
       width: 100%;
       gap: 48px;
-    }
-
-    &:hover {
-      .showcase-link {
-        @include mq-mouse {
-          opacity: 0.5;
-        }
-      }
     }
 
     .showcase-link {
@@ -134,82 +135,91 @@
       @include mq-max("md") {
         width: 100%;
       }
-    }
 
-    .showcase-item {
-      position: relative;
-      aspect-ratio: 3 / 2;
+      &[aria-disabled="true"] {
+        cursor: not-allowed;
 
-      &::before,
-      &::after {
-        @include row-center;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        aspect-ratio: 3 / 2;
-        opacity: 0;
-        transition: 0.3s ease;
-      }
-
-      &::before {
-        content: "";
-        background: rgba($black, 0.95);
-      }
-      &::after {
-        content: "Visit Site";
-        color: $white;
-        font-size: 24px;
-        font-weight: 700;
-        text-transform: uppercase;
-        translate: 0 24px;
-        filter: blur(4px);
-
-        @include mq-max("xl") {
-          font-size: 16px;
-        }
-
-        @include mq-max("md") {
-          font-size: 24px;
-        }
-
-        @include mq-max("sm") {
-          font-size: 16px;
+        .showcase-item {
+          &::after {
+            content: "Coming Soon";
+          }
         }
       }
-
-      .showcase-caption {
-        margin-top: 8px;
-        font-size: 18px;
-
-        @include mq-max("xxl") {
-          font-size: 16px;
-        }
-
-        @include mq-max("xl") {
-          font-size: 14px;
-        }
-
-        @include mq-max("lg") {
-          font-size: 12px;
-        }
-
-        @include mq-max("md") {
-          font-size: 16px;
-        }
-
-        @include mq-max("sm") {
-          font-size: 14px;
-        }
-      }
-    }
-
-    .showcase-link[aria-disabled="true"] {
-      cursor: not-allowed;
 
       .showcase-item {
+        position: relative;
+        aspect-ratio: 3 / 2;
+
+        &::before,
         &::after {
-          content: "Coming Soon";
+          @include row-center;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          aspect-ratio: 3 / 2;
+          opacity: 0;
+          transition: 0.3s ease;
+        }
+
+        &::before {
+          content: "";
+          background: rgba($black, 0.95);
+        }
+        &::after {
+          content: "Visit Site";
+          color: $white;
+          font-size: 24px;
+          font-weight: 700;
+          text-transform: uppercase;
+          translate: 0 24px;
+          filter: blur(4px);
+
+          @include mq-max("xl") {
+            font-size: 16px;
+          }
+
+          @include mq-max("md") {
+            font-size: 24px;
+          }
+
+          @include mq-max("sm") {
+            font-size: 16px;
+          }
+        }
+
+        .showcase-caption {
+          margin-top: 8px;
+          font-size: 18px;
+
+          @include mq-max("xxl") {
+            font-size: 16px;
+          }
+
+          @include mq-max("xl") {
+            font-size: 14px;
+          }
+
+          @include mq-max("lg") {
+            font-size: 12px;
+          }
+
+          @include mq-max("md") {
+            font-size: 16px;
+          }
+
+          @include mq-max("sm") {
+            font-size: 14px;
+          }
+        }
+      }
+
+      &:nth-of-type(1),
+      &:nth-of-type(4) {
+        .showcase-item {
+          img {
+            background: #151515;
+          }
         }
       }
     }

@@ -1492,6 +1492,11 @@ ul {
   margin: 96px auto;
   width: 80%;
 }
+@media (hover: hover) and (pointer: fine) {
+  #work-section .work-showcase:hover .showcase-link, #work-section .work-showcase:focus-within .showcase-link {
+    opacity: 0.5;
+  }
+}
 @media screen and (max-width: 1512px) {
   #work-section .work-showcase {
     margin: 64px auto;
@@ -1502,11 +1507,6 @@ ul {
   #work-section .work-showcase {
     width: 100%;
     gap: 48px;
-  }
-}
-@media (hover: hover) and (pointer: fine) {
-  #work-section .work-showcase:hover .showcase-link {
-    opacity: 0.5;
   }
 }
 #work-section .work-showcase .showcase-link {
@@ -1535,11 +1535,17 @@ ul {
     width: 100%;
   }
 }
-#work-section .work-showcase .showcase-item {
+#work-section .work-showcase .showcase-link[aria-disabled=true] {
+  cursor: not-allowed;
+}
+#work-section .work-showcase .showcase-link[aria-disabled=true] .showcase-item::after {
+  content: "Coming Soon";
+}
+#work-section .work-showcase .showcase-link .showcase-item {
   position: relative;
   aspect-ratio: 3/2;
 }
-#work-section .work-showcase .showcase-item::before, #work-section .work-showcase .showcase-item::after {
+#work-section .work-showcase .showcase-link .showcase-item::before, #work-section .work-showcase .showcase-link .showcase-item::after {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1551,11 +1557,11 @@ ul {
   opacity: 0;
   transition: 0.3s ease;
 }
-#work-section .work-showcase .showcase-item::before {
+#work-section .work-showcase .showcase-link .showcase-item::before {
   content: "";
   background: rgba(16, 16, 16, 0.95);
 }
-#work-section .work-showcase .showcase-item::after {
+#work-section .work-showcase .showcase-link .showcase-item::after {
   content: "Visit Site";
   color: #f0f0f0;
   font-size: 24px;
@@ -1565,54 +1571,51 @@ ul {
   filter: blur(4px);
 }
 @media screen and (max-width: 1200px) {
-  #work-section .work-showcase .showcase-item::after {
+  #work-section .work-showcase .showcase-link .showcase-item::after {
     font-size: 16px;
   }
 }
 @media screen and (max-width: 768px) {
-  #work-section .work-showcase .showcase-item::after {
+  #work-section .work-showcase .showcase-link .showcase-item::after {
     font-size: 24px;
   }
 }
 @media screen and (max-width: 480px) {
-  #work-section .work-showcase .showcase-item::after {
+  #work-section .work-showcase .showcase-link .showcase-item::after {
     font-size: 16px;
   }
 }
-#work-section .work-showcase .showcase-item .showcase-caption {
+#work-section .work-showcase .showcase-link .showcase-item .showcase-caption {
   margin-top: 8px;
   font-size: 18px;
 }
 @media screen and (max-width: 1512px) {
-  #work-section .work-showcase .showcase-item .showcase-caption {
+  #work-section .work-showcase .showcase-link .showcase-item .showcase-caption {
     font-size: 16px;
   }
 }
 @media screen and (max-width: 1200px) {
-  #work-section .work-showcase .showcase-item .showcase-caption {
+  #work-section .work-showcase .showcase-link .showcase-item .showcase-caption {
     font-size: 14px;
   }
 }
 @media screen and (max-width: 1024px) {
-  #work-section .work-showcase .showcase-item .showcase-caption {
+  #work-section .work-showcase .showcase-link .showcase-item .showcase-caption {
     font-size: 12px;
   }
 }
 @media screen and (max-width: 768px) {
-  #work-section .work-showcase .showcase-item .showcase-caption {
+  #work-section .work-showcase .showcase-link .showcase-item .showcase-caption {
     font-size: 16px;
   }
 }
 @media screen and (max-width: 480px) {
-  #work-section .work-showcase .showcase-item .showcase-caption {
+  #work-section .work-showcase .showcase-link .showcase-item .showcase-caption {
     font-size: 14px;
   }
 }
-#work-section .work-showcase .showcase-link[aria-disabled=true] {
-  cursor: not-allowed;
-}
-#work-section .work-showcase .showcase-link[aria-disabled=true] .showcase-item::after {
-  content: "Coming Soon";
+#work-section .work-showcase .showcase-link:nth-of-type(1) .showcase-item img, #work-section .work-showcase .showcase-link:nth-of-type(4) .showcase-item img {
+  background: #151515;
 }
 #work-section .made-with-care {
   display: flex;
