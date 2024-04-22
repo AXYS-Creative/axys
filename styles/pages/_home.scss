@@ -113,15 +113,17 @@
       &:focus {
         opacity: 1;
 
-        .coming-soon::before,
-        .coming-soon::after {
-          opacity: 1;
-        }
+        .showcase-item {
+          &::before,
+          &::after {
+            opacity: 1;
+          }
 
-        .coming-soon::after {
-          translate: 0 0;
-          filter: blur(0);
-          transition: 0.4s ease;
+          &::after {
+            translate: 0 0;
+            filter: blur(0);
+            transition: 0.4s ease;
+          }
         }
       }
 
@@ -134,16 +136,12 @@
       }
     }
 
-    .showcase-link[aria-disabled="true"] {
-      cursor: not-allowed;
-    }
-
     .showcase-item {
       position: relative;
       aspect-ratio: 3 / 2;
 
-      &.coming-soon::before,
-      &.coming-soon::after {
+      &::before,
+      &::after {
         @include row-center;
         position: absolute;
         top: 0;
@@ -154,12 +152,12 @@
         transition: 0.3s ease;
       }
 
-      &.coming-soon::before {
+      &::before {
         content: "";
         background: rgba($black, 0.95);
       }
-      &.coming-soon::after {
-        content: "Coming Soon";
+      &::after {
+        content: "Visit Site";
         color: $white;
         font-size: 24px;
         font-weight: 700;
@@ -202,6 +200,16 @@
 
         @include mq-max("sm") {
           font-size: 14px;
+        }
+      }
+    }
+
+    .showcase-link[aria-disabled="true"] {
+      cursor: not-allowed;
+
+      .showcase-item {
+        &::after {
+          content: "Coming Soon";
         }
       }
     }
