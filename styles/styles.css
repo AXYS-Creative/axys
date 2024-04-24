@@ -755,23 +755,6 @@ strong {
   font-weight: 900;
 }
 
-.classic-link {
-  position: relative;
-}
-.classic-link::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: #fbfaa2;
-  animation: classic-link-default 0.3s ease forwards;
-}
-.classic-link:hover::before, .classic-link:focus::before {
-  animation: classic-link-hover 0.3s ease forwards;
-}
-
 button {
   background: none;
   border: none;
@@ -1295,6 +1278,23 @@ ul {
     height: 0;
   }
 }
+.classic-link {
+  position: relative;
+}
+.classic-link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #fbfaa2;
+  animation: classic-link-default 0.3s ease forwards;
+}
+.classic-link:hover::before, .classic-link:focus::before {
+  animation: classic-link-hover 0.3s ease forwards;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -2883,45 +2883,64 @@ ul {
   }
 }
 .policies-page {
-  margin: 100px 300px;
+  max-width: 1440px;
+  margin: 140px auto;
 }
 @media screen and (max-width: 1200px) {
   .policies-page {
-    margin: 100px;
+    margin: 80px auto;
   }
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 480px) {
   .policies-page {
-    margin: 100px 50px;
+    margin: 64px auto;
   }
 }
-@media screen and (max-width: 768px) {
-  .policies-page {
-    margin: 100px 20px;
-  }
-}
-.policies-page span {
+.policies-page a {
   color: #fbfaa2;
+  text-decoration: none;
 }
 .policies-page .heading .heading-title {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
   padding-bottom: 30px;
 }
 .policies-page .heading .heading-title h1 {
-  font-family: "Archivo", sans-serif;
+  font-size: 96px;
+  text-transform: uppercase;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1512px) {
   .policies-page .heading .heading-title h1 {
-    font-size: 50px;
+    font-size: 80px;
   }
 }
-.policies-page .heading .heading-title svg {
-  translate: 0 8px;
+@media screen and (max-width: 1200px) {
+  .policies-page .heading .heading-title h1 {
+    font-size: 64px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .policies-page .heading .heading-title h1 {
+    font-size: calc(12px + 6.4vw);
+    margin-bottom: 12px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .policies-page .heading .heading-title h1 {
+    font-size: calc(12px + 5.8vw);
+  }
+}
+.policies-page .heading .heading-title .policies-svg svg {
+  width: 64px;
 }
 @media screen and (max-width: 1024px) {
-  .policies-page .heading .heading-title svg {
+  .policies-page .heading .heading-title .policies-svg svg {
+    width: 40px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .policies-page .heading .heading-title .policies-svg svg {
     translate: 0 -6px;
   }
 }
