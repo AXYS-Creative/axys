@@ -103,7 +103,7 @@ header {
     }
 
     &:hover {
-      @include mq-min("sm") {
+      @include mq-mouse {
         .menu-btn-text {
           translate: -12px 0;
         }
@@ -152,7 +152,7 @@ header {
       }
     }
 
-    &.active {
+    &[aria-expanded="true"] {
       .burger-line-wrapper {
         rotate: 90deg;
       }
@@ -184,6 +184,25 @@ header {
       }
     }
   }
+
+  &.nav-active {
+    .logo {
+      p {
+        &:first-of-type {
+          width: 48px;
+        }
+        &:last-of-type {
+          width: 96px;
+        }
+      }
+    }
+
+    .menu-btn {
+      .menu-btn-text {
+        opacity: 1;
+      }
+    }
+  }
 }
 
 nav {
@@ -201,7 +220,7 @@ nav {
   pointer-events: none;
   transition: opacity 0.3s ease 0.48s;
 
-  &.active {
+  &[aria-hidden="false"] {
     opacity: 1;
     pointer-events: all;
     transition: opacity 0.3s ease;

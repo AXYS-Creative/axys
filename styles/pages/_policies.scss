@@ -6,10 +6,6 @@
     margin: 140px auto;
   }
 
-  @include mq-max("sm") {
-    margin: 64px auto;
-  }
-
   a {
     color: $yellow;
     text-decoration: none;

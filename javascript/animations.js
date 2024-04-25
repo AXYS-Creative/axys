@@ -1,73 +1,76 @@
 let mqMaxXxl = window.matchMedia("(max-width: 1440px)");
-let mqMaxSm = window.matchMedia("(max-width: 480px)");
+let mqMaxMd = window.matchMedia("(max-width: 768px)");
 
 const glitchCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?><:;";
 
-function applyGlitchEffect({ element, text, iterations, color }) {
-  let glitchIterations = 0;
-  clearInterval(element.glitchInterval);
+const dynamicText = document.querySelector(".dynamic-text");
 
-  if (color) {
-    element.style.color = color;
-  }
+if (dynamicText) {
+  function applyGlitchEffect({ element, text, iterations, color }) {
+    let glitchIterations = 0;
+    clearInterval(element.glitchInterval);
 
-  const revealRate = iterations / text.length;
-
-  element.glitchInterval = setInterval(() => {
-    const glitchText = text
-      .split("")
-      .map((char, index) => {
-        if (glitchIterations / revealRate > index) {
-          return char;
-        }
-
-        return glitchCharacters.charAt(
-          Math.floor(Math.random() * glitchCharacters.length)
-        );
-      })
-      .join("");
-
-    element.innerText = glitchText;
-
-    if (glitchIterations >= iterations) {
-      clearInterval(element.glitchInterval);
-      element.innerText = text;
+    if (color) {
+      element.style.color = color;
     }
 
-    glitchIterations++;
-  }, 25);
-}
+    const revealRate = iterations / text.length;
 
-// Hero Glitch Text Function
-function heroGlitchText() {
-  const dynamicText = document.querySelector(".dynamic-text");
-  const words = [
-    { word: "Creative", color: "#E48C66" },
-    { word: "Responsive", color: "#7EC1D4" },
-    { word: "Accessible", color: "#A4D1A2" },
-    { word: "Innovative", color: "#FBFAA2" },
-    { word: "Engaging", color: "#E1A7B4" },
-  ];
+    element.glitchInterval = setInterval(() => {
+      const glitchText = text
+        .split("")
+        .map((char, index) => {
+          if (glitchIterations / revealRate > index) {
+            return char;
+          }
 
-  let index = 0;
+          return glitchCharacters.charAt(
+            Math.floor(Math.random() * glitchCharacters.length)
+          );
+        })
+        .join("");
 
-  function updateText() {
-    const wordObj = words[index];
-    applyGlitchEffect({
-      element: dynamicText,
-      text: wordObj.word,
-      iterations: wordObj.word.length * 4,
-      color: wordObj.color,
-    });
+      element.innerText = glitchText;
 
-    index = (index + 1) % words.length;
+      if (glitchIterations >= iterations) {
+        clearInterval(element.glitchInterval);
+        element.innerText = text;
+      }
+
+      glitchIterations++;
+    }, 25);
   }
 
-  updateText();
-  setInterval(updateText, 4000);
-}
+  // Hero Glitch Text Function
+  function heroGlitchText() {
+    const words = [
+      { word: "Creative", color: "#E48C66" },
+      { word: "Responsive", color: "#7EC1D4" },
+      { word: "Accessible", color: "#A4D1A2" },
+      { word: "Innovative", color: "#FBFAA2" },
+      { word: "Engaging", color: "#E1A7B4" },
+    ];
 
-heroGlitchText();
+    let index = 0;
+
+    function updateText() {
+      const wordObj = words[index];
+      applyGlitchEffect({
+        element: dynamicText,
+        text: wordObj.word,
+        iterations: wordObj.word.length * 4,
+        color: wordObj.color,
+      });
+
+      index = (index + 1) % words.length;
+    }
+
+    updateText();
+    setInterval(updateText, 4000);
+  }
+
+  heroGlitchText();
+}
 
 //
 
@@ -110,7 +113,7 @@ const scrollAnimations = () => {
 
   if (mqMaxXxl.matches) {
     pixelSpacer = 64;
-  } else if (mqMaxSm.matches) {
+  } else if (mqMaxMd.matches) {
     pixelSpacer = 32;
   }
 
@@ -133,7 +136,7 @@ scrollAnimations();
 
 //
 
-if (mqMaxSm.matches) {
+if (mqMaxMd.matches) {
   let siteHeader = document.querySelector(".site-header");
 
   const scrollFromTop = () => {
