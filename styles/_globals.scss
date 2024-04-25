@@ -93,6 +93,7 @@ header {
     text-transform: uppercase;
     gap: 12px;
     cursor: pointer;
+    mix-blend-mode: difference;
 
     @include mq-min("xxxl") {
       right: calc(50% - $content-width / 2 + $content-padding);

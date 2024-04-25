@@ -92,6 +92,7 @@ header .menu-btn {
   text-transform: uppercase;
   gap: 12px;
   cursor: pointer;
+  mix-blend-mode: difference;
 }
 @media screen and (min-width: 1921px) {
   header .menu-btn {

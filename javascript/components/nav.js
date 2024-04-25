@@ -12,8 +12,6 @@ tabElementsNav.forEach((elem) => elem.setAttribute("tabIndex", "-1"));
 const toggleNav = () => {
   const isNavOpen = navMenu.getAttribute("aria-hidden") === "true";
 
-  console.log(isNavOpen);
-
   siteHeader.classList.toggle("nav-active");
 
   navMenu.setAttribute("aria-hidden", !isNavOpen);
@@ -31,6 +29,8 @@ const toggleNav = () => {
 const closeNav = () => {
   navMenu.setAttribute("aria-hidden", "true");
   menuBtn.setAttribute("aria-expanded", "false");
+
+  siteHeader.classList.remove("nav-active");
 
   // Reset tabindex for tabElementsPage and tabElementsNav
   tabElementsPage.forEach((el) => el.setAttribute("tabindex", "0"));
