@@ -1150,6 +1150,11 @@ ul {
     opacity: 0;
     transition: opacity 0.3s ease;
 
+    @include mq-max("md") {
+      width: 16vw;
+      height: 16vw;
+    }
+
     &.active {
       display: block;
       opacity: 0.5;

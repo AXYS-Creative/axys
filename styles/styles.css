@@ -1084,6 +1084,14 @@ ul {
   opacity: 0;
   transition: opacity 0.3s ease;
 }
+@media screen and (max-width: 768px) {
+  .mouse-cursor .icon-globe,
+  .mouse-cursor .icon-person,
+  .mouse-cursor .icon-magnifying-glass {
+    width: 16vw;
+    height: 16vw;
+  }
+}
 .mouse-cursor .icon-globe.active,
 .mouse-cursor .icon-person.active,
 .mouse-cursor .icon-magnifying-glass.active {
