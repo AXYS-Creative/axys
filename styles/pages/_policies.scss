@@ -1,9 +1,9 @@
 .policies-page {
-  max-width: 1440px;
-  margin: 140px auto;
+  max-width: 1320px;
+  margin: 180px auto;
 
   @include mq-max("xl") {
-    margin: 80px auto;
+    margin: 140px auto;
   }
 
   @include mq-max("sm") {
@@ -17,7 +17,6 @@
 
   .heading {
     .heading-title {
-      // border: $test;
       display: flex;
       align-items: center;
       gap: 30px;
