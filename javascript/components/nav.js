@@ -1,7 +1,8 @@
 const siteHeader = document.querySelector(".site-header"),
   navMenu = document.querySelector(".nav-menu"),
-  menuBtn = document.querySelector(".menu-btn"),
-  navLinks = document.querySelectorAll(".nav-link"),
+  menuBtn = document.querySelector(".menu-btn");
+
+const navLinks = document.querySelectorAll(".nav-link"),
   navFooterLinks = document.querySelectorAll(".nav-footer-link"),
   tabElementsPage = document.querySelectorAll(".tab-element-page"),
   tabElementsNav = document.querySelectorAll(".tab-element-nav");
@@ -11,6 +12,8 @@ tabElementsNav.forEach((elem) => elem.setAttribute("tabIndex", "-1"));
 const toggleNav = () => {
   const isNavOpen = navMenu.getAttribute("aria-hidden") === "true";
 
+  console.log(isNavOpen);
+
   siteHeader.classList.toggle("nav-active");
 
   navMenu.setAttribute("aria-hidden", !isNavOpen);
@@ -18,10 +21,10 @@ const toggleNav = () => {
 
   // Update tabindex for tabElementsPage and tabElementsNav
   tabElementsPage.forEach((el) =>
-    el.setAttribute("tabindex", isNavOpen ? "0" : "-1")
+    el.setAttribute("tabindex", isNavOpen ? "-1" : "0")
   );
   tabElementsNav.forEach((el) =>
-    el.setAttribute("tabindex", isNavOpen ? "-1" : "0")
+    el.setAttribute("tabindex", isNavOpen ? "0" : "-1")
   );
 };
 
