@@ -2,7 +2,8 @@
   max-width: 1440px;
   margin: 180px auto;
 
-  @include mq-max("xl") {
+  @include mq-max("xxl") {
+    max-width: 1024px;
     margin: 140px auto;
   }
 

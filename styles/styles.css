@@ -2903,8 +2903,9 @@ ul {
   max-width: 1440px;
   margin: 180px auto;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1512px) {
   .policies-page {
+    max-width: 1024px;
     margin: 140px auto;
   }
 }
