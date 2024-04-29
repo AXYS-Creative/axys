@@ -781,6 +781,19 @@ img {
 ul {
   list-style: none;
 }
+ul.simple-list {
+  list-style-type: circle;
+  list-style-position: inside;
+}
+ul.simple-list li {
+  font-size: 16px;
+}
+@media screen and (max-width: 1512px) {
+  ul.simple-list li {
+    font-size: 14px;
+    letter-spacing: 0.25px;
+  }
+}
 
 .cta-wrapper {
   display: flex;
@@ -2137,23 +2150,12 @@ ul {
   justify-content: center;
   align-items: flex-start;
   gap: 16px;
-  translate: 24px 0;
   margin-bottom: 96px;
-  list-style: circle;
 }
 @media screen and (max-width: 1512px) {
   #plans-section .plan-options .price-card .benefits-list {
     gap: 12px;
     margin-bottom: 64px;
-  }
-}
-#plans-section .plan-options .price-card .benefits-list li {
-  font-size: 16px;
-}
-@media screen and (max-width: 1512px) {
-  #plans-section .plan-options .price-card .benefits-list li {
-    font-size: 14px;
-    letter-spacing: 0.25px;
   }
 }
 #plans-section .plan-options .price-card .cta-wrapper .cta-1 {
