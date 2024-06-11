@@ -783,9 +783,8 @@ ul {
 }
 ul.classic-list {
   list-style-type: circle;
-  list-style-position: inside;
   margin-block: 12px;
-  margin-inline-start: 4px;
+  margin-inline-start: 20px;
 }
 ul.classic-list li {
   font-size: 16px;
@@ -2568,7 +2567,6 @@ ul.classic-list li {
   padding: 12px 0;
   display: flex;
   font-size: 20px;
-  line-height: 150%;
   transition: 0.2s ease 0s;
   cursor: pointer;
 }
