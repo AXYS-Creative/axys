@@ -1,5 +1,6 @@
 .classic-link {
   position: relative;
+  display: inline-block;
 
   &::before {
     content: "";

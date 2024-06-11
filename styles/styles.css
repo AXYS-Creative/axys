@@ -1313,6 +1313,7 @@ ul.classic-list li {
 }
 .classic-link {
   position: relative;
+  display: inline-block;
 }
 .classic-link::before {
   content: "";

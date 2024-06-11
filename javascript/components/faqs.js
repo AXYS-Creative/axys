@@ -21,4 +21,22 @@ if (faqList) {
       }
     });
   }
+
+  // Add event listeners for focus and blur events on .classic-link elements
+  const classicLinks = document.querySelectorAll(".classic-link");
+
+  classicLinks.forEach((link) => {
+    link.addEventListener("focus", (event) => {
+      const faqItem = event.target.closest(".faq-item");
+      // Check if the faq-item is already active
+      if (!faqItem.classList.contains("active")) {
+        toggleFAQItem(faqItem);
+      }
+    });
+
+    link.addEventListener("blur", (event) => {
+      const faqItem = event.target.closest(".faq-item");
+      faqItem.classList.remove("active");
+    });
+  });
 }
