@@ -862,15 +862,13 @@
           }
         }
 
-        .confirmation-message,
-        .error-message {
+        .status-message {
           @include row-center(space-between);
           position: absolute;
           bottom: 0;
           translate: 0 148%;
           gap: 12px;
           font-size: 14px;
-          color: $green;
           opacity: 0;
           pointer-events: none;
           transition: 0.24s ease 0.12s;
@@ -879,25 +877,32 @@
             font-size: 13px;
           }
 
-          &.active {
-            opacity: 1;
-            pointer-events: all;
-
-            .check-icon,
-            .error-icon {
-              scale: 1.2;
-            }
-          }
-
-          .check-icon,
+          .success-icon,
           .error-icon {
             width: 24px;
             height: 24px;
-            border: 1px solid $green;
             border-radius: 50%;
             padding: 4px;
             scale: 0.5;
             transition: 0.3s ease 0.24s;
+          }
+
+          &.active {
+            opacity: 1;
+            pointer-events: all;
+
+            .success-icon,
+            .error-icon {
+              scale: 1.2;
+            }
+          }
+        }
+
+        .success-message {
+          color: $green;
+
+          .success-icon {
+            border: 1px solid $green;
 
             path {
               fill: $green;

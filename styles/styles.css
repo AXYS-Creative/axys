@@ -2351,8 +2351,7 @@ ul.classic-list li {
   fill: #909090;
   transition: 0.36s ease;
 }
-#plans-section .plan-options .half-card .mail-form .confirmation-message,
-#plans-section .plan-options .half-card .mail-form .error-message {
+#plans-section .plan-options .half-card .mail-form .status-message {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -2361,44 +2360,39 @@ ul.classic-list li {
   translate: 0 148%;
   gap: 12px;
   font-size: 14px;
-  color: #a4d1a2;
   opacity: 0;
   pointer-events: none;
   transition: 0.24s ease 0.12s;
 }
 @media screen and (max-width: 480px) {
-  #plans-section .plan-options .half-card .mail-form .confirmation-message,
-  #plans-section .plan-options .half-card .mail-form .error-message {
+  #plans-section .plan-options .half-card .mail-form .status-message {
     font-size: 13px;
   }
 }
-#plans-section .plan-options .half-card .mail-form .confirmation-message.active,
-#plans-section .plan-options .half-card .mail-form .error-message.active {
-  opacity: 1;
-  pointer-events: all;
-}
-#plans-section .plan-options .half-card .mail-form .confirmation-message.active .check-icon,
-#plans-section .plan-options .half-card .mail-form .confirmation-message.active .error-icon,
-#plans-section .plan-options .half-card .mail-form .error-message.active .check-icon,
-#plans-section .plan-options .half-card .mail-form .error-message.active .error-icon {
-  scale: 1.2;
-}
-#plans-section .plan-options .half-card .mail-form .confirmation-message .check-icon,
-#plans-section .plan-options .half-card .mail-form .confirmation-message .error-icon,
-#plans-section .plan-options .half-card .mail-form .error-message .check-icon,
-#plans-section .plan-options .half-card .mail-form .error-message .error-icon {
+#plans-section .plan-options .half-card .mail-form .status-message .success-icon,
+#plans-section .plan-options .half-card .mail-form .status-message .error-icon {
   width: 24px;
   height: 24px;
-  border: 1px solid #a4d1a2;
   border-radius: 50%;
   padding: 4px;
   scale: 0.5;
   transition: 0.3s ease 0.24s;
 }
-#plans-section .plan-options .half-card .mail-form .confirmation-message .check-icon path,
-#plans-section .plan-options .half-card .mail-form .confirmation-message .error-icon path,
-#plans-section .plan-options .half-card .mail-form .error-message .check-icon path,
-#plans-section .plan-options .half-card .mail-form .error-message .error-icon path {
+#plans-section .plan-options .half-card .mail-form .status-message.active {
+  opacity: 1;
+  pointer-events: all;
+}
+#plans-section .plan-options .half-card .mail-form .status-message.active .success-icon,
+#plans-section .plan-options .half-card .mail-form .status-message.active .error-icon {
+  scale: 1.2;
+}
+#plans-section .plan-options .half-card .mail-form .success-message {
+  color: #a4d1a2;
+}
+#plans-section .plan-options .half-card .mail-form .success-message .success-icon {
+  border: 1px solid #a4d1a2;
+}
+#plans-section .plan-options .half-card .mail-form .success-message .success-icon path {
   fill: #a4d1a2;
 }
 #plans-section .plan-options .half-card .mail-form .error-message {
