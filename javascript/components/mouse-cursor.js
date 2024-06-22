@@ -186,6 +186,5 @@ const isSafari = () => {
 };
 
 if (isSafari()) {
-  // document.body.classList.add('is-safari');
   cursor.style.transition = "none";
 }
