@@ -178,3 +178,14 @@ if (statementSection) {
     );
   });
 }
+
+// Hide Mouse cursor on Safari ... glitched the animation
+const isSafari = () => {
+  let ua = navigator.userAgent.toLowerCase();
+  return ua.indexOf("safari") !== -1 && ua.indexOf("chrome") === -1;
+};
+
+if (isSafari()) {
+  // document.body.classList.add('is-safari');
+  cursor.style.transition = "none";
+}
