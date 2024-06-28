@@ -1574,6 +1574,9 @@ ul.classic-list li {
 #work-section .work-showcase .showcase-link[aria-disabled=true] .showcase-item::after {
   content: "Coming Soon";
 }
+#work-section .work-showcase .showcase-link[href="https://essentialism.netlify.app"] .showcase-item::after {
+  content: "View Progress";
+}
 #work-section .work-showcase .showcase-link .showcase-item {
   position: relative;
   aspect-ratio: 3/2;

@@ -146,6 +146,15 @@
         }
       }
 
+      &[href="https://essentialism.netlify.app"]
+      {
+        .showcase-item {
+          &::after {
+            content: "View Progress";
+          }
+        }
+      }
+
       .showcase-item {
         position: relative;
         aspect-ratio: 3 / 2;
