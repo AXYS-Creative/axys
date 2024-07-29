@@ -16,7 +16,7 @@
   // Autofill for form fields: input, textarea, select, etc.
   &:-webkit-autofill,
   &:-webkit-autofill:hover,
-  &:-webkit-autofill:focus {
+  &:-webkit-autofill:focus-visible {
     -webkit-text-fill-color: $white;
     -webkit-box-shadow: 0 0 0px 1000px $grey-dark inset;
   }
@@ -91,7 +91,7 @@ header {
     @include row-center;
     top: 32px;
     right: $content-padding;
-    margin-right: -10px; // Alignment for page spacing
+    margin-inline-end: -10px; // Alignment for page spacing
     text-transform: uppercase;
     gap: 12px;
     cursor: pointer;
@@ -306,7 +306,7 @@ nav {
       text-transform: uppercase;
       font-size: 64px;
       padding: 12px 0;
-      padding-left: 20px;
+      padding-inline-start: 20px;
       cursor: pointer;
       transition: 0.3s ease;
 
@@ -317,19 +317,19 @@ nav {
       @include mq-max("md") {
         font-size: 36px;
         padding: 8px 0;
-        padding-left: 12px;
+        padding-inline-start: 12px;
       }
 
       @include mq-max("sm") {
-        padding-left: unset;
+        padding-inline-start: unset;
       }
 
       &:hover,
-      &:focus {
-        padding-left: 36px;
+      &:focus-visible {
+        padding-inline-start: 36px;
 
         @include mq-max("md") {
-          padding-left: 24px;
+          padding-inline-start: 24px;
         }
 
         svg {
@@ -422,7 +422,7 @@ nav {
 
           .nav-footer-link {
             &:hover,
-            &:focus {
+            &:focus-visible {
               color: $coral;
             }
           }
@@ -435,7 +435,7 @@ nav {
             gap: 4px;
 
             &:hover,
-            &:focus {
+            &:focus-visible {
               color: $green;
             }
 
@@ -456,7 +456,7 @@ nav {
 
           .nav-footer-link {
             &:hover,
-            &:focus {
+            &:focus-visible {
               color: $yellow;
             }
           }
@@ -481,7 +481,7 @@ nav {
         }
 
         &:hover,
-        &:focus {
+        &:focus-visible {
           .link-text {
             translate: 12px 0;
 
@@ -499,7 +499,7 @@ nav {
           }
         }
 
-        &:focus {
+        &:focus-visible {
           .icon-wrapper {
             border: 2px solid $white;
           }
@@ -515,11 +515,11 @@ nav {
           height: 48px;
           border-radius: 50%;
           border: 2px solid transparent;
-          margin-right: -4px;
+          margin-inline-end: -4px;
           transition: 0.3s ease;
 
           @include mq-max("md") {
-            margin-right: unset;
+            margin-inline-end: unset;
             width: 32px;
             height: 32px;
           }
@@ -595,7 +595,7 @@ section {
     text-align: center;
 
     h2 {
-      margin-bottom: 24px;
+      margin-block-end: 24px;
     }
   }
 
@@ -603,10 +603,10 @@ section {
     font-size: 18px;
     letter-spacing: 0.25px;
     line-height: 120%;
-    margin-bottom: 64px;
+    margin-block-end: 64px;
 
     @include mq-max("md") {
-      margin-bottom: 24px;
+      margin-block-end: 24px;
       font-size: 16px;
     }
 
@@ -644,7 +644,7 @@ footer {
       display: none;
     }
 
-    &:focus {
+    &:focus-visible {
       svg {
         border: 2px solid $green;
       }
@@ -655,8 +655,8 @@ footer {
       height: 36px;
       border-radius: 50%;
       border: 2px solid transparent;
-      margin-bottom: -4px;
-      margin-right: 8px;
+      margin-block-end: -4px;
+      margin-inline-end: 8px;
       transition: 0.4s $cubic-ease-back-dramatic, border 0.3s ease;
     }
   }
@@ -668,7 +668,7 @@ footer {
       @include column-start;
       translate: -36px 0;
       gap: 24px;
-      margin-bottom: 64px;
+      margin-block-end: 64px;
     }
 
     @include mq-max("md") {
@@ -696,7 +696,7 @@ footer {
     }
 
     .email-us-icon {
-      margin-left: 8px;
+      margin-inline-start: 8px;
       width: 24px;
       height: 24px;
     }
@@ -731,11 +731,11 @@ footer {
 
     @include mq-max("lg") {
       translate: -36px 0;
-      margin-bottom: 128px;
+      margin-block-end: 128px;
     }
 
     @include mq-max("md") {
-      margin-bottom: 196px;
+      margin-block-end: 196px;
     }
 
     &:hover,
@@ -856,7 +856,7 @@ ul {
 
   .cta-1 {
     &:hover,
-    &:focus {
+    &:focus-visible {
       .ring {
         border-color: $blue;
         translate: -24px 0;
@@ -913,7 +913,7 @@ ul {
 
   .cta-2 {
     &:hover,
-    &:focus {
+    &:focus-visible {
       .cta-text {
         color: $coral;
         translate: 12px 0;
@@ -941,7 +941,7 @@ ul {
       @include row-center;
       width: 24px;
       height: 24px;
-      margin-right: 4px;
+      margin-inline-end: 4px;
 
       .dot {
         width: 8px;
@@ -1000,7 +1000,7 @@ ul {
     align-items: center;
     justify-content: flex-end;
     text-transform: uppercase;
-    margin-bottom: 24px;
+    margin-block-end: 24px;
     transition: 0.3s ease;
     // translate: unique per instance
 
@@ -1050,11 +1050,11 @@ ul {
       // transition is set above (:hover) to allow for individual delay
 
       &:hover,
-      &:focus {
+      &:focus-visible {
         color: $blue;
       }
 
-      &:focus {
+      &:focus-visible {
         border-color: $blue;
       }
 
@@ -1242,18 +1242,18 @@ ul {
 
   &-inner,
   &-inner-logos {
-    padding-right: 24px; // Offsets to allow a smooth marquee at 50%, instead of 50.3%
+    padding-inline-end: 24px; // Offsets to allow a smooth marquee at 50%, instead of 50.3%
     display: flex;
     align-items: center;
     width: fit-content;
 
     @include mq-max("sm") {
-      padding-right: 12px;
+      padding-inline-end: 12px;
     }
   }
 
   &-inner-logos {
-    padding-right: 0; // undo the offset above
+    padding-inline-end: 0; // undo the offset above
   }
 
   .marquee-text {

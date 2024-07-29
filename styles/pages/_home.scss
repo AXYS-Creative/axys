@@ -1,5 +1,5 @@
 #hero-section {
-  margin-top: 124px;
+  margin-block-start: 124px;
   padding: 196px 0;
 
   @include mq-max("xxl") {
@@ -7,34 +7,38 @@
   }
 
   @include mq-max("xl") {
-    margin-top: 96px;
+    margin-block-start: 96px;
   }
 
   .section-headline {
     text-align: left;
-    margin-bottom: 128px;
+    margin-block-end: 128px;
 
     @include mq-max("xxl") {
-      margin-bottom: 96px;
+      margin-block-end: 96px;
     }
 
     &__title {
       // see 'h1, h2' in _globals.scss
 
       @include mq-max("md") {
-        margin-bottom: 12px;
+        margin-block-end: 12px;
       }
 
       span {
         &:last-of-type {
-          padding-left: 240px;
+          padding-inline-start: 240px;
+
+          @include mq-max("xxl") {
+            padding-inline-start: 200px;
+          }
 
           @include mq-max("xl") {
-            padding-left: 160px;
+            padding-inline-start: 160px;
           }
 
           @include mq-max("md") {
-            padding-left: 0;
+            padding-inline-start: 0;
           }
         }
       }
@@ -60,23 +64,23 @@
   }
 
   .cta-wrapper {
-    margin-left: 112px;
+    margin-inline-start: 112px;
 
     @include mq-max("xl") {
-      margin-left: 96px;
+      margin-inline-start: 96px;
     }
 
     @include mq-max("md") {
-      margin-left: 0;
+      margin-inline-start: 0;
     }
   }
 }
 
 #work-section {
-  scroll-margin-top: -96px;
+  scroll-margin-block-start: -96px;
 
   @include mq-max("xxl") {
-    scroll-margin-top: -24px;
+    scroll-margin-block-start: -24px;
   }
 
   .work-showcase {
@@ -111,7 +115,7 @@
       opacity: 0.9;
 
       &:hover,
-      &:focus {
+      &:focus-visible {
         opacity: 1;
 
         .showcase-item {
@@ -198,7 +202,7 @@
         }
 
         .showcase-caption {
-          margin-top: 8px;
+          margin-block-start: 8px;
           font-size: 18px;
 
           @include mq-max("xxl") {
@@ -239,8 +243,8 @@
     font-size: 14px;
 
     .heart-svg {
-      margin-left: 4px;
-      margin-bottom: -1px;
+      margin-inline-start: 4px;
+      margin-block-end: -1px;
     }
   }
 }
@@ -327,13 +331,13 @@
 }
 
 #benefits-section {
-  margin-left: 128px;
+  margin-inline-start: 128px;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
 
   @include mq-max("xxl") {
-    margin-left: 0;
+    margin-inline-start: 0;
   }
 
   @include mq-max("lg") {
@@ -361,10 +365,10 @@
     }
 
     .cta-wrapper {
-      margin-left: 64px;
+      margin-inline-start: 64px;
 
       @include mq-max("xl") {
-        margin-left: 0;
+        margin-inline-start: 0;
       }
     }
   }
@@ -407,14 +411,14 @@
       h3 {
         font-size: 48px;
         font-weight: 200;
-        margin-bottom: 24px;
+        margin-block-end: 24px;
         display: flex;
         align-items: center;
         gap: 24px;
 
         @include mq-max("xxl") {
           font-size: 36px;
-          margin-bottom: 12px;
+          margin-block-end: 12px;
         }
 
         @include mq-max("xl") {
@@ -439,14 +443,14 @@
         font-size: 20px;
         font-weight: 200;
         line-height: 120%;
-        padding-left: calc(48px + 24px);
+        padding-inline-start: calc(48px + 24px);
 
         @include mq-max("xl") {
           font-size: 16px;
         }
 
         @include mq-max("lg") {
-          padding-left: 0;
+          padding-inline-start: 0;
         }
 
         @include mq-max("md") {
@@ -477,25 +481,25 @@
   & > .cta-wrapper.lg-screen-and-below {
     @include mq-min("md") {
       align-self: flex-start;
-      margin-left: 80px;
+      margin-inline-start: 80px;
     }
   }
 }
 
 #plans-section {
-  scroll-margin-top: -96px;
+  scroll-margin-block-start: -96px;
 
   @include mq-max("xxl") {
-    scroll-margin-top: -64px;
+    scroll-margin-block-start: -64px;
   }
 
   @include mq-max("md") {
-    scroll-margin-top: unset;
+    scroll-margin-block-start: unset;
   }
 
   .section-headline {
     @include mq-max("xxl") {
-      margin-bottom: 64px;
+      margin-block-end: 64px;
     }
   }
 
@@ -577,7 +581,7 @@
         flex-wrap: wrap;
         gap: 12px;
         font-size: 48px;
-        margin-bottom: 16px;
+        margin-block-end: 16px;
 
         @include mq-max("xxl") {
           font-size: 32px;
@@ -660,7 +664,7 @@
 
       .benefits-title {
         font-size: 24px;
-        margin-bottom: 16px;
+        margin-block-end: 16px;
 
         @include mq-max("xxl") {
           font-size: 20px;
@@ -670,11 +674,11 @@
       .benefits-list {
         @include column-start;
         gap: 16px;
-        margin-bottom: 96px;
+        margin-block-end: 96px;
 
         @include mq-max("xxl") {
           gap: 12px;
-          margin-bottom: 64px;
+          margin-block-end: 64px;
         }
       }
 
@@ -682,14 +686,14 @@
         // accessible keyboard tabbing
 
         .cta-1 {
-          scroll-margin-top: 820px;
+          scroll-margin-block-start: 820px;
 
           @include mq-max("xxl") {
-            scroll-margin-top: 496px;
+            scroll-margin-block-start: 496px;
           }
 
           @include mq-max("md") {
-            scroll-margin-top: 360px;
+            scroll-margin-block-start: 360px;
           }
         }
       }
@@ -726,11 +730,11 @@
       h4 {
         font-size: 24px;
         text-transform: uppercase;
-        margin-bottom: 28px;
+        margin-block-end: 28px;
 
         @include mq-max("xxl") {
           font-size: 20px;
-          margin-bottom: 16px;
+          margin-block-end: 16px;
         }
 
         @include mq-max("sm") {
@@ -748,12 +752,12 @@
 
         @include mq-max("lg") {
           &:last-of-type {
-            margin-bottom: 64px;
+            margin-block-end: 64px;
           }
         }
 
         &:last-of-type {
-          margin-top: -8px;
+          margin-block-start: -8px;
         }
       }
 
@@ -816,11 +820,11 @@
           color: $white;
           background: transparent;
           border: none;
-          border-bottom: 2px solid $grey-light;
+          border-block-end: 2px solid $grey-light;
           border-radius: 0;
           transition: border 0.36s ease;
 
-          &:focus {
+          &:focus-visible {
             border-color: $blue;
           }
         }
@@ -925,7 +929,7 @@
           .error-icon {
             border-color: transparent;
             border-radius: 0;
-            margin-right: -6px;
+            margin-inline-end: -6px;
 
             path {
               fill: $yellow;
@@ -985,9 +989,9 @@
 
     .faq-item {
       position: relative;
-      border-bottom: 2px solid $grey;
-      margin-bottom: 24px;
-      padding-top: 42px;
+      border-block-end: 2px solid $grey;
+      margin-block-end: 24px;
+      padding-block-start: 42px;
       display: grid;
       grid-template-rows: 0fr;
       transition: all 0.3s ease, margin 0.4s ease;
@@ -997,8 +1001,8 @@
       }
 
       @include mq-max("xxl") {
-        margin-bottom: 12px;
-        padding-top: 24px;
+        margin-block-end: 12px;
+        padding-block-start: 24px;
       }
 
       &.active {
@@ -1103,14 +1107,14 @@
       }
 
       .answer-indicator {
-        padding-right: 12px;
+        padding-inline-end: 12px;
 
         @include mq-max("xxl") {
-          padding-right: 10px;
+          padding-inline-end: 10px;
         }
 
         @include mq-max("md") {
-          padding-right: 6px;
+          padding-inline-end: 6px;
         }
       }
     }
@@ -1123,7 +1127,7 @@
 
     .headline-description {
       @include mq-max("md") {
-        margin-bottom: 48px;
+        margin-block-end: 48px;
       }
 
       @include mq-max("sm") {
@@ -1145,7 +1149,7 @@
   .pre-footer-title {
     @include row-center;
     gap: 16px;
-    margin-bottom: 40px;
+    margin-block-end: 40px;
 
     @include mq-max("md") {
       gap: 12px;
@@ -1154,7 +1158,7 @@
     h2 {
       @include mq-max("md") {
         font-size: 40px;
-        margin-bottom: 0;
+        margin-block-end: 0;
       }
 
       @include mq-max("sm") {

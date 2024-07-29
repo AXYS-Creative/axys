@@ -17,7 +17,7 @@
       display: flex;
       align-items: center;
       gap: 30px;
-      padding-bottom: 30px;
+      padding-block-end: 30px;
 
       h1 {
         @include title-font;
@@ -45,7 +45,7 @@
     .header-text {
       @include column-start;
       gap: 26px;
-      border-bottom: 3px solid $coral;
+      border-block-end: 3px solid $coral;
 
       h2 {
         all: unset;
@@ -58,7 +58,7 @@
       }
 
       p {
-        padding-bottom: 40px;
+        padding-block-end: 40px;
 
         @include mq-max("md") {
           font-size: 14px;
@@ -81,7 +81,7 @@
     .policies-title {
       font-size: 18px;
       font-weight: 600;
-      padding-bottom: 14px;
+      padding-block-end: 14px;
     }
 
     p {

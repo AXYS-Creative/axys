@@ -14,7 +14,7 @@
   }
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     &::before {
       animation: classic-link-hover 0.3s ease forwards;
     }

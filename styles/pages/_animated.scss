@@ -73,11 +73,11 @@
 
 .hero-text-slide {
   @extend #hero-section;
-  margin-top: 0 !important;
+  margin-block-start: 0 !important;
 
   .section-headline {
     @include row-center;
-    margin-bottom: unset;
+    margin-block-end: unset;
     animation: blur-title 3.2s ease 0.4s forwards;
     opacity: 0;
     filter: blur(12px);
@@ -85,7 +85,7 @@
 
     &__title {
       @include column-start;
-      margin-bottom: unset;
+      margin-block-end: unset;
     }
 
     // .line-1 {
@@ -100,15 +100,15 @@
         @include row-center;
         width: 56px;
         height: 56px;
-        padding-left: unset;
-        padding-bottom: 12px;
+        padding-inline-start: unset;
+        padding-block-end: 12px;
         translate: 24px -2px;
         animation: rotate-plus-sign 2.6s ease 1.2s forwards;
       }
     }
 
     .line-3 {
-      padding-left: 240px;
+      padding-inline-start: 240px;
       display: block;
       translate: -240px 0;
       animation: slide-title-text 0.6s ease 1.8s forwards;

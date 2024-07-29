@@ -86,7 +86,7 @@ $min-breakpoints: (
 
   @include mq-max("md") {
     font-size: calc(12px + 6.4vw);
-    margin-bottom: 12px;
+    margin-block-end: 12px;
   }
 }
 

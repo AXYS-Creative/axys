@@ -1,16 +1,16 @@
-// Clear focus from any element on mousemove (remove button :focus styles)
-(function clearFocusOnMouseMove() {
-  function removeFocus() {
-    if (
-      document.activeElement &&
-      !document.activeElement.classList.contains("input")
-    ) {
-      document.activeElement.blur();
-    }
-  }
-  // Set up event listeners
-  document.addEventListener("mousemove", removeFocus);
-})();
+// // Clear focus from any element on mousemove (remove button :focus styles)
+// (function clearFocusOnMouseMove() {
+//   function removeFocus() {
+//     if (
+//       document.activeElement &&
+//       !document.activeElement.classList.contains("input")
+//     ) {
+//       document.activeElement.blur();
+//     }
+//   }
+//   // Set up event listeners
+//   document.addEventListener("mousemove", removeFocus);
+// })();
 
 // Get Current Year for Copyright
 (function getCurrentYear() {
