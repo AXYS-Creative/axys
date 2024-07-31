@@ -17,6 +17,9 @@ const marqueeData = [
   "snowflake",
   "samsara",
   "sitecore",
+  "gartner",
+  "cyberark",
+  "rsna",
 ];
 
 const marqueeContainers = document.querySelectorAll(".marquee-inner-logos");
