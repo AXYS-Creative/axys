@@ -343,15 +343,13 @@
     <main aria-label="Main website content">
       <section id="hero-section">
         <div class="section-headline">
-          <h1 class="section-headline__title">
-            <span class="sr-only">
-              Creative, Responsive, Accessible, Innovative, and Engaging
-            </span>
+          <h1
+            class="section-headline__title"
+            aria-label="Creative, Responsive, Accessible, Innovative, and Engaging Web design + development"
+          >
             <span class="dynamic-text" aria-hidden="true"></span>
-            <br />
-            <span>Web design +</span>
-            <br />
-            <span>Development</span>
+            <span aria-hidden="true">Web design +</span>
+            <span aria-hidden="true">Development</span>
           </h1>
 
           <p>Unlimited services. <br />One basic subscription.</p>
@@ -384,9 +382,11 @@
         </div>
       </section>
 
-      <div class="presentation-content">
+      <div
+        class="presentation-content"
+        aria-label="Where design meets development"
+      >
         <div class="marquee">
-          <h2 class="sr-only">Where design meets development</h2>
           <div class="marquee-inner" aria-hidden="true" role="presentation">
             <p class="marquee-text">
               <span>•</span>
@@ -420,8 +420,10 @@
 
       <section id="work-section">
         <div class="section-headline">
-          <h2 class="section-title">
-            Our <span class="yellow-text">Work</span>
+          <h2 class="section-title" aria-label="Our work">
+            <span aria-hidden="true">
+              Our <span class="yellow-text">Work</span>
+            </span>
           </h2>
           <p class="headline-description">
             We diligently collaborate with our clients to create
@@ -509,7 +511,6 @@
 
         <small class="made-with-care">
           [ Made with care
-          <!-- <abbr title="care"> -->
           <svg
             class="heart-svg"
             width="16"
@@ -517,22 +518,22 @@
             viewBox="0 0 16 16"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
           >
             <path
               d="M3.11562 8.89813L7.35078 12.7511C7.52656 12.9109 7.75859 13 8 13C8.24141 13 8.47344 12.9109 8.64922 12.7511L12.8844 8.89813C13.5969 8.25179 14 7.34508 14 6.39727V6.2648C14 4.66836 12.8164 3.30716 11.2016 3.04452C10.1328 2.87094 9.04531 3.21124 8.28125 3.95579L8 4.22986L7.71875 3.95579C6.95469 3.21124 5.86719 2.87094 4.79844 3.04452C3.18359 3.30716 2 4.66836 2 6.2648V6.39727C2 7.34508 2.40312 8.25179 3.11562 8.89813Z"
               fill="#E1A7B4"
             />
           </svg>
-          <!-- </abbr> -->
           ]
         </small>
       </section>
 
-      <section id="statement-section">
-        <p class="sr-only">
-          We are committed to building elegant, responsive, and performant
-          websites optimized for user accessibility and search engines.
-        </p>
+      <section
+        id="statement-section"
+        aria-label="We are committed to building elegant, responsive, and performant
+      websites optimized for user accessibility and search engines."
+      >
         <p class="mission-statement scroll-animate" aria-hidden="true">
           <span class="text">We</span>
           <span class="text">are</span>
@@ -559,7 +560,11 @@
       <section id="benefits-section">
         <div class="headline-full benefits-headline-full">
           <div class="section-headline">
-            <h2>Member <span class="coral-text">benefits</span></h2>
+            <h2 aria-label="Member Benefits">
+              <span aria-hidden="true">
+                Member <span class="coral-text">benefits</span>
+              </span>
+            </h2>
             <p class="headline-description">
               Unlock these perks and so much more.
             </p>
@@ -599,6 +604,7 @@
                 viewBox="0 0 42 34"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
               >
                 <path
                   d="M0 15.5059C0 10.459 4.03594 6.375 9.02344 6.375C11.6025 6.375 14.0569 7.49063 15.7631 9.43633L21 15.3996L26.2369 9.43633C27.9497 7.49063 30.4041 6.375 32.9766 6.375C37.9641 6.375 42 10.459 42 15.5059V18.5008C42 23.541 37.9641 27.625 32.9766 27.625C30.3975 27.625 27.9431 26.5094 26.2369 24.5637L21 18.6004L15.7631 24.5637C14.0503 26.5094 11.5959 27.625 9.02344 27.625C4.03594 27.625 0 23.541 0 18.4941V15.5059ZM19.5956 17L14.1947 10.8508C12.8822 9.35664 10.9987 8.5 9.02344 8.5C5.1975 8.5 2.1 11.6344 2.1 15.5059V18.5008C2.1 22.3656 5.1975 25.5 9.02344 25.5C10.9987 25.5 12.8822 24.6434 14.1947 23.1492L19.5956 17ZM22.4044 17L27.8053 23.1492C29.1178 24.6434 31.0012 25.5 32.9766 25.5C36.8025 25.5 39.9 22.3656 39.9 18.4941V15.5059C39.9 11.6344 36.8025 8.5 32.9766 8.5C31.0012 8.5 29.1178 9.35664 27.8053 10.8508L22.4044 17Z"
@@ -628,6 +634,7 @@
                 viewBox="0 0 40 40"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
               >
                 <path
                   d="M32.6011 28.1406C32.8511 27.75 33.2808 27.5 33.7495 27.5C34.7104 27.5 35.3354 28.5 34.8198 29.3125C31.7183 34.2344 26.2417 37.5 19.9995 37.5C10.3354 37.5 2.49951 29.6641 2.49951 20C2.49951 10.3359 10.3354 2.5 19.9995 2.5C24.3823 2.5 28.3901 4.10937 31.4604 6.77344L33.8589 4.375C34.2573 3.97656 34.8042 3.75 35.3667 3.75C36.5464 3.75 37.4995 4.70313 37.4995 5.88281V13.75C37.4995 14.4375 36.937 15 36.2495 15H28.3823C27.2026 15 26.2495 14.0469 26.2495 12.8672C26.2495 12.3047 26.4761 11.7578 26.8745 11.3594L29.687 8.54688C27.0698 6.33594 23.6948 5 19.9995 5C11.7183 5 4.99951 11.7188 4.99951 20C4.99951 28.2812 11.7183 35 19.9995 35C25.2808 35 29.9292 32.2656 32.6011 28.1406ZM34.9995 6.76562L29.2651 12.5H34.9995V6.76562Z"
@@ -638,9 +645,11 @@
             </h3>
             <p>
               Get designs or sections of your website generally within 1-2
-              business days <span class="business-days">(M-F)</span>. Please be
-              aware that full websites can take weeks or even months to complete
-              depending on their size and complexity.
+              business days
+              <span class="business-days" aria-label="Monday through Friday">
+                <span aria-hidden="true">(M-F)</span> </span
+              >. Please be aware that full websites can take weeks or even
+              months to complete depending on their size and complexity.
             </p>
           </div>
           <div class="benefit-block scroll-animate">
@@ -651,6 +660,7 @@
                 viewBox="0 0 42 34"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
               >
                 <g clip-path="url(#clip0_711_705)">
                   <path
@@ -685,6 +695,7 @@
                 viewBox="0 0 35 40"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
               >
                 <path
                   d="M2.5 17.9297V6.25003C2.5 5.56253 3.0625 5.00003 3.75 5.00003H15.4297C16.0938 5.00003 16.7266 5.26565 17.1953 5.7344L30.9453 19.4844C31.9219 20.461 31.9219 22.0469 30.9453 23.0235L20.5156 33.4453C19.5391 34.4219 17.9531 34.4219 16.9766 33.4453L3.22656 19.6953C2.75781 19.2266 2.49219 18.5938 2.49219 17.9297H2.5ZM0 17.9297C0 19.2578 0.523438 20.5313 1.46094 21.4688L15.2109 35.2188C17.1641 37.1719 20.3281 37.1719 22.2812 35.2188L32.7109 24.7891C34.6641 22.836 34.6641 19.6719 32.7109 17.7188L18.9609 3.96878C18.0234 3.03128 16.75 2.50784 15.4219 2.50784H3.75C1.67969 2.50003 0 4.17971 0 6.25003V17.9297ZM8.75 13.125C9.24728 13.125 9.72419 12.9275 10.0758 12.5759C10.4275 12.2242 10.625 11.7473 10.625 11.25C10.625 10.7527 10.4275 10.2758 10.0758 9.9242C9.72419 9.57257 9.24728 9.37503 8.75 9.37503C8.25272 9.37503 7.77581 9.57257 7.42417 9.9242C7.07254 10.2758 6.875 10.7527 6.875 11.25C6.875 11.7473 7.07254 12.2242 7.42417 12.5759C7.77581 12.9275 8.25272 13.125 8.75 13.125Z"
@@ -707,6 +718,7 @@
                 viewBox="0 0 42 34"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
               >
                 <g clip-path="url(#clip0_711_713)">
                   <path
@@ -743,6 +755,7 @@
                 viewBox="0 0 42 34"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
               >
                 <path
                   d="M29.4002 5.31295C29.4002 4.72857 28.9277 4.25045 28.3502 4.25045C27.7727 4.25045 27.3002 4.72857 27.3002 5.31295V28.6879C27.3002 29.2723 27.7727 29.7504 28.3502 29.7504C28.9277 29.7504 29.4002 29.2723 29.4002 28.6879V5.31295ZM37.8002 5.31295C37.8002 4.72857 37.3277 4.25045 36.7502 4.25045C36.1727 4.25045 35.7002 4.72857 35.7002 5.31295V28.6879C35.7002 29.2723 36.1727 29.7504 36.7502 29.7504C37.3277 29.7504 37.8002 29.2723 37.8002 28.6879V5.31295ZM18.9002 17.0004L6.3002 27.6254V6.37545L18.9002 17.0004ZM7.64551 4.74185C7.02207 4.21724 6.14926 4.09771 5.4077 4.44966C4.66613 4.80162 4.2002 5.55201 4.2002 6.37545V27.6254C4.2002 28.4489 4.6727 29.1993 5.4077 29.5512C6.1427 29.9032 7.01551 29.7903 7.64551 29.259L20.2455 18.634C20.7246 18.229 21.0002 17.6313 21.0002 17.0004C21.0002 16.3696 20.7246 15.7719 20.2455 15.3669L7.64551 4.74185Z"
@@ -799,28 +812,45 @@
 
       <section id="plans-section">
         <div class="section-headline">
-          <h2>Member <span class="blue-text">Plans</span></h2>
+          <h2 aria-label="Member Plans">
+            <span aria-hidden="true">
+              Member <span class="blue-text">Plans</span>
+            </span>
+          </h2>
           <p class="headline-description">
-            Find the right plan for you and eliminate the hassle of inconsistent
-            freelancers and <br class="md-screen-and-up" />
-            expensive agencies. Let’s get started today.
+            <span class="md-screen-and-above">
+              Find the right plan for you and eliminate the hassle of
+              inconsistent freelancers and
+            </span>
+            <span class="md-screen-and-above">
+              expensive agencies. Let’s get started today.
+            </span>
           </p>
         </div>
 
         <div class="plan-options">
           <div class="segment card price-card">
-            <h3 class="card-title coral-text">
-              Standard <span class="most-popular">[ Most popular ]</span>
+            <h3 aria-label="Standard Plan, most popular.">
+              <span class="card-title coral-text bold-text" aria-hidden="true">
+                Standard <span class="most-popular">[ Most popular ]</span>
+              </span>
             </h3>
-            <h4 class="card-price">
-              $4,995/m
-              <span class="pause-or-cancel">Pause or cancel anytime</span>
+            <h4
+              class="card-price"
+              aria-label="$4,995 per month. Pause or cancel anytime."
+            >
+              <span aria-hidden="true">$4,995/m</span>
+              <span class="pause-or-cancel" aria-hidden="true">
+                Pause or cancel anytime
+              </span>
             </h4>
-            <hr class="divider divider-coral" />
-            <h5 class="benefits-title">Member benefits</h5>
+            <hr class="divider divider-coral" aria-hidden="true" />
+            <h5 class="benefits-title bold-text">Member benefits</h5>
             <ul class="benefits-list classic-list">
               <li>One request at a time</li>
-              <li>Average 1-2 day delivery</li>
+              <li aria-label="Average 1 to 2 day delivery">
+                <span aria-hidden="true">Average 1-2 day delivery</span>
+              </li>
               <li>Unlimited services</li>
               <li>Unlimited revisions</li>
               <li>Unlimited team members</li>
@@ -863,21 +893,25 @@
           </div>
 
           <div class="segment card price-card">
-            <h3 class="card-title green-text">
-              Premium
-              <span class="most-popular hidden" aria-hidden="true"
-                >[ Fill text goes here ]</span
-              >
+            <h3>
+              <span class="card-title green-text bold-text">
+                Premium
+                <span class="most-popular hidden" aria-hidden="true">
+                  [ Fill text goes here ]
+                </span>
+              </span>
             </h3>
             <h4 class="card-price">
               $6,995/m
               <span class="pause-or-cancel">Pause or cancel anytime</span>
             </h4>
-            <hr class="divider divider-green" />
-            <h5 class="benefits-title">Member benefits</h5>
+            <hr class="divider divider-green" aria-hidden="true" />
+            <h5 class="benefits-title bold-text">Member benefits</h5>
             <ul class="benefits-list classic-list">
               <li class="bold-text">Two requests at a time</li>
-              <li>Average 1-2 day delivery</li>
+              <li aria-label="Average 1 to 2 day delivery">
+                <span aria-hidden="true">Average 1-2 day delivery</span>
+              </li>
               <li>Unlimited services</li>
               <li>Unlimited revisions</li>
               <li>Unlimited team members</li>

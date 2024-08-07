@@ -1436,6 +1436,15 @@ ul.classic-list li {
   }
 }
 
+.md-screen-and-above {
+  display: block;
+}
+@media screen and (max-width: 768px) {
+  .md-screen-and-above {
+    display: inline;
+  }
+}
+
 #hero-section, .hero-text-slide {
   margin-block-start: 124px;
   padding: 196px 0;
@@ -1458,6 +1467,10 @@ ul.classic-list li {
   #hero-section .section-headline, .hero-text-slide .section-headline {
     margin-block-end: 96px;
   }
+}
+#hero-section .section-headline__title, .hero-text-slide .section-headline__title {
+  display: flex;
+  flex-direction: column;
 }
 @media screen and (max-width: 768px) {
   #hero-section .section-headline__title, .hero-text-slide .section-headline__title {
@@ -2052,7 +2065,6 @@ ul.classic-list li {
 #plans-section .plan-options .price-card h3,
 #plans-section .plan-options .price-card h5 {
   text-transform: uppercase;
-  font-weight: 700;
 }
 #plans-section .plan-options .price-card .card-title {
   display: flex;

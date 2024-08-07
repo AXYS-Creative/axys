@@ -77,7 +77,7 @@
   pointer-events: none;
 }
 
-// Media query classes
+// Media query classes - Warning, causing a break in voice assistant speech
 
 .lg-screen-and-up {
   display: none;
@@ -124,5 +124,15 @@
 
   @include mq-max("sm") {
     display: flex;
+  }
+}
+
+// Updated media query classes
+
+.md-screen-and-above {
+  display: block;
+
+  @include mq-max("md") {
+    display: inline;
   }
 }
