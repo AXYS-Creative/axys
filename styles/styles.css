@@ -541,7 +541,7 @@ section {
 section .section-headline {
   text-align: center;
 }
-section .section-headline h2 {
+section .section-headline__heading {
   margin-block-end: 24px;
 }
 section .headline-description {
@@ -1149,13 +1149,13 @@ ul.classic-list li {
   background: rgba(240, 240, 240, 0.05);
 }
 .stripes-bg .stripe:nth-of-type(1)::before {
-  animation: background-stripes 8s ease 2s infinite;
+  animation: background-stripes 5.6s ease 1s infinite;
 }
 .stripes-bg .stripe:nth-of-type(2)::before {
-  animation: background-stripes 8s ease 2.12s infinite;
+  animation: background-stripes 5.6s ease 1.12s infinite;
 }
 .stripes-bg .stripe:nth-of-type(3)::before {
-  animation: background-stripes 8s ease 2.24s infinite;
+  animation: background-stripes 5.6s ease 1.24s infinite;
 }
 
 .marquee {
@@ -1312,6 +1312,10 @@ ul.classic-list li {
     height: 0;
   }
 }
+.scroll-glitch {
+  display: inline-flex;
+}
+
 .classic-link {
   position: relative;
   display: inline-block;
@@ -1528,15 +1532,19 @@ ul.classic-list li {
   }
 }
 
-#work-section {
+.work-section {
   scroll-margin-block-start: -96px;
 }
 @media screen and (max-width: 1512px) {
-  #work-section {
+  .work-section {
     scroll-margin-block-start: -24px;
   }
 }
-#work-section .work-showcase {
+.work-section .scroll-glitch {
+  display: inline-flex;
+  width: 3.2em;
+}
+.work-section .work-showcase {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1546,62 +1554,62 @@ ul.classic-list li {
   width: 80%;
 }
 @media (hover: hover) and (pointer: fine) {
-  #work-section .work-showcase:hover .showcase-link, #work-section .work-showcase:focus-within .showcase-link {
+  .work-section .work-showcase:hover .showcase-link, .work-section .work-showcase:focus-within .showcase-link {
     opacity: 0.5;
   }
 }
 @media screen and (max-width: 1512px) {
-  #work-section .work-showcase {
+  .work-section .work-showcase {
     margin: 64px auto;
     width: 92%;
   }
 }
 @media screen and (max-width: 768px) {
-  #work-section .work-showcase {
+  .work-section .work-showcase {
     width: 100%;
     gap: 48px;
   }
 }
-#work-section .work-showcase .showcase-link {
+.work-section .work-showcase .showcase-link {
   width: 48%;
   transition: 0.3s ease;
   opacity: 0.9;
 }
-#work-section .work-showcase .showcase-link:hover, #work-section .work-showcase .showcase-link:focus-visible {
+.work-section .work-showcase .showcase-link:hover, .work-section .work-showcase .showcase-link:focus-visible {
   opacity: 1;
 }
-#work-section .work-showcase .showcase-link:hover .showcase-item::before, #work-section .work-showcase .showcase-link:hover .showcase-item::after, #work-section .work-showcase .showcase-link:focus-visible .showcase-item::before, #work-section .work-showcase .showcase-link:focus-visible .showcase-item::after {
+.work-section .work-showcase .showcase-link:hover .showcase-item::before, .work-section .work-showcase .showcase-link:hover .showcase-item::after, .work-section .work-showcase .showcase-link:focus-visible .showcase-item::before, .work-section .work-showcase .showcase-link:focus-visible .showcase-item::after {
   opacity: 1;
 }
-#work-section .work-showcase .showcase-link:hover .showcase-item::after, #work-section .work-showcase .showcase-link:focus-visible .showcase-item::after {
+.work-section .work-showcase .showcase-link:hover .showcase-item::after, .work-section .work-showcase .showcase-link:focus-visible .showcase-item::after {
   translate: 0 0;
   filter: blur(0);
   transition: 0.4s ease;
 }
 @media (hover: none) and (pointer: coarse) {
-  #work-section .work-showcase .showcase-link {
+  .work-section .work-showcase .showcase-link {
     opacity: 1;
   }
 }
 @media screen and (max-width: 768px) {
-  #work-section .work-showcase .showcase-link {
+  .work-section .work-showcase .showcase-link {
     width: 100%;
   }
 }
-#work-section .work-showcase .showcase-link[aria-disabled=true] {
+.work-section .work-showcase .showcase-link[aria-disabled=true] {
   cursor: not-allowed;
 }
-#work-section .work-showcase .showcase-link[aria-disabled=true] .showcase-item::after {
+.work-section .work-showcase .showcase-link[aria-disabled=true] .showcase-item::after {
   content: "Coming Soon";
 }
-#work-section .work-showcase .showcase-link[href="https://essentialism.netlify.app"] .showcase-item::after {
+.work-section .work-showcase .showcase-link[href="https://essentialism.netlify.app"] .showcase-item::after {
   content: "View Progress";
 }
-#work-section .work-showcase .showcase-link .showcase-item {
+.work-section .work-showcase .showcase-link .showcase-item {
   position: relative;
   aspect-ratio: 3/2;
 }
-#work-section .work-showcase .showcase-link .showcase-item::before, #work-section .work-showcase .showcase-link .showcase-item::after {
+.work-section .work-showcase .showcase-link .showcase-item::before, .work-section .work-showcase .showcase-link .showcase-item::after {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1613,11 +1621,11 @@ ul.classic-list li {
   opacity: 0;
   transition: 0.3s ease;
 }
-#work-section .work-showcase .showcase-link .showcase-item::before {
+.work-section .work-showcase .showcase-link .showcase-item::before {
   content: "";
   background: rgba(16, 16, 16, 0.95);
 }
-#work-section .work-showcase .showcase-link .showcase-item::after {
+.work-section .work-showcase .showcase-link .showcase-item::after {
   content: "Visit Site";
   color: #f0f0f0;
   font-size: 24px;
@@ -1627,59 +1635,59 @@ ul.classic-list li {
   filter: blur(4px);
 }
 @media screen and (max-width: 1200px) {
-  #work-section .work-showcase .showcase-link .showcase-item::after {
+  .work-section .work-showcase .showcase-link .showcase-item::after {
     font-size: 16px;
   }
 }
 @media screen and (max-width: 768px) {
-  #work-section .work-showcase .showcase-link .showcase-item::after {
+  .work-section .work-showcase .showcase-link .showcase-item::after {
     font-size: 24px;
   }
 }
 @media screen and (max-width: 480px) {
-  #work-section .work-showcase .showcase-link .showcase-item::after {
+  .work-section .work-showcase .showcase-link .showcase-item::after {
     font-size: 16px;
   }
 }
-#work-section .work-showcase .showcase-link .showcase-item .showcase-caption {
+.work-section .work-showcase .showcase-link .showcase-item .showcase-caption {
   margin-block-start: 8px;
   font-size: 18px;
 }
 @media screen and (max-width: 1512px) {
-  #work-section .work-showcase .showcase-link .showcase-item .showcase-caption {
+  .work-section .work-showcase .showcase-link .showcase-item .showcase-caption {
     font-size: 16px;
   }
 }
 @media screen and (max-width: 1200px) {
-  #work-section .work-showcase .showcase-link .showcase-item .showcase-caption {
+  .work-section .work-showcase .showcase-link .showcase-item .showcase-caption {
     font-size: 14px;
   }
 }
 @media screen and (max-width: 1024px) {
-  #work-section .work-showcase .showcase-link .showcase-item .showcase-caption {
+  .work-section .work-showcase .showcase-link .showcase-item .showcase-caption {
     font-size: 12px;
   }
 }
 @media screen and (max-width: 768px) {
-  #work-section .work-showcase .showcase-link .showcase-item .showcase-caption {
+  .work-section .work-showcase .showcase-link .showcase-item .showcase-caption {
     font-size: 16px;
   }
 }
 @media screen and (max-width: 480px) {
-  #work-section .work-showcase .showcase-link .showcase-item .showcase-caption {
+  .work-section .work-showcase .showcase-link .showcase-item .showcase-caption {
     font-size: 14px;
   }
 }
-#work-section .work-showcase .showcase-link:nth-of-type(1) .showcase-item img, #work-section .work-showcase .showcase-link:nth-of-type(4) .showcase-item img {
+.work-section .work-showcase .showcase-link:nth-of-type(1) .showcase-item img, .work-section .work-showcase .showcase-link:nth-of-type(4) .showcase-item img {
   background: #181818;
 }
-#work-section .made-with-care {
+.work-section .made-with-care {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 14px;
 }
-#work-section .made-with-care .heart-svg {
+.work-section .made-with-care .heart-svg {
   margin-inline-start: 4px;
   margin-block-end: -1px;
 }
@@ -1737,7 +1745,7 @@ ul.classic-list li {
 }
 @media (hover: hover) and (pointer: fine) {
   #statement-section .mission-statement:hover .text {
-    opacity: 0.2 !important;
+    opacity: 0.4 !important;
     transition: 0.3s ease !important;
   }
   #statement-section .mission-statement:hover .statement-websites,
@@ -1753,105 +1761,109 @@ ul.classic-list li {
 }
 #statement-section .mission-statement .text {
   opacity: 0.1;
-  transition: opacity 0.3s ease;
-  filter: blur(3px);
-}
-#statement-section .mission-statement .text:nth-child(2) {
-  transition-delay: 0.036s;
-}
-#statement-section .mission-statement .text:nth-child(3) {
-  transition-delay: 0.072s;
-}
-#statement-section .mission-statement .text:nth-child(4) {
-  transition-delay: 0.108s;
-}
-#statement-section .mission-statement .text:nth-child(5) {
-  transition-delay: 0.144s;
-}
-#statement-section .mission-statement .text:nth-child(6) {
-  transition-delay: 0.18s;
-}
-#statement-section .mission-statement .text:nth-child(7) {
-  transition-delay: 0.216s;
-}
-#statement-section .mission-statement .text:nth-child(8) {
-  transition-delay: 0.252s;
-}
-#statement-section .mission-statement .text:nth-child(9) {
-  transition-delay: 0.288s;
-}
-#statement-section .mission-statement .text:nth-child(10) {
-  transition-delay: 0.324s;
-}
-#statement-section .mission-statement .text:nth-child(11) {
-  transition-delay: 0.36s;
-}
-#statement-section .mission-statement .text:nth-child(12) {
-  transition-delay: 0.396s;
-}
-#statement-section .mission-statement .text:nth-child(13) {
-  transition-delay: 0.432s;
-}
-#statement-section .mission-statement .text:nth-child(14) {
-  transition-delay: 0.468s;
-}
-#statement-section .mission-statement .text:nth-child(15) {
-  transition-delay: 0.504s;
-}
-#statement-section .mission-statement .text:nth-child(16) {
-  transition-delay: 0.54s;
+  transition: 0.6s ease;
+  filter: blur(2px);
 }
 #statement-section .mission-statement.animate .text {
   opacity: 1;
   filter: blur(0);
 }
+#statement-section .mission-statement.animate .text:nth-child(2) {
+  transition-delay: 0.048s;
+}
+#statement-section .mission-statement.animate .text:nth-child(3) {
+  transition-delay: 0.096s;
+}
+#statement-section .mission-statement.animate .text:nth-child(4) {
+  transition-delay: 0.144s;
+}
+#statement-section .mission-statement.animate .text:nth-child(5) {
+  transition-delay: 0.192s;
+}
+#statement-section .mission-statement.animate .text:nth-child(6) {
+  transition-delay: 0.24s;
+}
+#statement-section .mission-statement.animate .text:nth-child(7) {
+  transition-delay: 0.288s;
+}
+#statement-section .mission-statement.animate .text:nth-child(8) {
+  transition-delay: 0.336s;
+}
+#statement-section .mission-statement.animate .text:nth-child(9) {
+  transition-delay: 0.384s;
+}
+#statement-section .mission-statement.animate .text:nth-child(10) {
+  transition-delay: 0.432s;
+}
+#statement-section .mission-statement.animate .text:nth-child(11) {
+  transition-delay: 0.48s;
+}
+#statement-section .mission-statement.animate .text:nth-child(12) {
+  transition-delay: 0.528s;
+}
+#statement-section .mission-statement.animate .text:nth-child(13) {
+  transition-delay: 0.576s;
+}
+#statement-section .mission-statement.animate .text:nth-child(14) {
+  transition-delay: 0.624s;
+}
+#statement-section .mission-statement.animate .text:nth-child(15) {
+  transition-delay: 0.672s;
+}
+#statement-section .mission-statement.animate .text:nth-child(16) {
+  transition-delay: 0.72s;
+}
 
-#benefits-section {
+.benefits-section {
   margin-inline-start: 128px;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
 }
 @media screen and (max-width: 1512px) {
-  #benefits-section {
+  .benefits-section {
     margin-inline-start: 0;
   }
 }
 @media screen and (max-width: 1024px) {
-  #benefits-section {
+  .benefits-section {
     flex-direction: column;
     align-items: center;
     position: relative;
   }
 }
-#benefits-section .headline-full {
+.benefits-section .scroll-glitch {
+  display: block;
+  width: 5em;
+}
+.benefits-section .headline-full {
   position: sticky;
   top: 33%;
   width: 50%;
 }
 @media screen and (max-width: 1024px) {
-  #benefits-section .headline-full {
+  .benefits-section .headline-full {
     position: static;
     width: 92%;
   }
 }
 @media screen and (max-width: 480px) {
-  #benefits-section .headline-full {
+  .benefits-section .headline-full {
     width: 100%;
   }
 }
-#benefits-section .headline-full .section-headline {
+.benefits-section .headline-full .section-headline {
   text-align: left;
 }
-#benefits-section .headline-full .cta-wrapper {
+.benefits-section .headline-full .cta-wrapper {
   margin-inline-start: 64px;
 }
 @media screen and (max-width: 1200px) {
-  #benefits-section .headline-full .cta-wrapper {
+  .benefits-section .headline-full .cta-wrapper {
     margin-inline-start: 0;
   }
 }
-#benefits-section .benefit-list {
+.benefits-section .benefit-list {
   display: flex;
   flex-direction: column;
   gap: 128px;
@@ -1859,39 +1871,39 @@ ul.classic-list li {
   padding: 128px 0;
 }
 @media screen and (max-width: 1512px) {
-  #benefits-section .benefit-list {
+  .benefits-section .benefit-list {
     width: 50%;
   }
 }
 @media screen and (max-width: 1200px) {
-  #benefits-section .benefit-list {
+  .benefits-section .benefit-list {
     padding: 64px 0 96px;
   }
 }
 @media screen and (max-width: 1024px) {
-  #benefits-section .benefit-list {
+  .benefits-section .benefit-list {
     width: 92%;
   }
 }
 @media screen and (max-width: 768px) {
-  #benefits-section .benefit-list {
+  .benefits-section .benefit-list {
     gap: 96px;
   }
 }
 @media screen and (max-width: 480px) {
-  #benefits-section .benefit-list {
+  .benefits-section .benefit-list {
     width: 100%;
     gap: 64px;
   }
 }
-#benefits-section .benefit-list .benefit-block {
+.benefits-section .benefit-list .benefit-block {
   width: 100%;
   max-width: 672px;
   opacity: 0.1;
-  filter: blur(3px);
-  transition: 0.3s ease;
+  filter: blur(2px);
+  transition: 0.6s ease;
 }
-#benefits-section .benefit-list .benefit-block h3 {
+.benefits-section .benefit-list .benefit-block h3 {
   font-size: 48px;
   font-weight: 200;
   margin-block-end: 24px;
@@ -1900,95 +1912,98 @@ ul.classic-list li {
   gap: 24px;
 }
 @media screen and (max-width: 1512px) {
-  #benefits-section .benefit-list .benefit-block h3 {
+  .benefits-section .benefit-list .benefit-block h3 {
     font-size: 36px;
     margin-block-end: 12px;
   }
 }
 @media screen and (max-width: 1200px) {
-  #benefits-section .benefit-list .benefit-block h3 {
+  .benefits-section .benefit-list .benefit-block h3 {
     font-size: 32px;
     gap: 12px;
   }
 }
 @media screen and (max-width: 768px) {
-  #benefits-section .benefit-list .benefit-block h3 {
+  .benefits-section .benefit-list .benefit-block h3 {
     font-size: 24px;
   }
 }
-#benefits-section .benefit-list .benefit-block h3 svg {
+.benefits-section .benefit-list .benefit-block h3 svg {
   width: 48px;
 }
 @media screen and (max-width: 768px) {
-  #benefits-section .benefit-list .benefit-block h3 svg {
+  .benefits-section .benefit-list .benefit-block h3 svg {
     width: 24px;
   }
 }
-#benefits-section .benefit-list .benefit-block p {
+.benefits-section .benefit-list .benefit-block p {
   font-size: 20px;
   font-weight: 200;
   line-height: 120%;
   padding-inline-start: 72px;
 }
 @media screen and (max-width: 1200px) {
-  #benefits-section .benefit-list .benefit-block p {
+  .benefits-section .benefit-list .benefit-block p {
     font-size: 16px;
   }
 }
 @media screen and (max-width: 1024px) {
-  #benefits-section .benefit-list .benefit-block p {
+  .benefits-section .benefit-list .benefit-block p {
     padding-inline-start: 0;
   }
 }
 @media screen and (max-width: 768px) {
-  #benefits-section .benefit-list .benefit-block p {
+  .benefits-section .benefit-list .benefit-block p {
     font-size: 14px;
     letter-spacing: 0.25px;
   }
 }
-#benefits-section .benefit-list .benefit-block p .business-days {
+.benefits-section .benefit-list .benefit-block p .business-days {
   font-size: 16px;
 }
 @media screen and (max-width: 1200px) {
-  #benefits-section .benefit-list .benefit-block p .business-days {
+  .benefits-section .benefit-list .benefit-block p .business-days {
     font-size: 14px;
   }
 }
 @media screen and (max-width: 768px) {
-  #benefits-section .benefit-list .benefit-block p .business-days {
+  .benefits-section .benefit-list .benefit-block p .business-days {
     font-size: 12px;
   }
 }
-#benefits-section .benefit-list .benefit-block.animate {
+.benefits-section .benefit-list .benefit-block.animate {
   opacity: 1;
   filter: blur(0);
 }
 @media screen and (min-width: 769px) {
-  #benefits-section > .cta-wrapper.lg-screen-and-below {
+  .benefits-section > .cta-wrapper.lg-screen-and-below {
     align-self: flex-start;
     margin-inline-start: 80px;
   }
 }
 
-#plans-section {
+.plans-section {
   scroll-margin-block-start: -96px;
 }
 @media screen and (max-width: 1512px) {
-  #plans-section {
+  .plans-section {
     scroll-margin-block-start: -64px;
   }
 }
 @media screen and (max-width: 768px) {
-  #plans-section {
+  .plans-section {
     scroll-margin-block-start: unset;
   }
 }
+.plans-section .scroll-glitch {
+  width: 3.4em;
+}
 @media screen and (max-width: 1512px) {
-  #plans-section .section-headline {
+  .plans-section .section-headline {
     margin-block-end: 64px;
   }
 }
-#plans-section .plan-options {
+.plans-section .plan-options {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1996,77 +2011,77 @@ ul.classic-list li {
   gap: 32px;
 }
 @media screen and (max-width: 1512px) {
-  #plans-section .plan-options {
+  .plans-section .plan-options {
     gap: 16px;
   }
 }
 @media screen and (max-width: 1200px) {
-  #plans-section .plan-options {
+  .plans-section .plan-options {
     flex-wrap: wrap;
     gap: 24px;
   }
 }
 @media screen and (max-width: 1024px) {
-  #plans-section .plan-options {
+  .plans-section .plan-options {
     flex-direction: column;
     align-items: center;
   }
 }
-#plans-section .plan-options .segment {
+.plans-section .plan-options .segment {
   width: 33%;
 }
 @media screen and (max-width: 1200px) {
-  #plans-section .plan-options .segment {
+  .plans-section .plan-options .segment {
     width: unset;
   }
 }
 @media screen and (max-width: 1024px) {
-  #plans-section .plan-options .segment {
+  .plans-section .plan-options .segment {
     width: 80%;
   }
 }
 @media screen and (max-width: 768px) {
-  #plans-section .plan-options .segment {
+  .plans-section .plan-options .segment {
     width: 100%;
   }
 }
-#plans-section .plan-options .segment.last-segment {
+.plans-section .plan-options .segment.last-segment {
   display: flex;
   flex-direction: column;
   gap: 32px;
 }
 @media screen and (max-width: 1512px) {
-  #plans-section .plan-options .segment.last-segment {
+  .plans-section .plan-options .segment.last-segment {
     gap: 16px;
   }
 }
 @media screen and (max-width: 1200px) {
-  #plans-section .plan-options .segment.last-segment {
+  .plans-section .plan-options .segment.last-segment {
     gap: 24px;
     width: 100%;
     flex-direction: row;
   }
 }
 @media screen and (max-width: 1024px) {
-  #plans-section .plan-options .segment.last-segment {
+  .plans-section .plan-options .segment.last-segment {
     flex-direction: column;
     align-items: center;
   }
 }
-#plans-section .plan-options .card {
+.plans-section .plan-options .card {
   background: #1e1e1e;
   padding: 32px 24px;
 }
 @media screen and (max-width: 1200px) {
-  #plans-section .plan-options .price-card {
+  .plans-section .plan-options .price-card {
     flex: 1;
   }
 }
-#plans-section .plan-options .price-card h3,
-#plans-section .plan-options .price-card h5 {
+.plans-section .plan-options .price-card h3,
+.plans-section .plan-options .price-card h5 {
   text-transform: uppercase;
 }
-#plans-section .plan-options .price-card .card-title {
+.plans-section .plan-options .price-card .card-title {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -2075,100 +2090,100 @@ ul.classic-list li {
   margin-block-end: 16px;
 }
 @media screen and (max-width: 1512px) {
-  #plans-section .plan-options .price-card .card-title {
+  .plans-section .plan-options .price-card .card-title {
     font-size: 32px;
   }
 }
 @media screen and (max-width: 1200px) {
-  #plans-section .plan-options .price-card .card-title {
+  .plans-section .plan-options .price-card .card-title {
     font-size: 36px;
   }
 }
 @media screen and (max-width: 480px) {
-  #plans-section .plan-options .price-card .card-title {
+  .plans-section .plan-options .price-card .card-title {
     font-size: 32px;
   }
 }
-#plans-section .plan-options .price-card .card-title .most-popular {
+.plans-section .plan-options .price-card .card-title .most-popular {
   font-size: 12px;
   font-weight: 700;
   color: #909090;
 }
 @media screen and (max-width: 1512px) {
-  #plans-section .plan-options .price-card .card-title .most-popular {
+  .plans-section .plan-options .price-card .card-title .most-popular {
     font-size: 10px;
   }
 }
 @media screen and (max-width: 1200px) {
-  #plans-section .plan-options .price-card .card-title .most-popular {
+  .plans-section .plan-options .price-card .card-title .most-popular {
     font-size: 14px;
   }
 }
 @media screen and (max-width: 480px) {
-  #plans-section .plan-options .price-card .card-title .most-popular {
+  .plans-section .plan-options .price-card .card-title .most-popular {
     font-size: 10px;
   }
 }
-#plans-section .plan-options .price-card .card-price {
+.plans-section .plan-options .price-card .card-price {
   font-size: 36px;
 }
 @media screen and (max-width: 1512px) {
-  #plans-section .plan-options .price-card .card-price {
+  .plans-section .plan-options .price-card .card-price {
     font-size: 24px;
   }
 }
 @media screen and (max-width: 1200px) {
-  #plans-section .plan-options .price-card .card-price {
+  .plans-section .plan-options .price-card .card-price {
     font-size: 32px;
   }
 }
 @media screen and (max-width: 480px) {
-  #plans-section .plan-options .price-card .card-price {
+  .plans-section .plan-options .price-card .card-price {
     font-size: 28px;
   }
 }
-#plans-section .plan-options .price-card .card-price .pause-or-cancel {
+.plans-section .plan-options .price-card .card-price .pause-or-cancel {
   font-size: 14px;
   letter-spacing: 0.25px;
   color: #909090;
   vertical-align: middle;
 }
 @media screen and (max-width: 1512px) {
-  #plans-section .plan-options .price-card .card-price .pause-or-cancel {
+  .plans-section .plan-options .price-card .card-price .pause-or-cancel {
     font-size: 12px;
   }
 }
-#plans-section .plan-options .price-card .divider {
+.plans-section .plan-options .price-card .divider {
   height: 4px;
   border: none;
   margin: 64px 0;
 }
 @media screen and (max-width: 1512px) {
-  #plans-section .plan-options .price-card .divider {
+  .plans-section .plan-options .price-card .divider {
     margin: 42px 0;
   }
 }
 @media screen and (max-width: 480px) {
-  #plans-section .plan-options .price-card .divider {
+  .plans-section .plan-options .price-card .divider {
     margin: 36px 0;
   }
 }
-#plans-section .plan-options .price-card .divider-coral {
+.plans-section .plan-options .price-card .divider-coral {
   background: #e48c66;
 }
-#plans-section .plan-options .price-card .divider-green {
+.plans-section .plan-options .price-card .divider-green {
   background: #a4d1a2;
 }
-#plans-section .plan-options .price-card .benefits-title {
+.plans-section .plan-options .price-card .benefits-title {
   font-size: 24px;
   margin-block-end: 16px;
 }
 @media screen and (max-width: 1512px) {
-  #plans-section .plan-options .price-card .benefits-title {
+  .plans-section .plan-options .price-card .benefits-title {
     font-size: 20px;
   }
 }
-#plans-section .plan-options .price-card .benefits-list {
+.plans-section .plan-options .price-card .benefits-list {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2177,25 +2192,25 @@ ul.classic-list li {
   margin-block-end: 96px;
 }
 @media screen and (max-width: 1512px) {
-  #plans-section .plan-options .price-card .benefits-list {
+  .plans-section .plan-options .price-card .benefits-list {
     gap: 12px;
     margin-block-end: 64px;
   }
 }
-#plans-section .plan-options .price-card .cta-wrapper .cta-1 {
+.plans-section .plan-options .price-card .cta-wrapper .cta-1 {
   scroll-margin-block-start: 820px;
 }
 @media screen and (max-width: 1512px) {
-  #plans-section .plan-options .price-card .cta-wrapper .cta-1 {
+  .plans-section .plan-options .price-card .cta-wrapper .cta-1 {
     scroll-margin-block-start: 496px;
   }
 }
 @media screen and (max-width: 768px) {
-  #plans-section .plan-options .price-card .cta-wrapper .cta-1 {
+  .plans-section .plan-options .price-card .cta-wrapper .cta-1 {
     scroll-margin-block-start: 360px;
   }
 }
-#plans-section .plan-options .half-card {
+.plans-section .plan-options .half-card {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2204,63 +2219,63 @@ ul.classic-list li {
   height: 50%;
 }
 @media screen and (max-width: 1512px) {
-  #plans-section .plan-options .half-card:last-of-type {
+  .plans-section .plan-options .half-card:last-of-type {
     height: 64%;
   }
 }
 @media screen and (max-width: 1200px) {
-  #plans-section .plan-options .half-card {
+  .plans-section .plan-options .half-card {
     width: 50%;
     height: 124%;
   }
-  #plans-section .plan-options .half-card:last-of-type {
+  .plans-section .plan-options .half-card:last-of-type {
     height: 124%;
   }
 }
 @media screen and (max-width: 1024px) {
-  #plans-section .plan-options .half-card {
+  .plans-section .plan-options .half-card {
     width: 80%;
   }
 }
 @media screen and (max-width: 768px) {
-  #plans-section .plan-options .half-card {
+  .plans-section .plan-options .half-card {
     width: 100%;
   }
 }
-#plans-section .plan-options .half-card h4 {
+.plans-section .plan-options .half-card h4 {
   font-size: 24px;
   text-transform: uppercase;
   margin-block-end: 28px;
 }
 @media screen and (max-width: 1512px) {
-  #plans-section .plan-options .half-card h4 {
+  .plans-section .plan-options .half-card h4 {
     font-size: 20px;
     margin-block-end: 16px;
   }
 }
 @media screen and (max-width: 480px) {
-  #plans-section .plan-options .half-card h4 {
+  .plans-section .plan-options .half-card h4 {
     font-size: 18px;
   }
 }
-#plans-section .plan-options .half-card .half-card-description {
+.plans-section .plan-options .half-card .half-card-description {
   font-size: 16px;
 }
 @media screen and (max-width: 1512px) {
-  #plans-section .plan-options .half-card .half-card-description {
+  .plans-section .plan-options .half-card .half-card-description {
     font-size: 14px;
     letter-spacing: 0.25px;
   }
 }
 @media screen and (max-width: 1024px) {
-  #plans-section .plan-options .half-card .half-card-description:last-of-type {
+  .plans-section .plan-options .half-card .half-card-description:last-of-type {
     margin-block-end: 64px;
   }
 }
-#plans-section .plan-options .half-card .half-card-description:last-of-type {
+.plans-section .plan-options .half-card .half-card-description:last-of-type {
   margin-block-start: -8px;
 }
-#plans-section .plan-options .half-card .mail-form {
+.plans-section .plan-options .half-card .mail-form {
   position: relative;
   width: 100%;
   height: 56px;
@@ -2268,34 +2283,34 @@ ul.classic-list li {
   transition: 0.3s ease;
 }
 @media screen and (max-width: 1512px) {
-  #plans-section .plan-options .half-card .mail-form {
+  .plans-section .plan-options .half-card .mail-form {
     height: 48px;
   }
 }
-#plans-section .plan-options .half-card .mail-form.active {
+.plans-section .plan-options .half-card .mail-form.active {
   translate: 0 -24px;
 }
-#plans-section .plan-options .half-card .mail-form:hover .input {
+.plans-section .plan-options .half-card .mail-form:hover .input {
   border-color: #7ec1d4;
 }
-#plans-section .plan-options .half-card .mail-form:hover .label {
+.plans-section .plan-options .half-card .mail-form:hover .label {
   color: #3d3d3d;
 }
 @media screen and (max-width: 480px) {
-  #plans-section .plan-options .half-card .mail-form:hover .submit-btn {
+  .plans-section .plan-options .half-card .mail-form:hover .submit-btn {
     scale: 1;
     border: 1px solid #7ec1d4;
     translate: 0 -20px;
   }
 }
-#plans-section .plan-options .half-card .mail-form:hover .submit-btn svg {
+.plans-section .plan-options .half-card .mail-form:hover .submit-btn svg {
   scale: 0.8;
 }
-#plans-section .plan-options .half-card .mail-form:hover .submit-btn svg path {
+.plans-section .plan-options .half-card .mail-form:hover .submit-btn svg path {
   fill: #7ec1d4;
 }
-#plans-section .plan-options .half-card .mail-form .input,
-#plans-section .plan-options .half-card .mail-form .label {
+.plans-section .plan-options .half-card .mail-form .input,
+.plans-section .plan-options .half-card .mail-form .label {
   position: absolute;
   left: 0;
   width: 100%;
@@ -2303,12 +2318,12 @@ ul.classic-list li {
   font-size: 24px;
 }
 @media screen and (max-width: 1512px) {
-  #plans-section .plan-options .half-card .mail-form .input,
-  #plans-section .plan-options .half-card .mail-form .label {
+  .plans-section .plan-options .half-card .mail-form .input,
+  .plans-section .plan-options .half-card .mail-form .label {
     font-size: 16px;
   }
 }
-#plans-section .plan-options .half-card .mail-form .input {
+.plans-section .plan-options .half-card .mail-form .input {
   bottom: 0;
   color: #f0f0f0;
   background: transparent;
@@ -2317,38 +2332,38 @@ ul.classic-list li {
   border-radius: 0;
   transition: border 0.36s ease;
 }
-#plans-section .plan-options .half-card .mail-form .input:focus-visible {
+.plans-section .plan-options .half-card .mail-form .input:focus-visible {
   border-color: #7ec1d4;
 }
-#plans-section .plan-options .half-card .mail-form .label {
+.plans-section .plan-options .half-card .mail-form .label {
   top: 32%;
   color: #909090;
   pointer-events: none;
   transition: 0.24s ease;
 }
-#plans-section .plan-options .half-card .mail-form .input:not(:-moz-placeholder-shown).input:not(focus) ~ .label {
+.plans-section .plan-options .half-card .mail-form .input:not(:-moz-placeholder-shown).input:not(focus) ~ .label {
   transform: translate(0, -68%);
   color: #7ec1d4;
   font-size: 16px;
 }
-#plans-section .plan-options .half-card .mail-form .input:focus ~ .label,
-#plans-section .plan-options .half-card .mail-form .input:not(:placeholder-shown).input:not(focus) ~ .label {
+.plans-section .plan-options .half-card .mail-form .input:focus ~ .label,
+.plans-section .plan-options .half-card .mail-form .input:not(:placeholder-shown).input:not(focus) ~ .label {
   transform: translate(0, -68%);
   color: #7ec1d4;
   font-size: 16px;
 }
 @media screen and (max-width: 1512px) {
-  #plans-section .plan-options .half-card .mail-form .input:not(:-moz-placeholder-shown).input:not(focus) ~ .label {
+  .plans-section .plan-options .half-card .mail-form .input:not(:-moz-placeholder-shown).input:not(focus) ~ .label {
     transform: translate(0, -80%);
     font-size: 12px;
   }
-  #plans-section .plan-options .half-card .mail-form .input:focus ~ .label,
-  #plans-section .plan-options .half-card .mail-form .input:not(:placeholder-shown).input:not(focus) ~ .label {
+  .plans-section .plan-options .half-card .mail-form .input:focus ~ .label,
+  .plans-section .plan-options .half-card .mail-form .input:not(:placeholder-shown).input:not(focus) ~ .label {
     transform: translate(0, -80%);
     font-size: 12px;
   }
 }
-#plans-section .plan-options .half-card .mail-form .submit-btn {
+.plans-section .plan-options .half-card .mail-form .submit-btn {
   position: absolute;
   top: 50%;
   right: 0;
@@ -2358,22 +2373,22 @@ ul.classic-list li {
   translate: 0 -12px;
   transition: 0.4s cubic-bezier(0.05, 1.75, 0.75, 1.75);
 }
-#plans-section .plan-options .half-card .mail-form .submit-btn svg {
+.plans-section .plan-options .half-card .mail-form .submit-btn svg {
   width: 32px;
   height: 32px;
   transition: 0.3s ease;
 }
 @media screen and (max-width: 1512px) {
-  #plans-section .plan-options .half-card .mail-form .submit-btn svg {
+  .plans-section .plan-options .half-card .mail-form .submit-btn svg {
     width: 20px;
     height: 20px;
   }
 }
-#plans-section .plan-options .half-card .mail-form .submit-btn svg path {
+.plans-section .plan-options .half-card .mail-form .submit-btn svg path {
   fill: #909090;
   transition: 0.36s ease;
 }
-#plans-section .plan-options .half-card .mail-form .status-message {
+.plans-section .plan-options .half-card .mail-form .status-message {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -2387,12 +2402,12 @@ ul.classic-list li {
   transition: 0.24s ease 0.12s;
 }
 @media screen and (max-width: 480px) {
-  #plans-section .plan-options .half-card .mail-form .status-message {
+  .plans-section .plan-options .half-card .mail-form .status-message {
     font-size: 13px;
   }
 }
-#plans-section .plan-options .half-card .mail-form .status-message .success-icon,
-#plans-section .plan-options .half-card .mail-form .status-message .error-icon {
+.plans-section .plan-options .half-card .mail-form .status-message .success-icon,
+.plans-section .plan-options .half-card .mail-form .status-message .error-icon {
   width: 24px;
   height: 24px;
   border-radius: 50%;
@@ -2400,86 +2415,89 @@ ul.classic-list li {
   scale: 0.5;
   transition: 0.3s ease 0.24s;
 }
-#plans-section .plan-options .half-card .mail-form .status-message.active {
+.plans-section .plan-options .half-card .mail-form .status-message.active {
   opacity: 1;
   pointer-events: all;
 }
-#plans-section .plan-options .half-card .mail-form .status-message.active .success-icon,
-#plans-section .plan-options .half-card .mail-form .status-message.active .error-icon {
+.plans-section .plan-options .half-card .mail-form .status-message.active .success-icon,
+.plans-section .plan-options .half-card .mail-form .status-message.active .error-icon {
   scale: 1.2;
 }
-#plans-section .plan-options .half-card .mail-form .success-message {
+.plans-section .plan-options .half-card .mail-form .success-message {
   color: #a4d1a2;
 }
-#plans-section .plan-options .half-card .mail-form .success-message .success-icon {
+.plans-section .plan-options .half-card .mail-form .success-message .success-icon {
   border: 1px solid #a4d1a2;
 }
-#plans-section .plan-options .half-card .mail-form .success-message .success-icon path {
+.plans-section .plan-options .half-card .mail-form .success-message .success-icon path {
   fill: #a4d1a2;
 }
-#plans-section .plan-options .half-card .mail-form .error-message {
+.plans-section .plan-options .half-card .mail-form .error-message {
   color: #fbfaa2;
 }
-#plans-section .plan-options .half-card .mail-form .error-message .error-icon {
+.plans-section .plan-options .half-card .mail-form .error-message .error-icon {
   border-color: transparent;
   border-radius: 0;
   margin-inline-end: -6px;
 }
-#plans-section .plan-options .half-card .mail-form .error-message .error-icon path {
+.plans-section .plan-options .half-card .mail-form .error-message .error-icon path {
   fill: #fbfaa2;
 }
-#plans-section .cta-wrapper {
+.plans-section .cta-wrapper {
   translate: 16px 0;
   width: unset;
   justify-content: flex-start;
   gap: 0;
 }
 @media screen and (max-width: 1512px) {
-  #plans-section .cta-wrapper {
+  .plans-section .cta-wrapper {
     translate: 12px 0;
     gap: 12px;
   }
 }
 @media screen and (max-width: 768px) {
-  #plans-section .cta-wrapper {
+  .plans-section .cta-wrapper {
     gap: 0;
     translate: 0 0;
   }
 }
 @media screen and (max-width: 1512px) {
-  #plans-section .cta-wrapper .cta-1,
-  #plans-section .cta-wrapper .cta-2 {
+  .plans-section .cta-wrapper .cta-1,
+  .plans-section .cta-wrapper .cta-2 {
     font-size: 16px;
   }
 }
-#plans-section .cta-wrapper .cta-text {
+.plans-section .cta-wrapper .cta-text {
   background: #1e1e1e;
 }
 
-#faq-section {
+.faq-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-#faq-section .faq-list {
+.faq-section .scroll-glitch {
+  width: 2.8em;
+}
+.faq-section .faq-list {
   display: flex;
   flex-direction: column;
   width: 58%;
   margin: 48px 0 124px;
 }
 @media screen and (max-width: 1200px) {
-  #faq-section .faq-list {
+  .faq-section .faq-list {
     width: 80%;
   }
 }
 @media screen and (max-width: 768px) {
-  #faq-section .faq-list {
+  .faq-section .faq-list {
     width: 100%;
     margin: 48px 0 64px;
   }
 }
-#faq-section .faq-list .faq-item {
+.faq-section .faq-list .faq-item {
   position: relative;
   border-block-end: 2px solid #3d3d3d;
   margin-block-end: 24px;
@@ -2488,22 +2506,22 @@ ul.classic-list li {
   grid-template-rows: 0fr;
   transition: all 0.3s ease, margin 0.4s ease;
 }
-#faq-section .faq-list .faq-item:hover {
+.faq-section .faq-list .faq-item:hover {
   border-color: #a4d1a2;
 }
 @media screen and (max-width: 1512px) {
-  #faq-section .faq-list .faq-item {
+  .faq-section .faq-list .faq-item {
     margin-block-end: 12px;
     padding-block-start: 24px;
   }
 }
-#faq-section .faq-list .faq-item.active {
+.faq-section .faq-list .faq-item.active {
   grid-template-rows: 1fr;
 }
-#faq-section .faq-list .faq-item.active .question .angle-arrow {
+.faq-section .faq-list .faq-item.active .question .angle-arrow {
   rotate: 180deg;
 }
-#faq-section .faq-list .faq-item.active .answer {
+.faq-section .faq-list .faq-item.active .answer {
   opacity: 1;
   pointer-events: all;
   padding: 32px 0 16px;
@@ -2511,11 +2529,11 @@ ul.classic-list li {
   transition: 0.3s ease 0.12s;
 }
 @media screen and (max-width: 1512px) {
-  #faq-section .faq-list .faq-item.active .answer {
+  .faq-section .faq-list .faq-item.active .answer {
     padding: 16px 0 8px;
   }
 }
-#faq-section .faq-list .question {
+.faq-section .faq-list .question {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -2526,11 +2544,11 @@ ul.classic-list li {
   z-index: 1;
 }
 @media screen and (max-width: 1512px) {
-  #faq-section .faq-list .question {
+  .faq-section .faq-list .question {
     padding: 4px 0;
   }
 }
-#faq-section .faq-list .question h3 {
+.faq-section .faq-list .question h3 {
   color: #f0f0f0;
   font-size: 20px;
   text-align: left;
@@ -2539,43 +2557,43 @@ ul.classic-list li {
   transition: 0.3s ease;
 }
 @media screen and (max-width: 1512px) {
-  #faq-section .faq-list .question h3 {
+  .faq-section .faq-list .question h3 {
     font-size: 16px;
     gap: 8px;
   }
 }
 @media screen and (max-width: 768px) {
-  #faq-section .faq-list .question h3 {
+  .faq-section .faq-list .question h3 {
     font-size: 14px;
     gap: 4px;
   }
 }
-#faq-section .faq-list .question h3-indicator {
+.faq-section .faq-list .question h3-indicator {
   width: 24px;
 }
-#faq-section .faq-list .question .angle-arrow-wrapper {
+.faq-section .faq-list .question .angle-arrow-wrapper {
   transition: 0.4s cubic-bezier(0.05, 1.75, 0.75, 1.75);
 }
-#faq-section .faq-list .question .angle-arrow-wrapper .angle-arrow {
+.faq-section .faq-list .question .angle-arrow-wrapper .angle-arrow {
   width: 36px;
   height: 36px;
   transition: 0.3s ease;
 }
 @media screen and (max-width: 1512px) {
-  #faq-section .faq-list .question .angle-arrow-wrapper .angle-arrow {
+  .faq-section .faq-list .question .angle-arrow-wrapper .angle-arrow {
     width: 24px;
     height: 24px;
   }
 }
-#faq-section .faq-list .question .angle-arrow-wrapper .angle-arrow path {
+.faq-section .faq-list .question .angle-arrow-wrapper .angle-arrow path {
   fill: #a4d1a2;
 }
 @media screen and (max-width: 480px) {
-  #faq-section .faq-list .question .angle-arrow-wrapper .angle-arrow {
+  .faq-section .faq-list .question .angle-arrow-wrapper .angle-arrow {
     width: 2rem;
   }
 }
-#faq-section .faq-list .answer {
+.faq-section .faq-list .answer {
   overflow: hidden;
   opacity: 0;
   pointer-events: none;
@@ -2587,30 +2605,30 @@ ul.classic-list li {
   cursor: pointer;
 }
 @media screen and (max-width: 1512px) {
-  #faq-section .faq-list .answer {
+  .faq-section .faq-list .answer {
     font-size: 16px;
   }
 }
 @media screen and (max-width: 768px) {
-  #faq-section .faq-list .answer {
+  .faq-section .faq-list .answer {
     font-size: 14px;
   }
 }
-#faq-section .faq-list .answer .answer-indicator {
+.faq-section .faq-list .answer .answer-indicator {
   padding-inline-end: 12px;
 }
 @media screen and (max-width: 1512px) {
-  #faq-section .faq-list .answer .answer-indicator {
+  .faq-section .faq-list .answer .answer-indicator {
     padding-inline-end: 10px;
   }
 }
 @media screen and (max-width: 768px) {
-  #faq-section .faq-list .answer .answer-indicator {
+  .faq-section .faq-list .answer .answer-indicator {
     padding-inline-end: 6px;
   }
 }
 @media screen and (max-width: 480px) {
-  #faq-section .faq-cta {
+  .faq-section .faq-cta {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -2618,16 +2636,16 @@ ul.classic-list li {
   }
 }
 @media screen and (max-width: 768px) {
-  #faq-section .faq-cta .headline-description {
+  .faq-section .faq-cta .headline-description {
     margin-block-end: 48px;
   }
 }
 @media screen and (max-width: 480px) {
-  #faq-section .faq-cta .headline-description {
+  .faq-section .faq-cta .headline-description {
     width: 86%;
   }
 }
-#faq-section .faq-cta .cta-wrapper {
+.faq-section .faq-cta .cta-wrapper {
   width: unset;
   justify-content: center;
   gap: 16px;

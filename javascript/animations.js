@@ -1,12 +1,16 @@
+gsap.registerPlugin(ScrollTrigger);
+
 let mqMaxXxl = window.matchMedia("(max-width: 1440px)");
 let mqMaxMd = window.matchMedia("(max-width: 768px)");
 
-const glitchCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?><:;";
+const allGlitchEffects = (() => {
+  const glitchCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?";
 
-const dynamicText = document.querySelector(".dynamic-text");
+  const dynamicText = document.querySelector(".dynamic-text");
 
-if (dynamicText) {
-  function applyGlitchEffect({ element, text, iterations, color }) {
+  //
+  // Hero Glitch Text Function
+  const applyHeroGlitch = ({ element, text, iterations, color }) => {
     let glitchIterations = 0;
     clearInterval(element.glitchInterval);
 
@@ -38,11 +42,10 @@ if (dynamicText) {
       }
 
       glitchIterations++;
-    }, 25);
-  }
+    }, 16);
+  };
 
-  // Hero Glitch Text Function
-  function heroGlitchText() {
+  const heroGlitchText = (() => {
     const words = [
       { word: "Creative", color: "#E48C66" },
       { word: "Responsive", color: "#7EC1D4" },
@@ -53,9 +56,9 @@ if (dynamicText) {
 
     let index = 0;
 
-    function updateText() {
+    const updateText = () => {
       const wordObj = words[index];
-      applyGlitchEffect({
+      applyHeroGlitch({
         element: dynamicText,
         text: wordObj.word,
         iterations: wordObj.word.length * 4,
@@ -63,76 +66,123 @@ if (dynamicText) {
       });
 
       index = (index + 1) % words.length;
-    }
+    };
 
     updateText();
-    setInterval(updateText, 4000);
-  }
+    setInterval(updateText, 2800);
+  })();
 
-  heroGlitchText();
-}
-
-//
-
-const scrollAnimations = () => {
-  function throttle(func, limit) {
-    let lastFunc;
-    let lastRan;
-
-    return function () {
-      const context = this;
-      const args = arguments;
-
-      if (!lastRan) {
-        func.apply(context, args);
-        lastRan = Date.now();
-      } else {
-        clearTimeout(lastFunc);
-        lastFunc = setTimeout(function () {
-          if (Date.now() - lastRan >= limit) {
-            func.apply(context, args);
-            lastRan = Date.now();
+  //
+  // Hero Glitch Text Function
+  const oneTimeGlitch = (element, originalText) => {
+    console.log(originalText);
+    let iterations = 0;
+    const glitchInterval = setInterval(() => {
+      element.innerText = originalText
+        .split("")
+        .map((char, index) => {
+          if (index < iterations) {
+            return originalText[index];
           }
-        }, limit - (Date.now() - lastRan));
+          return glitchCharacters[Math.floor(Math.random() * 32)];
+        })
+        .join("");
+
+      if (iterations >= originalText.length) {
+        clearInterval(glitchInterval);
       }
-    };
-  }
 
-  function isElementInView(element, offset = 0) {
-    const rect = element.getBoundingClientRect();
-
-    const windowHeight =
-      window.innerHeight || document.documentElement.clientHeight;
-
-    const isTopInView = rect.top <= windowHeight - offset;
-    const isBottomPassedTop = rect.top < 0 + offset;
-    return isTopInView && !isBottomPassedTop;
-  }
-
-  let pixelSpacer = 80;
-
-  if (mqMaxXxl.matches) {
-    pixelSpacer = 64;
-  } else if (mqMaxMd.matches) {
-    pixelSpacer = 32;
-  }
-
-  const handleScroll = () => {
-    document.querySelectorAll(".scroll-animate").forEach((el) => {
-      if (isElementInView(el, pixelSpacer)) {
-        el.classList.add("animate");
-      } else {
-        el.classList.remove("animate");
-      }
-    });
+      iterations += 1 / 8;
+    }, 16);
   };
 
-  // Adjust the throttle with the second argument below. The smaller the number, the quicker the function calls (milliseconds)
-  const throttledScroll = throttle(handleScroll, 100);
-  window.addEventListener("scroll", throttledScroll);
-};
+  const applyScrollTriggerGlitch = (() => {
+    const glitchTitles = document.querySelectorAll(".scroll-glitch");
+    const glitchTitlesTargets = document.querySelectorAll(
+      ".scroll-glitch-target"
+    );
 
-scrollAnimations();
+    glitchTitles.forEach((el, index) => {
+      const originalText = el.innerText;
+      const target = glitchTitlesTargets[index];
+
+      gsap.to(el, {
+        scrollTrigger: {
+          trigger: target,
+          toggleActions: "play none play none",
+          start: "top bottom",
+          end: "bottom top",
+          onEnter: () => oneTimeGlitch(el, originalText),
+          onLeave: () => oneTimeGlitch(el, originalText),
+          onEnterBack: () => oneTimeGlitch(el, originalText),
+          onLeaveBack: () => oneTimeGlitch(el, originalText),
+        },
+      });
+    });
+  })();
+
+  //
+  // Used over a list, like navigation links.
+  const glitchLinks = document.querySelectorAll(".glitch-link");
+
+  glitchLinks.forEach((el) => {
+    // Store the original text of each link
+    const originalLinkText = el.innerText;
+
+    let iterations = 0;
+    el.addEventListener("mouseover", () => {
+      const glitchy = setInterval(() => {
+        el.innerText = originalLinkText
+          .split("")
+          .map((char, index) => {
+            if (index < iterations) {
+              return originalLinkText[index];
+            }
+            return glitchCharacters[Math.floor(Math.random() * 36)];
+          })
+          .join("");
+
+        iterations >= originalLinkText.length ? clearInterval(glitchy) : null;
+
+        iterations += 1 / 6;
+      }, 25);
+
+      iterations = 0; // Important to set 'iterations' back to zero.
+    });
+  });
+})();
+
+// GLOBAL - Easily toggle an 'animate' class on any element with 'gsap-animate' class
+const globalGenerateAnimate = (() => {
+  const targetElements = document.querySelectorAll(".gsap-animate");
+
+  targetElements.forEach((targetElem) => {
+    gsap.to(targetElem, {
+      scrollTrigger: {
+        trigger: targetElem,
+        start: "top 98%",
+        end: "bottom top",
+        onEnter: () => targetElem.classList.add("animate"),
+        onLeave: () => targetElem.classList.remove("animate"),
+        onEnterBack: () => targetElem.classList.add("animate"),
+        onLeaveBack: () => targetElem.classList.remove("animate"),
+      },
+    });
+  });
+
+  // GAME CHANGER!!!
+  // Refresh ScrollTrigger instances on page load and resize
+  window.addEventListener("load", () => {
+    ScrollTrigger.refresh();
+  });
+
+  // Greater than 520 so it doesn't refresh on  mobile(dvh)
+  if (window.innerWidth > 520) {
+    window.addEventListener("resize", () => {
+      ScrollTrigger.refresh();
+    });
+  }
+})();
 
 //
 
@@ -140,7 +190,7 @@ if (mqMaxMd.matches) {
   let siteHeader = document.querySelector(".site-header");
 
   const scrollFromTop = () => {
-    window.addEventListener("scroll", function () {
+    window.addEventListener("scroll", () => {
       if (window.scrollY > 120) {
         siteHeader.classList.add("away-from-top");
       } else {

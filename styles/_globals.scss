@@ -591,11 +591,26 @@ section {
     padding: 96px 0;
   }
 
+  // &.section-with-headline {
+  //   border: $test;
+  // }
+
   .section-headline {
     text-align: center;
 
-    h2 {
+    &__heading {
       margin-block-end: 24px;
+
+      // @include mq-motion-allow {
+      //   opacity: 0.2;
+      //   filter: blur($blur);
+      //   transition: 0.6s ease;
+
+      //   &.animate {
+      //     opacity: 1;
+      //     filter: blur(0);
+      //   }
+      // }
     }
   }
 
@@ -1214,17 +1229,17 @@ ul {
 
     &:nth-of-type(1) {
       &::before {
-        animation: background-stripes 8s ease 2s infinite;
+        animation: background-stripes 5.6s ease 1s infinite;
       }
     }
     &:nth-of-type(2) {
       &::before {
-        animation: background-stripes 8s ease 2.12s infinite;
+        animation: background-stripes 5.6s ease 1.12s infinite;
       }
     }
     &:nth-of-type(3) {
       &::before {
-        animation: background-stripes 8s ease 2.24s infinite;
+        animation: background-stripes 5.6s ease 1.24s infinite;
       }
     }
   }
