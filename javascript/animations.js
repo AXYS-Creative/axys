@@ -74,7 +74,7 @@ const allGlitchEffects = (() => {
 
   //
   // Hero Glitch Text Function
-  const oneTimeGlitch = (element, originalText) => {
+  const singleGlitch = (element, originalText) => {
     console.log(originalText);
     let iterations = 0;
     const glitchInterval = setInterval(() => {
@@ -112,10 +112,10 @@ const allGlitchEffects = (() => {
           toggleActions: "play none play none",
           start: "top bottom",
           end: "bottom top",
-          onEnter: () => oneTimeGlitch(el, originalText),
-          onLeave: () => oneTimeGlitch(el, originalText),
-          onEnterBack: () => oneTimeGlitch(el, originalText),
-          onLeaveBack: () => oneTimeGlitch(el, originalText),
+          onEnter: () => singleGlitch(el, originalText),
+          onLeave: () => singleGlitch(el, originalText),
+          onEnterBack: () => singleGlitch(el, originalText),
+          onLeaveBack: () => singleGlitch(el, originalText),
         },
       });
     });
@@ -123,32 +123,16 @@ const allGlitchEffects = (() => {
 
   //
   // Used over a list, like navigation links.
+
   const glitchLinks = document.querySelectorAll(".glitch-link");
 
   glitchLinks.forEach((el) => {
-    // Store the original text of each link
     const originalLinkText = el.innerText;
 
-    let iterations = 0;
-    el.addEventListener("mouseover", () => {
-      const glitchy = setInterval(() => {
-        el.innerText = originalLinkText
-          .split("")
-          .map((char, index) => {
-            if (index < iterations) {
-              return originalLinkText[index];
-            }
-            return glitchCharacters[Math.floor(Math.random() * 36)];
-          })
-          .join("");
+    const handleGlitch = () => singleGlitch(el, originalLinkText);
 
-        iterations >= originalLinkText.length ? clearInterval(glitchy) : null;
-
-        iterations += 1 / 6;
-      }, 25);
-
-      iterations = 0; // Important to set 'iterations' back to zero.
-    });
+    el.addEventListener("mouseover", handleGlitch);
+    el.addEventListener("focus", handleGlitch);
   });
 })();
 

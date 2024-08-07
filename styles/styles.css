@@ -1316,6 +1316,10 @@ ul.classic-list li {
   display: inline-flex;
 }
 
+.glitch-link {
+  width: 6.8em;
+}
+
 .classic-link {
   position: relative;
   display: inline-block;
