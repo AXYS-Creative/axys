@@ -2076,6 +2076,26 @@ ul.classic-list li {
   background: #1e1e1e;
   padding: 32px 24px;
 }
+.plans-section .plan-options .card:hover, .plans-section .plan-options .card:focus-within {
+  scale: 1.03 !important;
+  transition: 0.3s ease !important;
+}
+@media screen and (max-width: 1512px) {
+  .plans-section .plan-options .card:hover, .plans-section .plan-options .card:focus-within {
+    scale: 1.02 !important;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .plans-section .plan-options .card {
+    opacity: 0;
+    scale: 0.96;
+    transition: 0.6s ease;
+  }
+  .plans-section .plan-options .card.animate {
+    opacity: 1;
+    scale: 1;
+  }
+}
 @media screen and (max-width: 1200px) {
   .plans-section .plan-options .price-card {
     flex: 1;
@@ -2510,7 +2530,7 @@ ul.classic-list li {
   grid-template-rows: 0fr;
   transition: all 0.3s ease, margin 0.4s ease;
 }
-.faq-section .faq-list .faq-item:hover {
+.faq-section .faq-list .faq-item:hover, .faq-section .faq-list .faq-item:focus-within {
   border-color: #a4d1a2;
 }
 @media screen and (max-width: 1512px) {

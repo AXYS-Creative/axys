@@ -1,8 +1,6 @@
 gsap.registerPlugin(ScrollTrigger);
 
-let mqMaxXxl = window.matchMedia("(max-width: 1440px)");
-let mqMaxMd = window.matchMedia("(max-width: 768px)");
-
+// Global - Everything Glitchy
 const allGlitchEffects = (() => {
   const glitchCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?";
 
@@ -75,7 +73,6 @@ const allGlitchEffects = (() => {
   //
   // Hero Glitch Text Function
   const singleGlitch = (element, originalText) => {
-    console.log(originalText);
     let iterations = 0;
     const glitchInterval = setInterval(() => {
       element.innerText = originalText
@@ -123,7 +120,6 @@ const allGlitchEffects = (() => {
 
   //
   // Used over a list, like navigation links.
-
   const glitchLinks = document.querySelectorAll(".glitch-link");
 
   glitchLinks.forEach((el) => {
@@ -132,11 +128,11 @@ const allGlitchEffects = (() => {
     const handleGlitch = () => singleGlitch(el, originalLinkText);
 
     el.addEventListener("mouseover", handleGlitch);
-    el.addEventListener("focus", handleGlitch);
+    el.addEventListener("focusin", handleGlitch);
   });
 })();
 
-// GLOBAL - Easily toggle an 'animate' class on any element with 'gsap-animate' class
+// Global - Easily toggle an 'animate' class on any element with 'gsap-animate' class
 const globalGenerateAnimate = (() => {
   const targetElements = document.querySelectorAll(".gsap-animate");
 
@@ -168,20 +164,15 @@ const globalGenerateAnimate = (() => {
   }
 })();
 
-//
-
-if (mqMaxMd.matches) {
+// Global -Animate when scrolling away from the top of the page
+const scrollFromTop = (() => {
   let siteHeader = document.querySelector(".site-header");
 
-  const scrollFromTop = () => {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 120) {
-        siteHeader.classList.add("away-from-top");
-      } else {
-        siteHeader.classList.remove("away-from-top");
-      }
-    });
-  };
-
-  scrollFromTop();
-}
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 120) {
+      siteHeader.classList.add("away-from-top");
+    } else {
+      siteHeader.classList.remove("away-from-top");
+    }
+  });
+})();
