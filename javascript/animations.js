@@ -53,9 +53,9 @@ const allGlitchEffects = (() => {
         }, 16);
       };
 
-      const heroGlitchText = (() => {
-        const dynamicText = document.querySelector(".dynamic-text");
-
+      // Fix error for pages without hero text
+      const dynamicText = document.querySelector(".dynamic-text");
+      if (dynamicText) {
         const words = [
           { word: "Creative", color: "#E48C66" },
           { word: "Responsive", color: "#7EC1D4" },
@@ -80,7 +80,7 @@ const allGlitchEffects = (() => {
 
         updateText();
         setInterval(updateText, 2800);
-      })();
+      }
 
       //
       // Hero Glitch Text Function
@@ -139,25 +139,27 @@ const allGlitchEffects = (() => {
           },
         ];
 
-        responsiveItems.forEach((el) => {
-          const element = document.querySelector(el.element);
-          const target = document.querySelector(el.target);
-          const targetLg = document.querySelector(el.targetLg);
+        responsiveItems.forEach((item) => {
+          const element = document.querySelector(item.elementSelector);
+          const target = document.querySelector(item.targetSelector);
+          const targetLg = document.querySelector(item.targetLgSelector);
 
-          const originalText = element.innerText;
+          if (element && (target || targetLg)) {
+            const originalText = element.innerText;
 
-          gsap.to(element, {
-            scrollTrigger: {
-              trigger: maxLg ? targetLg : target,
-              toggleActions: "play none play none",
-              start: "top bottom",
-              end: "bottom top",
-              onEnter: () => singleGlitch(element, originalText),
-              onLeave: () => singleGlitch(element, originalText),
-              onEnterBack: () => singleGlitch(element, originalText),
-              onLeaveBack: () => singleGlitch(element, originalText),
-            },
-          });
+            gsap.to(element, {
+              scrollTrigger: {
+                trigger: maxLg ? targetLg : target,
+                toggleActions: "play none play none",
+                start: "top bottom",
+                end: "bottom top",
+                onEnter: () => singleGlitch(element, originalText),
+                onLeave: () => singleGlitch(element, originalText),
+                onEnterBack: () => singleGlitch(element, originalText),
+                onLeaveBack: () => singleGlitch(element, originalText),
+              },
+            });
+          }
         });
       })();
 
