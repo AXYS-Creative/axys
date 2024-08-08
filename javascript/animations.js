@@ -4,132 +4,177 @@ gsap.registerPlugin(ScrollTrigger);
 const allGlitchEffects = (() => {
   const glitchCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?";
 
-  const dynamicText = document.querySelector(".dynamic-text");
+  let responsiveGsap = gsap.matchMedia();
 
-  //
-  // Hero Glitch Text Function
-  const applyHeroGlitch = ({ element, text, iterations, color }) => {
-    let glitchIterations = 0;
-    clearInterval(element.glitchInterval);
+  responsiveGsap.add(
+    {
+      maxMd: "(max-width: 768px)",
+      maxLg: "(max-width: 1024px)",
+      maxXl: "(max-width: 1200px)",
+      minMd: "(min-width: 769px)",
+    },
+    (context) => {
+      let { maxMd, maxLg, maxXl, minMd } = context.conditions;
 
-    if (color) {
-      element.style.color = color;
-    }
-
-    const revealRate = iterations / text.length;
-
-    element.glitchInterval = setInterval(() => {
-      const glitchText = text
-        .split("")
-        .map((char, index) => {
-          if (glitchIterations / revealRate > index) {
-            return char;
-          }
-
-          return glitchCharacters.charAt(
-            Math.floor(Math.random() * glitchCharacters.length)
-          );
-        })
-        .join("");
-
-      element.innerText = glitchText;
-
-      if (glitchIterations >= iterations) {
+      //
+      // Hero Glitch Text Function
+      const applyHeroGlitch = ({ element, text, iterations, color }) => {
+        let glitchIterations = 0;
         clearInterval(element.glitchInterval);
-        element.innerText = text;
-      }
 
-      glitchIterations++;
-    }, 16);
-  };
+        if (color) {
+          element.style.color = color;
+        }
 
-  const heroGlitchText = (() => {
-    const words = [
-      { word: "Creative", color: "#E48C66" },
-      { word: "Responsive", color: "#7EC1D4" },
-      { word: "Accessible", color: "#A4D1A2" },
-      { word: "Innovative", color: "#FBFAA2" },
-      { word: "Engaging", color: "#E1A7B4" },
-    ];
+        const revealRate = iterations / text.length;
 
-    let index = 0;
+        element.glitchInterval = setInterval(() => {
+          const glitchText = text
+            .split("")
+            .map((char, index) => {
+              if (glitchIterations / revealRate > index) {
+                return char;
+              }
 
-    const updateText = () => {
-      const wordObj = words[index];
-      applyHeroGlitch({
-        element: dynamicText,
-        text: wordObj.word,
-        iterations: wordObj.word.length * 4,
-        color: wordObj.color,
-      });
+              return glitchCharacters.charAt(
+                Math.floor(Math.random() * glitchCharacters.length)
+              );
+            })
+            .join("");
 
-      index = (index + 1) % words.length;
-    };
+          element.innerText = glitchText;
 
-    updateText();
-    setInterval(updateText, 2800);
-  })();
-
-  //
-  // Hero Glitch Text Function
-  const singleGlitch = (element, originalText) => {
-    let iterations = 0;
-    const glitchInterval = setInterval(() => {
-      element.innerText = originalText
-        .split("")
-        .map((char, index) => {
-          if (index < iterations) {
-            return originalText[index];
+          if (glitchIterations >= iterations) {
+            clearInterval(element.glitchInterval);
+            element.innerText = text;
           }
-          return glitchCharacters[Math.floor(Math.random() * 32)];
-        })
-        .join("");
 
-      if (iterations >= originalText.length) {
-        clearInterval(glitchInterval);
-      }
+          glitchIterations++;
+        }, 16);
+      };
 
-      iterations += 1 / 8;
-    }, 16);
-  };
+      const heroGlitchText = (() => {
+        const dynamicText = document.querySelector(".dynamic-text");
 
-  const applyScrollTriggerGlitch = (() => {
-    const glitchTitles = document.querySelectorAll(".scroll-glitch");
-    const glitchTitlesTargets = document.querySelectorAll(
-      ".scroll-glitch-target"
-    );
+        const words = [
+          { word: "Creative", color: "#E48C66" },
+          { word: "Responsive", color: "#7EC1D4" },
+          { word: "Accessible", color: "#A4D1A2" },
+          { word: "Innovative", color: "#FBFAA2" },
+          { word: "Engaging", color: "#E1A7B4" },
+        ];
 
-    glitchTitles.forEach((el, index) => {
-      const originalText = el.innerText;
-      const target = glitchTitlesTargets[index];
+        let index = 0;
 
-      gsap.to(el, {
-        scrollTrigger: {
-          trigger: target,
-          toggleActions: "play none play none",
-          start: "top bottom",
-          end: "bottom top",
-          onEnter: () => singleGlitch(el, originalText),
-          onLeave: () => singleGlitch(el, originalText),
-          onEnterBack: () => singleGlitch(el, originalText),
-          onLeaveBack: () => singleGlitch(el, originalText),
-        },
+        const updateText = () => {
+          const wordObj = words[index];
+          applyHeroGlitch({
+            element: dynamicText,
+            text: wordObj.word,
+            iterations: wordObj.word.length * 4,
+            color: wordObj.color,
+          });
+
+          index = (index + 1) % words.length;
+        };
+
+        updateText();
+        setInterval(updateText, 2800);
+      })();
+
+      //
+      // Hero Glitch Text Function
+      const singleGlitch = (element, originalText) => {
+        let iterations = 0;
+        const glitchInterval = setInterval(() => {
+          element.innerText = originalText
+            .split("")
+            .map((char, index) => {
+              if (index < iterations) {
+                return originalText[index];
+              }
+              return glitchCharacters[Math.floor(Math.random() * 32)];
+            })
+            .join("");
+
+          if (iterations >= originalText.length) {
+            clearInterval(glitchInterval);
+          }
+
+          iterations += 1 / 8;
+        }, 16);
+      };
+
+      const applyScrollGlitch = (() => {
+        const glitchTitles = document.querySelectorAll(".scroll-glitch");
+        const glitchTitlesTargets = document.querySelectorAll(
+          ".scroll-glitch-target"
+        );
+
+        glitchTitles.forEach((el, index) => {
+          const originalText = el.innerText;
+          const target = glitchTitlesTargets[index];
+
+          gsap.to(el, {
+            scrollTrigger: {
+              trigger: target,
+              toggleActions: "play none play none",
+              start: "top bottom",
+              end: "bottom top",
+              onEnter: () => singleGlitch(el, originalText),
+              onLeave: () => singleGlitch(el, originalText),
+              onEnterBack: () => singleGlitch(el, originalText),
+              onLeaveBack: () => singleGlitch(el, originalText),
+            },
+          });
+        });
+      })();
+
+      const responsiveScrollGlitch = (() => {
+        const responsiveItems = [
+          {
+            element: ".responsive-glitch-element__benefits",
+            target: ".responsive-glitch-target__benefits",
+            targetLg: ".responsive-glitch-target__benefits-lg",
+          },
+        ];
+
+        responsiveItems.forEach((el) => {
+          const element = document.querySelector(el.element);
+          const target = document.querySelector(el.target);
+          const targetLg = document.querySelector(el.targetLg);
+
+          const originalText = element.innerText;
+
+          gsap.to(element, {
+            scrollTrigger: {
+              trigger: maxLg ? targetLg : target,
+              toggleActions: "play none play none",
+              start: "top bottom",
+              end: "bottom top",
+              onEnter: () => singleGlitch(element, originalText),
+              onLeave: () => singleGlitch(element, originalText),
+              onEnterBack: () => singleGlitch(element, originalText),
+              onLeaveBack: () => singleGlitch(element, originalText),
+            },
+          });
+        });
+      })();
+
+      //
+      // Used over a list, like navigation links.
+      const glitchLinks = document.querySelectorAll(".glitch-link");
+
+      glitchLinks.forEach((el) => {
+        const originalLinkText = el.innerText;
+
+        const handleGlitch = () => singleGlitch(el, originalLinkText);
+
+        el.addEventListener("mouseover", handleGlitch);
+        el.addEventListener("focusin", handleGlitch);
       });
-    });
-  })();
-
-  //
-  // Used over a list, like navigation links.
-  const glitchLinks = document.querySelectorAll(".glitch-link");
-
-  glitchLinks.forEach((el) => {
-    const originalLinkText = el.innerText;
-
-    const handleGlitch = () => singleGlitch(el, originalLinkText);
-
-    el.addEventListener("mouseover", handleGlitch);
-    el.addEventListener("focusin", handleGlitch);
-  });
+    }
+  );
 })();
 
 // Global - Easily toggle an 'animate' class on any element with 'gsap-animate' class

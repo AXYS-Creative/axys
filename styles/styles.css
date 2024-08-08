@@ -1224,14 +1224,14 @@ ul.classic-list li {
     gap: 6px;
   }
 }
-.marquee img {
+.marquee .marquee-img {
   -o-object-fit: contain;
      object-fit: contain;
   width: 124px;
   height: 48px;
 }
 @media screen and (max-width: 768px) {
-  .marquee img {
+  .marquee .marquee-img {
     width: 96px;
   }
 }
