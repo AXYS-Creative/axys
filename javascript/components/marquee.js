@@ -13,7 +13,7 @@ const marqueeData = [
   "servicenow",
   "redgate",
   "fis",
-  "blue-yonder",
+  "blueyonder",
   "snowflake",
   "samsara",
   "sitecore",
@@ -34,7 +34,7 @@ function updateMarquee(data) {
           <img src="${
             IMG_PATH + business
           }.svg" alt="${business}" class="marquee-img">
-          <span class="marquee-dot" aria-hidden="true" role="presentation">•</span>
+          <span class="marquee-dot" aria-hidden="true">•</span>
         `;
   });
 

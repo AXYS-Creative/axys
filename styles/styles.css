@@ -1229,6 +1229,7 @@ ul.classic-list li {
      object-fit: contain;
   width: 124px;
   height: 48px;
+  opacity: 0.75;
 }
 @media screen and (max-width: 768px) {
   .marquee .marquee-img {
@@ -1238,7 +1239,7 @@ ul.classic-list li {
 .marquee .marquee-dot {
   font-size: 36px;
   color: #909090;
-  opacity: 0.25;
+  opacity: 0.75;
   margin: 0 56px;
   -webkit-user-select: none;
      -moz-user-select: none;
