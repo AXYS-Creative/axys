@@ -305,6 +305,21 @@ nav .nav-links .nav-link:hover svg, nav .nav-links .nav-link:focus-visible svg {
 nav .nav-links .nav-link:hover svg path, nav .nav-links .nav-link:focus-visible svg path {
   opacity: 1;
 }
+nav .nav-links .nav-link:hover.home-link span, nav .nav-links .nav-link:focus-visible.home-link span {
+  color: #e1a7b4;
+}
+nav .nav-links .nav-link:hover.work-link span, nav .nav-links .nav-link:focus-visible.work-link span {
+  color: #fbfaa2;
+}
+nav .nav-links .nav-link:hover.benefits-link span, nav .nav-links .nav-link:focus-visible.benefits-link span {
+  color: #e48c66;
+}
+nav .nav-links .nav-link:hover.plans-link span, nav .nav-links .nav-link:focus-visible.plans-link span {
+  color: #7ec1d4;
+}
+nav .nav-links .nav-link:hover.faq-link span, nav .nav-links .nav-link:focus-visible.faq-link span {
+  color: #a4d1a2;
+}
 nav .nav-links .nav-link .icon-wrapper {
   display: flex;
   justify-content: space-between;
@@ -345,6 +360,11 @@ nav .nav-links .nav-link svg path {
   fill: #e48c66;
   opacity: 0;
   transition: 0.3s ease;
+}
+@media (prefers-reduced-motion: no-preference) {
+  nav .nav-links .nav-link span.glitch-link {
+    transition: 0.3s ease;
+  }
 }
 nav .nav-footer {
   display: flex;
@@ -1549,6 +1569,7 @@ ul.classic-list li {
   }
 }
 .work-section span[data-title] {
+  color: #fbfaa2;
   display: inline-flex;
   width: 3.2em;
 }
@@ -1841,6 +1862,7 @@ ul.classic-list li {
   }
 }
 .benefits-section span[data-title] {
+  color: #e48c66;
   display: block;
   width: 5em;
 }
@@ -2004,6 +2026,7 @@ ul.classic-list li {
   }
 }
 .plans-section span[data-title] {
+  color: #7ec1d4;
   width: 3.4em;
 }
 @media screen and (max-width: 1512px) {
@@ -2508,6 +2531,7 @@ ul.classic-list li {
   align-items: center;
 }
 .faq-section span[data-title] {
+  color: #a4d1a2;
   width: 2.8em;
 }
 .faq-section .faq-list {

@@ -87,6 +87,7 @@
   }
 
   span[data-title] {
+    color: $work-title-color;
     display: inline-flex;
     width: 3.2em;
   }
@@ -363,6 +364,7 @@
   }
 
   span[data-title] {
+    color: $benefits-title-color;
     display: block;
     width: 5em;
   }
@@ -527,6 +529,7 @@
   }
 
   span[data-title] {
+    color: $plans-title-color;
     width: 3.4em;
   }
 
@@ -1026,6 +1029,7 @@
   @include column-center;
 
   span[data-title] {
+    color: $faq-title-color;
     width: 2.8em;
   }
 

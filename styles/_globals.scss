@@ -311,18 +311,20 @@ nav {
       cursor: pointer;
       transition: 0.3s ease;
 
-      @include mq-max("xxl") {
-        font-size: 48px;
-      }
+      @media all {
+        @include mq-max("xxl") {
+          font-size: 48px;
+        }
 
-      @include mq-max("md") {
-        font-size: 36px;
-        padding: 8px 0;
-        padding-inline-start: 12px;
-      }
+        @include mq-max("md") {
+          font-size: 36px;
+          padding: 8px 0;
+          padding-inline-start: 12px;
+        }
 
-      @include mq-max("sm") {
-        padding-inline-start: unset;
+        @include mq-max("sm") {
+          padding-inline-start: unset;
+        }
       }
 
       &:hover,
@@ -339,6 +341,32 @@ nav {
 
           path {
             opacity: 1;
+          }
+        }
+
+        &.home-link {
+          span {
+            color: $home-title-color;
+          }
+        }
+        &.work-link {
+          span {
+            color: $work-title-color;
+          }
+        }
+        &.benefits-link {
+          span {
+            color: $benefits-title-color;
+          }
+        }
+        &.plans-link {
+          span {
+            color: $plans-title-color;
+          }
+        }
+        &.faq-link {
+          span {
+            color: $faq-title-color;
           }
         }
       }
@@ -378,6 +406,12 @@ nav {
         path {
           fill: $coral;
           opacity: 0;
+          transition: 0.3s ease;
+        }
+      }
+
+      span.glitch-link {
+        @include mq-motion-allow {
           transition: 0.3s ease;
         }
       }
