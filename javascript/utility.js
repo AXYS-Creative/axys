@@ -1,3 +1,8 @@
+// prettier-ignore
+export const mqMouse = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+// prettier-ignore
+export const mqReduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
 // Get Current Year for Copyright
 (function getCurrentYear() {
   const yearText = document.querySelector(".year-text");

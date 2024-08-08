@@ -1,6 +1,6 @@
-let mqMouse = window.matchMedia("(hover: hover) and (pointer: fine)");
+import { mqMouse, mqReduceMotion } from "../utility.js";
 
-if (mqMouse.matches) {
+if (mqMouse && !mqReduceMotion) {
   const magnetEffect = () => {
     document.querySelectorAll(".magnet").forEach((el) =>
       el.addEventListener("mousemove", function (e) {

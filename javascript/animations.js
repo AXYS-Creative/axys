@@ -83,8 +83,14 @@ const allGlitchEffects = (() => {
       }
 
       //
-      // Reusable Glitch function
+      // Reusable Glitch function + it's accessbile for reduced motion
       const singleGlitch = (element, originalText) => {
+        // Skip for a11y - reduced motion
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          element.innerText = originalText;
+          return;
+        }
+
         let iterations = 0;
         const glitchInterval = setInterval(() => {
           element.innerText = originalText
