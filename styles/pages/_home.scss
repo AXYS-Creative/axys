@@ -1,4 +1,4 @@
-#hero-section {
+.hero-section {
   margin-block-start: 124px;
   padding: 196px 0;
 
@@ -258,7 +258,7 @@
   }
 }
 
-#statement-section {
+.statement-section {
   @include row-center;
   text-align: center;
   height: 80vh;
@@ -1200,7 +1200,7 @@
   }
 }
 
-#pre-footer-section {
+.pre-footer {
   @include column-center;
 
   .pre-footer-title {

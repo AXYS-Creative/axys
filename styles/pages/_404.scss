@@ -7,7 +7,7 @@
 
   #not-found-section {
     @include row-center;
-    @extend #pre-footer-section;
+    @extend .pre-footer;
     padding: 0;
     height: 100vh;
     height: 100dvh;

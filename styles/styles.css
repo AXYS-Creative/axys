@@ -1452,57 +1452,57 @@ ul.classic-list li {
   }
 }
 
-#hero-section, .hero-text-slide {
+.hero-section, .hero-text-slide {
   margin-block-start: 124px;
   padding: 196px 0;
 }
 @media screen and (max-width: 1512px) {
-  #hero-section, .hero-text-slide {
+  .hero-section, .hero-text-slide {
     padding: 124px 0;
   }
 }
 @media screen and (max-width: 1200px) {
-  #hero-section, .hero-text-slide {
+  .hero-section, .hero-text-slide {
     margin-block-start: 96px;
   }
 }
-#hero-section .section-headline, .hero-text-slide .section-headline {
+.hero-section .section-headline, .hero-text-slide .section-headline {
   text-align: left;
   margin-block-end: 128px;
 }
 @media screen and (max-width: 1512px) {
-  #hero-section .section-headline, .hero-text-slide .section-headline {
+  .hero-section .section-headline, .hero-text-slide .section-headline {
     margin-block-end: 96px;
   }
 }
-#hero-section .section-headline__title, .hero-text-slide .section-headline__title {
+.hero-section .section-headline__title, .hero-text-slide .section-headline__title {
   display: flex;
   flex-direction: column;
 }
 @media screen and (max-width: 768px) {
-  #hero-section .section-headline__title, .hero-text-slide .section-headline__title {
+  .hero-section .section-headline__title, .hero-text-slide .section-headline__title {
     margin-block-end: 12px;
   }
 }
-#hero-section .section-headline__title span:last-of-type, .hero-text-slide .section-headline__title span:last-of-type {
+.hero-section .section-headline__title span:last-of-type, .hero-text-slide .section-headline__title span:last-of-type {
   padding-inline-start: 240px;
 }
 @media screen and (max-width: 1512px) {
-  #hero-section .section-headline__title span:last-of-type, .hero-text-slide .section-headline__title span:last-of-type {
+  .hero-section .section-headline__title span:last-of-type, .hero-text-slide .section-headline__title span:last-of-type {
     padding-inline-start: 200px;
   }
 }
 @media screen and (max-width: 1200px) {
-  #hero-section .section-headline__title span:last-of-type, .hero-text-slide .section-headline__title span:last-of-type {
+  .hero-section .section-headline__title span:last-of-type, .hero-text-slide .section-headline__title span:last-of-type {
     padding-inline-start: 160px;
   }
 }
 @media screen and (max-width: 768px) {
-  #hero-section .section-headline__title span:last-of-type, .hero-text-slide .section-headline__title span:last-of-type {
+  .hero-section .section-headline__title span:last-of-type, .hero-text-slide .section-headline__title span:last-of-type {
     padding-inline-start: 0;
   }
 }
-#hero-section .section-headline p, .hero-text-slide .section-headline p {
+.hero-section .section-headline p, .hero-text-slide .section-headline p {
   font-size: 14px;
   letter-spacing: 0.25px;
   line-height: 148%;
@@ -1510,27 +1510,27 @@ ul.classic-list li {
   translate: 0 -64px;
 }
 @media screen and (max-width: 1200px) {
-  #hero-section .section-headline p, .hero-text-slide .section-headline p {
+  .hero-section .section-headline p, .hero-text-slide .section-headline p {
     font-size: 12px;
     translate: 0 -48px;
   }
 }
 @media screen and (max-width: 768px) {
-  #hero-section .section-headline p, .hero-text-slide .section-headline p {
+  .hero-section .section-headline p, .hero-text-slide .section-headline p {
     translate: 0 0;
     line-height: 112%;
   }
 }
-#hero-section .cta-wrapper, .hero-text-slide .cta-wrapper {
+.hero-section .cta-wrapper, .hero-text-slide .cta-wrapper {
   margin-inline-start: 112px;
 }
 @media screen and (max-width: 1200px) {
-  #hero-section .cta-wrapper, .hero-text-slide .cta-wrapper {
+  .hero-section .cta-wrapper, .hero-text-slide .cta-wrapper {
     margin-inline-start: 96px;
   }
 }
 @media screen and (max-width: 768px) {
-  #hero-section .cta-wrapper, .hero-text-slide .cta-wrapper {
+  .hero-section .cta-wrapper, .hero-text-slide .cta-wrapper {
     margin-inline-start: 0;
   }
 }
@@ -1695,7 +1695,7 @@ ul.classic-list li {
   margin-block-end: -1px;
 }
 
-#statement-section {
+.statement-section {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1703,117 +1703,117 @@ ul.classic-list li {
   height: 80vh;
 }
 @media screen and (max-width: 1512px) {
-  #statement-section {
+  .statement-section {
     height: 64vh;
   }
 }
 @media screen and (max-width: 1200px) {
-  #statement-section {
+  .statement-section {
     height: unset;
     padding: 264px 0;
   }
 }
 @media screen and (max-width: 480px) {
-  #statement-section {
+  .statement-section {
     padding: 180px 0;
   }
 }
-#statement-section .mission-statement {
+.statement-section .mission-statement {
   font-size: 48px;
 }
 @media screen and (max-width: 1512px) {
-  #statement-section .mission-statement {
+  .statement-section .mission-statement {
     font-size: 36px;
   }
 }
 @media screen and (max-width: 1200px) {
-  #statement-section .mission-statement {
+  .statement-section .mission-statement {
     font-size: 32px;
   }
 }
 @media screen and (max-width: 1024px) {
-  #statement-section .mission-statement {
+  .statement-section .mission-statement {
     font-size: 24px;
   }
 }
 @media screen and (max-width: 768px) {
-  #statement-section .mission-statement {
+  .statement-section .mission-statement {
     font-size: 5.4vw;
   }
 }
 @media screen and (max-width: 480px) {
-  #statement-section .mission-statement {
+  .statement-section .mission-statement {
     font-size: 5vw;
   }
 }
 @media (hover: hover) and (pointer: fine) {
-  #statement-section .mission-statement:hover .text {
+  .statement-section .mission-statement:hover .text {
     opacity: 0.4 !important;
     transition: 0.3s ease !important;
   }
-  #statement-section .mission-statement:hover .statement-websites,
-  #statement-section .mission-statement:hover .statement-a11y,
-  #statement-section .mission-statement:hover .statement-seo {
+  .statement-section .mission-statement:hover .statement-websites,
+  .statement-section .mission-statement:hover .statement-a11y,
+  .statement-section .mission-statement:hover .statement-seo {
     transition: 0.3s ease !important;
   }
-  #statement-section .mission-statement:hover .statement-websites:hover,
-  #statement-section .mission-statement:hover .statement-a11y:hover,
-  #statement-section .mission-statement:hover .statement-seo:hover {
+  .statement-section .mission-statement:hover .statement-websites:hover,
+  .statement-section .mission-statement:hover .statement-a11y:hover,
+  .statement-section .mission-statement:hover .statement-seo:hover {
     opacity: 1 !important;
   }
 }
-#statement-section .mission-statement .text {
+.statement-section .mission-statement .text {
   opacity: 0.1;
   filter: blur(2px);
   transition: 0.6s ease;
 }
-#statement-section .mission-statement.animate .text {
+.statement-section .mission-statement.animate .text {
   opacity: 1;
   filter: blur(0);
 }
-#statement-section .mission-statement.animate .text:nth-child(2) {
+.statement-section .mission-statement.animate .text:nth-child(2) {
   transition-delay: 0.048s;
 }
-#statement-section .mission-statement.animate .text:nth-child(3) {
+.statement-section .mission-statement.animate .text:nth-child(3) {
   transition-delay: 0.096s;
 }
-#statement-section .mission-statement.animate .text:nth-child(4) {
+.statement-section .mission-statement.animate .text:nth-child(4) {
   transition-delay: 0.144s;
 }
-#statement-section .mission-statement.animate .text:nth-child(5) {
+.statement-section .mission-statement.animate .text:nth-child(5) {
   transition-delay: 0.192s;
 }
-#statement-section .mission-statement.animate .text:nth-child(6) {
+.statement-section .mission-statement.animate .text:nth-child(6) {
   transition-delay: 0.24s;
 }
-#statement-section .mission-statement.animate .text:nth-child(7) {
+.statement-section .mission-statement.animate .text:nth-child(7) {
   transition-delay: 0.288s;
 }
-#statement-section .mission-statement.animate .text:nth-child(8) {
+.statement-section .mission-statement.animate .text:nth-child(8) {
   transition-delay: 0.336s;
 }
-#statement-section .mission-statement.animate .text:nth-child(9) {
+.statement-section .mission-statement.animate .text:nth-child(9) {
   transition-delay: 0.384s;
 }
-#statement-section .mission-statement.animate .text:nth-child(10) {
+.statement-section .mission-statement.animate .text:nth-child(10) {
   transition-delay: 0.432s;
 }
-#statement-section .mission-statement.animate .text:nth-child(11) {
+.statement-section .mission-statement.animate .text:nth-child(11) {
   transition-delay: 0.48s;
 }
-#statement-section .mission-statement.animate .text:nth-child(12) {
+.statement-section .mission-statement.animate .text:nth-child(12) {
   transition-delay: 0.528s;
 }
-#statement-section .mission-statement.animate .text:nth-child(13) {
+.statement-section .mission-statement.animate .text:nth-child(13) {
   transition-delay: 0.576s;
 }
-#statement-section .mission-statement.animate .text:nth-child(14) {
+.statement-section .mission-statement.animate .text:nth-child(14) {
   transition-delay: 0.624s;
 }
-#statement-section .mission-statement.animate .text:nth-child(15) {
+.statement-section .mission-statement.animate .text:nth-child(15) {
   transition-delay: 0.672s;
 }
-#statement-section .mission-statement.animate .text:nth-child(16) {
+.statement-section .mission-statement.animate .text:nth-child(16) {
   transition-delay: 0.72s;
 }
 
@@ -2674,13 +2674,13 @@ ul.classic-list li {
   gap: 16px;
 }
 
-#pre-footer-section, .page-not-found #not-found-section {
+.pre-footer, .page-not-found #not-found-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-#pre-footer-section .pre-footer-title, .page-not-found #not-found-section .pre-footer-title, .page-not-found #not-found-section .not-found-title {
+.pre-footer .pre-footer-title, .page-not-found #not-found-section .pre-footer-title, .page-not-found #not-found-section .not-found-title {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2688,57 +2688,57 @@ ul.classic-list li {
   margin-block-end: 40px;
 }
 @media screen and (max-width: 768px) {
-  #pre-footer-section .pre-footer-title, .page-not-found #not-found-section .pre-footer-title, .page-not-found #not-found-section .not-found-title {
+  .pre-footer .pre-footer-title, .page-not-found #not-found-section .pre-footer-title, .page-not-found #not-found-section .not-found-title {
     gap: 12px;
   }
 }
 @media screen and (max-width: 768px) {
-  #pre-footer-section .pre-footer-title h2, .page-not-found #not-found-section .pre-footer-title h2, .page-not-found #not-found-section .not-found-title h2 {
+  .pre-footer .pre-footer-title h2, .page-not-found #not-found-section .pre-footer-title h2, .page-not-found #not-found-section .not-found-title h2 {
     font-size: 40px;
     margin-block-end: 0;
   }
 }
 @media screen and (max-width: 480px) {
-  #pre-footer-section .pre-footer-title h2, .page-not-found #not-found-section .pre-footer-title h2, .page-not-found #not-found-section .not-found-title h2 {
+  .pre-footer .pre-footer-title h2, .page-not-found #not-found-section .pre-footer-title h2, .page-not-found #not-found-section .not-found-title h2 {
     font-size: 28px;
   }
 }
-#pre-footer-section .pre-footer-title span, .page-not-found #not-found-section .pre-footer-title span, .page-not-found #not-found-section .not-found-title span {
+.pre-footer .pre-footer-title span, .page-not-found #not-found-section .pre-footer-title span, .page-not-found #not-found-section .not-found-title span {
   font-weight: 900;
 }
-#pre-footer-section .pre-footer-title .icon-wrapper, .page-not-found #not-found-section .pre-footer-title .icon-wrapper, .page-not-found #not-found-section .not-found-title .icon-wrapper {
+.pre-footer .pre-footer-title .icon-wrapper, .page-not-found #not-found-section .pre-footer-title .icon-wrapper, .page-not-found #not-found-section .not-found-title .icon-wrapper {
   height: 40px;
   width: 40px;
 }
 @media screen and (max-width: 1512px) {
-  #pre-footer-section .pre-footer-title .icon-wrapper, .page-not-found #not-found-section .pre-footer-title .icon-wrapper, .page-not-found #not-found-section .not-found-title .icon-wrapper {
+  .pre-footer .pre-footer-title .icon-wrapper, .page-not-found #not-found-section .pre-footer-title .icon-wrapper, .page-not-found #not-found-section .not-found-title .icon-wrapper {
     width: 36px;
     height: 36px;
   }
 }
 @media screen and (max-width: 1200px) {
-  #pre-footer-section .pre-footer-title .icon-wrapper, .page-not-found #not-found-section .pre-footer-title .icon-wrapper, .page-not-found #not-found-section .not-found-title .icon-wrapper {
+  .pre-footer .pre-footer-title .icon-wrapper, .page-not-found #not-found-section .pre-footer-title .icon-wrapper, .page-not-found #not-found-section .not-found-title .icon-wrapper {
     width: 32px;
     height: 32px;
   }
 }
 @media screen and (max-width: 768px) {
-  #pre-footer-section .pre-footer-title .icon-wrapper, .page-not-found #not-found-section .pre-footer-title .icon-wrapper, .page-not-found #not-found-section .not-found-title .icon-wrapper {
+  .pre-footer .pre-footer-title .icon-wrapper, .page-not-found #not-found-section .pre-footer-title .icon-wrapper, .page-not-found #not-found-section .not-found-title .icon-wrapper {
     height: 24px;
     width: 24px;
   }
 }
 @media screen and (max-width: 480px) {
-  #pre-footer-section .pre-footer-title .icon-wrapper, .page-not-found #not-found-section .pre-footer-title .icon-wrapper, .page-not-found #not-found-section .not-found-title .icon-wrapper {
+  .pre-footer .pre-footer-title .icon-wrapper, .page-not-found #not-found-section .pre-footer-title .icon-wrapper, .page-not-found #not-found-section .not-found-title .icon-wrapper {
     height: 16px;
     width: 16px;
   }
 }
-#pre-footer-section .pre-footer-title .icon-wrapper svg, .page-not-found #not-found-section .pre-footer-title .icon-wrapper svg, .page-not-found #not-found-section .not-found-title .icon-wrapper svg {
+.pre-footer .pre-footer-title .icon-wrapper svg, .page-not-found #not-found-section .pre-footer-title .icon-wrapper svg, .page-not-found #not-found-section .not-found-title .icon-wrapper svg {
   width: 100%;
   height: 100%;
 }
-#pre-footer-section .headline-description, .page-not-found #not-found-section .headline-description {
+.pre-footer .headline-description, .page-not-found #not-found-section .headline-description {
   text-align: center;
 }
 

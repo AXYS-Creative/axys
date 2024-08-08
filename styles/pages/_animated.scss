@@ -72,7 +72,7 @@
 }
 
 .hero-text-slide {
-  @extend #hero-section;
+  @extend .hero-section;
   margin-block-start: 0 !important;
 
   .section-headline {
