@@ -1453,6 +1453,10 @@ ul.classic-list li {
   }
 }
 
+.flip-horizontal {
+  rotate: 180deg;
+}
+
 .hero-section, .hero-text-slide {
   margin-block-start: 124px;
   padding: 196px 0;
@@ -1544,7 +1548,7 @@ ul.classic-list li {
     scroll-margin-block-start: -24px;
   }
 }
-.work-section .scroll-glitch {
+.work-section span[data-title] {
   display: inline-flex;
   width: 3.2em;
 }
@@ -1836,7 +1840,7 @@ ul.classic-list li {
     position: relative;
   }
 }
-.benefits-section .scroll-glitch {
+.benefits-section span[data-title] {
   display: block;
   width: 5em;
 }
@@ -1999,7 +2003,7 @@ ul.classic-list li {
     scroll-margin-block-start: unset;
   }
 }
-.plans-section .scroll-glitch {
+.plans-section span[data-title] {
   width: 3.4em;
 }
 @media screen and (max-width: 1512px) {
@@ -2501,7 +2505,7 @@ ul.classic-list li {
   justify-content: center;
   align-items: center;
 }
-.faq-section .scroll-glitch {
+.faq-section span[data-title] {
   width: 2.8em;
 }
 .faq-section .faq-list {

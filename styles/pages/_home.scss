@@ -85,7 +85,7 @@
     scroll-margin-block-start: -24px;
   }
 
-  .scroll-glitch {
+  span[data-title] {
     display: inline-flex;
     width: 3.2em;
   }
@@ -361,7 +361,7 @@
     }
   }
 
-  .scroll-glitch {
+  span[data-title] {
     display: block;
     width: 5em;
   }
@@ -525,7 +525,7 @@
     }
   }
 
-  .scroll-glitch {
+  span[data-title] {
     width: 3.4em;
   }
 
@@ -1024,7 +1024,7 @@
 .faq-section {
   @include column-center;
 
-  .scroll-glitch {
+  span[data-title] {
     width: 2.8em;
   }
 

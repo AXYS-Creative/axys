@@ -16,6 +16,10 @@ const toggleNav = () => {
 
   navMenu.setAttribute("aria-hidden", !isNavOpen);
   menuBtn.setAttribute("aria-expanded", isNavOpen);
+  menuBtn.setAttribute(
+    "aria-label",
+    isNavOpen ? "Close navigation menu" : "Open navigation menu"
+  );
 
   // Update tabindex for tabElementsPage and tabElementsNav
   tabElementsPage.forEach((el) =>

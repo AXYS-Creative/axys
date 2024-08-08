@@ -53,7 +53,7 @@ const allGlitchEffects = (() => {
         }, 16);
       };
 
-      // Keep if() statement for pages without hero/dynamic text
+      // Not on other pages
       const dynamicText = document.querySelector(".dynamic-text");
       if (dynamicText) {
         const words = [
@@ -136,6 +136,10 @@ const allGlitchEffects = (() => {
             element: ".responsive-glitch-element__benefits",
             target: ".responsive-glitch-target__benefits",
             targetLg: ".responsive-glitch-target__benefits-lg",
+            start: "top 72%",
+            end: "bottom 36%",
+            startLg: "top bottom",
+            endLg: "bottom top",
           },
         ];
 
@@ -143,21 +147,28 @@ const allGlitchEffects = (() => {
           const element = document.querySelector(item.element);
           const target = document.querySelector(item.target);
           const targetLg = document.querySelector(item.targetLg);
+          const start = item.start;
+          const end = item.end;
+          const startLg = item.startLg;
+          const endLg = item.endLg;
 
-          const originalText = element.getAttribute("data-title");
+          // Not on other pages
+          if (element) {
+            const originalText = element.getAttribute("data-title");
 
-          gsap.to(element, {
-            scrollTrigger: {
-              trigger: maxLg ? targetLg : target,
-              toggleActions: "play none play none",
-              start: "top bottom",
-              end: "bottom top",
-              onEnter: () => singleGlitch(element, originalText),
-              onLeave: () => singleGlitch(element, originalText),
-              onEnterBack: () => singleGlitch(element, originalText),
-              onLeaveBack: () => singleGlitch(element, originalText),
-            },
-          });
+            gsap.to(element, {
+              scrollTrigger: {
+                trigger: maxLg ? targetLg : target,
+                toggleActions: "play none play none",
+                start: maxLg ? startLg : start,
+                end: maxLg ? endLg : end,
+                onEnter: () => singleGlitch(element, originalText),
+                onLeave: () => singleGlitch(element, originalText),
+                onEnterBack: () => singleGlitch(element, originalText),
+                onLeaveBack: () => singleGlitch(element, originalText),
+              },
+            });
+          }
         });
       })();
 
