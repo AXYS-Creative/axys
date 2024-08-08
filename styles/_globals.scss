@@ -591,10 +591,6 @@ section {
     padding: 96px 0;
   }
 
-  // &.section-with-headline {
-  //   border: $test;
-  // }
-
   .section-headline {
     text-align: center;
 
@@ -619,6 +615,7 @@ section {
     letter-spacing: 0.25px;
     line-height: 120%;
     margin-block-end: 64px;
+    text-wrap: balance;
 
     @include mq-max("md") {
       margin-block-end: 24px;

@@ -53,7 +53,7 @@ const allGlitchEffects = (() => {
         }, 16);
       };
 
-      // Fix error for pages without hero text
+      // Keep if() statement for pages without hero/dynamic text
       const dynamicText = document.querySelector(".dynamic-text");
       if (dynamicText) {
         const words = [
@@ -83,7 +83,7 @@ const allGlitchEffects = (() => {
       }
 
       //
-      // Hero Glitch Text Function
+      // Reusable Glitch function
       const singleGlitch = (element, originalText) => {
         let iterations = 0;
         const glitchInterval = setInterval(() => {
@@ -112,7 +112,7 @@ const allGlitchEffects = (() => {
         );
 
         glitchTitles.forEach((el, index) => {
-          const originalText = el.innerText;
+          const originalText = el.getAttribute("data-title");
           const target = glitchTitlesTargets[index];
 
           gsap.to(el, {
@@ -140,31 +140,30 @@ const allGlitchEffects = (() => {
         ];
 
         responsiveItems.forEach((item) => {
-          const element = document.querySelector(item.elementSelector);
-          const target = document.querySelector(item.targetSelector);
-          const targetLg = document.querySelector(item.targetLgSelector);
+          const element = document.querySelector(item.element);
+          const target = document.querySelector(item.target);
+          const targetLg = document.querySelector(item.targetLg);
 
-          if (element && (target || targetLg)) {
-            const originalText = element.innerText;
+          const originalText = element.getAttribute("data-title");
 
-            gsap.to(element, {
-              scrollTrigger: {
-                trigger: maxLg ? targetLg : target,
-                toggleActions: "play none play none",
-                start: "top bottom",
-                end: "bottom top",
-                onEnter: () => singleGlitch(element, originalText),
-                onLeave: () => singleGlitch(element, originalText),
-                onEnterBack: () => singleGlitch(element, originalText),
-                onLeaveBack: () => singleGlitch(element, originalText),
-              },
-            });
-          }
+          gsap.to(element, {
+            scrollTrigger: {
+              trigger: maxLg ? targetLg : target,
+              toggleActions: "play none play none",
+              start: "top bottom",
+              end: "bottom top",
+              onEnter: () => singleGlitch(element, originalText),
+              onLeave: () => singleGlitch(element, originalText),
+              onEnterBack: () => singleGlitch(element, originalText),
+              onLeaveBack: () => singleGlitch(element, originalText),
+            },
+          });
         });
       })();
 
       //
-      // Used over a list, like navigation links.
+      // Global Utility for hover
+      // TODO: add focus effect
       const glitchLinks = document.querySelectorAll(".glitch-link");
 
       glitchLinks.forEach((el) => {

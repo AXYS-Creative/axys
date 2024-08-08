@@ -97,7 +97,7 @@
         aria-label="Toggle navigation menu"
         aria-expanded="false"
       >
-        <p class="menu-btn-text glitch-link">Menu</p>
+        <p class="menu-btn-text glitch-link" data-title="menu">Menu</p>
         <div class="burger magnet magnet-strong">
           <div class="burger-line-wrapper">
             <span class="burger-line"></span>
@@ -132,7 +132,7 @@
                   />
                 </svg>
               </div>
-              <span class="glitch-link">Home</span>
+              <span class="glitch-link" data-title="home">Home</span>
             </a>
           </li>
           <li>
@@ -152,7 +152,7 @@
                   />
                 </svg>
               </div>
-              <span class="glitch-link">Work</span>
+              <span class="glitch-link" data-title="work">Work</span>
             </a>
           </li>
           <li>
@@ -172,7 +172,7 @@
                   />
                 </svg>
               </div>
-              <span class="glitch-link">Benefits</span>
+              <span class="glitch-link" data-title="benefits">Benefits</span>
             </a>
           </li>
           <li>
@@ -192,7 +192,7 @@
                   />
                 </svg>
               </div>
-              <span class="glitch-link">Plans</span>
+              <span class="glitch-link" data-title="plans">Plans</span>
             </a>
           </li>
           <li>
@@ -212,7 +212,7 @@
                   />
                 </svg>
               </div>
-              <span class="glitch-link">FAQs</span>
+              <span class="glitch-link" data-title="faqs">FAQs</span>
             </a>
           </li>
         </ul>
@@ -425,15 +425,21 @@
           <h2 class="section-headline__heading" aria-label="Our work">
             <span aria-hidden="true">
               Our
-              <span class="yellow-text scroll-glitch scroll-glitch-target">
+              <span
+                class="yellow-text scroll-glitch scroll-glitch-target"
+                data-title="work"
+              >
                 Work
               </span>
             </span>
           </h2>
           <p class="headline-description">
-            We diligently collaborate with our clients to create
-            <br class="md-screen-and-up" />
-            exceptional experiences for their audiences.
+            <span class="md-screen-and-above">
+              We diligently collaborate with our clients to create
+            </span>
+            <span class="md-screen-and-above">
+              exceptional experiences for their audiences.
+            </span>
           </p>
         </div>
 
@@ -575,8 +581,10 @@
                 Member
                 <span
                   class="coral-text responsive-glitch-element__benefits responsive-glitch-target__benefits-lg"
-                  >benefits</span
+                  data-title="benefits"
                 >
+                  benefits
+                </span>
               </span>
             </h2>
             <p class="headline-description">
@@ -826,7 +834,10 @@
           <h2 class="section-headline__heading" aria-label="Member Plans">
             <span aria-hidden="true">
               Member
-              <span class="blue-text scroll-glitch scroll-glitch-target">
+              <span
+                class="blue-text scroll-glitch scroll-glitch-target"
+                data-title="plans"
+              >
                 Plans
               </span>
             </span>
@@ -1076,7 +1087,10 @@
         <div class="section-headline">
           <h2 class="section-headline__heading">
             THE
-            <span class="green-text scroll-glitch scroll-glitch-target">
+            <span
+              class="green-text scroll-glitch scroll-glitch-target"
+              data-title="faqs"
+            >
               FAQS
             </span>
           </h2>
@@ -1575,9 +1589,12 @@
           </div>
         </div>
         <p class="headline-description">
-          Gain access to unlimited design and development services,
-          <br class="sm-screen-and-up" />
-          and free up your time for more urgent business needs.
+          <span class="md-screen-and-above">
+            Gain access to unlimited design and development services,
+          </span>
+          <span class="md-screen-and-above">
+            and free up your time for more urgent business needs.
+          </span>
         </p>
         <div class="cta-wrapper">
           <a href="#plans-section" class="cta-1 tab-element-page">
