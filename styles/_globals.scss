@@ -1297,7 +1297,6 @@ ul {
     object-fit: contain;
     width: 124px;
     height: 48px;
-    opacity: 0.75;
 
     @include mq-max("md") {
       width: 96px;
@@ -1307,7 +1306,6 @@ ul {
   .marquee-dot {
     font-size: 36px;
     color: $grey-light;
-    opacity: 0.75;
     margin: 0 56px;
     user-select: none;
 
