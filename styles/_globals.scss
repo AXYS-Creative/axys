@@ -114,8 +114,8 @@ header {
     }
 
     .menu-btn-text {
-      transition: 0.3s ease;
       width: 36px;
+      transition: 0.3s ease;
 
       @include mq-max("sm") {
         width: 28px;
@@ -184,6 +184,7 @@ header {
     .menu-btn {
       .menu-btn-text {
         opacity: 0;
+        // visibility: hidden; // Need this to pass wave, but need to make it transition
       }
     }
   }

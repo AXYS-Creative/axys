@@ -72,9 +72,8 @@
   font-weight: 700;
 }
 
-.hidden {
-  opacity: 0;
-  pointer-events: none;
+.visually-hidden {
+  visibility: hidden;
 }
 
 // Media query classes - Warning, causing a break in voice assistant speech

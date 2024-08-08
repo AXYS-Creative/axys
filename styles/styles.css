@@ -112,8 +112,8 @@ header .menu-btn {
   }
 }
 header .menu-btn .menu-btn-text {
-  transition: 0.3s ease;
   width: 36px;
+  transition: 0.3s ease;
 }
 @media screen and (max-width: 480px) {
   header .menu-btn .menu-btn-text {
@@ -1385,9 +1385,8 @@ ul.classic-list li {
   font-weight: 700;
 }
 
-.hidden {
-  opacity: 0;
-  pointer-events: none;
+.visually-hidden {
+  visibility: hidden;
 }
 
 .lg-screen-and-up {
@@ -1511,6 +1510,7 @@ ul.classic-list li {
   font-size: 14px;
   letter-spacing: 0.25px;
   line-height: 148%;
+  display: inline-block;
   color: #f0f0f0;
   translate: 0 -64px;
 }
