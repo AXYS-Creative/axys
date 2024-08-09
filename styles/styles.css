@@ -308,17 +308,47 @@ nav .nav-links .nav-link:hover svg path, nav .nav-links .nav-link:focus-visible 
 nav .nav-links .nav-link:hover.home-link span, nav .nav-links .nav-link:focus-visible.home-link span {
   color: #e1a7b4;
 }
+nav .nav-links .nav-link:hover.home-link svg, nav .nav-links .nav-link:focus-visible.home-link svg {
+  border-color: #e1a7b4;
+}
+nav .nav-links .nav-link:hover.home-link svg path, nav .nav-links .nav-link:focus-visible.home-link svg path {
+  fill: #e1a7b4;
+}
 nav .nav-links .nav-link:hover.work-link span, nav .nav-links .nav-link:focus-visible.work-link span {
   color: #fbfaa2;
+}
+nav .nav-links .nav-link:hover.work-link svg, nav .nav-links .nav-link:focus-visible.work-link svg {
+  border-color: #fbfaa2;
+}
+nav .nav-links .nav-link:hover.work-link svg path, nav .nav-links .nav-link:focus-visible.work-link svg path {
+  fill: #fbfaa2;
 }
 nav .nav-links .nav-link:hover.benefits-link span, nav .nav-links .nav-link:focus-visible.benefits-link span {
   color: #e48c66;
 }
+nav .nav-links .nav-link:hover.benefits-link svg, nav .nav-links .nav-link:focus-visible.benefits-link svg {
+  border-color: #e48c66;
+}
+nav .nav-links .nav-link:hover.benefits-link svg path, nav .nav-links .nav-link:focus-visible.benefits-link svg path {
+  fill: #e48c66;
+}
 nav .nav-links .nav-link:hover.plans-link span, nav .nav-links .nav-link:focus-visible.plans-link span {
   color: #7ec1d4;
 }
+nav .nav-links .nav-link:hover.plans-link svg, nav .nav-links .nav-link:focus-visible.plans-link svg {
+  border-color: #7ec1d4;
+}
+nav .nav-links .nav-link:hover.plans-link svg path, nav .nav-links .nav-link:focus-visible.plans-link svg path {
+  fill: #7ec1d4;
+}
 nav .nav-links .nav-link:hover.faq-link span, nav .nav-links .nav-link:focus-visible.faq-link span {
   color: #a4d1a2;
+}
+nav .nav-links .nav-link:hover.faq-link svg, nav .nav-links .nav-link:focus-visible.faq-link svg {
+  border-color: #a4d1a2;
+}
+nav .nav-links .nav-link:hover.faq-link svg path, nav .nav-links .nav-link:focus-visible.faq-link svg path {
+  fill: #a4d1a2;
 }
 nav .nav-links .nav-link .icon-wrapper {
   display: flex;
@@ -1965,6 +1995,9 @@ ul.classic-list li {
   .benefits-section .benefit-list .benefit-block h3 svg {
     width: 24px;
   }
+}
+.benefits-section .benefit-list .benefit-block h3 svg path {
+  fill: #e48c66;
 }
 .benefits-section .benefit-list .benefit-block p {
   font-size: 20px;

@@ -336,6 +336,7 @@ nav {
         }
 
         svg {
+          // TODO: Set title color here also
           scale: 1.5;
           border-width: 2px;
 
@@ -348,25 +349,60 @@ nav {
           span {
             color: $home-title-color;
           }
+          svg {
+            border-color: $home-title-color;
+
+            path {
+              fill: $home-title-color;
+            }
+          }
         }
         &.work-link {
           span {
             color: $work-title-color;
+          }
+          svg {
+            border-color: $work-title-color;
+
+            path {
+              fill: $work-title-color;
+            }
           }
         }
         &.benefits-link {
           span {
             color: $benefits-title-color;
           }
+          svg {
+            border-color: $benefits-title-color;
+
+            path {
+              fill: $benefits-title-color;
+            }
+          }
         }
         &.plans-link {
           span {
             color: $plans-title-color;
           }
+          svg {
+            border-color: $plans-title-color;
+
+            path {
+              fill: $plans-title-color;
+            }
+          }
         }
         &.faq-link {
           span {
             color: $faq-title-color;
+          }
+          svg {
+            border-color: $faq-title-color;
+
+            path {
+              fill: $faq-title-color;
+            }
           }
         }
       }
