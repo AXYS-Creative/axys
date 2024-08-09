@@ -179,17 +179,28 @@ const allGlitchEffects = (() => {
       })();
 
       //
-      // Global Utility for hover
-      // TODO: add focus effect
+      // Global utility for glitch hover/focus. Add a data-title
       const glitchLinks = document.querySelectorAll(".glitch-link");
 
       glitchLinks.forEach((el) => {
         const originalLinkText = el.innerText;
 
         const handleGlitch = () => singleGlitch(el, originalLinkText);
+        const parentLink = el.closest("a");
+        const siblingElement = el.closest("button");
 
-        el.addEventListener("mouseover", handleGlitch);
-        el.addEventListener("focusin", handleGlitch);
+        el.addEventListener("mouseenter", handleGlitch);
+        el.addEventListener("focus", handleGlitch);
+
+        if (parentLink) {
+          parentLink.addEventListener("mouseenter", handleGlitch);
+          parentLink.addEventListener("focus", handleGlitch);
+        }
+
+        if (siblingElement) {
+          siblingElement.addEventListener("mouseenter", handleGlitch);
+          siblingElement.addEventListener("focus", handleGlitch);
+        }
       });
     }
   );

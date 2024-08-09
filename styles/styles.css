@@ -717,7 +717,7 @@ footer .copyright {
   position: absolute;
   bottom: 50%;
   left: 50%;
-  transform: translate(calc(-50% - 6px), 50%);
+  transform: translate(calc(-50% - 11px), 50%);
   font-size: 12px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -726,13 +726,13 @@ footer .copyright {
   footer .copyright {
     width: 100%;
     bottom: 64px;
-    transform: translate(calc(-50% - 6px), 0);
+    transform: translate(calc(-50% - 11px), 0);
   }
 }
 @media screen and (max-width: 768px) {
   footer .copyright {
     font-size: 10px;
-    transform: translate(calc(-50% - 5.5px), 0);
+    transform: translate(calc(-50% - 9.5px), 0);
   }
 }
 footer .footer-social {
