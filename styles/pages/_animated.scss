@@ -16,7 +16,6 @@
   @include row-center;
 
   .group-wrapper {
-    // border: $test;
     width: 100vw;
     @include row-center;
     animation: rotate-wrapper 4s ease 1s forwards;
@@ -29,7 +28,6 @@
   }
 
   .logo-title {
-    // border: $test;
     width: 0;
     text-align: center;
     text-wrap: nowrap;
@@ -88,15 +86,10 @@
       margin-block-end: unset;
     }
 
-    // .line-1 {
-
-    // }
-
     .line-2 {
       @include row-center;
 
       .plus-sign {
-        // border: $test;
         @include row-center;
         width: 56px;
         height: 56px;
