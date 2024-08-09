@@ -44,14 +44,14 @@ cursorHoverVanish(logo);
 );
 
 // Toggle sibling selector (dot, icon, etc...)
-const cursorHoverSibling = (elements, querySelector, activeClass) => {
+const cursorHoverSibling = (elements, querySelector, activeClass, pxOffset) => {
   elements.forEach((element) => {
-    element.addEventListener("mousemove", () => {
+    element.addEventListener("mouseenter", () => {
       followMouse = false;
       const sibling = element.querySelector(querySelector);
       const siblingRef = sibling.getBoundingClientRect();
-      const centerX = siblingRef.left + siblingRef.width / 2;
-      const centerY = siblingRef.top + siblingRef.height / 2;
+      const centerX = siblingRef.left + siblingRef.width / 2 + pxOffset;
+      const centerY = siblingRef.top + siblingRef.height / 2 + pxOffset;
       cursor.style.transform = `translate(${
         centerX - cursor.offsetWidth / 2
       }px, ${centerY - cursor.offsetHeight / 2}px)`;
@@ -65,10 +65,15 @@ const cursorHoverSibling = (elements, querySelector, activeClass) => {
   });
 };
 
-cursorHoverSibling(navLinks, ".nav-link-svg", "nav-link-active");
-cursorHoverSibling(navFooterLinks, ".icon", "nav-link-active");
-cursorHoverSibling(cta2, ".dot-wrapper", "cta2-active");
-cursorHoverSibling(returnToTop, ".return-to-top-icon", "return-to-top-active");
+cursorHoverSibling(navLinks, ".nav-link-svg", "nav-link-active", 0);
+cursorHoverSibling(navFooterLinks, ".icon", "nav-link-active", 0);
+cursorHoverSibling(cta2, ".dot-wrapper", "cta2-active", 12);
+cursorHoverSibling(
+  returnToTop,
+  ".return-to-top-icon",
+  "return-to-top-active",
+  6
+);
 
 socialMediaLinks.forEach((link) => {
   link.addEventListener("mousemove", () => {
