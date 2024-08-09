@@ -97,6 +97,14 @@ header {
     cursor: pointer;
     mix-blend-mode: difference;
 
+    @include no-motion-desktop-hover {
+      .burger {
+        border: 2px solid $grey;
+        border-radius: 50%;
+        transition: none;
+      }
+    }
+
     @include mq-min("xxxl") {
       right: calc(50% - $content-width / 2 + $content-padding);
     }
@@ -204,6 +212,12 @@ header {
     }
 
     .menu-btn {
+      @include no-motion-desktop-hover {
+        .burger {
+          border-color: $white;
+        }
+      }
+
       .menu-btn-text {
         opacity: 1;
       }
@@ -448,9 +462,7 @@ nav {
       }
 
       span.glitch-link {
-        @include mq-motion-allow {
-          transition: 0.3s ease;
-        }
+        transition: 0.3s ease;
       }
     }
   }
@@ -469,19 +481,21 @@ nav {
       gap: 56px;
       translate: -16px 0;
 
-      @include mq-max("xxl") {
-        gap: 24px;
-      }
+      @media all {
+        @include mq-max("xxl") {
+          gap: 24px;
+        }
 
-      @include mq-max("lg") {
-        gap: 4px;
-      }
+        @include mq-max("lg") {
+          gap: 4px;
+        }
 
-      @include mq-max("md") {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0;
-        translate: 0 0;
+        @include mq-max("md") {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0;
+          translate: 0 0;
+        }
       }
 
       // Footer nav-links
@@ -541,15 +555,23 @@ nav {
         gap: 4px;
         text-transform: uppercase;
 
-        @include mq-max("md") {
-          font-size: 14px;
-          width: 140px;
-          flex-direction: row-reverse;
-        }
+        @media all {
+          @include no-motion-desktop-hover {
+            .icon-wrapper {
+              border: 2px solid $white;
+            }
+          }
 
-        @include mq-max("sm") {
-          font-size: 12px;
-          width: 124px;
+          @include mq-max("md") {
+            font-size: 14px;
+            width: 140px;
+            flex-direction: row-reverse;
+          }
+
+          @include mq-max("sm") {
+            font-size: 12px;
+            width: 124px;
+          }
         }
 
         &:hover,
@@ -723,6 +745,12 @@ footer {
   .return-to-top {
     @include row-center;
     text-transform: uppercase;
+
+    @include no-motion-desktop-hover {
+      svg {
+        border: 2px solid $green;
+      }
+    }
 
     @include mq-max("lg") {
       display: none;
@@ -1133,6 +1161,10 @@ ul {
       transition: 0.3s ease;
       // transition is set above (:hover) to allow for individual delay
 
+      @include no-motion-desktop-hover {
+        border-color: $blue;
+      }
+
       &:hover,
       &:focus-visible {
         color: $blue;
@@ -1152,8 +1184,6 @@ ul {
     }
   }
 }
-
-// Custom
 
 .mouse-cursor {
   border: 2px solid $grey;

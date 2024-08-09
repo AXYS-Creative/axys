@@ -96,6 +96,13 @@ header .menu-btn {
   cursor: pointer;
   mix-blend-mode: difference;
 }
+@media (prefers-reduced-motion: reduce) and (hover: hover) and (pointer: fine) {
+  header .menu-btn:hover .burger {
+    border: 2px solid #3d3d3d;
+    border-radius: 50%;
+    transition: none;
+  }
+}
 @media screen and (min-width: 1921px) {
   header .menu-btn {
     right: calc(50% - 960px + 64px);
@@ -178,6 +185,11 @@ header.nav-active .logo p:first-of-type {
 }
 header.nav-active .logo p:last-of-type {
   width: 96px;
+}
+@media (prefers-reduced-motion: reduce) and (hover: hover) and (pointer: fine) {
+  header.nav-active .menu-btn:hover .burger {
+    border-color: #f0f0f0;
+  }
 }
 header.nav-active .menu-btn .menu-btn-text {
   opacity: 1;
@@ -392,10 +404,8 @@ nav .nav-links .nav-link svg path {
   opacity: 0;
   transition: 0.3s ease;
 }
-@media (prefers-reduced-motion: no-preference) {
-  nav .nav-links .nav-link span.glitch-link {
-    transition: 0.3s ease;
-  }
+nav .nav-links .nav-link span.glitch-link {
+  transition: 0.3s ease;
 }
 nav .nav-footer {
   display: flex;
@@ -476,6 +486,11 @@ nav .nav-footer-links .nav-footer-link {
   font-size: 16px;
   gap: 4px;
   text-transform: uppercase;
+}
+@media (prefers-reduced-motion: reduce) and (hover: hover) and (pointer: fine) {
+  nav .nav-footer-links .nav-footer-link:hover .icon-wrapper {
+    border: 2px solid #f0f0f0;
+  }
 }
 @media screen and (max-width: 768px) {
   nav .nav-footer-links .nav-footer-link {
@@ -647,6 +662,11 @@ footer .return-to-top {
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
+}
+@media (prefers-reduced-motion: reduce) and (hover: hover) and (pointer: fine) {
+  footer .return-to-top:hover svg {
+    border: 2px solid #a4d1a2;
+  }
 }
 @media screen and (max-width: 1024px) {
   footer .return-to-top {
@@ -1046,6 +1066,11 @@ ul.classic-list li {
   opacity: 0;
   pointer-events: none;
   transition: 0.3s ease;
+}
+@media (prefers-reduced-motion: reduce) and (hover: hover) and (pointer: fine) {
+  .social-media-container .social-media-links .social-media-link:hover {
+    border-color: #7ec1d4;
+  }
 }
 .social-media-container .social-media-links .social-media-link:hover, .social-media-container .social-media-links .social-media-link:focus-visible {
   color: #7ec1d4;
@@ -1813,7 +1838,7 @@ ul.classic-list li {
     font-size: 5vw;
   }
 }
-@media (hover: hover) and (pointer: fine) {
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
   .statement-section .mission-statement:hover .text {
     opacity: 0.4 !important;
     transition: 0.3s ease !important;
@@ -2395,6 +2420,12 @@ ul.classic-list li {
 .plans-section .plan-options .half-card .mail-form:hover .label {
   color: #3d3d3d;
 }
+@media (prefers-reduced-motion: reduce) {
+  .plans-section .plan-options .half-card .mail-form:hover .submit-btn {
+    border: 1px solid #7ec1d4;
+    translate: 0 -20px;
+  }
+}
 @media screen and (max-width: 480px) {
   .plans-section .plan-options .half-card .mail-form:hover .submit-btn {
     scale: 1;
@@ -2463,6 +2494,9 @@ ul.classic-list li {
   }
 }
 .plans-section .plan-options .half-card .mail-form .submit-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   top: 50%;
   right: 0;

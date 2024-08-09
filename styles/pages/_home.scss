@@ -306,19 +306,21 @@
     }
 
     @include mq-mouse {
-      &:hover {
-        .text {
-          opacity: 0.4 !important;
-          transition: 0.3s ease !important;
-        }
+      @include mq-motion-allow {
+        &:hover {
+          .text {
+            opacity: 0.4 !important;
+            transition: 0.3s ease !important;
+          }
 
-        .statement-websites,
-        .statement-a11y,
-        .statement-seo {
-          transition: 0.3s ease !important;
+          .statement-websites,
+          .statement-a11y,
+          .statement-seo {
+            transition: 0.3s ease !important;
 
-          &:hover {
-            opacity: 1 !important;
+            &:hover {
+              opacity: 1 !important;
+            }
           }
         }
       }
@@ -848,6 +850,10 @@
           }
 
           .submit-btn {
+            @include mq-motion-reduce {
+              border: 1px solid $blue;
+              translate: 0 -20px;
+            }
             @include mq-max("sm") {
               scale: 1;
               border: 1px solid $blue;
@@ -911,6 +917,7 @@
         }
 
         .submit-btn {
+          @include row-center;
           position: absolute;
           top: 50%;
           right: 0;
