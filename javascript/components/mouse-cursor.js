@@ -44,9 +44,15 @@ cursorHoverVanish(logo);
 );
 
 // Toggle sibling selector (dot, icon, etc...)
-const cursorHoverSibling = (elements, querySelector, activeClass, pxOffset) => {
+const cursorHoverSibling = (
+  elements,
+  querySelector,
+  activeClass,
+  pxOffset,
+  eventType = "mousemove"
+) => {
   elements.forEach((element) => {
-    element.addEventListener("mouseenter", () => {
+    element.addEventListener(eventType, () => {
       followMouse = false;
       const sibling = element.querySelector(querySelector);
       const siblingRef = sibling.getBoundingClientRect();
@@ -65,15 +71,11 @@ const cursorHoverSibling = (elements, querySelector, activeClass, pxOffset) => {
   });
 };
 
-cursorHoverSibling(navLinks, ".nav-link-svg", "nav-link-active", 0);
-cursorHoverSibling(navFooterLinks, ".icon", "nav-link-active", 0);
-cursorHoverSibling(cta2, ".dot-wrapper", "cta2-active", 12);
-cursorHoverSibling(
-  returnToTop,
-  ".return-to-top-icon",
-  "return-to-top-active",
-  6
-);
+// prettier-ignore
+cursorHoverSibling(returnToTop, ".return-to-top-icon", "return-to-top-active", 0, undefined);
+cursorHoverSibling(navLinks, ".nav-link-svg", "nav-link-active", 0, undefined);
+cursorHoverSibling(navFooterLinks, ".icon", "nav-link-active", 0, undefined);
+cursorHoverSibling(cta2, ".dot-wrapper", "cta2-active", 12, "mouseenter");
 
 socialMediaLinks.forEach((link) => {
   link.addEventListener("mousemove", () => {

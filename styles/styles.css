@@ -107,8 +107,9 @@ header .menu-btn {
   }
 }
 @media (hover: hover) and (pointer: fine) {
-  header .menu-btn:hover .menu-btn-text {
+  header .menu-btn:hover p.menu-btn-text {
     translate: -12px 0;
+    opacity: 1;
   }
 }
 header .menu-btn .menu-btn-text {

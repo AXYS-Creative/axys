@@ -107,8 +107,10 @@ header {
 
     &:hover {
       @include mq-mouse {
-        .menu-btn-text {
+        // element added for specificity
+        p.menu-btn-text {
           translate: -12px 0;
+          opacity: 1;
         }
       }
     }
