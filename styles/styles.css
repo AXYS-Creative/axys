@@ -119,6 +119,9 @@ header .menu-btn {
     opacity: 1;
   }
 }
+header .menu-btn:focus-visible p.menu-btn-text {
+  opacity: 1;
+}
 header .menu-btn .menu-btn-text {
   width: 36px;
   transition: 0.3s ease;

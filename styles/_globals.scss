@@ -97,20 +97,22 @@ header {
     cursor: pointer;
     mix-blend-mode: difference;
 
-    @include no-motion-desktop-hover {
-      .burger {
-        border: 2px solid $grey;
-        border-radius: 50%;
-        transition: none;
+    @media all {
+      @include no-motion-desktop-hover {
+        .burger {
+          border: 2px solid $grey;
+          border-radius: 50%;
+          transition: none;
+        }
       }
-    }
 
-    @include mq-min("xxxl") {
-      right: calc(50% - $content-width / 2 + $content-padding);
-    }
+      @include mq-min("xxxl") {
+        right: calc(50% - $content-width / 2 + $content-padding);
+      }
 
-    @include mq-max("md") {
-      right: $content-padding-md;
+      @include mq-max("md") {
+        right: $content-padding-md;
+      }
     }
 
     &:hover {
@@ -120,6 +122,13 @@ header {
           translate: -12px 0;
           opacity: 1;
         }
+      }
+    }
+
+    &:focus-visible {
+      p.menu-btn-text {
+        // exclude translation like above
+        opacity: 1;
       }
     }
 

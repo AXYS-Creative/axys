@@ -4,12 +4,24 @@ export const mqMouse = window.matchMedia("(hover: hover) and (pointer: fine)").m
 export const mqReduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 // Get Current Year for Copyright
-(function getCurrentYear() {
+const getCurrentYear = (() => {
   const yearText = document.querySelector(".year-text");
   const currentYear = new Date().getFullYear();
 
   yearText.innerHTML = currentYear;
 })();
+
+// For footer 'return to top' link
+const handleReturnToTop = (() => {
+  const returnToTop = document.querySelector(".return-to-top"),
+    logo = document.querySelector(".logo");
+
+  returnToTop.addEventListener("click", (e) => {
+    logo.focus();
+  });
+})();
+
+// Handle 'Scroll to top' keyboard navigation
 
 // Media Queries
 // const minMediaMD = window.matchMedia("(min-width: 768px)");
