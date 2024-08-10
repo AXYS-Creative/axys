@@ -16,10 +16,13 @@ const allGlitchEffects = (() => {
     (context) => {
       let { maxMd, maxLg, maxXl, minMd } = context.conditions;
 
+      let glitchAnimationLengh = 16; // Default: 16
+
       //
       // Hero Glitch Text Function
       const applyHeroGlitch = ({ element, text, iterations, color }) => {
-        let glitchIterations = 0;
+        let glitchIterations = 0; // Default: 0
+
         clearInterval(element.glitchInterval);
 
         if (color) {
@@ -50,7 +53,7 @@ const allGlitchEffects = (() => {
           }
 
           glitchIterations++;
-        }, 16);
+        }, glitchAnimationLengh);
       };
 
       // Not on other pages
@@ -108,7 +111,7 @@ const allGlitchEffects = (() => {
           }
 
           iterations += 1 / 8;
-        }, 16);
+        }, glitchAnimationLengh);
       };
 
       const applyScrollGlitch = (() => {
