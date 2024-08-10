@@ -1478,6 +1478,15 @@ ul.classic-list li {
   visibility: hidden;
 }
 
+.no-motion {
+  display: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .no-motion {
+    display: block;
+  }
+}
+
 .lg-screen-and-up {
   display: none;
 }
@@ -1575,6 +1584,11 @@ ul.classic-list li {
 @media screen and (max-width: 768px) {
   .hero-section .section-headline__title, .hero-text-slide .section-headline__title {
     margin-block-end: 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-section .section-headline__title .dynamic-text, .hero-text-slide .section-headline__title .dynamic-text {
+    display: none;
   }
 }
 .hero-section .section-headline__title span:last-of-type, .hero-text-slide .section-headline__title span:last-of-type {

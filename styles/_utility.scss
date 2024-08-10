@@ -78,6 +78,14 @@
 
 // Media query classes - Warning, causing a break in voice assistant speech
 
+.no-motion {
+  display: none;
+
+  @include mq-motion-reduce {
+    display: block;
+  }
+}
+
 .lg-screen-and-up {
   display: none;
 

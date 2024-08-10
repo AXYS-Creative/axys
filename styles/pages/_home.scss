@@ -27,6 +27,12 @@
         margin-block-end: 12px;
       }
 
+      .dynamic-text {
+        @include mq-motion-reduce {
+          display: none;
+        }
+      }
+
       span {
         &:last-of-type {
           padding-inline-start: 240px;
