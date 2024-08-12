@@ -23,7 +23,7 @@
 }
 
 html {
-  overflow-x: hidden;
+  overflow-x: hidden; // Users with mouse (vs trackpad) have a horizontal scroll?
   scroll-behavior: smooth;
   scrollbar-color: $coral transparent;
 }
