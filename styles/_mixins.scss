@@ -64,7 +64,7 @@ $min-breakpoints: (
   }
 }
 
-// Hover state for computer users with redduced motion:: @mq-mouse + @mq-motion-reduce + :hover
+// Hover state for computer users with reduced motion:: @mq-mouse + @mq-motion-reduce + :hover
 @mixin no-motion-desktop-hover {
   @media (prefers-reduced-motion: reduce) and (hover: hover) and (pointer: fine) {
     &:hover {

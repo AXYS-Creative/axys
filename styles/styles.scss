@@ -1,6 +1,15 @@
 // Base
-@import "variables.scss", "mixins.scss", "globals.scss", "animations.scss",
-  "utility.scss";
+// prettier-ignore
+@import "variables.scss",
+ "mixins.scss",
+ "globals.scss",
+ "animations.scss",
+ "utility.scss";
 
 // Pages
-@import "./pages/home", "./pages/404", "./pages/animated", "./pages/policies";
+// prettier-ignore
+@import "./pages/home",
+ "./pages/404",
+ "./pages/animated",
+ "./pages/policies",
+ "./pages/tokens";

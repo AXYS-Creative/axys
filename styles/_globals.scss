@@ -944,6 +944,10 @@ ul {
   }
 }
 
+summary {
+  cursor: pointer;
+}
+
 .cta-wrapper {
   display: flex;
   gap: 8px;

@@ -872,6 +872,10 @@ ul.classic-list li {
   }
 }
 
+summary {
+  cursor: pointer;
+}
+
 .cta-wrapper {
   display: flex;
   gap: 8px;
@@ -3195,4 +3199,33 @@ ul.classic-list li {
   .policies-page .policies p {
     font-size: 14px;
   }
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border: 1px solid #909090;
+  margin-block: 48px;
+}
+.table .table-block {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid #909090;
+}
+.table .table-block:first-of-type div {
+  font-weight: 700;
+}
+.table .table-block:last-of-type {
+  border: none;
+}
+.table .table-block div {
+  padding: 12px;
+}
+.table .table-block__info {
+  flex: 1;
+}
+.table .table-block__details {
+  flex: 2;
 }/*# sourceMappingURL=styles.css.map */
