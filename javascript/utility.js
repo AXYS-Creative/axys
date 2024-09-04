@@ -21,8 +21,6 @@ const handleReturnToTop = (() => {
   });
 })();
 
-// Handle 'Scroll to top' keyboard navigation
-
 // Media Queries
 // const minMediaMD = window.matchMedia("(min-width: 768px)");
 

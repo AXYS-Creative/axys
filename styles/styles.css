@@ -65,17 +65,17 @@ footer,
     left: 24px;
   }
 }
-.site-header .logo p {
+.site-header .logo span {
   overflow: hidden;
   font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
   transition: 0.3s ease;
 }
-.site-header .logo p:first-of-type {
+.site-header .logo span:first-of-type {
   width: 48px;
 }
-.site-header .logo p:last-of-type {
+.site-header .logo span:last-of-type {
   width: 96px;
 }
 .site-header .logo svg {
@@ -113,12 +113,12 @@ footer,
   }
 }
 @media (hover: hover) and (pointer: fine) {
-  .site-header .menu-btn:hover p.menu-btn-text {
+  .site-header .menu-btn:hover span.menu-btn-text {
     translate: -12px 0;
     opacity: 1;
   }
 }
-.site-header .menu-btn:focus-visible p.menu-btn-text {
+.site-header .menu-btn:focus-visible span.menu-btn-text {
   opacity: 1;
 }
 .site-header .menu-btn .menu-btn-text {
