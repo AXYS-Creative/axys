@@ -1,3 +1,20 @@
+.tokens-header {
+  margin-block: 24px;
+
+  &:first-of-type {
+    margin-block: 24px 128px;
+  }
+
+  .page-title,
+  .page-description {
+    text-align: center;
+  }
+
+  h2 {
+    @include subtitle-font;
+  }
+}
+
 .table {
   $table-border: 1px solid $grey-light;
 
@@ -13,6 +30,7 @@
     &:first-of-type {
       div {
         font-weight: 700;
+        color: $yellow;
       }
     }
 
@@ -26,9 +44,10 @@
 
     &__info {
       flex: 1;
+      border-right: $table-border;
     }
     &__details {
-      flex: 2;
+      flex: 3;
     }
   }
 }
