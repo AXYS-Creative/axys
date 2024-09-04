@@ -559,11 +559,6 @@ nav .nav-footer .nav-social {
     translate: 0 10px;
   }
 }
-@media screen and (max-width: 480px) {
-  nav .nav-footer .nav-social {
-    display: none;
-  }
-}
 nav .nav-footer .nav-social:hover .social-media-title, nav .nav-footer .nav-social:focus-within .social-media-title {
   translate: 0 0;
 }
@@ -1040,6 +1035,11 @@ summary {
 .social-media-container .social-media-title svg {
   width: 18px;
   height: 18px;
+}
+@media screen and (max-width: 480px) {
+  .social-media-container .social-media-title svg {
+    display: none;
+  }
 }
 .social-media-container .social-media-links {
   display: flex;
@@ -3205,28 +3205,42 @@ summary {
   margin-block: 24px;
 }
 .tokens-header:first-of-type {
-  margin-block: 24px 128px;
+  margin-block: 248px 480px;
+}
+@media screen and (max-width: 1512px) {
+  .tokens-header:first-of-type {
+    margin-block: 264px 396px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .tokens-header:first-of-type {
+    margin-block: 196px 320px;
+  }
 }
 .tokens-header .page-title,
 .tokens-header .page-description {
   text-align: center;
 }
-.tokens-header h2 {
+.tokens-header .page-title,
+.tokens-header .sub-title {
+  margin-block-end: 12px;
+}
+.tokens-header .sub-title {
   font-size: 64px;
   text-transform: uppercase;
 }
 @media screen and (max-width: 1512px) {
-  .tokens-header h2 {
+  .tokens-header .sub-title {
     font-size: 56px;
   }
 }
 @media screen and (max-width: 1200px) {
-  .tokens-header h2 {
+  .tokens-header .sub-title {
     font-size: 48px;
   }
 }
 @media screen and (max-width: 768px) {
-  .tokens-header h2 {
+  .tokens-header .sub-title {
     font-size: calc(12px + 4.8vw);
   }
 }
@@ -3254,10 +3268,25 @@ summary {
 .table .table-block div {
   padding: 12px;
 }
+@media screen and (max-width: 768px) {
+  .table .table-block div {
+    padding: 8px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .table .table-block__info, .table .table-block__details {
+    font-size: 13px;
+  }
+}
 .table .table-block__info {
   flex: 1;
   border-right: 1px solid #909090;
 }
 .table .table-block__details {
   flex: 3;
+}
+@media screen and (max-width: 768px) {
+  .table .table-block__details {
+    flex: 5;
+  }
 }/*# sourceMappingURL=styles.css.map */

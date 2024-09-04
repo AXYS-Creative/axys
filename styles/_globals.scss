@@ -645,10 +645,6 @@ nav {
         translate: 0 10px;
       }
 
-      @include mq-max("sm") {
-        display: none;
-      }
-
       &:hover,
       &:focus-within {
         .social-media-title {
@@ -1143,6 +1139,10 @@ summary {
     svg {
       width: 18px;
       height: 18px;
+
+      @include mq-max("sm") {
+        display: none;
+      }
     }
   }
 

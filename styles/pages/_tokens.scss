@@ -2,7 +2,15 @@
   margin-block: 24px;
 
   &:first-of-type {
-    margin-block: 24px 128px;
+    margin-block: 248px 480px;
+
+    @include mq-max("xxl") {
+      margin-block: 264px 396px;
+    }
+
+    @include mq-max("xl") {
+      margin-block: 196px 320px;
+    }
   }
 
   .page-title,
@@ -10,7 +18,12 @@
     text-align: center;
   }
 
-  h2 {
+  .page-title,
+  .sub-title {
+    margin-block-end: 12px;
+  }
+
+  .sub-title {
     @include subtitle-font;
   }
 }
@@ -40,6 +53,17 @@
 
     div {
       padding: 12px;
+
+      @include mq-max("md") {
+        padding: 8px;
+      }
+    }
+
+    &__info,
+    &__details {
+      @include mq-max("md") {
+        font-size: 13px;
+      }
     }
 
     &__info {
@@ -48,6 +72,10 @@
     }
     &__details {
       flex: 3;
+
+      @include mq-max("md") {
+        flex: 5;
+      }
     }
   }
 }
