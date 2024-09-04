@@ -5,11 +5,11 @@
     margin-block: 248px 480px;
 
     @include mq-max("xxl") {
-      margin-block: 264px 396px;
+      margin-block: 212px 396px;
     }
 
     @include mq-max("xl") {
-      margin-block: 196px 320px;
+      margin-block: 164px 320px;
     }
   }
 

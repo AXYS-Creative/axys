@@ -3209,12 +3209,12 @@ summary {
 }
 @media screen and (max-width: 1512px) {
   .tokens-header:first-of-type {
-    margin-block: 264px 396px;
+    margin-block: 212px 396px;
   }
 }
 @media screen and (max-width: 1200px) {
   .tokens-header:first-of-type {
-    margin-block: 196px 320px;
+    margin-block: 164px 320px;
   }
 }
 .tokens-header .page-title,
