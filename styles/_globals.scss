@@ -195,7 +195,7 @@ footer,
 
   &.away-from-top {
     .logo {
-      p {
+      span {
         width: 0;
       }
     }
@@ -210,7 +210,7 @@ footer,
 
   &.nav-active {
     .logo {
-      p {
+      span {
         &:first-of-type {
           width: 48px;
         }

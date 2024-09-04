@@ -176,16 +176,16 @@ footer,
   translate: -50% -50%;
   rotate: -45deg;
 }
-.site-header.away-from-top .logo p {
+.site-header.away-from-top .logo span {
   width: 0;
 }
 .site-header.away-from-top .menu-btn .menu-btn-text {
   opacity: 0;
 }
-.site-header.nav-active .logo p:first-of-type {
+.site-header.nav-active .logo span:first-of-type {
   width: 48px;
 }
-.site-header.nav-active .logo p:last-of-type {
+.site-header.nav-active .logo span:last-of-type {
   width: 96px;
 }
 @media (prefers-reduced-motion: reduce) and (hover: hover) and (pointer: fine) {
