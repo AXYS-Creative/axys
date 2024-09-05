@@ -351,7 +351,18 @@
     <main>
       <section class="hero">
         <div class="tokens-header">
-          <h1 class="page-title">CMS <span class="coral-text">Tokens</span></h1>
+          <!-- <h1 class="page-title">CMS <span class="coral-text">Tokens</span></h1> -->
+          <h1 class="page-title" aria-label="CMS Tokens">
+            <span aria-hidden="true">
+              CMS
+              <span
+                class="scroll-glitch scroll-glitch-target coral-text"
+                data-title="tokens"
+              >
+                Tokens
+              </span>
+            </span>
+          </h1>
           <p class="page-description">
             As an admin, CMS tokens give you greater control
             <br class="md-screen-and-up" aria-hidden="true" />
@@ -360,10 +371,17 @@
         </div>
 
         <div class="tokens-header">
-          <h2 class="sub-title">Tokens</h2>
+          <!-- <h2 class="sub-title">Tokens</h2> -->
+          <h2
+            class="sub-title scroll-glitch scroll-glitch-target"
+            aria-label="Tokens"
+            data-title="tokens"
+          >
+            Tokens
+          </h2>
           <p>
-            CMS tokens give you greater control and customization over your
-            site’s content.
+            Tokens can be used anywhere text can be added. The syntax is as
+            follows: [%%]
           </p>
         </div>
 
@@ -383,7 +401,14 @@
         </div>
 
         <div class="tokens-header">
-          <h2 class="sub-title">Classes</h2>
+          <!-- <h2 class="sub-title">Classes</h2> -->
+          <h2
+            class="sub-title scroll-glitch scroll-glitch-target"
+            aria-label="Classes"
+            data-title="classes"
+          >
+            Classes
+          </h2>
           <p>
             Classes can be added to any tokens using dot notation i.e.
             [%br.md-screen-and-up]

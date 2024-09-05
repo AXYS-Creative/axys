@@ -3217,9 +3217,36 @@ summary {
     margin-block: 164px 320px;
   }
 }
+@media screen and (max-width: 768px) {
+  .tokens-header:first-of-type {
+    margin-block: 180px 356px;
+  }
+}
 .tokens-header .page-title,
 .tokens-header .page-description {
   text-align: center;
+}
+.tokens-header .page-title .scroll-glitch,
+.tokens-header .page-description .scroll-glitch {
+  width: 396px;
+}
+@media screen and (max-width: 1512px) {
+  .tokens-header .page-title .scroll-glitch,
+  .tokens-header .page-description .scroll-glitch {
+    width: 332px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .tokens-header .page-title .scroll-glitch,
+  .tokens-header .page-description .scroll-glitch {
+    width: 264px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .tokens-header .page-title .scroll-glitch,
+  .tokens-header .page-description .scroll-glitch {
+    width: calc(64px + 24vw);
+  }
 }
 .tokens-header .page-title,
 .tokens-header .sub-title {
@@ -3251,7 +3278,12 @@ summary {
   justify-content: center;
   align-items: flex-start;
   border: 1px solid #909090;
-  margin-block: 48px;
+  margin-block: 48px 196px;
+}
+@media screen and (max-width: 768px) {
+  .table {
+    margin-block: 48px 148px;
+  }
 }
 .table .table-block {
   display: flex;
@@ -3283,7 +3315,7 @@ summary {
   border-right: 1px solid #909090;
 }
 .table .table-block__details {
-  flex: 3;
+  flex: 2.25;
 }
 @media screen and (max-width: 768px) {
   .table .table-block__details {

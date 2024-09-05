@@ -11,11 +11,33 @@
     @include mq-max("xl") {
       margin-block: 164px 320px;
     }
+
+    @include mq-max("md") {
+      margin-block: 180px 356px;
+    }
   }
 
   .page-title,
   .page-description {
     text-align: center;
+
+    .scroll-glitch {
+      width: 396px;
+
+      @media all {
+        @include mq-max("xxl") {
+          width: 332px;
+        }
+
+        @include mq-max("xl") {
+          width: 264px;
+        }
+
+        @include mq-max("md") {
+          width: calc(64px + 24vw);
+        }
+      }
+    }
   }
 
   .page-title,
@@ -33,7 +55,11 @@
 
   @include column-start;
   border: $table-border;
-  margin-block: 48px;
+  margin-block: 48px 196px;
+
+  @include mq-max("md") {
+    margin-block: 48px 148px;
+  }
 
   .table-block {
     display: flex;
@@ -71,7 +97,7 @@
       border-right: $table-border;
     }
     &__details {
-      flex: 3;
+      flex: 2.25;
 
       @include mq-max("md") {
         flex: 5;
