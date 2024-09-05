@@ -580,6 +580,11 @@ nav .nav-footer .nav-social .social-media-title {
     translate: 0 12px;
   }
 }
+@media screen and (max-width: 480px) {
+  nav .nav-footer .nav-social .social-media-title svg {
+    display: none;
+  }
+}
 @media screen and (max-width: 768px) {
   nav .nav-footer .nav-social .social-media-links {
     translate: -8px 0;
@@ -1035,11 +1040,6 @@ summary {
 .social-media-container .social-media-title svg {
   width: 18px;
   height: 18px;
-}
-@media screen and (max-width: 480px) {
-  .social-media-container .social-media-title svg {
-    display: none;
-  }
 }
 .social-media-container .social-media-links {
   display: flex;
@@ -2818,9 +2818,31 @@ summary {
   gap: 16px;
   margin-block-end: 40px;
 }
+@media (prefers-reduced-motion: no-preference) {
+  .pre-footer .pre-footer-title, .page-not-found .not-found-section .pre-footer-title, .page-not-found .not-found-section .not-found-title {
+    rotate: -180deg;
+  }
+  .pre-footer .pre-footer-title.animate, .page-not-found .not-found-section .pre-footer-title.animate, .page-not-found .not-found-section .animate.not-found-title {
+    rotate: 0deg;
+    transition: 0.4s ease 0.3s;
+  }
+}
 @media screen and (max-width: 768px) {
   .pre-footer .pre-footer-title, .page-not-found .not-found-section .pre-footer-title, .page-not-found .not-found-section .not-found-title {
     gap: 12px;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .pre-footer .pre-footer-title h2, .page-not-found .not-found-section .pre-footer-title h2, .page-not-found .not-found-section .not-found-title h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 0;
+    overflow: hidden;
+  }
+  .pre-footer .pre-footer-title h2.animate, .page-not-found .not-found-section .pre-footer-title h2.animate, .page-not-found .not-found-section .not-found-title h2.animate {
+    width: 100%;
+    transition: 0.5s ease 0.7s;
   }
 }
 @media screen and (max-width: 768px) {
@@ -2834,12 +2856,38 @@ summary {
     font-size: 28px;
   }
 }
-.pre-footer .pre-footer-title span, .page-not-found .not-found-section .pre-footer-title span, .page-not-found .not-found-section .not-found-title span {
+.pre-footer .pre-footer-title h2 span, .page-not-found .not-found-section .pre-footer-title h2 span, .page-not-found .not-found-section .not-found-title h2 span {
   font-weight: 900;
 }
 .pre-footer .pre-footer-title .icon-wrapper, .page-not-found .not-found-section .pre-footer-title .icon-wrapper, .page-not-found .not-found-section .not-found-title .icon-wrapper {
   height: 40px;
   width: 40px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .pre-footer .pre-footer-title .icon-wrapper:first-of-type, .page-not-found .not-found-section .pre-footer-title .icon-wrapper:first-of-type, .page-not-found .not-found-section .not-found-title .icon-wrapper:first-of-type {
+    translate: 14px 0;
+  }
+}
+@media screen and (prefers-reduced-motion: no-preference) and (max-width: 768px) {
+  .pre-footer .pre-footer-title .icon-wrapper:first-of-type, .page-not-found .not-found-section .pre-footer-title .icon-wrapper:first-of-type, .page-not-found .not-found-section .not-found-title .icon-wrapper:first-of-type {
+    translate: 12px 0;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .pre-footer .pre-footer-title .icon-wrapper:last-of-type, .page-not-found .not-found-section .pre-footer-title .icon-wrapper:last-of-type, .page-not-found .not-found-section .not-found-title .icon-wrapper:last-of-type {
+    translate: -14px 0;
+  }
+}
+@media screen and (prefers-reduced-motion: no-preference) and (max-width: 768px) {
+  .pre-footer .pre-footer-title .icon-wrapper:last-of-type, .page-not-found .not-found-section .pre-footer-title .icon-wrapper:last-of-type, .page-not-found .not-found-section .not-found-title .icon-wrapper:last-of-type {
+    translate: -12px 0;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .pre-footer .pre-footer-title .icon-wrapper.animate, .page-not-found .not-found-section .pre-footer-title .icon-wrapper.animate, .page-not-found .not-found-section .not-found-title .icon-wrapper.animate {
+    translate: 0;
+    transition: 0.3s ease 0.75s;
+  }
 }
 @media screen and (max-width: 1512px) {
   .pre-footer .pre-footer-title .icon-wrapper, .page-not-found .not-found-section .pre-footer-title .icon-wrapper, .page-not-found .not-found-section .not-found-title .icon-wrapper {

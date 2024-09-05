@@ -659,12 +659,20 @@ nav {
       .social-media-title {
         translate: 0 52px;
 
-        @include mq-max("md") {
-          translate: 0 12px;
+        @media all {
+          @include mq-max("md") {
+            translate: 0 12px;
+          }
+
+          @include mq-touch {
+            translate: 0 12px;
+          }
         }
 
-        @include mq-touch {
-          translate: 0 12px;
+        svg {
+          @include mq-max("sm") {
+            display: none;
+          }
         }
       }
 
@@ -1140,9 +1148,9 @@ summary {
       width: 18px;
       height: 18px;
 
-      @include mq-max("sm") {
-        display: none;
-      }
+      // @include mq-max("sm") {
+      //   display: none;
+      // }
     }
   }
 

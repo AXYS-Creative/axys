@@ -1232,47 +1232,96 @@
     gap: 16px;
     margin-block-end: 40px;
 
+    @include mq-motion-allow {
+      rotate: -180deg;
+
+      &.animate {
+        rotate: 0deg;
+        transition: 0.4s ease 0.3s;
+      }
+    }
+
     @include mq-max("md") {
       gap: 12px;
     }
 
     h2 {
-      @include mq-max("md") {
-        font-size: 40px;
-        margin-block-end: 0;
+      @media all {
+        @include mq-motion-allow {
+          @include row-center;
+          width: 0;
+          overflow: hidden;
+
+          &.animate {
+            width: 100%;
+            transition: 0.5s ease 0.7s;
+          }
+        }
+
+        @include mq-max("md") {
+          font-size: 40px;
+          margin-block-end: 0;
+        }
+
+        @include mq-max("sm") {
+          font-size: 28px;
+        }
       }
 
-      @include mq-max("sm") {
-        font-size: 28px;
+      span {
+        font-weight: 900;
       }
-    }
-
-    span {
-      font-weight: 900;
     }
 
     .icon-wrapper {
       height: 40px;
       width: 40px;
 
-      @include mq-max("xxl") {
-        width: 36px;
-        height: 36px;
-      }
+      @media all {
+        @include mq-motion-allow {
+          $shift: 14px;
+          $shift-md: 12px;
 
-      @include mq-max("xl") {
-        width: 32px;
-        height: 32px;
-      }
+          &:first-of-type {
+            translate: $shift 0;
 
-      @include mq-max("md") {
-        height: 24px;
-        width: 24px;
-      }
+            @include mq-max("md") {
+              translate: $shift-md 0;
+            }
+          }
+          &:last-of-type {
+            translate: -$shift 0;
 
-      @include mq-max("sm") {
-        height: 16px;
-        width: 16px;
+            @include mq-max("md") {
+              translate: -$shift-md 0;
+            }
+          }
+
+          &.animate {
+            translate: 0;
+            transition: 0.3s ease 0.75s;
+          }
+        }
+
+        @include mq-max("xxl") {
+          width: 36px;
+          height: 36px;
+        }
+
+        @include mq-max("xl") {
+          width: 32px;
+          height: 32px;
+        }
+
+        @include mq-max("md") {
+          height: 24px;
+          width: 24px;
+        }
+
+        @include mq-max("sm") {
+          height: 16px;
+          width: 16px;
+        }
       }
 
       svg {
