@@ -16,6 +16,7 @@
     .not-found-title {
       @extend .pre-footer-title;
       @include column-center;
+      rotate: 0deg; // unset animation from .pre-footer-title
 
       @include mq-max("md") {
         margin-block-end: 16px;
@@ -24,6 +25,7 @@
       h2 {
         color: $coral;
         font-size: 64px;
+        width: auto; // unset animation from .pre-footer-title
 
         @include mq-max("md") {
           font-size: 40px;

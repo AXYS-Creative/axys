@@ -1225,9 +1225,11 @@
 }
 
 .pre-footer {
+  // Extended to 404 page. Be mindful of changes there as well.
   @include column-center;
 
   .pre-footer-title {
+    // Extended to 404 page.
     @include row-center;
     gap: 16px;
     margin-block-end: 40px;
@@ -1237,7 +1239,7 @@
 
       &.animate {
         rotate: 0deg;
-        transition: 0.4s ease 0.3s;
+        transition: 0.4s ease 0s;
       }
     }
 
@@ -1254,7 +1256,7 @@
 
           &.animate {
             width: 100%;
-            transition: 0.5s ease 0.7s;
+            transition: 0.5s ease 0.4s;
           }
         }
 
@@ -1299,7 +1301,7 @@
 
           &.animate {
             translate: 0;
-            transition: 0.3s ease 0.75s;
+            transition: 0.3s ease 0.5s;
           }
         }
 

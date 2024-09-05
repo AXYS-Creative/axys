@@ -2824,7 +2824,7 @@ summary {
   }
   .pre-footer .pre-footer-title.animate, .page-not-found .not-found-section .pre-footer-title.animate, .page-not-found .not-found-section .animate.not-found-title {
     rotate: 0deg;
-    transition: 0.4s ease 0.3s;
+    transition: 0.4s ease 0s;
   }
 }
 @media screen and (max-width: 768px) {
@@ -2842,7 +2842,7 @@ summary {
   }
   .pre-footer .pre-footer-title h2.animate, .page-not-found .not-found-section .pre-footer-title h2.animate, .page-not-found .not-found-section .not-found-title h2.animate {
     width: 100%;
-    transition: 0.5s ease 0.7s;
+    transition: 0.5s ease 0.4s;
   }
 }
 @media screen and (max-width: 768px) {
@@ -2886,7 +2886,7 @@ summary {
 @media (prefers-reduced-motion: no-preference) {
   .pre-footer .pre-footer-title .icon-wrapper.animate, .page-not-found .not-found-section .pre-footer-title .icon-wrapper.animate, .page-not-found .not-found-section .not-found-title .icon-wrapper.animate {
     translate: 0;
-    transition: 0.3s ease 0.75s;
+    transition: 0.3s ease 0.5s;
   }
 }
 @media screen and (max-width: 1512px) {
@@ -2941,6 +2941,7 @@ summary {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  rotate: 0deg;
 }
 @media screen and (max-width: 768px) {
   .page-not-found .not-found-section .not-found-title {
@@ -2950,6 +2951,7 @@ summary {
 .page-not-found .not-found-section .not-found-title h2 {
   color: #e48c66;
   font-size: 64px;
+  width: auto;
 }
 @media screen and (max-width: 768px) {
   .page-not-found .not-found-section .not-found-title h2 {
@@ -3238,6 +3240,7 @@ summary {
   font-size: 18px;
   font-weight: 600;
   padding-block-end: 14px;
+  color: #e1a7b4;
 }
 .policies-page .policies p {
   font-size: 16px;
