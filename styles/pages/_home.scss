@@ -167,14 +167,14 @@
         }
       }
 
-      &[href="https://essentialism.netlify.app"]
-      {
-        .showcase-item {
-          &::after {
-            content: "View Progress";
-          }
-        }
-      }
+      // &[href="https://essentialism.netlify.app"]
+      // {
+      //   .showcase-item {
+      //     &::after {
+      //       content: "View Progress";
+      //     }
+      //   }
+      // }
 
       .showcase-item {
         position: relative;
