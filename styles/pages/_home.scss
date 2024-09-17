@@ -1010,15 +1010,6 @@
           }
         }
       }
-
-      &:last-of-type {
-        @include mq-max("xxl") {
-          height: 64%;
-        }
-        @include mq-max("xl") {
-          height: 124%;
-        }
-      }
     }
   }
 
