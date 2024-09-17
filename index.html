@@ -715,8 +715,10 @@
                 class="classic-link yellow-text tab-element-page"
                 href="https://trello.com/"
                 target="_blank"
-                >Trello</a
-              >. Simply sign in from your computer or phone to create and manage
+              >
+                Trello
+              </a>
+              . Simply sign in from your computer or phone to create and manage
               tasks, then watch as your requests are completed and delivered.
             </p>
           </div>
@@ -774,8 +776,9 @@
                 class="classic-link yellow-text tab-element-page"
                 href="https://trello.com/"
                 target="_blank"
-                >Trello</a
               >
+                Trello
+              </a>
               board. Then they’ll have access to submitting and tracking
               tickets.
             </p>
@@ -832,10 +835,10 @@
         </div>
       </section>
 
-      <div class="presentation-content">
+      <div class="presentation-content" aria-hidden="true">
         <div class="marquee">
           <div class="marquee-inner-logos"></div>
-          <div class="marquee-inner-logos" aria-hidden="true"></div>
+          <div class="marquee-inner-logos"></div>
         </div>
       </div>
 
@@ -928,17 +931,22 @@
           </div>
 
           <div class="segment card price-card gsap-animate">
-            <h3>
-              <span class="card-title green-text bold-text">
+            <h3 aria-label="Premium Plan">
+              <span class="card-title green-text bold-text" aria-hidden="true">
                 Premium
-                <span class="most-popular visually-hidden" aria-hidden="true">
+                <span class="most-popular visually-hidden">
                   [ Fill text goes here ]
                 </span>
               </span>
             </h3>
-            <h4 class="card-price">
-              $6,995/m
-              <span class="pause-or-cancel">Pause or cancel anytime</span>
+            <h4
+              class="card-price"
+              aria-label="$6,995 per month. Pause or cancel anytime."
+            >
+              <span aria-hidden="true"> $6,995/m </span>
+              <span class="pause-or-cancel" aria-hidden="true">
+                Pause or cancel anytime
+              </span>
             </h4>
             <hr class="divider divider-green" aria-hidden="true" />
             <h5 class="benefits-title bold-text">Member benefits</h5>
@@ -1095,10 +1103,15 @@
 
       <section class="faq-section" id="faq">
         <div class="section-headline">
-          <h2 class="section-headline__heading">
-            THE
-            <span class="scroll-glitch scroll-glitch-target" data-title="faqs">
-              FAQS
+          <h2 class="section-headline__heading" aria-label="The FAQs">
+            <span aria-hidden="true">
+              THE
+              <span
+                class="scroll-glitch scroll-glitch-target"
+                data-title="faqs"
+              >
+                FAQS
+              </span>
             </span>
           </h2>
           <p class="headline-description">Any questions? We’ve got answers.</p>
@@ -1108,7 +1121,7 @@
           <div class="faq-item">
             <button class="question tab-element-page" aria-controls="answer-1">
               <h3>
-                <span class="question-indicator">Q.</span>
+                <span class="question-indicator" aria-hidden="true">Q.</span>
                 What services do you offer?
               </h3>
               <div class="angle-arrow-wrapper magnet magnet-strong">
@@ -1128,12 +1141,12 @@
               </div>
             </button>
             <div class="answer" id="answer-1">
-              <span class="answer-indicator">A.</span>
+              <span class="answer-indicator" aria-hidden="true">A.</span>
               <div>
                 We specialize in designing and developing memorable websites
                 made for user experience, accessibility, performance, and search
                 engine optimization.
-                <br /><br />
+                <br aria-hidden="true" /><br aria-hidden="true" />
                 We provide these solutions through:
                 <ul class="classic-list">
                   <li>Static websites</li>
@@ -1146,7 +1159,7 @@
           <div class="faq-item">
             <button class="question tab-element-page" aria-controls="answer-2">
               <h3>
-                <span class="question-indicator">Q.</span>
+                <span class="question-indicator" aria-hidden="true">Q.</span>
                 <!-- Why wouldn't I just hire a full-time creator? -->
                 Why wouldn't I just hire in-house?
               </h3>
@@ -1167,13 +1180,13 @@
               </div>
             </button>
             <div class="answer" id="answer-2">
-              <span class="answer-indicator">A.</span>
+              <span class="answer-indicator" aria-hidden="true">A.</span>
               <p>
                 To save money. Consider this: the average annual salary for
                 senior-level designers and developers often exceeds $100,000 for
                 each discipline and this doesn't include any benefits. In our
                 model, we cover both of these disciplines at a single cost.
-                <br /><br />
+                <br aria-hidden="true" /><br aria-hidden="true" />
                 With the monthly plan, you're only paying for what you need, and
                 have the flexibility to pause or cancel at anytime.
               </p>
@@ -1182,7 +1195,7 @@
           <div class="faq-item">
             <button class="question tab-element-page" aria-controls="answer-3">
               <h3>
-                <span class="question-indicator">Q.</span>
+                <span class="question-indicator" aria-hidden="true">Q.</span>
                 What happens after I sign up?
               </h3>
               <div class="angle-arrow-wrapper magnet magnet-strong">
@@ -1202,7 +1215,7 @@
               </div>
             </button>
             <div class="answer" id="answer-3">
-              <span class="answer-indicator">A.</span>
+              <span class="answer-indicator" aria-hidden="true">A.</span>
               <p>
                 Within minutes of signing up, we are notified about your
                 subscription choice. We'll then issue an intro email containing
@@ -1215,7 +1228,8 @@
                   Trello
                 </a>
                 board. This board will be our primary means of communication,
-                task tracking, and request handling. <br /><br />
+                task tracking, and request handling.
+                <br aria-hidden="true" /><br aria-hidden="true" />
                 After creating the board, we'll send you the link so you can
                 start adding requests immediately. Typically, we begin working
                 on these requests on the same day.
@@ -1225,7 +1239,7 @@
           <div class="faq-item">
             <button class="question tab-element-page" aria-controls="answer-4">
               <h3>
-                <span class="question-indicator">Q.</span>
+                <span class="question-indicator" aria-hidden="true">Q.</span>
                 Do I have a limited number of requests?
               </h3>
               <div class="angle-arrow-wrapper magnet magnet-strong">
@@ -1245,7 +1259,7 @@
               </div>
             </button>
             <div class="answer" id="answer-4">
-              <span class="answer-indicator">A.</span>
+              <span class="answer-indicator" aria-hidden="true">A.</span>
               <p>
                 No. Once you become a member, you can add as many design or
                 development requests as you'd like. Keep in mind that they are
@@ -1256,7 +1270,7 @@
           <div class="faq-item">
             <button class="question tab-element-page" aria-controls="answer-5">
               <h3>
-                <span class="question-indicator">Q.</span>
+                <span class="question-indicator" aria-hidden="true">Q.</span>
                 What if I only have a single request?
               </h3>
               <div class="angle-arrow-wrapper magnet magnet-strong">
@@ -1276,7 +1290,7 @@
               </div>
             </button>
             <div class="answer" id="answer-5">
-              <span class="answer-indicator">A.</span>
+              <span class="answer-indicator" aria-hidden="true">A.</span>
               <p>
                 This is where the pause feature excels. You can pause your
                 subscription at anytime which prevents all charges and locks in
@@ -1289,7 +1303,7 @@
           <div class="faq-item">
             <button class="question tab-element-page" aria-controls="answer-6">
               <h3>
-                <span class="question-indicator">Q.</span>
+                <span class="question-indicator" aria-hidden="true">Q.</span>
                 How do I pause my plan?
               </h3>
               <div class="angle-arrow-wrapper magnet magnet-strong">
@@ -1309,7 +1323,7 @@
               </div>
             </button>
             <div class="answer" id="answer-6">
-              <span class="answer-indicator">A.</span>
+              <span class="answer-indicator" aria-hidden="true">A.</span>
               <p>
                 This can be done in your
                 <a
@@ -1326,7 +1340,7 @@
           <div class="faq-item">
             <button class="question tab-element-page" aria-controls="answer-7">
               <h3>
-                <span class="question-indicator">Q.</span>
+                <span class="question-indicator" aria-hidden="true">Q.</span>
                 How quickly do you deliver?
               </h3>
               <div class="angle-arrow-wrapper magnet magnet-strong">
@@ -1346,7 +1360,7 @@
               </div>
             </button>
             <div class="answer" id="answer-7">
-              <span class="answer-indicator">A.</span>
+              <span class="answer-indicator" aria-hidden="true">A.</span>
               <p>
                 We deliver designs or portions of websites within 24-48 hours.
                 Estimates for delivering entire projects depends on their size
@@ -1360,7 +1374,7 @@
           <div class="faq-item">
             <button class="question tab-element-page" aria-controls="answer-8">
               <h3>
-                <span class="question-indicator">Q.</span>
+                <span class="question-indicator" aria-hidden="true">Q.</span>
                 How do I make a request and track progress?
               </h3>
               <div class="angle-arrow-wrapper magnet magnet-strong">
@@ -1380,7 +1394,7 @@
               </div>
             </button>
             <div class="answer" id="answer-8">
-              <span class="answer-indicator">A.</span>
+              <span class="answer-indicator" aria-hidden="true">A.</span>
               <p>
                 This is done with
                 <a
@@ -1398,7 +1412,7 @@
           <div class="faq-item">
             <button class="question tab-element-page" aria-controls="answer-9">
               <h3>
-                <span class="question-indicator">Q.</span>
+                <span class="question-indicator" aria-hidden="true">Q.</span>
                 Who are the designers and developers?
               </h3>
               <div class="angle-arrow-wrapper magnet magnet-strong">
@@ -1418,7 +1432,7 @@
               </div>
             </button>
             <div class="answer" id="answer-9">
-              <span class="answer-indicator">A.</span>
+              <span class="answer-indicator" aria-hidden="true">A.</span>
               <p>
                 AXYS Creative is driven by only two people: Aaron and Bailey
                 Garcia. This structure facilitates quick decision-making and
@@ -1431,7 +1445,7 @@
           <div class="faq-item">
             <button class="question tab-element-page" aria-controls="answer-10">
               <h3>
-                <span class="question-indicator">Q.</span>
+                <span class="question-indicator" aria-hidden="true">Q.</span>
                 Are there limits to your services?
               </h3>
               <div class="angle-arrow-wrapper magnet magnet-strong">
@@ -1451,7 +1465,7 @@
               </div>
             </button>
             <div class="answer" id="answer-10">
-              <span class="answer-indicator">A.</span>
+              <span class="answer-indicator" aria-hidden="true">A.</span>
               <p>
                 Yes. We currently don't offer development for social media-type
                 applications. We also don't develop mobile apps of any kind.
@@ -1462,7 +1476,7 @@
           <div class="faq-item">
             <button class="question tab-element-page" aria-controls="answer-11">
               <h3>
-                <span class="question-indicator">Q.</span>
+                <span class="question-indicator" aria-hidden="true">Q.</span>
                 What if I'm unsatisfied with the work?
               </h3>
               <div class="angle-arrow-wrapper magnet magnet-strong">
@@ -1482,7 +1496,7 @@
               </div>
             </button>
             <div class="answer" id="answer-11">
-              <span class="answer-indicator">A.</span>
+              <span class="answer-indicator" aria-hidden="true">A.</span>
               <p>
                 We'll continue to revise until you're happy and proud of the
                 work. Simply put in a request and we'll get started on it.
@@ -1492,7 +1506,7 @@
           <div class="faq-item">
             <button class="question tab-element-page" aria-controls="answer-12">
               <h3>
-                <span class="question-indicator">Q.</span>
+                <span class="question-indicator" aria-hidden="true">Q.</span>
                 Do you offer refunds?
               </h3>
               <div class="angle-arrow-wrapper magnet magnet-strong">
@@ -1512,7 +1526,7 @@
               </div>
             </button>
             <div class="answer" id="answer-12">
-              <span class="answer-indicator">A.</span>
+              <span class="answer-indicator" aria-hidden="true">A.</span>
               <p>
                 No. Please be aware that we don't offer any refunds at this
                 time.
