@@ -2585,6 +2585,16 @@ summary {
 .plans-section .plan-options .half-card .mail-form .error-message .error-icon path {
   fill: #fbfaa2;
 }
+@media screen and (max-width: 1512px) {
+  .plans-section .plan-options .half-card:last-of-type {
+    height: 64%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .plans-section .plan-options .half-card:last-of-type {
+    height: 124%;
+  }
+}
 .plans-section .cta-wrapper {
   translate: 16px 0;
   width: unset;
