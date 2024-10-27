@@ -105,15 +105,6 @@
     margin: 96px auto;
     width: 80%;
 
-    &:hover,
-    &:focus-within {
-      @include mq-mouse {
-        .showcase-link {
-          opacity: 0.5;
-        }
-      }
-    }
-
     @media all {
       @include mq-max("xxl") {
         margin: 64px auto;
@@ -128,8 +119,6 @@
 
     .showcase-link {
       width: 48%;
-      transition: 0.3s ease;
-      opacity: 0.9;
 
       &:hover,
       &:focus-visible {
@@ -157,25 +146,6 @@
         width: 100%;
       }
 
-      &[aria-disabled="true"] {
-        cursor: not-allowed;
-
-        .showcase-item {
-          &::after {
-            content: "Coming Soon";
-          }
-        }
-      }
-
-      // &[href="https://essentialism.netlify.app"]
-      // {
-      //   .showcase-item {
-      //     &::after {
-      //       content: "View Progress";
-      //     }
-      //   }
-      // }
-
       .showcase-item {
         position: relative;
         aspect-ratio: 3 / 2;
@@ -194,7 +164,7 @@
 
         &::before {
           content: "";
-          background: rgba($black, 0.95);
+          background: rgba($black, 0.75);
         }
         &::after {
           content: "Visit Site";
@@ -205,16 +175,18 @@
           translate: 0 24px;
           filter: blur(4px);
 
-          @include mq-max("xl") {
-            font-size: 16px;
-          }
+          @media all {
+            @include mq-max("xl") {
+              font-size: 16px;
+            }
 
-          @include mq-max("md") {
-            font-size: 24px;
-          }
+            @include mq-max("md") {
+              font-size: 24px;
+            }
 
-          @include mq-max("sm") {
-            font-size: 16px;
+            @include mq-max("sm") {
+              font-size: 16px;
+            }
           }
         }
 
@@ -222,24 +194,26 @@
           margin-block-start: 8px;
           font-size: 18px;
 
-          @include mq-max("xxl") {
-            font-size: 16px;
-          }
+          @media all {
+            @include mq-max("xxl") {
+              font-size: 16px;
+            }
 
-          @include mq-max("xl") {
-            font-size: 14px;
-          }
+            @include mq-max("xl") {
+              font-size: 14px;
+            }
 
-          @include mq-max("lg") {
-            font-size: 12px;
-          }
+            @include mq-max("lg") {
+              font-size: 12px;
+            }
 
-          @include mq-max("md") {
-            font-size: 16px;
-          }
+            @include mq-max("md") {
+              font-size: 16px;
+            }
 
-          @include mq-max("sm") {
-            font-size: 14px;
+            @include mq-max("sm") {
+              font-size: 14px;
+            }
           }
         }
       }

@@ -20,6 +20,7 @@ const marqueeData = [
   "gartner",
   "cyberark",
   "rsna",
+  "zscaler",
 ];
 
 const marqueeContainers = document.querySelectorAll(".marquee-inner-logos");

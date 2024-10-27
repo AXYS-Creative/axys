@@ -1668,11 +1668,6 @@ summary {
   margin: 96px auto;
   width: 80%;
 }
-@media (hover: hover) and (pointer: fine) {
-  .work-section .work-showcase:hover .showcase-link, .work-section .work-showcase:focus-within .showcase-link {
-    opacity: 0.5;
-  }
-}
 @media screen and (max-width: 1512px) {
   .work-section .work-showcase {
     margin: 64px auto;
@@ -1687,8 +1682,6 @@ summary {
 }
 .work-section .work-showcase .showcase-link {
   width: 48%;
-  transition: 0.3s ease;
-  opacity: 0.9;
 }
 .work-section .work-showcase .showcase-link:hover, .work-section .work-showcase .showcase-link:focus-visible {
   opacity: 1;
@@ -1711,12 +1704,6 @@ summary {
     width: 100%;
   }
 }
-.work-section .work-showcase .showcase-link[aria-disabled=true] {
-  cursor: not-allowed;
-}
-.work-section .work-showcase .showcase-link[aria-disabled=true] .showcase-item::after {
-  content: "Coming Soon";
-}
 .work-section .work-showcase .showcase-link .showcase-item {
   position: relative;
   aspect-ratio: 3/2;
@@ -1735,7 +1722,7 @@ summary {
 }
 .work-section .work-showcase .showcase-link .showcase-item::before {
   content: "";
-  background: rgba(16, 16, 16, 0.95);
+  background: rgba(16, 16, 16, 0.75);
 }
 .work-section .work-showcase .showcase-link .showcase-item::after {
   content: "Visit Site";
