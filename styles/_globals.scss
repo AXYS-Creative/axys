@@ -520,6 +520,16 @@ nav {
             &:focus-visible {
               color: $coral;
             }
+
+            svg {
+              width: 18px;
+              height: 18px;
+
+              @include mq-min("md") {
+                width: 24px;
+                height: 24px;
+              }
+            }
           }
         }
 
@@ -532,16 +542,6 @@ nav {
             &:hover,
             &:focus-visible {
               color: $green;
-            }
-
-            svg {
-              width: 18px;
-              height: 18px;
-
-              @include mq-min("md") {
-                width: 24px;
-                height: 24px;
-              }
             }
           }
         }

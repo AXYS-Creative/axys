@@ -456,6 +456,16 @@ nav .nav-footer-links li:nth-of-type(1) {
 nav .nav-footer-links li:nth-of-type(1) .nav-footer-link:hover, nav .nav-footer-links li:nth-of-type(1) .nav-footer-link:focus-visible {
   color: #e48c66;
 }
+nav .nav-footer-links li:nth-of-type(1) .nav-footer-link svg {
+  width: 18px;
+  height: 18px;
+}
+@media screen and (min-width: 769px) {
+  nav .nav-footer-links li:nth-of-type(1) .nav-footer-link svg {
+    width: 24px;
+    height: 24px;
+  }
+}
 nav .nav-footer-links li:nth-of-type(2) {
   transition-delay: 0.32s;
 }
@@ -464,16 +474,6 @@ nav .nav-footer-links li:nth-of-type(2) .nav-footer-link {
 }
 nav .nav-footer-links li:nth-of-type(2) .nav-footer-link:hover, nav .nav-footer-links li:nth-of-type(2) .nav-footer-link:focus-visible {
   color: #a4d1a2;
-}
-nav .nav-footer-links li:nth-of-type(2) .nav-footer-link svg {
-  width: 18px;
-  height: 18px;
-}
-@media screen and (min-width: 769px) {
-  nav .nav-footer-links li:nth-of-type(2) .nav-footer-link svg {
-    width: 24px;
-    height: 24px;
-  }
 }
 nav .nav-footer-links li:nth-of-type(3) {
   transition-delay: 0.36s;
@@ -2670,7 +2670,7 @@ summary {
 }
 @media screen and (max-width: 1512px) {
   .faq-section .faq-list .faq-item.active .answer {
-    padding: 16px 0 8px;
+    padding: 32px 0 12px;
   }
 }
 .faq-section .faq-list .question {
@@ -2685,7 +2685,7 @@ summary {
 }
 @media screen and (max-width: 1512px) {
   .faq-section .faq-list .question {
-    padding: 4px 0;
+    padding: 12px 0;
   }
 }
 .faq-section .faq-list .question h3 {
