@@ -3141,6 +3141,9 @@ summary {
   color: #fbfaa2;
   text-decoration: none;
 }
+.policies-page__header {
+  margin-block-end: 16px;
+}
 .policies-page__header .heading-title {
   display: flex;
   align-items: center;
@@ -3203,11 +3206,11 @@ summary {
     font-size: 20px;
   }
 }
-.policies-page__header .header-text p {
+.policies-page__header .header-text small {
   padding-block-end: 40px;
 }
 @media screen and (max-width: 768px) {
-  .policies-page__header .header-text p {
+  .policies-page__header .header-text small {
     font-size: 14px;
   }
 }

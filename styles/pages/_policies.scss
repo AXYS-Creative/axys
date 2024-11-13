@@ -13,6 +13,8 @@
   }
 
   &__header {
+    margin-block-end: 16px;
+
     .heading-title {
       display: flex;
       align-items: center;
@@ -57,7 +59,7 @@
         }
       }
 
-      p {
+      small {
         padding-block-end: 40px;
 
         @include mq-max("md") {
