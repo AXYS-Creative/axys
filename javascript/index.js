@@ -6,4 +6,6 @@ import "./components/mouse-cursor.js";
 import "./components/marquee.js";
 
 import "./utility.js";
-import "./animations.js";
+
+import "./global/animations.js";
+import "./global/plans.js";
