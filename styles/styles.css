@@ -1541,7 +1541,7 @@ summary {
   position: fixed;
   bottom: 12px;
   right: 12px;
-  width: 420px;
+  width: 448px;
   aspect-ratio: 2/1;
   padding: 56px var(--toast-padding) var(--toast-padding);
   z-index: 2;
@@ -1594,6 +1594,11 @@ summary {
   height: 16px;
   font-size: 32px;
   translate: 0 -2px;
+  transition: color 0.3s ease, transform 0.4s cubic-bezier(0.05, 1.75, 0.75, 1.75);
+}
+.toast-banner .toast__close-btn:hover, .toast-banner .toast__close-btn:focus-visible {
+  scale: 1.2;
+  color: #909090;
 }
 .toast-cta-group {
   position: absolute;

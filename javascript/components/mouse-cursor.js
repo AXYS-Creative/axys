@@ -3,6 +3,7 @@ const cursor = document.querySelector(".mouse-cursor"),
   menuBtn = document.querySelector(".menu-btn"),
   burger = document.querySelector(".burger"),
   mailForm = document.querySelector(".mail-form"),
+  toastCloseBtn = document.querySelector(".toast__close-btn"),
   submitFormBtn = document.querySelector(".submit-btn");
 
 const navLinks = document.querySelectorAll(".nav-link"),
@@ -38,6 +39,7 @@ const cursorHoverVanish = (elem) => {
 
 // Attaching vanish to individual elements
 cursorHoverVanish(logo);
+cursorHoverVanish(toastCloseBtn);
 // Attaching events to NodeList items
 [...cta1, ...workItems, ...classicLinks, ...faqItems].forEach(
   cursorHoverVanish

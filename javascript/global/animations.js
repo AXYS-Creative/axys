@@ -263,3 +263,12 @@ const scrollFromTop = (() => {
     lastScrollY = currentScrollY;
   });
 })();
+
+// Utility
+
+// Greater than 520 so it doesn't refresh on  mobile(dvh)
+if (window.innerWidth > 520) {
+  window.addEventListener("resize", () => {
+    ScrollTrigger.refresh();
+  });
+}
