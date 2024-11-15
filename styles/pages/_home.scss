@@ -1,3 +1,69 @@
+.toast {
+  --toast-padding: 16px;
+
+  background: $grey-dark;
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  width: 420px;
+  aspect-ratio: 2 / 1;
+  padding: 56px var(--toast-padding) var(--toast-padding);
+  z-index: $z-index-toast;
+  translate: 0 120%;
+
+  @include mq-motion-allow {
+    transition: translate 0.4s ease;
+  }
+
+  @include mq-max("md") {
+    width: calc(100vw - calc($content-padding-md * 2));
+    right: 50%;
+    height: 200px;
+    padding-block-start: 48px;
+    translate: 50% 120%;
+  }
+
+  &-banner {
+    @include discount-card-banner(space-between, 8px 16px);
+
+    h2 {
+      @include discount-card-banner-text;
+      margin-block-end: 0;
+    }
+
+    .toast__close-btn {
+      @include row-center;
+      color: $black;
+      width: 16px;
+      height: 16px;
+      font-size: 32px;
+      translate: 0 -2px;
+    }
+  }
+
+  &-cta-group {
+    position: absolute;
+    left: calc(var(--toast-padding));
+    bottom: var(--toast-padding);
+
+    .cta-1 {
+      .cta-text {
+        background-color: $grey-dark;
+      }
+    }
+  }
+
+  &.display-toast {
+    translate: 0 0;
+
+    @include mq-max("md") {
+      translate: 50% 0;
+    }
+  }
+}
+
+//
+
 .hero-section {
   margin-block-start: 124px;
   padding: 196px 0;
@@ -503,6 +569,10 @@
           display: block;
           color: var(--heading-color);
         }
+
+        time {
+          color: var(--heading-color);
+        }
       }
     }
   }
@@ -788,23 +858,10 @@
         }
 
         .discount-banner {
-          @include row-center;
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          background: $yellow;
-          padding: 8px;
+          @include discount-card-banner;
 
           p {
-            color: $black;
-            font-weight: 700;
-            text-align: center;
-            text-transform: uppercase;
-
-            @include mq-max("xxl") {
-              font-size: 14px;
-            }
+            @include discount-card-banner-text;
           }
         }
 

@@ -1,3 +1,5 @@
+import { toast } from "../components/toast.js";
+
 // Toggle this between true and false to set the discount state. Don't forget to update the data schema in the head.
 let discount = true;
 
@@ -34,6 +36,14 @@ planCards?.forEach((card) => {
 const discountHighlight = document.querySelector(".discount-highlight");
 const discountBenefitText = document.querySelector(".discount-benefit-text");
 
-discountHighlight.classList.toggle("discount-styles", discount);
+discountHighlight?.classList.toggle("discount-styles", discount);
 
-discountBenefitText.setAttribute("aria-hidden", !discount);
+discountBenefitText?.setAttribute("aria-hidden", !discount);
+
+//
+// Toast
+//
+if (!discount && toast) {
+  toast.style.display = "none";
+  toast.setAttribute("aria-hidden", true);
+}

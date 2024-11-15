@@ -1,11 +1,12 @@
 .classic-link {
   position: relative;
   display: inline-block;
+  line-height: 120%;
 
   &::before {
     content: "";
     position: absolute;
-    bottom: -1px;
+    bottom: 0;
     left: auto;
     right: 0;
     width: 0;

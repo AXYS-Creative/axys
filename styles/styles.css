@@ -47,7 +47,7 @@ footer,
 .site-header > * {
   position: fixed;
   top: 0;
-  z-index: 3;
+  z-index: 4;
 }
 .site-header .logo {
   display: flex;
@@ -207,7 +207,7 @@ nav {
   height: 100dvh;
   min-height: 620px;
   overflow: auto;
-  z-index: 2;
+  z-index: 3;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease 0.48s;
@@ -1103,7 +1103,7 @@ summary {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  z-index: 4;
+  z-index: 5;
   pointer-events: none;
   transition: 0.8s cubic-bezier(0, 0.49, 0.4, 1.19), border 0.4s ease, width 0.48s ease, height 0.48s ease, opacity 0.3s ease 0.3s;
 }
@@ -1385,11 +1385,12 @@ summary {
 .classic-link {
   position: relative;
   display: inline-block;
+  line-height: 120%;
 }
 .classic-link::before {
   content: "";
   position: absolute;
-  bottom: -1px;
+  bottom: 0;
   left: auto;
   right: 0;
   width: 0;
@@ -1532,6 +1533,83 @@ summary {
 
 .flip-horizontal {
   rotate: 180deg;
+}
+
+.toast {
+  --toast-padding: 16px;
+  background: #1e1e1e;
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  width: 420px;
+  aspect-ratio: 2/1;
+  padding: 56px var(--toast-padding) var(--toast-padding);
+  z-index: 2;
+  translate: 0 120%;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .toast {
+    transition: translate 0.4s ease;
+  }
+}
+@media screen and (max-width: 768px) {
+  .toast {
+    width: calc(100vw - 48px);
+    right: 50%;
+    height: 200px;
+    padding-block-start: 48px;
+    translate: 50% 120%;
+  }
+}
+.toast-banner {
+  background: #fbfaa2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 8px 16px;
+}
+.toast-banner h2 {
+  color: #101010;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  margin-block-end: 0;
+}
+@media screen and (max-width: 1512px) {
+  .toast-banner h2 {
+    font-size: 14px;
+  }
+}
+.toast-banner .toast__close-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #101010;
+  width: 16px;
+  height: 16px;
+  font-size: 32px;
+  translate: 0 -2px;
+}
+.toast-cta-group {
+  position: absolute;
+  left: calc(var(--toast-padding));
+  bottom: var(--toast-padding);
+}
+.toast-cta-group .cta-1 .cta-text {
+  background-color: #1e1e1e;
+}
+.toast.display-toast {
+  translate: 0 0;
+}
+@media screen and (max-width: 768px) {
+  .toast.display-toast {
+    translate: 50% 0;
+  }
 }
 
 .hero-section, .hero-text-slide {
@@ -2024,6 +2102,9 @@ summary {
   display: block;
   color: var(--heading-color);
 }
+.benefits-section .benefit-list .benefit-block.discount-styles time {
+  color: var(--heading-color);
+}
 @media screen and (min-width: 769px) {
   .benefits-section > .cta-wrapper.lg-screen-and-below {
     align-self: flex-start;
@@ -2303,18 +2384,19 @@ summary {
   margin-block-start: 32px;
 }
 .plans-section .plan-options .plan-card--discounted .discount-banner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: #fbfaa2;
   position: absolute;
   top: 0;
   left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  background: #fbfaa2;
   padding: 8px;
 }
 .plans-section .plan-options .plan-card--discounted .discount-banner p {
   color: #101010;
+  font-size: 16px;
   font-weight: 700;
   text-align: center;
   text-transform: uppercase;
