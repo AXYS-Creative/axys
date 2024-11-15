@@ -1931,7 +1931,7 @@ summary {
   filter: blur(3px);
   transition: 0.6s ease;
 }
-.benefits-section .benefit-list .benefit-block h3 {
+.benefits-section .benefit-list .benefit-block .benefit-heading {
   font-size: 48px;
   font-weight: 200;
   margin-block-end: 24px;
@@ -1940,31 +1940,31 @@ summary {
   gap: 24px;
 }
 @media screen and (max-width: 1512px) {
-  .benefits-section .benefit-list .benefit-block h3 {
+  .benefits-section .benefit-list .benefit-block .benefit-heading {
     font-size: 36px;
     margin-block-end: 12px;
   }
 }
 @media screen and (max-width: 1200px) {
-  .benefits-section .benefit-list .benefit-block h3 {
+  .benefits-section .benefit-list .benefit-block .benefit-heading {
     font-size: 32px;
     gap: 12px;
   }
 }
 @media screen and (max-width: 768px) {
-  .benefits-section .benefit-list .benefit-block h3 {
+  .benefits-section .benefit-list .benefit-block .benefit-heading {
     font-size: 24px;
   }
 }
-.benefits-section .benefit-list .benefit-block h3 svg {
+.benefits-section .benefit-list .benefit-block .benefit-heading svg {
   width: 48px;
 }
 @media screen and (max-width: 768px) {
-  .benefits-section .benefit-list .benefit-block h3 svg {
+  .benefits-section .benefit-list .benefit-block .benefit-heading svg {
     width: 24px;
   }
 }
-.benefits-section .benefit-list .benefit-block h3 svg path {
+.benefits-section .benefit-list .benefit-block .benefit-heading svg path {
   fill: #e48c66;
 }
 .benefits-section .benefit-list .benefit-block p {
@@ -2002,9 +2002,27 @@ summary {
     font-size: 12px;
   }
 }
+.benefits-section .benefit-list .benefit-block p .discount-benefit-text,
+.benefits-section .benefit-list .benefit-block p [data-discount] {
+  display: none;
+}
 .benefits-section .benefit-list .benefit-block.animate {
   opacity: 1;
   filter: blur(0);
+}
+.benefits-section .benefit-list .benefit-block.discount-styles {
+  --heading-color: #fbfaa2;
+}
+.benefits-section .benefit-list .benefit-block.discount-styles .benefit-heading {
+  color: var(--heading-color);
+}
+.benefits-section .benefit-list .benefit-block.discount-styles .benefit-heading svg path {
+  fill: var(--heading-color);
+}
+.benefits-section .benefit-list .benefit-block.discount-styles .discount-benefit-text,
+.benefits-section .benefit-list .benefit-block.discount-styles [data-discount] {
+  display: block;
+  color: var(--heading-color);
 }
 @media screen and (min-width: 769px) {
   .benefits-section > .cta-wrapper.lg-screen-and-below {

@@ -404,7 +404,7 @@
       filter: blur($blur);
       transition: 0.6s ease;
 
-      h3 {
+      .benefit-heading {
         font-size: 48px;
         font-weight: 200;
         margin-block-end: 24px;
@@ -447,17 +447,19 @@
         line-height: 120%;
         padding-inline-start: calc(48px + 24px);
 
-        @include mq-max("xl") {
-          font-size: 16px;
-        }
+        @media all {
+          @include mq-max("xl") {
+            font-size: 16px;
+          }
 
-        @include mq-max("lg") {
-          padding-inline-start: 0;
-        }
+          @include mq-max("lg") {
+            padding-inline-start: 0;
+          }
 
-        @include mq-max("md") {
-          font-size: 14px;
-          letter-spacing: 0.25px;
+          @include mq-max("md") {
+            font-size: 14px;
+            letter-spacing: 0.25px;
+          }
         }
 
         .business-days {
@@ -471,11 +473,36 @@
             font-size: 12px;
           }
         }
+
+        .discount-benefit-text,
+        [data-discount] {
+          display: none;
+        }
       }
 
       &.animate {
         opacity: 1;
         filter: blur(0);
+      }
+
+      &.discount-styles {
+        --heading-color: #{$yellow};
+
+        .benefit-heading {
+          color: var(--heading-color);
+
+          svg {
+            path {
+              fill: var(--heading-color);
+            }
+          }
+        }
+
+        .discount-benefit-text,
+        [data-discount] {
+          display: block;
+          color: var(--heading-color);
+        }
       }
     }
   }

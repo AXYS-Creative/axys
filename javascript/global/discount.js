@@ -1,7 +1,9 @@
 // Toggle this between true and false to set the discount state. Don't forget to update the data schema in the head.
 let discount = true;
 
+//
 // Plans Section
+//
 const planCards = document.querySelectorAll(".plan-card");
 
 planCards?.forEach((card) => {
@@ -26,4 +28,12 @@ planCards?.forEach((card) => {
   discountedCta.setAttribute("aria-hidden", !discount);
 });
 
-// Benefits Section
+//
+// Benefits Section (Fixed monthly rate)
+//
+const discountHighlight = document.querySelector(".discount-highlight");
+const discountBenefitText = document.querySelector(".discount-benefit-text");
+
+discountHighlight.classList.toggle("discount-styles", discount);
+
+discountBenefitText.setAttribute("aria-hidden", !discount);
