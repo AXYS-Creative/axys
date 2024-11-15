@@ -57,21 +57,76 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "AXYS Creative",
-        "url": "https://axyscreative.com",
-        "logo": "https://axyscreative.com/public/axys-logo-192.png",
-        "image": "https://axyscreative.com/public/axys-creative-og.png",
-        "sameAs": [
-          "https://www.instagram.com/axyscreative/",
-          "https://twitter.com/AXYSCreative",
-          "https://dribbble.com/axyscreative"
-        ],
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "email": "info@axyscreative.com",
-          "contactType": "Support"
-        }
+        "@graph": [
+          {
+            "@type": "Organization",
+            "name": "AXYS Creative",
+            "url": "https://axyscreative.com",
+            "logo": "https://axyscreative.com/public/axys-logo-192.png",
+            "image": "https://axyscreative.com/public/axys-creative-og.png",
+            "sameAs": [
+              "https://www.instagram.com/axyscreative/",
+              "https://twitter.com/AXYSCreative",
+              "https://dribbble.com/axyscreative"
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "email": "info@axyscreative.com",
+              "contactType": "Support"
+            }
+          },
+          {
+            "@type": "Service",
+            "name": "Standard Plan",
+            "description": "Unlimited web design and development services. One request at a time. Average 1-2 day delivery. Seamless management. Pause or cancel anytime.",
+            "provider": {
+              "@type": "Organization",
+              "name": "AXYS Creative"
+            },
+            "serviceType": "Web Design and Development",
+            "areaServed": "Worldwide",
+            "offers": {
+              "@type": "Offer",
+              "price": "4995",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock",
+              "priceValidUntil": "2024-12-31",
+              "url": "https://axyscreative.com/#plans",
+              "eligibleQuantity": {
+                "@type": "QuantitativeValue",
+                "unitText": "month"
+              },
+              "discount": "50%",
+              "discountedPrice": "2495"
+            }
+          }
+          {
+            "@type": "Service",
+            "name": "Premium Plan",
+            "description": "Unlimited web design and development services. Two requests at a time. Average 1-2 day delivery. Seamless management. Pause or cancel anytime.
+            ",
+            "provider": {
+              "@type": "Organization",
+              "name": "AXYS Creative"
+            },
+            "serviceType": "Web Design and Development",
+            "areaServed": "Worldwide",
+            "offers": {
+              "@type": "Offer",
+              "price": "6995",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock",
+              "priceValidUntil": "2024-12-31",
+              "url": "https://axyscreative.com/#plans",
+              "eligibleQuantity": {
+                "@type": "QuantitativeValue",
+                "unitText": "month"
+              },
+              "discount": "50%",
+              "discountedPrice": "3495"
+            }
+          }
+        ]
       }
     </script>
   </head>
@@ -855,14 +910,31 @@
         </div>
 
         <div class="plan-options">
-          <div class="segment card price-card gsap-animate">
+          <div class="segment card plan-card gsap-animate">
+            <div class="discount-banner">
+              <p>50% Off — End of year sale</p>
+            </div>
+
             <h3 aria-label="Standard Plan, most popular.">
               <span class="card-title coral-text bold-text" aria-hidden="true">
                 Standard <span class="most-popular">[ Most popular ]</span>
               </span>
             </h3>
+
+            <!-- Discounted Price -->
             <h4
-              class="card-price"
+              class="card-price card-price--discounted"
+              aria-label="$2,495 per month. Pause or cancel anytime."
+            >
+              <span aria-hidden="true">$2,495/m</span>
+              <span class="pause-or-cancel" aria-hidden="true">
+                Pause or cancel anytime
+              </span>
+            </h4>
+
+            <!-- Default Price -->
+            <h4
+              class="card-price card-price--default"
               aria-label="$4,995 per month. Pause or cancel anytime."
             >
               <span aria-hidden="true">$4,995/m</span>
@@ -870,7 +942,9 @@
                 Pause or cancel anytime
               </span>
             </h4>
+
             <hr class="divider divider-coral" aria-hidden="true" />
+
             <h5 class="benefits-title bold-text">Member benefits</h5>
             <ul class="benefits-list classic-list">
               <li>One request at a time</li>
@@ -884,10 +958,34 @@
               <li>Pause or cancel anytime</li>
             </ul>
             <div class="cta-wrapper">
+              <!-- default cta -->
               <a
                 href="https://buy.stripe.com/6oEcNCe6B5zq6o8dQQ"
                 target="_blank"
-                class="cta-1 tab-element-page"
+                class="cta-1 tab-element-page card-cta--default"
+              >
+                <div class="ring">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="16"
+                    width="14"
+                    viewBox="0 0 448 512"
+                  >
+                    <path
+                      opacity="1"
+                      fill="#1E3050"
+                      d="M435.3 267.3L446.6 256l-11.3-11.3-168-168L256 65.4 233.4 88l11.3 11.3L385.4 240 16 240 0 240l0 32 16 0 369.4 0L244.7 412.7 233.4 424 256 446.6l11.3-11.3 168-168z"
+                    />
+                  </svg>
+                </div>
+                <span class="cta-text">Get started</span>
+              </a>
+
+              <!-- discounted cta -->
+              <a
+                href="https://buy.stripe.com/aEU8xmgeJ4vm27SdQU"
+                target="_blank"
+                class="cta-1 tab-element-page card-cta--discounted"
               >
                 <div class="ring">
                   <svg
@@ -918,7 +1016,11 @@
             </div>
           </div>
 
-          <div class="segment card price-card gsap-animate">
+          <div class="segment card plan-card gsap-animate">
+            <div class="discount-banner">
+              <p>50% Off — End of year sale</p>
+            </div>
+
             <h3 aria-label="Premium Plan">
               <span class="card-title green-text bold-text" aria-hidden="true">
                 Premium
@@ -927,8 +1029,21 @@
                 </span>
               </span>
             </h3>
+
+            <!-- discounted price -->
             <h4
-              class="card-price"
+              class="card-price card-price--discounted"
+              aria-label="$3,495 per month. Pause or cancel anytime."
+            >
+              <span aria-hidden="true">$3,495/m</span>
+              <span class="pause-or-cancel" aria-hidden="true">
+                Pause or cancel anytime
+              </span>
+            </h4>
+
+            <!-- default price -->
+            <h4
+              class="card-price card-price--default"
               aria-label="$6,995 per month. Pause or cancel anytime."
             >
               <span aria-hidden="true"> $6,995/m </span>
@@ -936,7 +1051,9 @@
                 Pause or cancel anytime
               </span>
             </h4>
+
             <hr class="divider divider-green" aria-hidden="true" />
+
             <h5 class="benefits-title bold-text">Member benefits</h5>
             <ul class="benefits-list classic-list">
               <li class="bold-text">Two requests at a time</li>
@@ -950,10 +1067,11 @@
               <li>Pause or cancel anytime</li>
             </ul>
             <div class="cta-wrapper">
+              <!-- default cta -->
               <a
                 href="https://buy.stripe.com/cN26pe1jPe5WfYIdQR"
                 target="_blank"
-                class="cta-1 tab-element-page"
+                class="cta-1 tab-element-page card-cta--default"
               >
                 <div class="ring">
                   <svg
@@ -971,6 +1089,30 @@
                 </div>
                 <span class="cta-text">Get started</span>
               </a>
+
+              <!-- discounted cta -->
+              <a
+                href="https://buy.stripe.com/eVaeVK1jPge4eUEdQW"
+                target="_blank"
+                class="cta-1 tab-element-page card-cta--discounted"
+              >
+                <div class="ring">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="16"
+                    width="14"
+                    viewBox="0 0 448 512"
+                  >
+                    <path
+                      opacity="1"
+                      fill="#1E3050"
+                      d="M435.3 267.3L446.6 256l-11.3-11.3-168-168L256 65.4 233.4 88l11.3 11.3L385.4 240 16 240 0 240l0 32 16 0 369.4 0L244.7 412.7 233.4 424 256 446.6l11.3-11.3 168-168z"
+                    />
+                  </svg>
+                </div>
+                <span class="cta-text">Get started</span>
+              </a>
+
               <a
                 href="https://calendly.com/axyscreativeagency/15-min-intro"
                 target="_blank"

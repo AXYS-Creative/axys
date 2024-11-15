@@ -1,3 +1,0 @@
-let discount = false;
-
-// const

@@ -227,7 +227,6 @@ const globalGenerateAnimate = (() => {
     });
   });
 
-  // GAME CHANGER!!!
   // Refresh ScrollTrigger instances on page load and resize
   window.addEventListener("load", () => {
     ScrollTrigger.refresh();

@@ -2150,15 +2150,18 @@ summary {
   }
 }
 @media screen and (max-width: 1200px) {
-  .plans-section .plan-options .price-card {
+  .plans-section .plan-options .plan-card {
     flex: 1;
   }
 }
-.plans-section .plan-options .price-card h3,
-.plans-section .plan-options .price-card h5 {
+.plans-section .plan-options .plan-card .discount-banner {
+  display: none;
+}
+.plans-section .plan-options .plan-card h3,
+.plans-section .plan-options .plan-card h5 {
   text-transform: uppercase;
 }
-.plans-section .plan-options .price-card .card-title {
+.plans-section .plan-options .plan-card .card-title {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -2167,125 +2170,194 @@ summary {
   margin-block-end: 16px;
 }
 @media screen and (max-width: 1512px) {
-  .plans-section .plan-options .price-card .card-title {
+  .plans-section .plan-options .plan-card .card-title {
     font-size: 32px;
   }
 }
 @media screen and (max-width: 1200px) {
-  .plans-section .plan-options .price-card .card-title {
+  .plans-section .plan-options .plan-card .card-title {
     font-size: 36px;
   }
 }
 @media screen and (max-width: 480px) {
-  .plans-section .plan-options .price-card .card-title {
+  .plans-section .plan-options .plan-card .card-title {
     font-size: 32px;
   }
 }
-.plans-section .plan-options .price-card .card-title .most-popular {
+.plans-section .plan-options .plan-card .card-title .most-popular {
   font-size: 12px;
   font-weight: 700;
   color: #909090;
 }
 @media screen and (max-width: 1512px) {
-  .plans-section .plan-options .price-card .card-title .most-popular {
+  .plans-section .plan-options .plan-card .card-title .most-popular {
     font-size: 10px;
   }
 }
 @media screen and (max-width: 1200px) {
-  .plans-section .plan-options .price-card .card-title .most-popular {
+  .plans-section .plan-options .plan-card .card-title .most-popular {
     font-size: 14px;
   }
 }
 @media screen and (max-width: 480px) {
-  .plans-section .plan-options .price-card .card-title .most-popular {
+  .plans-section .plan-options .plan-card .card-title .most-popular {
     font-size: 10px;
   }
 }
-.plans-section .plan-options .price-card .card-price {
+.plans-section .plan-options .plan-card .card-price {
   font-size: 36px;
 }
 @media screen and (max-width: 1512px) {
-  .plans-section .plan-options .price-card .card-price {
+  .plans-section .plan-options .plan-card .card-price {
     font-size: 24px;
   }
 }
 @media screen and (max-width: 1200px) {
-  .plans-section .plan-options .price-card .card-price {
+  .plans-section .plan-options .plan-card .card-price {
     font-size: 32px;
   }
 }
 @media screen and (max-width: 480px) {
-  .plans-section .plan-options .price-card .card-price {
+  .plans-section .plan-options .plan-card .card-price {
     font-size: 28px;
   }
 }
-.plans-section .plan-options .price-card .card-price .pause-or-cancel {
+.plans-section .plan-options .plan-card .card-price--discounted {
+  display: none;
+}
+.plans-section .plan-options .plan-card .card-price .pause-or-cancel {
   font-size: 14px;
   letter-spacing: 0.25px;
   color: #909090;
   vertical-align: middle;
 }
 @media screen and (max-width: 1512px) {
-  .plans-section .plan-options .price-card .card-price .pause-or-cancel {
+  .plans-section .plan-options .plan-card .card-price .pause-or-cancel {
     font-size: 12px;
   }
 }
-.plans-section .plan-options .price-card .divider {
+.plans-section .plan-options .plan-card .divider {
   height: 4px;
   border: none;
   margin: 64px 0;
 }
 @media screen and (max-width: 1512px) {
-  .plans-section .plan-options .price-card .divider {
+  .plans-section .plan-options .plan-card .divider {
     margin: 42px 0;
   }
 }
 @media screen and (max-width: 480px) {
-  .plans-section .plan-options .price-card .divider {
+  .plans-section .plan-options .plan-card .divider {
     margin: 36px 0;
   }
 }
-.plans-section .plan-options .price-card .divider-coral {
+.plans-section .plan-options .plan-card .divider-coral {
   background: #e48c66;
 }
-.plans-section .plan-options .price-card .divider-green {
+.plans-section .plan-options .plan-card .divider-green {
   background: #a4d1a2;
 }
-.plans-section .plan-options .price-card .benefits-title {
+.plans-section .plan-options .plan-card .benefits-title {
   font-size: 24px;
   margin-block-end: 16px;
 }
 @media screen and (max-width: 1512px) {
-  .plans-section .plan-options .price-card .benefits-title {
+  .plans-section .plan-options .plan-card .benefits-title {
     font-size: 20px;
   }
 }
-.plans-section .plan-options .price-card .benefits-list {
+.plans-section .plan-options .plan-card .benefits-list {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 16px;
+  gap: 12px;
   margin-block-end: 96px;
 }
 @media screen and (max-width: 1512px) {
-  .plans-section .plan-options .price-card .benefits-list {
-    gap: 12px;
+  .plans-section .plan-options .plan-card .benefits-list {
+    gap: 8px;
     margin-block-end: 64px;
   }
 }
-.plans-section .plan-options .price-card .cta-wrapper .cta-1 {
+@media screen and (max-width: 768px) {
+  .plans-section .plan-options .plan-card .benefits-list {
+    gap: 4px;
+  }
+}
+.plans-section .plan-options .plan-card .cta-wrapper .cta-1 {
   scroll-margin-block-start: 820px;
 }
 @media screen and (max-width: 1512px) {
-  .plans-section .plan-options .price-card .cta-wrapper .cta-1 {
+  .plans-section .plan-options .plan-card .cta-wrapper .cta-1 {
     scroll-margin-block-start: 496px;
   }
 }
 @media screen and (max-width: 768px) {
-  .plans-section .plan-options .price-card .cta-wrapper .cta-1 {
+  .plans-section .plan-options .plan-card .cta-wrapper .cta-1 {
     scroll-margin-block-start: 360px;
   }
+}
+.plans-section .plan-options .plan-card .card-cta--discounted {
+  display: none;
+}
+.plans-section .plan-options .plan-card--discounted {
+  position: relative;
+}
+.plans-section .plan-options .plan-card--discounted h3 {
+  margin-block-start: 32px;
+}
+.plans-section .plan-options .plan-card--discounted .discount-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fbfaa2;
+  padding: 8px;
+}
+.plans-section .plan-options .plan-card--discounted .discount-banner p {
+  color: #101010;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 1512px) {
+  .plans-section .plan-options .plan-card--discounted .discount-banner p {
+    font-size: 14px;
+  }
+}
+.plans-section .plan-options .plan-card--discounted .card-price--default {
+  scale: 0.8;
+  transform-origin: left;
+}
+.plans-section .plan-options .plan-card--discounted .card-price--default > span {
+  position: relative;
+  color: #909090;
+}
+.plans-section .plan-options .plan-card--discounted .card-price--default > span::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: rgba(240, 240, 240, 0.5);
+}
+.plans-section .plan-options .plan-card--discounted .card-price--default .pause-or-cancel {
+  display: none;
+}
+.plans-section .plan-options .plan-card--discounted .card-price--discounted {
+  display: block;
+}
+.plans-section .plan-options .plan-card--discounted .card-cta--default {
+  display: none;
+}
+.plans-section .plan-options .plan-card--discounted .card-cta--discounted {
+  display: flex;
 }
 .plans-section .plan-options .half-card {
   display: flex;

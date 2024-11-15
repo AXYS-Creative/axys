@@ -8,4 +8,4 @@ import "./components/marquee.js";
 import "./utility.js";
 
 import "./global/animations.js";
-import "./global/plans.js";
+import "./global/discount.js";
