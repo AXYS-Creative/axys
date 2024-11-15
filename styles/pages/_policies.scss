@@ -59,9 +59,20 @@
         }
       }
 
-      small {
+      div {
+        @include row-center(space-between);
+        width: 100%;
         padding-block-end: 40px;
 
+        @include mq-max("md") {
+          flex-direction: column;
+          gap: 24px;
+          align-items: flex-start;
+        }
+      }
+
+      a,
+      small {
         @include mq-max("md") {
           font-size: 14px;
         }

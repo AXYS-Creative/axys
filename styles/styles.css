@@ -1333,40 +1333,10 @@ summary {
   }
 }
 
-@keyframes classic-link-default {
-  0% {
-    right: auto;
-    left: 0;
-    width: 100%;
-  }
-  20% {
-    right: 0;
-    left: auto;
-    width: 100%;
-  }
-  100% {
-    right: 0;
-    left: auto;
-    width: 0;
-  }
+.formswift-button {
+  display: none;
 }
-@keyframes classic-link-hover {
-  0% {
-    right: auto;
-    left: 0;
-    width: 0;
-  }
-  80% {
-    right: auto;
-    left: 0;
-    width: 100%;
-  }
-  100% {
-    right: 0;
-    left: auto;
-    width: 100%;
-  }
-}
+
 @keyframes background-stripes {
   0% {
     top: 0;
@@ -1419,15 +1389,22 @@ summary {
 .classic-link::before {
   content: "";
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: -1px;
+  left: auto;
+  right: 0;
   width: 0;
   height: 2px;
   background-color: #fbfaa2;
-  animation: classic-link-default 0.3s ease forwards;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .classic-link::before {
+    transition: 0.3s ease;
+  }
 }
 .classic-link:hover::before, .classic-link:focus-visible::before {
-  animation: classic-link-hover 0.3s ease forwards;
+  left: 0;
+  right: auto;
+  width: 100%;
 }
 
 .sr-only {
@@ -3227,10 +3204,22 @@ summary {
     font-size: 20px;
   }
 }
-.policies-page__header .header-text small {
+.policies-page__header .header-text div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
   padding-block-end: 40px;
 }
 @media screen and (max-width: 768px) {
+  .policies-page__header .header-text div {
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+  }
+}
+@media screen and (max-width: 768px) {
+  .policies-page__header .header-text a,
   .policies-page__header .header-text small {
     font-size: 14px;
   }

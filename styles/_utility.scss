@@ -5,18 +5,24 @@
   &::before {
     content: "";
     position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: -1px;
+    left: auto;
+    right: 0;
     width: 0;
     height: 2px;
     background-color: $yellow;
-    animation: classic-link-default 0.3s ease forwards;
+
+    @include mq-motion-allow {
+      transition: 0.3s ease;
+    }
   }
 
   &:hover,
   &:focus-visible {
     &::before {
-      animation: classic-link-hover 0.3s ease forwards;
+      left: 0;
+      right: auto;
+      width: 100%;
     }
   }
 }
