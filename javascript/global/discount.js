@@ -1,6 +1,9 @@
 import { toast } from "../components/toast.js";
 
-// Toggle this between true and false to set the discount state. Don't forget to update the data schema in the head.
+/**
+ * Toggle this between true and false to set the discount state.
+ * Don't forget to update the data schema in the head.
+ */
 let discount = true;
 
 //
