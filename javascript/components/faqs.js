@@ -13,7 +13,7 @@ if (faqList) {
   });
 
   function toggleFAQItem(faqItem) {
-    faqItem.classList.toggle("active");
+    faqItem?.classList.toggle("active");
 
     document.querySelectorAll(".faq-item").forEach((item) => {
       if (item !== faqItem) {
@@ -29,14 +29,14 @@ if (faqList) {
     link.addEventListener("focus", (event) => {
       const faqItem = event.target.closest(".faq-item");
       // Check if the faq-item is already active
-      if (!faqItem.classList.contains("active")) {
+      if (!faqItem?.classList.contains("active")) {
         toggleFAQItem(faqItem);
       }
     });
 
     link.addEventListener("blur", (event) => {
       const faqItem = event.target.closest(".faq-item");
-      faqItem.classList.remove("active");
+      faqItem?.classList.remove("active");
     });
   });
 }

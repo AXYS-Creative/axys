@@ -29,10 +29,10 @@ document.addEventListener("mousemove", (e) => {
 
 // Toggle vanish class to mouse cursor
 const cursorHoverVanish = (elem) => {
-  elem.addEventListener("mouseenter", () => {
+  elem?.addEventListener("mouseenter", () => {
     cursor.classList.add("vanish-mouse-cursor");
   });
-  elem.addEventListener("mouseleave", () => {
+  elem?.addEventListener("mouseleave", () => {
     cursor.classList.remove("vanish-mouse-cursor");
   });
 };
