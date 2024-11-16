@@ -3,14 +3,14 @@ import { toast } from "../components/toast.js";
 // Countdown timer for dynamically ending discount state
 const discountCountdownTimer = () => {
   const currentDate = new Date();
-  const endDate = new Date("2024-12-31T23:59:59"); // Set your end date/time here
+  const endDate = new Date("2024-12-31T23:59:59");
 
   return currentDate < endDate;
 };
 
 /**
  * Using a timer so I don't need to manually update this at midnight on new years eve... Just the stripe links 🥲
- * BUT this does accept a boolean value too if you want to manually change it.
+ * This also accepts a boolean value if you'd like to change it manually.
  */
 let discount = discountCountdownTimer();
 
