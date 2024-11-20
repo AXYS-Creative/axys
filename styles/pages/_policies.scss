@@ -21,6 +21,10 @@
       gap: 30px;
       padding-block-end: 30px;
 
+      @include mq-max("md") {
+        gap: 2vw;
+      }
+
       h1 {
         @include title-font;
 
@@ -39,6 +43,7 @@
 
           @include mq-max("md") {
             translate: 0 -6px;
+            width: 6vw;
           }
         }
       }
@@ -48,6 +53,10 @@
       @include column-start;
       gap: 26px;
       border-block-end: 3px solid $coral;
+
+      @include mq-max("md") {
+        gap: 12px;
+      }
 
       h2 {
         all: unset;

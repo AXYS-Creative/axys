@@ -3253,6 +3253,11 @@ summary {
   gap: 30px;
   padding-block-end: 30px;
 }
+@media screen and (max-width: 768px) {
+  .policies-page__header .heading-title {
+    gap: 2vw;
+  }
+}
 .policies-page__header .heading-title h1 {
   font-size: 96px;
   text-transform: uppercase;
@@ -3289,6 +3294,7 @@ summary {
 @media screen and (max-width: 768px) {
   .policies-page__header .heading-title .policies-svg svg {
     translate: 0 -6px;
+    width: 6vw;
   }
 }
 .policies-page__header .header-text {
@@ -3298,6 +3304,11 @@ summary {
   align-items: flex-start;
   gap: 26px;
   border-block-end: 3px solid #e48c66;
+}
+@media screen and (max-width: 768px) {
+  .policies-page__header .header-text {
+    gap: 12px;
+  }
 }
 .policies-page__header .header-text h2 {
   all: unset;
