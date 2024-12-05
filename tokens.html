@@ -362,9 +362,9 @@
           >
             Tokens
           </h2>
-          <p>
+          <p class="tokens-header__description">
             Tokens can be used anywhere text can be added. The syntax is as
-            follows: [%%]
+            follows: <code>[%%]</code>
           </p>
         </div>
 
@@ -399,9 +399,11 @@
           >
             Classes
           </h2>
-          <p>
-            Classes can be added to any tokens using dot notation i.e.
-            [%br.md-screen-and-up%]
+          <p class="tokens-header__description">
+            Classes can be added to any tokens using dot notation. For example:
+            <code> [%br.md-screen-and-up%] </code>
+            &nbsp; or &nbsp;
+            <code> [%span.underline%]Your text[%span%] </code>
           </p>
         </div>
 
@@ -430,6 +432,12 @@
             <div class="table-block__details">
               Add an outline stroke to your text, setting the inner fill to
               transparent.
+            </div>
+          </div>
+          <div class="table-block">
+            <div class="table-block__info">.underline</div>
+            <div class="table-block__details">
+              Add an underline beneath your text.
             </div>
           </div>
         </div>

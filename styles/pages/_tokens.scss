@@ -48,6 +48,12 @@
   .sub-title {
     @include subtitle-font;
   }
+
+  &__description {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 }
 
 .table {

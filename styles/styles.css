@@ -876,6 +876,16 @@ summary {
   cursor: pointer;
 }
 
+code {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: #1e1e1e;
+  white-space: nowrap;
+  margin-block: 2px;
+}
+
 .cta-wrapper {
   display: flex;
   gap: 8px;
@@ -3436,6 +3446,11 @@ summary {
   .tokens-header .sub-title {
     font-size: calc(12px + 4.8vw);
   }
+}
+.tokens-header__description {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .table {

@@ -952,6 +952,16 @@ summary {
   cursor: pointer;
 }
 
+code {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 14px;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: $grey-dark;
+  white-space: nowrap;
+  margin-block: 2px;
+}
+
 .cta-wrapper {
   display: flex;
   gap: 8px;
