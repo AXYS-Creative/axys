@@ -47,16 +47,13 @@
 
   .sub-title {
     @include subtitle-font;
+    display: block;
   }
 
   &__description {
-    display: flex;
+    display: inline;
     align-items: center;
     flex-wrap: wrap;
-
-    code:first-of-type {
-      margin-inline-start: 1ch;
-    }
   }
 }
 

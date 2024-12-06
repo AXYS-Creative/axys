@@ -883,7 +883,8 @@ code {
   border-radius: 4px;
   background-color: #1e1e1e;
   white-space: nowrap;
-  margin-block: 2px;
+  margin-block-start: 2px;
+  display: inline-flex;
 }
 
 .cta-wrapper {
@@ -1467,6 +1468,10 @@ code {
 
 .visually-hidden {
   visibility: hidden;
+}
+
+.space {
+  padding-inline-start: 0.5ch;
 }
 
 .no-motion {
@@ -3431,6 +3436,7 @@ code {
 .tokens-header .sub-title {
   font-size: 64px;
   text-transform: uppercase;
+  display: block;
 }
 @media screen and (max-width: 1512px) {
   .tokens-header .sub-title {
@@ -3448,12 +3454,9 @@ code {
   }
 }
 .tokens-header__description {
-  display: flex;
+  display: inline;
   align-items: center;
   flex-wrap: wrap;
-}
-.tokens-header__description code:first-of-type {
-  margin-inline-start: 1ch;
 }
 
 .table {

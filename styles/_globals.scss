@@ -959,7 +959,8 @@ code {
   border-radius: 4px;
   background-color: $grey-dark;
   white-space: nowrap;
-  margin-block: 2px;
+  margin-block-start: 2px;
+  display: inline-flex;
 }
 
 .cta-wrapper {
