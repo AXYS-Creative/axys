@@ -10,15 +10,13 @@ const allGlitchEffects = (() => {
     {
       maxMd: "(max-width: 768px)",
       maxLg: "(max-width: 1024px)",
-      maxXl: "(max-width: 1200px)",
       minMd: "(min-width: 769px)",
     },
     (context) => {
-      let { maxMd, maxLg, maxXl, minMd } = context.conditions;
+      let { maxMd, maxLg, minMd } = context.conditions;
 
-      let glitchAnimationLengh = 16; // Default: 16
+      let glitchAnimationLength = 16; // Default: 16
 
-      //
       // Hero Glitch Text Function
       const applyHeroGlitch = ({ element, text, iterations, color }) => {
         let glitchIterations = 0; // Default: 0
@@ -53,7 +51,7 @@ const allGlitchEffects = (() => {
           }
 
           glitchIterations++;
-        }, glitchAnimationLengh);
+        }, glitchAnimationLength);
       };
 
       // Not on other pages
@@ -85,7 +83,6 @@ const allGlitchEffects = (() => {
         setInterval(updateText, 2800);
       }
 
-      //
       // Reusable Glitch function + it's accessbile for reduced motion
       const singleGlitch = (element, originalText) => {
         // Skip for a11y - reduced motion
@@ -111,7 +108,7 @@ const allGlitchEffects = (() => {
           }
 
           iterations += 1 / 8;
-        }, glitchAnimationLengh);
+        }, glitchAnimationLength);
       };
 
       const applyScrollGlitch = (() => {
@@ -227,12 +224,10 @@ const globalGenerateAnimate = (() => {
     });
   });
 
-  // Refresh ScrollTrigger instances on page load and resize
   window.addEventListener("load", () => {
     ScrollTrigger.refresh();
   });
 
-  // Greater than 520 so it doesn't refresh on  mobile(dvh)
   if (window.innerWidth > 520) {
     window.addEventListener("resize", () => {
       ScrollTrigger.refresh();

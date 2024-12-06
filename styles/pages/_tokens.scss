@@ -53,6 +53,10 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+
+    code:first-of-type {
+      margin-inline-start: 1ch;
+    }
   }
 }
 

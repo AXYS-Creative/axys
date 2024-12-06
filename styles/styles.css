@@ -3452,6 +3452,9 @@ code {
   align-items: center;
   flex-wrap: wrap;
 }
+.tokens-header__description code:first-of-type {
+  margin-inline-start: 1ch;
+}
 
 .table {
   display: flex;
