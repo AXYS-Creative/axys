@@ -35,3 +35,11 @@ const handleReturnToTop = (() => {
 // minMediaMD.addEventListener("change", handleMediaQueryChange);
 
 // handleMediaQueryChange(minMediaMD);
+
+// Social Media Post
+// const allLinks = document.querySelectorAll("a");
+
+// allLinks.forEach((link) => {
+//   link.removeAttribute("href");
+//   link.style.cursor = "pointer";
+// });

@@ -1,76 +1,3 @@
-.toast {
-  --toast-padding: 16px;
-
-  background: $grey-dark;
-  position: fixed;
-  bottom: 12px;
-  right: 12px;
-  width: 448px;
-  aspect-ratio: 2 / 1;
-  padding: 56px var(--toast-padding) var(--toast-padding);
-  z-index: $z-index-toast;
-  translate: 0 120%;
-
-  @include mq-motion-allow {
-    transition: translate 0.4s ease;
-  }
-
-  @include mq-max("md") {
-    width: calc(100vw - calc($content-padding-md * 2));
-    right: 50%;
-    height: 200px;
-    padding-block-start: 48px;
-    translate: 50% 120%;
-  }
-
-  &-banner {
-    @include discount-card-banner(space-between, 8px 16px);
-
-    h2 {
-      @include discount-card-banner-text;
-      margin-block-end: 0;
-    }
-
-    .toast__close-btn {
-      @include row-center;
-      color: $black;
-      width: 16px;
-      height: 16px;
-      font-size: 32px;
-      translate: 0 -2px;
-      transition: color 0.3s ease, transform 0.4s $cubic-ease-back-dramatic;
-
-      &:hover,
-      &:focus-visible {
-        scale: 1.2;
-        color: $grey-light;
-      }
-    }
-  }
-
-  &-cta-group {
-    position: absolute;
-    left: calc(var(--toast-padding));
-    bottom: var(--toast-padding);
-
-    .cta-1 {
-      .cta-text {
-        background-color: $grey-dark;
-      }
-    }
-  }
-
-  &.display-toast {
-    translate: 0 0;
-
-    @include mq-max("md") {
-      translate: 50% 0;
-    }
-  }
-}
-
-//
-
 .hero-section {
   margin-block-start: 124px;
   padding: 196px 0;
@@ -1474,5 +1401,78 @@
 
   .headline-description {
     text-align: center;
+  }
+}
+
+// Components
+
+.toast {
+  --toast-padding: 16px;
+
+  background: $grey-dark;
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  width: 448px;
+  aspect-ratio: 2 / 1;
+  padding: 56px var(--toast-padding) var(--toast-padding);
+  z-index: $z-index-toast;
+  translate: 0 120%;
+
+  @include mq-motion-allow {
+    transition: translate 0.4s ease;
+  }
+
+  @include mq-max("md") {
+    width: calc(100vw - calc($content-padding-md * 2));
+    right: 50%;
+    height: 200px;
+    padding-block-start: 48px;
+    translate: 50% 120%;
+  }
+
+  &-banner {
+    @include discount-card-banner(space-between, 8px 16px);
+
+    h2 {
+      @include discount-card-banner-text;
+      margin-block-end: 0;
+    }
+
+    .toast__close-btn {
+      @include row-center;
+      color: $black;
+      width: 16px;
+      height: 16px;
+      font-size: 32px;
+      translate: 0 -2px;
+      transition: color 0.3s ease, transform 0.4s $cubic-ease-back-dramatic;
+
+      &:hover,
+      &:focus-visible {
+        scale: 1.2;
+        color: $grey-light;
+      }
+    }
+  }
+
+  &-cta-group {
+    position: absolute;
+    left: calc(var(--toast-padding));
+    bottom: var(--toast-padding);
+
+    .cta-1 {
+      .cta-text {
+        background-color: $grey-dark;
+      }
+    }
+  }
+
+  &.display-toast {
+    translate: 0 0;
+
+    @include mq-max("md") {
+      translate: 50% 0;
+    }
   }
 }

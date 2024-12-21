@@ -739,7 +739,7 @@ footer .copyright {
   position: absolute;
   bottom: 50%;
   left: 50%;
-  transform: translate(calc(-50% - 11px), 50%);
+  translate: calc(-49% + 0.5px) 50%;
   font-size: 12px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -748,13 +748,13 @@ footer .copyright {
   footer .copyright {
     width: 100%;
     bottom: 64px;
-    transform: translate(calc(-50% - 11px), 0);
+    translate: calc(-49% - 6px) 0;
   }
 }
 @media screen and (max-width: 768px) {
   footer .copyright {
     font-size: 10px;
-    transform: translate(calc(-50% - 9.5px), 0);
+    translate: calc(-49% - 2px) 0;
   }
 }
 footer .footer-social {
@@ -1548,88 +1548,6 @@ code {
 
 .flip-horizontal {
   rotate: 180deg;
-}
-
-.toast {
-  --toast-padding: 16px;
-  background: #1e1e1e;
-  position: fixed;
-  bottom: 12px;
-  right: 12px;
-  width: 448px;
-  aspect-ratio: 2/1;
-  padding: 56px var(--toast-padding) var(--toast-padding);
-  z-index: 2;
-  translate: 0 120%;
-}
-@media (prefers-reduced-motion: no-preference) {
-  .toast {
-    transition: translate 0.4s ease;
-  }
-}
-@media screen and (max-width: 768px) {
-  .toast {
-    width: calc(100vw - 48px);
-    right: 50%;
-    height: 200px;
-    padding-block-start: 48px;
-    translate: 50% 120%;
-  }
-}
-.toast-banner {
-  background: #fbfaa2;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 8px 16px;
-}
-.toast-banner h2 {
-  color: #101010;
-  font-size: 16px;
-  font-weight: 700;
-  text-align: center;
-  text-transform: uppercase;
-  margin-block-end: 0;
-}
-@media screen and (max-width: 1512px) {
-  .toast-banner h2 {
-    font-size: 14px;
-  }
-}
-.toast-banner .toast__close-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #101010;
-  width: 16px;
-  height: 16px;
-  font-size: 32px;
-  translate: 0 -2px;
-  transition: color 0.3s ease, transform 0.4s cubic-bezier(0.05, 1.75, 0.75, 1.75);
-}
-.toast-banner .toast__close-btn:hover, .toast-banner .toast__close-btn:focus-visible {
-  scale: 1.2;
-  color: #909090;
-}
-.toast-cta-group {
-  position: absolute;
-  left: calc(var(--toast-padding));
-  bottom: var(--toast-padding);
-}
-.toast-cta-group .cta-1 .cta-text {
-  background-color: #1e1e1e;
-}
-.toast.display-toast {
-  translate: 0 0;
-}
-@media screen and (max-width: 768px) {
-  .toast.display-toast {
-    translate: 50% 0;
-  }
 }
 
 .hero-section, .hero-text-slide {
@@ -3023,6 +2941,88 @@ code {
 }
 .pre-footer .headline-description, .page-not-found .not-found-section .headline-description {
   text-align: center;
+}
+
+.toast {
+  --toast-padding: 16px;
+  background: #1e1e1e;
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  width: 448px;
+  aspect-ratio: 2/1;
+  padding: 56px var(--toast-padding) var(--toast-padding);
+  z-index: 2;
+  translate: 0 120%;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .toast {
+    transition: translate 0.4s ease;
+  }
+}
+@media screen and (max-width: 768px) {
+  .toast {
+    width: calc(100vw - 48px);
+    right: 50%;
+    height: 200px;
+    padding-block-start: 48px;
+    translate: 50% 120%;
+  }
+}
+.toast-banner {
+  background: #fbfaa2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 8px 16px;
+}
+.toast-banner h2 {
+  color: #101010;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  margin-block-end: 0;
+}
+@media screen and (max-width: 1512px) {
+  .toast-banner h2 {
+    font-size: 14px;
+  }
+}
+.toast-banner .toast__close-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #101010;
+  width: 16px;
+  height: 16px;
+  font-size: 32px;
+  translate: 0 -2px;
+  transition: color 0.3s ease, transform 0.4s cubic-bezier(0.05, 1.75, 0.75, 1.75);
+}
+.toast-banner .toast__close-btn:hover, .toast-banner .toast__close-btn:focus-visible {
+  scale: 1.2;
+  color: #909090;
+}
+.toast-cta-group {
+  position: absolute;
+  left: calc(var(--toast-padding));
+  bottom: var(--toast-padding);
+}
+.toast-cta-group .cta-1 .cta-text {
+  background-color: #1e1e1e;
+}
+.toast.display-toast {
+  translate: 0 0;
+}
+@media screen and (max-width: 768px) {
+  .toast.display-toast {
+    translate: 50% 0;
+  }
 }
 
 .page-not-found {
