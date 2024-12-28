@@ -182,16 +182,18 @@ const allGlitchEffects = (() => {
 
       const loaderGlitch = (() => {
         const loaderText = document.querySelector(".loading-screen__text");
-        const originalText = loaderText.getAttribute("data-title");
+        const originalText = loaderText?.getAttribute("data-title");
 
-        gsap.to(loaderText, {
-          scrollTrigger: {
-            trigger: ".loading-screen",
-            start: "top 50%",
-            end: "bottom 50%",
-            onEnter: () => singleGlitch(loaderText, originalText, 1.25),
-          },
-        });
+        if (loaderText) {
+          gsap.to(loaderText, {
+            scrollTrigger: {
+              trigger: ".loading-screen",
+              start: "top 50%",
+              end: "bottom 50%",
+              onEnter: () => singleGlitch(loaderText, originalText, 1.25),
+            },
+          });
+        }
       })();
 
       // Global utility for glitch hover/focus. Add a data-title

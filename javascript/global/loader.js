@@ -1,6 +1,5 @@
 let pageLoaded = false;
 let timerDone = false;
-// document.body.style = "overflow: hidden;"; // Fooks with sticky
 
 const attemptCompleteLoading = () => {
   if (pageLoaded && timerDone) {
@@ -9,8 +8,7 @@ const attemptCompleteLoading = () => {
 
     loadingScreen?.classList.add("load-complete");
     loadingScreen?.setAttribute("aria-hidden", "true");
-    hero.classList.add("load-complete");
-    // document.body.style = "overflow-y: auto;";
+    hero?.classList.add("load-complete");
   }
 };
 
@@ -22,4 +20,4 @@ window.addEventListener("load", () => {
 setTimeout(() => {
   timerDone = true;
   attemptCompleteLoading();
-}, 1200);
+}, 1500);

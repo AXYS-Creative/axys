@@ -498,8 +498,8 @@ nav .nav-footer-links {
   nav .nav-footer-links {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0;
-    translate: 0 0;
+    gap: 6px;
+    translate: 0 8px;
   }
 }
 nav .nav-footer-links li {
