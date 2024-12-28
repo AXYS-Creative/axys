@@ -3043,7 +3043,7 @@ code {
 }
 @media (prefers-reduced-motion: no-preference) {
   .toast {
-    transition: translate 0.4s ease;
+    transition: translate 0.5s ease;
   }
 }
 @media screen and (max-width: 768px) {

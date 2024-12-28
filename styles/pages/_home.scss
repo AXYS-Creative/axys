@@ -1420,7 +1420,7 @@
   translate: 0 120%;
 
   @include mq-motion-allow {
-    transition: translate 0.4s ease;
+    transition: translate 0.5s ease;
   }
 
   @include mq-max("md") {
