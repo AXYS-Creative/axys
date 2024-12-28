@@ -80,11 +80,13 @@ const allGlitchEffects = (() => {
         };
 
         updateText();
-        setInterval(updateText, 2800);
+        setTimeout(() => {
+          setInterval(updateText, 2800);
+        }, 500); // Delay for loader
       }
 
       // Reusable Glitch function + it's accessbile for reduced motion
-      const singleGlitch = (element, originalText) => {
+      const singleGlitch = (element, originalText, duration) => {
         // Skip for a11y - reduced motion
         if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
           element.innerText = originalText;
@@ -107,7 +109,7 @@ const allGlitchEffects = (() => {
             clearInterval(glitchInterval);
           }
 
-          iterations += 1 / 8;
+          iterations += 1 / duration;
         }, glitchAnimationLength);
       };
 
@@ -127,10 +129,10 @@ const allGlitchEffects = (() => {
               toggleActions: "play none play none",
               start: "top bottom",
               end: "bottom top",
-              onEnter: () => singleGlitch(el, originalText),
-              onLeave: () => singleGlitch(el, originalText),
-              onEnterBack: () => singleGlitch(el, originalText),
-              onLeaveBack: () => singleGlitch(el, originalText),
+              onEnter: () => singleGlitch(el, originalText, 8),
+              onLeave: () => singleGlitch(el, originalText, 8),
+              onEnterBack: () => singleGlitch(el, originalText, 8),
+              onLeaveBack: () => singleGlitch(el, originalText, 8),
             },
           });
         });
@@ -168,24 +170,37 @@ const allGlitchEffects = (() => {
                 toggleActions: "play none play none",
                 start: maxLg ? startLg : start,
                 end: maxLg ? endLg : end,
-                onEnter: () => singleGlitch(element, originalText),
-                onLeave: () => singleGlitch(element, originalText),
-                onEnterBack: () => singleGlitch(element, originalText),
-                onLeaveBack: () => singleGlitch(element, originalText),
+                onEnter: () => singleGlitch(element, originalText, 8),
+                onLeave: () => singleGlitch(element, originalText, 8),
+                onEnterBack: () => singleGlitch(element, originalText, 8),
+                onLeaveBack: () => singleGlitch(element, originalText, 8),
               },
             });
           }
         });
       })();
 
-      //
+      const loaderGlitch = (() => {
+        const loaderText = document.querySelector(".loading-screen__text");
+        const originalText = loaderText.getAttribute("data-title");
+
+        gsap.to(loaderText, {
+          scrollTrigger: {
+            trigger: ".loading-screen",
+            start: "top 50%",
+            end: "bottom 50%",
+            onEnter: () => singleGlitch(loaderText, originalText, 1.25),
+          },
+        });
+      })();
+
       // Global utility for glitch hover/focus. Add a data-title
       const glitchLinks = document.querySelectorAll(".glitch-link");
 
       glitchLinks.forEach((el) => {
         const originalLinkText = el.innerText;
 
-        const handleGlitch = () => singleGlitch(el, originalLinkText);
+        const handleGlitch = () => singleGlitch(el, originalLinkText, 8);
         const parentLink = el.closest("a");
         const siblingElement = el.closest("button");
 

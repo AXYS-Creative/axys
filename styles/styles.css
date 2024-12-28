@@ -1,10 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap");
+:root {
+  --font-family: Archivo, sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   color: #f0f0f0;
-  font-family: "Archivo", sans-serif;
+  font-family: var(--font-family);
   font-weight: 300;
 }
 *::-moz-selection {
@@ -27,6 +31,50 @@ html {
 
 body {
   background-color: #101010;
+}
+body .hero-section .section-headline__title span, body .hero-text-slide .section-headline__title span {
+  opacity: 0;
+  translate: 0 120%;
+  filter: blur(3px);
+}
+body .hero-section .section-headline__subtitle, body .hero-text-slide .section-headline__subtitle {
+  opacity: 0;
+  filter: blur(3px);
+}
+body .hero-section .cta-wrapper, body .hero-text-slide .cta-wrapper {
+  opacity: 0;
+  translate: 0 100%;
+}
+body:has(.load-complete) .hero-section .section-headline__title span, body:has(.load-complete) .hero-text-slide .section-headline__title span {
+  opacity: 1;
+  translate: 0 0;
+  filter: blur(0);
+  transition: 0.75s ease;
+}
+body:has(.load-complete) .hero-section .section-headline__title span:nth-of-type(1), body:has(.load-complete) .hero-text-slide .section-headline__title span:nth-of-type(1) {
+  transition-delay: 0.05s;
+}
+body:has(.load-complete) .hero-section .section-headline__title span:nth-of-type(2), body:has(.load-complete) .hero-text-slide .section-headline__title span:nth-of-type(2) {
+  transition-delay: 0.1s;
+}
+body:has(.load-complete) .hero-section .section-headline__title span:nth-of-type(3), body:has(.load-complete) .hero-text-slide .section-headline__title span:nth-of-type(3) {
+  transition-delay: 0.15s;
+}
+body:has(.load-complete) .hero-section .section-headline__title span:nth-of-type(4), body:has(.load-complete) .hero-text-slide .section-headline__title span:nth-of-type(4) {
+  transition-delay: 0.2s;
+}
+body:has(.load-complete) .hero-section .section-headline__title span:nth-of-type(5), body:has(.load-complete) .hero-text-slide .section-headline__title span:nth-of-type(5) {
+  transition-delay: 0.25s;
+}
+body:has(.load-complete) .hero-section .section-headline__subtitle, body:has(.load-complete) .hero-text-slide .section-headline__subtitle {
+  opacity: 1;
+  filter: blur(0);
+  transition: 0.8s ease 0.7s;
+}
+body:has(.load-complete) .hero-section .cta-wrapper, body:has(.load-complete) .hero-text-slide .cta-wrapper {
+  opacity: 1;
+  translate: 0 0;
+  transition: 0.75s ease 0.5s;
 }
 
 main,
@@ -806,6 +854,36 @@ footer .footer-social .social-media-title {
     gap: 4px;
     translate: -8px 0;
   }
+}
+
+.loading-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #101010;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100dvh;
+  z-index: 6;
+}
+.loading-screen__text {
+  width: 302px;
+  overflow: hidden;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 20px;
+}
+@media screen and (max-width: 768px) {
+  .loading-screen__text {
+    width: 245px;
+    font-size: 16px;
+  }
+}
+.loading-screen.load-complete {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
 }
 
 h1,
@@ -1605,22 +1683,22 @@ code {
     padding-inline-start: 0;
   }
 }
-.hero-section .section-headline p, .hero-text-slide .section-headline p {
+.hero-section .section-headline__subtitle, .hero-text-slide .section-headline__subtitle {
   font-size: 14px;
   letter-spacing: 0.25px;
-  line-height: 148%;
+  line-height: 120%;
   display: inline-block;
   color: #f0f0f0;
   translate: 0 -64px;
 }
 @media screen and (max-width: 1200px) {
-  .hero-section .section-headline p, .hero-text-slide .section-headline p {
+  .hero-section .section-headline__subtitle, .hero-text-slide .section-headline__subtitle {
     font-size: 12px;
     translate: 0 -48px;
   }
 }
 @media screen and (max-width: 768px) {
-  .hero-section .section-headline p, .hero-text-slide .section-headline p {
+  .hero-section .section-headline__subtitle, .hero-text-slide .section-headline__subtitle {
     translate: 0 0;
     line-height: 112%;
   }

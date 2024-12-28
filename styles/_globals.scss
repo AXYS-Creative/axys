@@ -5,7 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   color: $white;
-  font-family: "Archivo", sans-serif;
+  font-family: var(--font-family);
   font-weight: 300;
 
   &::selection {
@@ -30,6 +30,49 @@ html {
 
 body {
   background-color: $black;
+
+  .hero-section {
+    .section-headline__title span {
+      opacity: 0;
+      translate: 0 120%;
+      filter: blur($blur);
+    }
+    .section-headline__subtitle {
+      opacity: 0;
+      filter: blur($blur);
+    }
+    .cta-wrapper {
+      opacity: 0;
+      translate: 0 100%;
+    }
+  }
+
+  &:has(.load-complete) {
+    .hero-section {
+      .section-headline__title span {
+        opacity: 1;
+        translate: 0 0;
+        filter: blur(0);
+        transition: 0.75s ease;
+
+        @for $i from 1 through 5 {
+          &:nth-of-type(#{$i}) {
+            transition-delay: 0.05s * $i;
+          }
+        }
+      }
+      .section-headline__subtitle {
+        opacity: 1;
+        filter: blur(0);
+        transition: 0.8s ease 0.7s;
+      }
+      .cta-wrapper {
+        opacity: 1;
+        translate: 0 0;
+        transition: 0.75s ease 0.5s;
+      }
+    }
+  }
 }
 
 main,
@@ -901,6 +944,35 @@ footer {
         translate: -8px 0;
       }
     }
+  }
+}
+
+.loading-screen {
+  @include row-center;
+  background: $black;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100dvh;
+  z-index: $z-index-loader;
+
+  &__text {
+    width: 302px;
+    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 20px;
+
+    @include mq-max("md") {
+      width: 245px;
+      font-size: 16px;
+    }
+  }
+
+  &.load-complete {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
   }
 }
 
