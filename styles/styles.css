@@ -76,6 +76,14 @@ body:has(.load-complete) .hero-section .cta-wrapper, body:has(.load-complete) .h
   translate: 0 0;
   transition: 0.75s ease 0.5s;
 }
+@media (prefers-reduced-motion: no-preference) {
+  body:has(.load-complete) .toast {
+    transition-delay: 2s;
+  }
+}
+body:has(.load-complete) .toast[aria-hidden=true] {
+  transition-delay: 0s;
+}
 
 main,
 footer,
@@ -876,7 +884,7 @@ footer .footer-social .social-media-title {
 }
 @media screen and (max-width: 768px) {
   .loading-screen__text {
-    width: 245px;
+    width: 242px;
     font-size: 16px;
   }
 }

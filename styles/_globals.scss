@@ -72,6 +72,16 @@ body {
         transition: 0.75s ease 0.5s;
       }
     }
+
+    .toast {
+      @include mq-motion-allow {
+        transition-delay: 2s;
+      }
+
+      &[aria-hidden="true"] {
+        transition-delay: 0s;
+      }
+    }
   }
 }
 
@@ -964,7 +974,7 @@ footer {
     font-size: 20px;
 
     @include mq-max("md") {
-      width: 245px;
+      width: 242px;
       font-size: 16px;
     }
   }

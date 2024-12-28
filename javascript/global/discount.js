@@ -12,8 +12,7 @@ const discountCountdownTimer = () => {
  * Using a timer so I don't need to manually update this at midnight on new years eve... Just the stripe links 🥲
  * This also accepts a boolean value if you'd like to change it manually.
  */
-// let discount = discountCountdownTimer();
-let discount = false;
+let discount = discountCountdownTimer();
 
 //
 // Plans Section
