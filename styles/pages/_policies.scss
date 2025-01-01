@@ -13,8 +13,6 @@
   }
 
   &__header {
-    margin-block-end: 16px;
-
     .heading-title {
       display: flex;
       align-items: center;
@@ -35,15 +33,12 @@
 
       .policies-svg {
         svg {
-          width: 64px;
-
-          @include mq-max("lg") {
-            width: 40px;
-          }
+          width: 8ch;
+          height: auto;
 
           @include mq-max("md") {
             translate: 0 -6px;
-            width: 6vw;
+            width: 7vw;
           }
         }
       }
@@ -71,7 +66,7 @@
       div {
         @include row-center(space-between);
         width: 100%;
-        padding-block-end: 40px;
+        padding-block-end: 32px;
 
         @include mq-max("md") {
           flex-direction: column;
@@ -90,7 +85,7 @@
   }
 
   .policies-intro {
-    padding: 30px 0;
+    padding: 32px 0;
 
     @include mq-max("md") {
       font-size: 14px;
@@ -98,7 +93,7 @@
   }
 
   .policies {
-    padding: 20px 0;
+    padding: 24px 0;
 
     .policies-title {
       font-size: 18px;

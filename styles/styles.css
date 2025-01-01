@@ -3345,9 +3345,6 @@ code {
   color: #fbfaa2;
   text-decoration: none;
 }
-.policies-page__header {
-  margin-block-end: 16px;
-}
 .policies-page__header .heading-title {
   display: flex;
   align-items: center;
@@ -3385,17 +3382,13 @@ code {
   }
 }
 .policies-page__header .heading-title .policies-svg svg {
-  width: 64px;
-}
-@media screen and (max-width: 1024px) {
-  .policies-page__header .heading-title .policies-svg svg {
-    width: 40px;
-  }
+  width: 8ch;
+  height: auto;
 }
 @media screen and (max-width: 768px) {
   .policies-page__header .heading-title .policies-svg svg {
     translate: 0 -6px;
-    width: 6vw;
+    width: 7vw;
   }
 }
 .policies-page__header .header-text {
@@ -3426,7 +3419,7 @@ code {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding-block-end: 40px;
+  padding-block-end: 32px;
 }
 @media screen and (max-width: 768px) {
   .policies-page__header .header-text div {
@@ -3442,7 +3435,7 @@ code {
   }
 }
 .policies-page .policies-intro {
-  padding: 30px 0;
+  padding: 32px 0;
 }
 @media screen and (max-width: 768px) {
   .policies-page .policies-intro {
@@ -3450,7 +3443,7 @@ code {
   }
 }
 .policies-page .policies {
-  padding: 20px 0;
+  padding: 24px 0;
 }
 .policies-page .policies .policies-title {
   font-size: 18px;
