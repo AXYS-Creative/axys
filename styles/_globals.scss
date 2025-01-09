@@ -287,25 +287,30 @@ footer,
   }
 }
 
-nav {
-  background: rgba($grey-dark, 0.99);
+.site-nav {
+  background: rgba($grey-dark, 0.95);
+  backdrop-filter: blur(4px);
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  height: 100dvh;
+  top: 50%;
+  left: 50%;
+  width: calc(100vw - var(--content-padding) / 2);
+  height: calc(100dvh - var(--content-padding) / 2);
   min-height: 620px;
+  border-radius: var(--radius);
   overflow: auto;
   z-index: $z-index-nav;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease 0.48s;
+  translate: -50% -50%;
+  transform: perspective(500px) rotateX(-5deg);
+  transform-origin: top;
+  transition: 0.5s ease 0.32s, opacity 0.5s ease 0.48s;
 
   &[aria-hidden="false"] {
     opacity: 1;
     pointer-events: all;
-    transition: opacity 0.3s ease;
+    transition: 0.5s ease;
+    transform: perspective(500px) rotateX(0deg);
 
     .nav-links {
       li {
@@ -328,6 +333,8 @@ nav {
 
   @include mq-max("md") {
     min-height: 520px;
+    width: calc(100vw - var(--content-padding));
+    height: calc(100dvh - var(--content-padding));
   }
 
   .width-constraint {
@@ -347,7 +354,7 @@ nav {
 
   .nav-links {
     top: 50%;
-    translate: 16px -50%;
+    translate: 0 -50%;
 
     @include mq-max("sm") {
       translate: 0 -50%;
@@ -541,7 +548,7 @@ nav {
       @include row-center(space-between);
       align-self: flex-end;
       gap: 56px;
-      translate: -16px 0;
+      translate: -28px 0;
 
       @media all {
         @include mq-max("xxl") {

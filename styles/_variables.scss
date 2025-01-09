@@ -58,4 +58,14 @@ $test-bg: rgba(lightcoral, 0.25);
 
 :root {
   --font-family: #{$primary-font};
+
+  --content-padding: 64px;
+
+  --radius: 8px;
+
+  @media (max-width: 768px) {
+    --content-padding: 24px;
+
+    --radius: 6px;
+  }
 }
