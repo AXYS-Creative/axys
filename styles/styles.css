@@ -402,40 +402,40 @@ footer,
   fill: #e1a7b4;
 }
 .site-nav .nav-links .nav-link:hover.work-link span, .site-nav .nav-links .nav-link:focus-visible.work-link span {
-  color: #fbfaa2;
-}
-.site-nav .nav-links .nav-link:hover.work-link svg, .site-nav .nav-links .nav-link:focus-visible.work-link svg {
-  border-color: #fbfaa2;
-}
-.site-nav .nav-links .nav-link:hover.work-link svg path, .site-nav .nav-links .nav-link:focus-visible.work-link svg path {
-  fill: #fbfaa2;
-}
-.site-nav .nav-links .nav-link:hover.benefits-link span, .site-nav .nav-links .nav-link:focus-visible.benefits-link span {
-  color: #e48c66;
-}
-.site-nav .nav-links .nav-link:hover.benefits-link svg, .site-nav .nav-links .nav-link:focus-visible.benefits-link svg {
-  border-color: #e48c66;
-}
-.site-nav .nav-links .nav-link:hover.benefits-link svg path, .site-nav .nav-links .nav-link:focus-visible.benefits-link svg path {
-  fill: #e48c66;
-}
-.site-nav .nav-links .nav-link:hover.plans-link span, .site-nav .nav-links .nav-link:focus-visible.plans-link span {
-  color: #7ec1d4;
-}
-.site-nav .nav-links .nav-link:hover.plans-link svg, .site-nav .nav-links .nav-link:focus-visible.plans-link svg {
-  border-color: #7ec1d4;
-}
-.site-nav .nav-links .nav-link:hover.plans-link svg path, .site-nav .nav-links .nav-link:focus-visible.plans-link svg path {
-  fill: #7ec1d4;
-}
-.site-nav .nav-links .nav-link:hover.faq-link span, .site-nav .nav-links .nav-link:focus-visible.faq-link span {
   color: #a4d1a2;
 }
-.site-nav .nav-links .nav-link:hover.faq-link svg, .site-nav .nav-links .nav-link:focus-visible.faq-link svg {
+.site-nav .nav-links .nav-link:hover.work-link svg, .site-nav .nav-links .nav-link:focus-visible.work-link svg {
   border-color: #a4d1a2;
 }
-.site-nav .nav-links .nav-link:hover.faq-link svg path, .site-nav .nav-links .nav-link:focus-visible.faq-link svg path {
+.site-nav .nav-links .nav-link:hover.work-link svg path, .site-nav .nav-links .nav-link:focus-visible.work-link svg path {
   fill: #a4d1a2;
+}
+.site-nav .nav-links .nav-link:hover.benefits-link span, .site-nav .nav-links .nav-link:focus-visible.benefits-link span {
+  color: #7ec1d4;
+}
+.site-nav .nav-links .nav-link:hover.benefits-link svg, .site-nav .nav-links .nav-link:focus-visible.benefits-link svg {
+  border-color: #7ec1d4;
+}
+.site-nav .nav-links .nav-link:hover.benefits-link svg path, .site-nav .nav-links .nav-link:focus-visible.benefits-link svg path {
+  fill: #7ec1d4;
+}
+.site-nav .nav-links .nav-link:hover.plans-link span, .site-nav .nav-links .nav-link:focus-visible.plans-link span {
+  color: #e48c66;
+}
+.site-nav .nav-links .nav-link:hover.plans-link svg, .site-nav .nav-links .nav-link:focus-visible.plans-link svg {
+  border-color: #e48c66;
+}
+.site-nav .nav-links .nav-link:hover.plans-link svg path, .site-nav .nav-links .nav-link:focus-visible.plans-link svg path {
+  fill: #e48c66;
+}
+.site-nav .nav-links .nav-link:hover.faq-link span, .site-nav .nav-links .nav-link:focus-visible.faq-link span {
+  color: #fbfaa2;
+}
+.site-nav .nav-links .nav-link:hover.faq-link svg, .site-nav .nav-links .nav-link:focus-visible.faq-link svg {
+  border-color: #fbfaa2;
+}
+.site-nav .nav-links .nav-link:hover.faq-link svg path, .site-nav .nav-links .nav-link:focus-visible.faq-link svg path {
+  fill: #fbfaa2;
 }
 .site-nav .nav-links .nav-link .icon-wrapper {
   display: flex;
@@ -1560,6 +1560,13 @@ code {
   fill: #fbfaa2;
 }
 
+.pink-text {
+  color: #e1a7b4;
+}
+.pink-text path {
+  fill: #e1a7b4;
+}
+
 .lowercase-text {
   text-transform: lowercase;
 }
@@ -1750,7 +1757,7 @@ code {
   }
 }
 .work-section span[data-title] {
-  color: #fbfaa2;
+  color: #a4d1a2;
   display: inline-flex;
   width: 3.2em;
 }
@@ -2000,7 +2007,7 @@ code {
   }
 }
 .benefits-section span[data-title] {
-  color: #e48c66;
+  color: #7ec1d4;
   display: block;
   width: 5em;
 }
@@ -2105,7 +2112,7 @@ code {
   }
 }
 .benefits-section .benefit-list .benefit-block .benefit-heading svg path {
-  fill: #e48c66;
+  fill: #7ec1d4;
 }
 .benefits-section .benefit-list .benefit-block p {
   font-size: 20px;
@@ -2188,7 +2195,7 @@ code {
   }
 }
 .plans-section span[data-title] {
-  color: #7ec1d4;
+  color: #e48c66;
   width: 3.4em;
 }
 @media screen and (max-width: 1512px) {
@@ -2200,8 +2207,9 @@ code {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   align-items: stretch;
-  gap: 32px;
+  gap: 24px;
 }
 @media screen and (max-width: 1512px) {
   .plans-section .plan-options {
@@ -2210,59 +2218,13 @@ code {
 }
 @media screen and (max-width: 1200px) {
   .plans-section .plan-options {
-    flex-wrap: wrap;
-    gap: 24px;
-  }
-}
-@media screen and (max-width: 1024px) {
-  .plans-section .plan-options {
     flex-direction: column;
     align-items: center;
-  }
-}
-.plans-section .plan-options .segment {
-  width: 33%;
-}
-@media screen and (max-width: 1200px) {
-  .plans-section .plan-options .segment {
-    width: unset;
-  }
-}
-@media screen and (max-width: 1024px) {
-  .plans-section .plan-options .segment {
-    width: 80%;
-  }
-}
-@media screen and (max-width: 768px) {
-  .plans-section .plan-options .segment {
-    width: 100%;
-  }
-}
-.plans-section .plan-options .segment.last-segment {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-@media screen and (max-width: 1512px) {
-  .plans-section .plan-options .segment.last-segment {
-    gap: 16px;
-  }
-}
-@media screen and (max-width: 1200px) {
-  .plans-section .plan-options .segment.last-segment {
     gap: 24px;
-    width: 100%;
-    flex-direction: row;
-  }
-}
-@media screen and (max-width: 1024px) {
-  .plans-section .plan-options .segment.last-segment {
-    flex-direction: column;
-    align-items: center;
   }
 }
 .plans-section .plan-options .card {
-  background: rgba(30, 30, 30, 0.95);
+  background: #1e1e1e;
   -webkit-backdrop-filter: blur(4px);
           backdrop-filter: blur(4px);
   padding: 32px 24px;
@@ -2274,13 +2236,15 @@ code {
     scale: 0.96;
     transition: 0.6s ease;
   }
-  .plans-section .plan-options .card:hover, .plans-section .plan-options .card:focus-within {
+}
+@media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
+  .plans-section .plan-options .card:hover, .plans-section .plan-options .card:focus-visible {
     scale: 1.03 !important;
     transition: 0.3s ease !important;
   }
 }
-@media screen and (prefers-reduced-motion: no-preference) and (max-width: 1512px) {
-  .plans-section .plan-options .card:hover, .plans-section .plan-options .card:focus-within {
+@media screen and (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) and (max-width: 1512px) {
+  .plans-section .plan-options .card:hover, .plans-section .plan-options .card:focus-visible {
     scale: 1.02 !important;
   }
 }
@@ -2290,10 +2254,9 @@ code {
     scale: 1;
   }
 }
-@media screen and (max-width: 1200px) {
-  .plans-section .plan-options .plan-card {
-    flex: 1;
-  }
+.plans-section .plan-options .plan-card {
+  flex: 1;
+  width: 100%;
 }
 .plans-section .plan-options .plan-card .discount-banner {
   display: none;
@@ -2303,6 +2266,7 @@ code {
   text-transform: uppercase;
 }
 .plans-section .plan-options .plan-card .card-title {
+  color: var(--card-color);
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -2323,16 +2287,17 @@ code {
 @media screen and (max-width: 480px) {
   .plans-section .plan-options .plan-card .card-title {
     font-size: 32px;
+    margin-block-end: 24px;
   }
 }
 .plans-section .plan-options .plan-card .card-title .most-popular {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   color: #909090;
 }
 @media screen and (max-width: 1512px) {
   .plans-section .plan-options .plan-card .card-title .most-popular {
-    font-size: 10px;
+    font-size: 12px;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -2342,7 +2307,7 @@ code {
 }
 @media screen and (max-width: 480px) {
   .plans-section .plan-options .plan-card .card-title .most-popular {
-    font-size: 10px;
+    font-size: 12px;
   }
 }
 .plans-section .plan-options .plan-card .card-price {
@@ -2378,6 +2343,7 @@ code {
   }
 }
 .plans-section .plan-options .plan-card .divider {
+  background: var(--card-color);
   height: 4px;
   border: none;
   margin: 64px 0;
@@ -2391,12 +2357,6 @@ code {
   .plans-section .plan-options .plan-card .divider {
     margin: 36px 0;
   }
-}
-.plans-section .plan-options .plan-card .divider-coral {
-  background: #e48c66;
-}
-.plans-section .plan-options .plan-card .divider-green {
-  background: #a4d1a2;
 }
 .plans-section .plan-options .plan-card .benefits-title {
   font-size: 24px;
@@ -2442,6 +2402,15 @@ code {
 .plans-section .plan-options .plan-card .card-cta--discounted {
   display: none;
 }
+.plans-section .plan-options .plan-card--1 {
+  --card-color: #e1a7b4;
+}
+.plans-section .plan-options .plan-card--2 {
+  --card-color: #a4d1a2;
+}
+.plans-section .plan-options .plan-card--3 {
+  --card-color: #e48c66;
+}
 .plans-section .plan-options .plan-card--discounted {
   position: relative;
 }
@@ -2453,6 +2422,8 @@ code {
   position: absolute;
   top: 0;
   left: 0;
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2507,23 +2478,9 @@ code {
   justify-content: center;
   align-items: flex-start;
   justify-content: space-between;
-  height: 50%;
-}
-@media screen and (max-width: 1200px) {
-  .plans-section .plan-options .half-card {
-    width: 50%;
-    height: 124%;
-  }
-}
-@media screen and (max-width: 1024px) {
-  .plans-section .plan-options .half-card {
-    width: 80%;
-  }
-}
-@media screen and (max-width: 768px) {
-  .plans-section .plan-options .half-card {
-    width: 100%;
-  }
+  flex: 1;
+  width: 100%;
+  min-height: 280px;
 }
 .plans-section .plan-options .half-card h4 {
   font-size: 24px;
@@ -2735,14 +2692,27 @@ code {
 .plans-section .plan-options .half-card .mail-form .error-message .error-icon path {
   fill: #fbfaa2;
 }
+.plans-section .plan-options .footer-cards {
+  display: flex;
+  align-items: stretch;
+  gap: 32px;
+}
 @media screen and (max-width: 1512px) {
-  .plans-section .plan-options .half-card:last-of-type {
-    height: 64%;
+  .plans-section .plan-options .footer-cards {
+    gap: 16px;
   }
 }
 @media screen and (max-width: 1200px) {
-  .plans-section .plan-options .half-card:last-of-type {
-    height: 124%;
+  .plans-section .plan-options .footer-cards {
+    gap: 24px;
+    width: 100%;
+    flex-direction: row;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .plans-section .plan-options .footer-cards {
+    flex-direction: column;
+    align-items: center;
   }
 }
 .plans-section .cta-wrapper {
@@ -2780,7 +2750,7 @@ code {
   align-items: center;
 }
 .faq-section span[data-title] {
-  color: #a4d1a2;
+  color: #fbfaa2;
   width: 2.8em;
 }
 .faq-section .faq-list {
@@ -2810,7 +2780,7 @@ code {
   transition: all 0.3s ease, margin 0.4s ease;
 }
 .faq-section .faq-list .faq-item:hover, .faq-section .faq-list .faq-item:focus-within {
-  border-color: #a4d1a2;
+  border-color: #fbfaa2;
 }
 @media screen and (max-width: 1512px) {
   .faq-section .faq-list .faq-item {
@@ -2889,7 +2859,7 @@ code {
   }
 }
 .faq-section .faq-list .question .angle-arrow-wrapper .angle-arrow path {
-  fill: #a4d1a2;
+  fill: #fbfaa2;
 }
 @media screen and (max-width: 480px) {
   .faq-section .faq-list .question .angle-arrow-wrapper .angle-arrow {
@@ -3078,6 +3048,7 @@ code {
   right: 12px;
   width: 448px;
   aspect-ratio: 2/1;
+  border-radius: var(--radius);
   padding: 56px var(--toast-padding) var(--toast-padding);
   z-index: 2;
   translate: 0 120%;
@@ -3101,6 +3072,8 @@ code {
   position: absolute;
   top: 0;
   left: 0;
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
   display: flex;
   justify-content: space-between;
   align-items: center;

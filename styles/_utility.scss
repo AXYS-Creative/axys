@@ -71,6 +71,14 @@
   }
 }
 
+.pink-text {
+  color: $pink;
+
+  path {
+    fill: $pink;
+  }
+}
+
 .lowercase-text {
   text-transform: lowercase;
 }

@@ -80,27 +80,53 @@
           },
           {
             "@type": "Service",
-            "name": "Standard Plan",
-            "description": "Unlimited web design and development services. One request at a time. Average 1-2 day delivery. Seamless management. Pause or cancel anytime.",
+            "name": "Designer Plan",
+            "description": "Unlimited web design services. One request at a time. Average 1-2 day delivery. Seamless management. Pause or cancel anytime.",
             "provider": {
               "@type": "Organization",
               "name": "AXYS Creative"
             },
-            "serviceType": "Web Design and Development",
+            "serviceType": "Web Design",
             "areaServed": "Worldwide",
             "offers": {
               "@type": "Offer",
-              "price": "4995",
+              "price": "1995",
               "priceCurrency": "USD",
               "availability": "https://schema.org/InStock",
-              "priceValidUntil": "2024-12-31",
               "url": "https://axyscreative.com/#plans",
               "eligibleQuantity": {
                 "@type": "QuantitativeValue",
                 "unitText": "month"
               },
-              "discount": "50%",
-              "discountedPrice": "2495"
+              "discount": "15%",
+              "discountedPrice": "1595"
+              "priceValidUntil": "2024-12-31",
+            }
+          }
+          {
+            "@type": "Service",
+            "name": "Developer Plan",
+            "description": "Unlimited web development services. One requests at a time. Average 1-2 day delivery. Seamless management. Pause or cancel anytime.
+            ",
+            "provider": {
+              "@type": "Organization",
+              "name": "AXYS Creative"
+            },
+            "serviceType": "Web Development",
+            "areaServed": "Worldwide",
+            "offers": {
+              "@type": "Offer",
+              "price": "2995",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock",
+              "url": "https://axyscreative.com/#plans",
+              "eligibleQuantity": {
+                "@type": "QuantitativeValue",
+                "unitText": "month"
+              },
+              "discount": "15%",
+              "discountedPrice": "2545"
+              "priceValidUntil": "2024-12-31",
             }
           }
           {
@@ -116,17 +142,17 @@
             "areaServed": "Worldwide",
             "offers": {
               "@type": "Offer",
-              "price": "6995",
+              "price": "3995",
               "priceCurrency": "USD",
               "availability": "https://schema.org/InStock",
-              "priceValidUntil": "2024-12-31",
               "url": "https://axyscreative.com/#plans",
               "eligibleQuantity": {
                 "@type": "QuantitativeValue",
                 "unitText": "month"
               },
-              "discount": "50%",
-              "discountedPrice": "3495"
+              "discount": "15%",
+              "discountedPrice": "3395"
+              "priceValidUntil": "2024-12-31",
             }
           }
         ]
@@ -388,7 +414,7 @@
 
     <div class="toast" role="alert" aria-live="polite">
       <div class="toast-banner">
-        <h2>50% Off — End of year sale</h2>
+        <h2>15% Off — End of year sale</h2>
         <button
           class="toast__close-btn magnet"
           aria-label="close discount notification"
@@ -398,7 +424,7 @@
       </div>
 
       <p class="toast-message">
-        Lock in this exclusive discount today and save 50% on your rate—even
+        Lock in this exclusive discount today and save 15% on your rate—even
         after the sale ends!
         <a
           href="/policies.html#billing-and-payments"
@@ -479,28 +505,28 @@
             <p class="marquee-text">
               <span>•</span>
               Where
-              <span class="blue-text">design</span>
+              <span class="pink-text">design</span>
               meets
-              <span class="green-text">development</span>
+              <span class="yellow-text">development</span>
               <span>•</span>
               Where
-              <span class="blue-text">design</span>
+              <span class="pink-text">design</span>
               meets
-              <span class="green-text">development</span>
+              <span class="yellow-text">development</span>
             </p>
           </div>
           <div class="marquee-inner" aria-hidden="true">
             <p class="marquee-text">
               <span>•</span>
               Where
-              <span class="blue-text">design</span>
+              <span class="pink-text">design</span>
               meets
-              <span class="green-text">development</span>
+              <span class="yellow-text">development</span>
               <span>•</span>
               Where
-              <span class="blue-text">design</span>
+              <span class="pink-text">design</span>
               meets
-              <span class="green-text">development</span>
+              <span class="yellow-text">development</span>
             </p>
           </div>
         </div>
@@ -830,7 +856,7 @@
               <br data-discount aria-hidden="true" />
               <br data-discount aria-hidden="true" />
               <span class="discount-benefit-text">
-                Take advantage of our end-of-year sale and lock in 50% off your
+                Take advantage of our end-of-year sale and lock in 15% off your
                 rate, even after the sale ends! Offer ends
                 <time datetime="2024-12-31">December 31st, 2024</time>.
               </span>
@@ -958,23 +984,26 @@
         </div>
 
         <div class="plan-options">
-          <div class="segment card plan-card gsap-animate">
+          <div class="card plan-card plan-card--1 gsap-animate">
             <div class="discount-banner">
-              <p>50% Off — End of year sale</p>
+              <p>15% Off — End of year sale</p>
             </div>
 
-            <h3 aria-label="Standard Plan, most popular.">
-              <span class="card-title coral-text bold-text" aria-hidden="true">
-                Standard <span class="most-popular">[ Most popular ]</span>
+            <h3 aria-label="Designer plan">
+              <span class="card-title bold-text" aria-hidden="true">
+                Designer
+                <span class="most-popular visually-hidden">
+                  [ Fill text ]
+                </span>
               </span>
             </h3>
 
             <!-- Discounted Price -->
             <h4
               class="card-price card-price--discounted"
-              aria-label="$2,495 per month. Pause or cancel anytime."
+              aria-label="$1,595 per month. Pause or cancel anytime."
             >
-              <span aria-hidden="true">$2,495/m</span>
+              <span aria-hidden="true">$1,595/m</span>
               <span class="pause-or-cancel" aria-hidden="true">
                 Pause or cancel anytime
               </span>
@@ -983,9 +1012,9 @@
             <!-- Default Price -->
             <h4
               class="card-price card-price--default"
-              aria-label="$4,995 per month. Pause or cancel anytime."
+              aria-label="$1,995 per month. Pause or cancel anytime."
             >
-              <span aria-hidden="true">$4,995/m</span>
+              <span aria-hidden="true">$1,995/m</span>
               <span class="pause-or-cancel" aria-hidden="true">
                 Pause or cancel anytime
               </span>
@@ -994,21 +1023,23 @@
             <hr class="divider divider-coral" aria-hidden="true" />
 
             <h5 class="benefits-title bold-text">Member benefits</h5>
+
             <ul class="benefits-list classic-list">
+              <li class="bold-text">Unlimited Web Design</li>
               <li>One request at a time</li>
               <li aria-label="Average 1 to 2 day delivery">
                 <span aria-hidden="true">Average 1-2 day delivery</span>
               </li>
-              <li>Unlimited services</li>
               <li>Unlimited revisions</li>
               <li>Unlimited team members</li>
               <li>Seamless management</li>
               <li>Pause or cancel anytime</li>
             </ul>
+
             <div class="cta-wrapper">
-              <!-- default cta -->
+              <!-- default cta - plan 1 -->
               <a
-                href="https://buy.stripe.com/6oEcNCe6B5zq6o8dQQ"
+                href="https://buy.stripe.com/bIYcNC5A5d1SaEoeV2"
                 target="_blank"
                 class="cta-1 tab-element-page card-cta--default"
               >
@@ -1064,26 +1095,24 @@
             </div>
           </div>
 
-          <div class="segment card plan-card gsap-animate">
+          <div class="card plan-card plan-card--2 gsap-animate">
             <div class="discount-banner">
-              <p>50% Off — End of year sale</p>
+              <p>15% Off — End of year sale</p>
             </div>
 
             <h3 aria-label="Premium Plan">
-              <span class="card-title green-text bold-text" aria-hidden="true">
-                Premium
-                <span class="most-popular visually-hidden">
-                  [ Fill text goes here ]
-                </span>
+              <span class="card-title bold-text" aria-hidden="true">
+                Developer
+                <span class="most-popular visually-hidden"> [ Fill ] </span>
               </span>
             </h3>
 
             <!-- discounted price -->
             <h4
               class="card-price card-price--discounted"
-              aria-label="$3,495 per month. Pause or cancel anytime."
+              aria-label="$2,545 per month. Pause or cancel anytime."
             >
-              <span aria-hidden="true">$3,495/m</span>
+              <span aria-hidden="true">$2,545/m</span>
               <span class="pause-or-cancel" aria-hidden="true">
                 Pause or cancel anytime
               </span>
@@ -1092,9 +1121,9 @@
             <!-- default price -->
             <h4
               class="card-price card-price--default"
-              aria-label="$6,995 per month. Pause or cancel anytime."
+              aria-label="$2,995 per month. Pause or cancel anytime."
             >
-              <span aria-hidden="true"> $6,995/m </span>
+              <span aria-hidden="true"> $2,995/m </span>
               <span class="pause-or-cancel" aria-hidden="true">
                 Pause or cancel anytime
               </span>
@@ -1104,20 +1133,20 @@
 
             <h5 class="benefits-title bold-text">Member benefits</h5>
             <ul class="benefits-list classic-list">
-              <li class="bold-text">Two requests at a time</li>
+              <li class="bold-text">Unlimited Web Development</li>
+              <li>One requests at a time</li>
               <li aria-label="Average 1 to 2 day delivery">
                 <span aria-hidden="true">Average 1-2 day delivery</span>
               </li>
-              <li>Unlimited services</li>
               <li>Unlimited revisions</li>
               <li>Unlimited team members</li>
               <li>Seamless management</li>
               <li>Pause or cancel anytime</li>
             </ul>
             <div class="cta-wrapper">
-              <!-- default cta -->
+              <!-- default cta - plan 2 -->
               <a
-                href="https://buy.stripe.com/cN26pe1jPe5WfYIdQR"
+                href="https://buy.stripe.com/8wM7ti2nTd1S6o85kn"
                 target="_blank"
                 class="cta-1 tab-element-page card-cta--default"
               >
@@ -1174,14 +1203,122 @@
             </div>
           </div>
 
-          <div class="segment last-segment">
+          <div class="card plan-card plan-card--3 gsap-animate">
+            <div class="discount-banner">
+              <p>15% Off — End of year sale</p>
+            </div>
+
+            <h3 aria-label="Premium Plan">
+              <span class="card-title bold-text" aria-hidden="true">
+                Premium
+                <span class="most-popular">[ Best Deal ]</span>
+              </span>
+            </h3>
+
+            <!-- discounted price -->
+            <h4
+              class="card-price card-price--discounted"
+              aria-label="$3,395 per month. Pause or cancel anytime."
+            >
+              <span aria-hidden="true">$3,395/m</span>
+              <span class="pause-or-cancel" aria-hidden="true">
+                Pause or cancel anytime
+              </span>
+            </h4>
+
+            <!-- default price -->
+            <h4
+              class="card-price card-price--default"
+              aria-label="$3,995 per month. Pause or cancel anytime."
+            >
+              <span aria-hidden="true">$3,995/m</span>
+              <span class="pause-or-cancel" aria-hidden="true">
+                Pause or cancel anytime
+              </span>
+            </h4>
+
+            <hr class="divider divider-green" aria-hidden="true" />
+
+            <h5 class="benefits-title bold-text">Member benefits</h5>
+            <ul class="benefits-list classic-list">
+              <li class="bold-text">Unlimited Design + Development</li>
+              <li class="bold-text">Two requests at a time</li>
+              <li aria-label="Average 1 to 2 day delivery">
+                <span aria-hidden="true">Average 1-2 day delivery</span>
+              </li>
+              <li>Unlimited revisions</li>
+              <li>Unlimited team members</li>
+              <li>Seamless management</li>
+              <li>Pause or cancel anytime</li>
+            </ul>
+            <div class="cta-wrapper">
+              <!-- default cta - plan 3 -->
+              <a
+                href="https://buy.stripe.com/7sIaFue6B9PG8wg6oq"
+                target="_blank"
+                class="cta-1 tab-element-page card-cta--default"
+              >
+                <div class="ring">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="16"
+                    width="14"
+                    viewBox="0 0 448 512"
+                  >
+                    <path
+                      opacity="1"
+                      fill="#1E3050"
+                      d="M435.3 267.3L446.6 256l-11.3-11.3-168-168L256 65.4 233.4 88l11.3 11.3L385.4 240 16 240 0 240l0 32 16 0 369.4 0L244.7 412.7 233.4 424 256 446.6l11.3-11.3 168-168z"
+                    />
+                  </svg>
+                </div>
+                <span class="cta-text">Get started</span>
+              </a>
+
+              <!-- discounted cta -->
+              <a
+                href="https://buy.stripe.com/eVaeVK1jPge4eUEdQW"
+                target="_blank"
+                class="cta-1 tab-element-page card-cta--discounted"
+              >
+                <div class="ring">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="16"
+                    width="14"
+                    viewBox="0 0 448 512"
+                  >
+                    <path
+                      opacity="1"
+                      fill="#1E3050"
+                      d="M435.3 267.3L446.6 256l-11.3-11.3-168-168L256 65.4 233.4 88l11.3 11.3L385.4 240 16 240 0 240l0 32 16 0 369.4 0L244.7 412.7 233.4 424 256 446.6l11.3-11.3 168-168z"
+                    />
+                  </svg>
+                </div>
+                <span class="cta-text">Get started</span>
+              </a>
+
+              <a
+                href="https://calendly.com/axyscreativeagency/15-min-intro"
+                target="_blank"
+                class="cta-2 tab-element-page"
+              >
+                <div class="dot-wrapper">
+                  <span class="dot"></span>
+                </div>
+                <span class="cta-text">Book call</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-cards">
             <div class="card half-card gsap-animate">
               <div class="card-header-wrapper">
                 <h4>Have questions?</h4>
                 <p class="half-card-description">
-                  We’re happy to answer all your questions. Feel free to visit
-                  the FAQs below for answers to common questions, or book a
-                  15-minute Zoom call for a virtual tour.
+                  We’re happy to go over these with you! Feel free to book a
+                  call with us or visit the FAQs below for answers to common
+                  questions.
                 </p>
               </div>
               <div class="cta-wrapper">

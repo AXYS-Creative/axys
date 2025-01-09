@@ -552,8 +552,9 @@
 
   .plan-options {
     @include row-center(space-between);
+    flex-wrap: wrap;
     align-items: stretch;
-    gap: 32px;
+    gap: 24px;
 
     @media all {
       @include mq-max("xxl") {
@@ -561,60 +562,14 @@
       }
 
       @include mq-max("xl") {
-        flex-wrap: wrap;
-        gap: 24px;
-      }
-
-      @include mq-max("lg") {
         flex-direction: column;
         align-items: center;
-      }
-    }
-
-    .segment {
-      width: 33%;
-
-      @media all {
-        @include mq-max("xl") {
-          width: unset;
-        }
-
-        @include mq-max("lg") {
-          width: 80%;
-        }
-
-        @include mq-max("md") {
-          width: 100%;
-        }
-      }
-
-      &.last-segment {
-        display: flex;
-        flex-direction: column;
-        gap: 32px;
-
-        @media all {
-          @include mq-max("xxl") {
-            gap: 16px;
-          }
-
-          @include mq-max("xl") {
-            gap: 24px;
-            width: 100%;
-            flex-direction: row;
-          }
-
-          @include mq-max("lg") {
-            flex-direction: column;
-            align-items: center;
-          }
-        }
+        gap: 24px;
       }
     }
 
     .card {
-      // background: $grey-dark;
-      background: rgba($grey-dark, 0.95);
+      background: $grey-dark;
       backdrop-filter: blur(4px);
       padding: 32px 24px;
       border-radius: var(--radius);
@@ -624,8 +579,7 @@
         scale: 0.96;
         transition: 0.6s ease;
 
-        &:hover,
-        &:focus-within {
+        @include desktop-hover {
           scale: 1.03 !important;
           transition: 0.3s ease !important;
 
@@ -642,9 +596,8 @@
     }
 
     .plan-card {
-      @include mq-max("xl") {
-        flex: 1;
-      }
+      flex: 1;
+      width: 100%;
 
       .discount-banner {
         display: none;
@@ -656,6 +609,7 @@
       }
 
       .card-title {
+        color: var(--card-color);
         display: flex;
         align-items: center;
         flex-wrap: wrap;
@@ -674,16 +628,17 @@
 
           @include mq-max("sm") {
             font-size: 32px;
+            margin-block-end: 24px;
           }
         }
 
         .most-popular {
-          font-size: 12px;
+          font-size: 14px;
           font-weight: 700;
           color: $grey-light;
 
           @include mq-max("xxl") {
-            font-size: 10px;
+            font-size: 12px;
           }
 
           @include mq-max("xl") {
@@ -691,7 +646,7 @@
           }
 
           @include mq-max("sm") {
-            font-size: 10px;
+            font-size: 12px;
           }
         }
       }
@@ -730,6 +685,7 @@
       }
 
       .divider {
+        background: var(--card-color);
         height: 4px;
         border: none;
         margin: 64px 0;
@@ -740,13 +696,6 @@
 
         @include mq-max("sm") {
           margin: 36px 0;
-        }
-
-        &-coral {
-          background: $coral;
-        }
-        &-green {
-          background: $green;
         }
       }
 
@@ -792,6 +741,16 @@
 
       .card-cta--discounted {
         display: none;
+      }
+
+      &--1 {
+        --card-color: #{$pink};
+      }
+      &--2 {
+        --card-color: #{$green};
+      }
+      &--3 {
+        --card-color: #{$coral};
       }
 
       &--discounted {
@@ -847,22 +806,9 @@
     .half-card {
       @include column-start;
       justify-content: space-between;
-      height: 50%;
-
-      @media all {
-        @include mq-max("xl") {
-          width: 50%;
-          height: 124%;
-        }
-
-        @include mq-max("lg") {
-          width: 80%;
-        }
-
-        @include mq-max("md") {
-          width: 100%;
-        }
-      }
+      flex: 1;
+      width: 100%;
+      min-height: 280px;
 
       h4 {
         font-size: 24px;
@@ -1079,13 +1025,27 @@
           }
         }
       }
+    }
 
-      &:last-of-type {
+    .footer-cards {
+      display: flex;
+      align-items: stretch;
+      gap: 32px;
+
+      @media all {
         @include mq-max("xxl") {
-          height: 64%;
+          gap: 16px;
         }
+
         @include mq-max("xl") {
-          height: 124%;
+          gap: 24px;
+          width: 100%;
+          flex-direction: row;
+        }
+
+        @include mq-max("lg") {
+          flex-direction: column;
+          align-items: center;
         }
       }
     }
@@ -1425,6 +1385,7 @@
   right: 12px;
   width: 448px;
   aspect-ratio: 2 / 1;
+  border-radius: var(--radius);
   padding: 56px var(--toast-padding) var(--toast-padding);
   z-index: $z-index-toast;
   translate: 0 120%;
