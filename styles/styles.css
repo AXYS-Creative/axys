@@ -279,7 +279,7 @@ footer,
   translate: -50% -50%;
   transform: perspective(500px) rotateX(-5deg);
   transform-origin: top;
-  transition: 0.5s ease 0.32s, opacity 0.5s ease 0.48s;
+  transition: 0.5s ease 0.32s, opacity 0.5s ease 0.48s, height 0s;
 }
 .site-nav[aria-hidden=false] {
   opacity: 1;
@@ -1784,7 +1784,7 @@ code {
 .work-section .work-showcase .showcase-link:hover .showcase-item::before, .work-section .work-showcase .showcase-link:hover .showcase-item::after, .work-section .work-showcase .showcase-link:focus-visible .showcase-item::before, .work-section .work-showcase .showcase-link:focus-visible .showcase-item::after {
   opacity: 1;
 }
-.work-section .work-showcase .showcase-link:hover .showcase-item::after, .work-section .work-showcase .showcase-link:focus-visible .showcase-item::after {
+.work-section .work-showcase .showcase-link:hover .showcase-item::before, .work-section .work-showcase .showcase-link:focus-visible .showcase-item::before {
   translate: 0 0;
   filter: blur(0);
   transition: 0.4s ease;
@@ -1811,15 +1811,16 @@ code {
   top: 0;
   left: 0;
   width: 100%;
-  aspect-ratio: 3/2;
+  aspect-ratio: 3/2.05;
   opacity: 0;
   transition: 0.3s ease;
 }
-.work-section .work-showcase .showcase-link .showcase-item::before {
+.work-section .work-showcase .showcase-link .showcase-item::after {
   content: "";
   background: rgba(16, 16, 16, 0.75);
+  border-radius: var(--radius);
 }
-.work-section .work-showcase .showcase-link .showcase-item::after {
+.work-section .work-showcase .showcase-link .showcase-item::before {
   content: "Visit Site";
   color: #f0f0f0;
   font-size: 24px;
@@ -1827,25 +1828,46 @@ code {
   text-transform: uppercase;
   translate: 0 24px;
   filter: blur(4px);
+  z-index: 1;
 }
 @media screen and (max-width: 1200px) {
-  .work-section .work-showcase .showcase-link .showcase-item::after {
+  .work-section .work-showcase .showcase-link .showcase-item::before {
     font-size: 16px;
   }
 }
 @media screen and (max-width: 768px) {
-  .work-section .work-showcase .showcase-link .showcase-item::after {
+  .work-section .work-showcase .showcase-link .showcase-item::before {
     font-size: 24px;
   }
 }
 @media screen and (max-width: 480px) {
-  .work-section .work-showcase .showcase-link .showcase-item::after {
+  .work-section .work-showcase .showcase-link .showcase-item::before {
     font-size: 16px;
   }
 }
+.work-section .work-showcase .showcase-link .showcase-item .showcase-img {
+  transform: perspective(500px) rotateX(-12deg);
+  transform-origin: top;
+  transition: 0.8s ease 1s;
+  opacity: 0;
+  border-radius: var(--radius);
+}
+.work-section .work-showcase .showcase-link .showcase-item .showcase-img.animate {
+  transform: perspective(500px) rotateX(0deg);
+  opacity: 1;
+  transition: 0.8s ease;
+}
 .work-section .work-showcase .showcase-link .showcase-item .showcase-caption {
+  opacity: 0;
+  filter: blur(8px);
+  transition: 0.8s ease 1s;
   margin-block-start: 8px;
   font-size: 18px;
+}
+.work-section .work-showcase .showcase-link .showcase-item .showcase-caption.animate {
+  opacity: 1;
+  filter: blur(0px);
+  transition: 0.8s ease;
 }
 @media screen and (max-width: 1512px) {
   .work-section .work-showcase .showcase-link .showcase-item .showcase-caption {
@@ -2240,8 +2262,11 @@ code {
   }
 }
 .plans-section .plan-options .card {
-  background: #1e1e1e;
+  background: rgba(30, 30, 30, 0.95);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
   padding: 32px 24px;
+  border-radius: var(--radius);
 }
 @media (prefers-reduced-motion: no-preference) {
   .plans-section .plan-options .card {

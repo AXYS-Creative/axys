@@ -74,10 +74,6 @@ $min-breakpoints: (
 }
 
 //
-// Site Scaffolding
-//
-
-//
 // Heading Styles
 //
 
@@ -189,5 +185,38 @@ $min-breakpoints: (
 
   @include mq-max("xxl") {
     font-size: 14px;
+  }
+}
+
+//
+// Animations
+//
+
+// requires 'gsap-animate' class
+@mixin swing-in($fade: false) {
+  transform: perspective(500px) rotateX(-12deg);
+  transform-origin: top;
+  transition: 0.8s ease 1s;
+
+  @if $fade {
+    opacity: 0;
+  }
+
+  &.animate {
+    transform: perspective(500px) rotateX(0deg);
+    opacity: 1;
+    transition: 0.8s ease;
+  }
+}
+
+@mixin blur-in {
+  opacity: 0;
+  filter: blur(8px);
+  transition: 0.8s ease 1s;
+
+  &.animate {
+    opacity: 1;
+    filter: blur(0px);
+    transition: 0.8s ease;
   }
 }
