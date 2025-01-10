@@ -826,7 +826,7 @@ footer .copyright {
 @media screen and (max-width: 768px) {
   footer .copyright {
     font-size: 10px;
-    translate: calc(-49% - 2px) 0;
+    translate: calc(-49% - 1px) 0;
   }
 }
 footer .footer-social {
