@@ -2074,8 +2074,6 @@ code {
 .benefits-section .benefit-list .benefit-block {
   width: 100%;
   max-width: 672px;
-  opacity: 0.1;
-  filter: blur(3px);
   transition: 0.6s ease;
 }
 .benefits-section .benefit-list .benefit-block .benefit-heading {
@@ -2154,8 +2152,8 @@ code {
   display: none;
 }
 .benefits-section .benefit-list .benefit-block.animate {
-  opacity: 1;
-  filter: blur(0);
+  opacity: 1 !important;
+  filter: blur(0) !important;
 }
 .benefits-section .benefit-list .benefit-block.discount-styles {
   --heading-color: #fbfaa2;
@@ -2173,6 +2171,10 @@ code {
 }
 .benefits-section .benefit-list .benefit-block.discount-styles time {
   color: var(--heading-color);
+}
+.benefits-section .benefit-list.animate .benefit-block {
+  opacity: 0.1;
+  filter: blur(3px);
 }
 @media screen and (min-width: 769px) {
   .benefits-section > .cta-wrapper.lg-screen-and-below {
