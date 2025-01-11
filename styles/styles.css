@@ -1476,6 +1476,14 @@ code {
     height: 0;
   }
 }
+@keyframes glow {
+  0%, 40%, 70%, 100% {
+    filter: drop-shadow(0px 0px 4px rgba(255, 255, 255, 0));
+  }
+  50% {
+    filter: drop-shadow(0px 0px 4px rgba(255, 255, 255, 0.75));
+  }
+}
 @keyframes vanish-cursor {
   0%, 100% {
     width: 48px;
@@ -2074,6 +2082,36 @@ code {
   width: 100%;
   max-width: 672px;
   transition: 0.6s ease;
+}
+.benefits-section .benefit-list .benefit-block:nth-of-type(1) svg {
+  animation: glow 5s ease infinite 0.4s alternate-reverse;
+}
+.benefits-section .benefit-list .benefit-block:nth-of-type(2) svg {
+  animation: glow 5s ease infinite 0.8s alternate-reverse;
+}
+.benefits-section .benefit-list .benefit-block:nth-of-type(3) svg {
+  animation: glow 5s ease infinite 1.2s alternate-reverse;
+}
+.benefits-section .benefit-list .benefit-block:nth-of-type(4) svg {
+  animation: glow 5s ease infinite 1.6s alternate-reverse;
+}
+.benefits-section .benefit-list .benefit-block:nth-of-type(5) svg {
+  animation: glow 5s ease infinite 2s alternate-reverse;
+}
+.benefits-section .benefit-list .benefit-block:nth-of-type(6) svg {
+  animation: glow 5s ease infinite 2.4s alternate-reverse;
+}
+.benefits-section .benefit-list .benefit-block:nth-of-type(7) svg {
+  animation: glow 5s ease infinite 2.8s alternate-reverse;
+}
+.benefits-section .benefit-list .benefit-block:nth-of-type(8) svg {
+  animation: glow 5s ease infinite 3.2s alternate-reverse;
+}
+.benefits-section .benefit-list .benefit-block:nth-of-type(9) svg {
+  animation: glow 5s ease infinite 3.6s alternate-reverse;
+}
+.benefits-section .benefit-list .benefit-block:nth-of-type(10) svg {
+  animation: glow 5s ease infinite 4s alternate-reverse;
 }
 .benefits-section .benefit-list .benefit-block .benefit-heading {
   font-size: 48px;

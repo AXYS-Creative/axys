@@ -407,9 +407,15 @@
     .benefit-block {
       width: 100%;
       max-width: 672px;
-      // opacity: 0.1;
-      // filter: blur($blur);
       transition: 0.6s ease;
+
+      @for $i from 1 through 10 {
+        &:nth-of-type(#{$i}) {
+          svg {
+            animation: glow 5s ease infinite #{$i * 0.4s} alternate-reverse;
+          }
+        }
+      }
 
       .benefit-heading {
         font-size: 48px;
@@ -437,6 +443,8 @@
 
         svg {
           width: 48px;
+          // filter: drop-shadow(0px 0px 4px rgba(255, 255, 255, 0.5));
+          // animation: glow 12s ease infinite alternate-reverse;
 
           @include mq-max("md") {
             width: 24px;
