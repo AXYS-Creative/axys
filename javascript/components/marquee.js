@@ -32,9 +32,11 @@ function updateMarquee(data) {
 
   duplicatedData.forEach((business) => {
     marqueeContent += `
-          <img src="${
-            IMG_PATH + business
-          }.svg" alt="${business}" class="marquee-img">
+          <img src="${IMG_PATH + business}.svg" 
+            alt="${business}" 
+            class="marquee-img" 
+            loading="lazy"
+            >
           <span class="marquee-dot" aria-hidden="true">•</span>
         `;
   });
