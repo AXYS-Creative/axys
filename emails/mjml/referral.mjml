@@ -1,11 +1,4 @@
 <mjml>
-  <mj-head>
-    <mj-style>
-      .text { font-family: Arial, Helvetica, sans-serif; line-height: 1; }
-      .text-title { color: #7EC1D4 !important; } .text-body { color: #FFFFFF
-      !important; }
-    </mj-style>
-  </mj-head>
   <mj-body background-color="#000000">
     <mj-section padding="96px 0">
       <mj-column>
@@ -13,7 +6,7 @@
           href="https://example.com"
           src="https://axyscreative.com/public/email-logo.png"
           alt="Example Image"
-          width="400px"
+          width="250px"
         >
         </mj-image>
       </mj-column>
@@ -21,40 +14,73 @@
 
     <mj-section background-color="#1E1E1E" border-radius="8px">
       <mj-column>
-        <mj-text css-class="text text-title" font-size="20px"
-          >Hello [First Name],</mj-text
+        <mj-text font-size="20px" color="#7EC1D4">Hello [First Name],</mj-text>
+        <mj-spacer height="24px" />
+        <mj-text color="#FFFFFF" line-height="24px" font-size="15px">
+          Thank you for expressing interest in AXYS Creative referral program!
+          Know that your referee is in good hands.
+        </mj-text>
+        <mj-text color="#FFFFFF" line-height="24px" font-size="15px">
+          From here we’ll get in touch to see if our services are a good match
+          for them! If they sign onto one of our plans, you’ll be notified and
+          preparations for your commission will begin.
+        </mj-text>
+        <mj-text color="#FFFFFF" line-height="24px" font-size="15px">
+          Again, we thank you for your support and look forward to growing
+          together!
+        </mj-text>
+        <mj-spacer height="16px" />
+        <mj-text font-size="15px" color="#7EC1D4">AXYS Creative</mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section>
+      <mj-column>
+        <mj-text
+          padding-top="24px"
+          color="#FFFFFF"
+          line-height="24px"
+          font-size="13px"
+          align="center"
         >
-        <mj-text css-class="text text-body"
-          >Thank you for expressing interest in AXYS Creative referral program!
-          Know that your referee is in good hands.</mj-text
-        >
+          This message was sent in response to form submission from
+          <a href="https://axyscreative.com" style="color: #fbfaa2">
+            axyscreative.com
+          </a>
+        </mj-text>
       </mj-column>
     </mj-section>
 
     <mj-section padding="96px 0">
       <mj-column>
         <mj-text align="center" css-class="white-text">
-          <a href="https://example.com" style="margin-right: 16px">
+          <a
+            href="https://www.instagram.com/axyscreative/"
+            style="margin-right: 24px; color: transparent"
+          >
             <img
               src="https://axyscreative.com/public/email-link-instagram.png"
               alt="Instagram"
-              width="50px"
+              width="40px"
               style="display: inline"
             />
           </a>
-          <a href="https://example.com" style="margin-right: 16px">
+          <a
+            href="https://dribbble.com/axyscreative"
+            style="margin-right: 24px; color: transparent"
+          >
             <img
               src="https://axyscreative.com/public/email-link-dribbble.png"
               alt="Dribbble"
-              width="50px"
+              width="40px"
               style="display: inline"
             />
           </a>
-          <a href="https://example.com">
+          <a href="https://x.com/AXYSCreative">
             <img
               src="https://axyscreative.com/public/email-link-twitter-x.png"
               alt="Twitter/X"
-              width="50px"
+              width="40px"
               style="display: inline"
             />
           </a>
