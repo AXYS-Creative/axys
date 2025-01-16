@@ -1,0 +1,88 @@
+<mjml>
+  <mj-body>
+    <mj-section>
+      <mj-column>
+        <!-- Logo Section -->
+        <mj-image
+          width="100px"
+          src="https://axyscreative.com/public/axys-logo-192.png"
+        ></mj-image>
+
+        <!-- Divider -->
+        <mj-divider border-color="#F45E43"></mj-divider>
+
+        <!-- Heading -->
+        <mj-text
+          font-size="20px"
+          color="#F45E43"
+          font-family="helvetica"
+          align="center"
+          >Welcome to the AXYS Creative Referral Program!</mj-text
+        >
+      </mj-column>
+    </mj-section>
+
+    <mj-section>
+      <mj-column>
+        <!-- Body Text -->
+        <mj-text font-size="16px" color="#000000" font-family="helvetica">
+          Hi [First Name],<br /><br />
+
+          Thank you for signing up for the AXYS Creative Referral Program! We're
+          thrilled to have you on board and excited about the possibility of
+          working together to create amazing websites for clients while earning
+          commissions for your referrals.<br /><br />
+
+          Here’s a quick overview of how the program works:<br />
+          - <strong>Earn 10% Monthly Commission:</strong> For every successful
+          referral, you’ll receive 10% of the client’s subscription fee for as
+          long as they remain subscribed.<br />
+          - <strong>Seamless Tracking:</strong> We partner with Rewardful to
+          ensure accurate referral tracking and commission payouts.<br />
+          - <strong>Unlimited Potential:</strong> There’s no cap on how many
+          clients you can refer or how much you can earn.<br /><br />
+
+          <strong>Next Steps:</strong><br />
+          1. Share your unique referral link (provided after approval) with
+          potential clients.<br />
+          2. Sit back and earn recurring monthly commissions as your referrals
+          subscribe to our services.<br /><br />
+
+          If you have any questions about the program, how to maximize your
+          referrals, or anything else, don’t hesitate to reach out to us at
+          <a href="mailto:axyscreativeagency@gmail.com"
+            >axyscreativeagency@gmail.com</a
+          >
+          or reply to this email.<br /><br />
+
+          Thank you again for joining the AXYS Creative Referral Program. We
+          look forward to partnering with you!
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section>
+      <mj-column>
+        <!-- Footer -->
+        <mj-text
+          font-size="14px"
+          color="#999999"
+          font-family="helvetica"
+          align="center"
+        >
+          Best regards,<br />
+          Aaron &amp; Bailey Garcia<br />
+          <strong>AXYS Creative</strong><br />
+          📧
+          <a href="mailto:axyscreativeagency@gmail.com" style="color: #f45e43"
+            >axyscreativeagency@gmail.com</a
+          ><br />
+          🌐
+          <a href="https://axyscreative.com" style="color: #f45e43"
+            >https://axyscreative.com</a
+          >
+        </mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>
