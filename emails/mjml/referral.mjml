@@ -1,43 +1,64 @@
 <mjml>
-  <mj-body background-color="#000000">
-    <mj-section padding="96px 0">
+  <mj-head>
+    <mj-attributes>
+      <mj-body background-color="#101010" />
+    </mj-attributes>
+    <mj-raw>
+      <meta name="color-scheme" content="light only" />
+      <meta name="supported-color-schemes" content="light" />
+    </mj-raw>
+  </mj-head>
+  <mj-body background-color="#101010">
+    <mj-section padding="48px 0 24px" background-color="#101010">
       <mj-column>
         <mj-image
           href="https://example.com"
           src="https://axyscreative.com/public/email-logo.png"
           alt="Example Image"
-          width="250px"
+          width="200px"
         >
         </mj-image>
       </mj-column>
     </mj-section>
 
-    <mj-section background-color="#1E1E1E" border-radius="8px">
-      <mj-column>
+    <mj-section padding="24px" background-color="#101010">
+      <mj-column
+        background-color="#1E1E1E"
+        border-radius="8px"
+        padding="16px 4px"
+      >
         <mj-text font-size="20px" color="#7EC1D4">Hello [First Name],</mj-text>
         <mj-spacer height="24px" />
         <mj-text color="#FFFFFF" line-height="24px" font-size="15px">
-          Thank you for expressing interest in AXYS Creative referral program!
-          Know that your referee is in good hands.
+          Thank you for your interest in the AXYS Creative Referral Program!
+        </mj-text>
+        <mj-text font-size="15px" line-height="24px" color="#ffffff">
+          <strong style="color: #a4d1a2"
+            >To get started, please provide the following details:</strong
+          >
+          <ol style="padding-left: 20px; color: #ffffff">
+            <li>Client’s Name</li>
+            <li>Client’s Email and Phone Number</li>
+            <li>How You Know Them</li>
+          </ol>
         </mj-text>
         <mj-text color="#FFFFFF" line-height="24px" font-size="15px">
-          From here we’ll get in touch to see if our services are a good match
-          for them! If they sign onto one of our plans, you’ll be notified and
-          preparations for your commission will begin.
+          Once we have this information, we’ll reach out to see if our services
+          align with their needs. If they decide to join one of our plans, we’ll
+          notify you right away, and your commission preparation will begin.
         </mj-text>
         <mj-text color="#FFFFFF" line-height="24px" font-size="15px">
-          Again, we thank you for your support and look forward to growing
+          We truly appreciate your support and look forward to achieving success
           together!
         </mj-text>
         <mj-spacer height="16px" />
-        <mj-text font-size="15px" color="#7EC1D4">AXYS Creative</mj-text>
+        <mj-text font-size="15px" color="#e48c66">AXYS Creative</mj-text>
       </mj-column>
     </mj-section>
 
-    <mj-section>
+    <mj-section background-color="#101010">
       <mj-column>
         <mj-text
-          padding-top="24px"
           color="#FFFFFF"
           line-height="24px"
           font-size="13px"
@@ -50,29 +71,36 @@
         </mj-text>
       </mj-column>
     </mj-section>
-
-    <mj-section padding="96px 0">
+    <mj-section padding="1px 0" background-color="#101010">
       <mj-column>
-        <mj-text align="center" css-class="white-text">
+        <mj-text
+          align="center"
+          font-size="13px"
+          color="#FFFFFF"
+          font-family="helvetica"
+        >
+          Connect with us:
+        </mj-text>
+        <mj-text align="center">
           <a
             href="https://www.instagram.com/axyscreative/"
-            style="margin-right: 24px; color: transparent"
+            style="margin-right: 12px; color: transparent"
           >
             <img
               src="https://axyscreative.com/public/email-link-instagram.png"
               alt="Instagram"
-              width="40px"
+              width="36px"
               style="display: inline"
             />
           </a>
           <a
             href="https://dribbble.com/axyscreative"
-            style="margin-right: 24px; color: transparent"
+            style="margin-right: 12px; color: transparent"
           >
             <img
               src="https://axyscreative.com/public/email-link-dribbble.png"
               alt="Dribbble"
-              width="40px"
+              width="36px"
               style="display: inline"
             />
           </a>
@@ -80,7 +108,7 @@
             <img
               src="https://axyscreative.com/public/email-link-twitter-x.png"
               alt="Twitter/X"
-              width="40px"
+              width="36px"
               style="display: inline"
             />
           </a>
