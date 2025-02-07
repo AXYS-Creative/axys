@@ -1,6 +1,19 @@
 <mjml>
-  <mj-body>
-    <mj-section padding-top="48px" padding-bottom="24px">
+  <mj-head>
+    <mj-attributes>
+      <mj-body background-color="#101010" />
+    </mj-attributes>
+    <mj-raw>
+      <meta name="color-scheme" content="light only" />
+      <meta name="supported-color-schemes" content="light" />
+    </mj-raw>
+  </mj-head>
+  <mj-body background-color="#101010">
+    <mj-section
+      padding-top="48px"
+      padding-bottom="24px"
+      background-color="#101010"
+    >
       <mj-column>
         <mj-image
           href="https://example.com"
@@ -11,63 +24,57 @@
         </mj-image>
       </mj-column>
     </mj-section>
-    <mj-section padding="24px">
+    <mj-section padding="24px" background-color="#101010">
       <mj-column
-        background-color="#F0F0F0"
+        background-color="#1E1E1E"
         border-radius="8px"
         padding="16px 4px"
       >
-        <mj-text font-size="20px" color="#E48C66"
+        <mj-text font-size="20px" color="#7EC1D4"
           >Welcome [First Name],</mj-text
         >
         <mj-spacer height="24px" />
-        <mj-text color="#101010" line-height="24px" font-size="15px">
+        <mj-text color="#F0F0F0" line-height="24px" font-size="15px">
           We’re thrilled to partner with you and bring your vision to life. To
           make the process seamless, we’ve set up a dedicated Trello board for
           your account where you can manage and track all your requests.
         </mj-text>
-        <mj-text color="#101010" line-height="24px" font-size="15px">
+        <mj-text color="#F0F0F0" line-height="24px" font-size="15px">
           Below are some steps to get started:
         </mj-text>
         <mj-text font-size="15px" line-height="24px" color="#F0F0F0">
-          <strong style="color: #101010"> 1. Access your Trello board </strong>
+          <strong style="color: #a4d1a2"> 1. Access your Trello board </strong>
           <ul style="padding: 0px 0 0 24px; color: #f0f0f0">
             <li>
               <a
                 href="https://www.instagram.com/axyscreative/"
-                style="color: #e48c66"
+                style="color: #fbfaa2"
               >
                 Trello board here
               </a>
             </li>
           </ul>
-          <strong style="color: #101010">2. Add your first request</strong>
+          <strong style="color: #a4d1a2">2. Add your first request</strong>
           <ul style="padding: 0px 0 0 24px; color: #f0f0f0">
-            <li style="color: #101010">
-              Use the "Up Next" column to create a card for each request.
-            </li>
-            <li style="color: #101010">Include as much detail as possible.</li>
-            <li style="color: #101010">
-              Move your most urgent ones to the top of the column.
-            </li>
+            <li>Use the "Up Next" column to create a card for each request.</li>
+            <li>Include as much detail as possible.</li>
+            <li>Move your most urgent ones to the top of the column.</li>
           </ul>
-          <strong style="color: #101010">3. Stay updated</strong>
+          <strong style="color: #a4d1a2">3. Stay updated</strong>
           <ul style="padding: 0px 0 0 24px; color: #f0f0f0">
-            <li style="color: #101010">
+            <li>
               Watch the board for status updates, feedback requests, or
               completed tasks.
             </li>
-            <li style="color: #101010">
-              We’ll keep you informed every step of the way!
-            </li>
+            <li>We’ll keep you informed every step of the way!</li>
           </ul>
         </mj-text>
-        <mj-text color="#101010" line-height="24px" font-size="15px">
+        <mj-text color="#F0F0F0" line-height="24px" font-size="15px">
           If you’re new to Trello or have any questions about adding requests,
           let us know—we’re here to help! You can reply to this email or reach
           out at any time.
         </mj-text>
-        <mj-text color="#101010" line-height="24px" font-size="15px">
+        <mj-text color="#F0F0F0" line-height="24px" font-size="15px">
           We’ll review your first requests promptly and start turning them into
           results you’ll love. This is just the beginning of our collaboration,
           and we can’t wait to see what we’ll accomplish together!
@@ -80,27 +87,27 @@
         </mj-text>
       </mj-column>
     </mj-section>
-    <mj-section padding="0">
+    <mj-section background-color="#101010" padding="0">
       <mj-column>
         <mj-text
-          color="#101010"
+          color="#F0F0F0"
           line-height="24px"
           font-size="13px"
           align="center"
         >
           This message was sent in response to signing up with
-          <a href="https://axyscreative.com" style="color: #e48c66">
+          <a href="https://axyscreative.com" style="color: #fbfaa2">
             axyscreative.com
           </a>
         </mj-text>
       </mj-column>
     </mj-section>
-    <mj-section padding="12px 0">
+    <mj-section padding="12px 0" background-color="#101010">
       <mj-column>
         <mj-text
           align="center"
           font-size="13px"
-          color="#101010"
+          color="#F0F0F0"
           font-family="helvetica"
         >
           Connect with us:
