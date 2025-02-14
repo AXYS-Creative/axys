@@ -5,7 +5,7 @@
         <mj-image
           href="https://example.com"
           src="https://axyscreative.com/public/email-logo.png"
-          alt="Example Image"
+          alt=""
           width="200px"
         >
         </mj-image>
