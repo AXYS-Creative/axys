@@ -278,12 +278,12 @@ footer,
   translate: -50% -50%;
   transform: perspective(500px) rotateX(-5deg);
   transform-origin: top;
-  transition: 0.5s ease 0.32s, opacity 0.5s ease 0.48s, height 0s;
+  transition: 0.5s ease 0.32s, opacity 0.5s ease 0.48s, height 0s, width 0s;
 }
 .site-nav[aria-hidden=false] {
   opacity: 1;
   pointer-events: all;
-  transition: 0.5s ease;
+  transition: 0.5s ease, height 0s, width 0s;
   transform: perspective(500px) rotateX(0deg);
 }
 .site-nav[aria-hidden=false] .nav-links li {
@@ -2219,6 +2219,10 @@ code {
     align-self: flex-start;
     margin-inline-start: 80px;
   }
+}
+
+.client-logos {
+  display: none;
 }
 
 .plans-section {
