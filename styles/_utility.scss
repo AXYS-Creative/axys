@@ -95,6 +95,10 @@
   padding-inline-start: 0.5ch;
 }
 
+.no-wrap {
+  white-space: nowrap;
+}
+
 // Media query classes - Warning, causing a break in voice assistant speech
 
 .no-motion {

@@ -1591,6 +1591,10 @@ code {
   padding-inline-start: 0.5ch;
 }
 
+.no-wrap {
+  white-space: nowrap;
+}
+
 .no-motion {
   display: none;
 }
