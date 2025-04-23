@@ -1,0 +1,133 @@
+<mjml>
+  <mj-body>
+    <mj-section padding-top="48px" padding-bottom="24px">
+      <mj-column>
+        <mj-image
+          href="https://axyscreative.com/"
+          src="https://axyscreative.com/public/email-logo.png"
+          alt=""
+          width="200px"
+        >
+        </mj-image>
+      </mj-column>
+    </mj-section>
+    <mj-section padding="24px">
+      <mj-column
+        background-color="#F0F0F0"
+        border-radius="8px"
+        padding="16px 4px"
+      >
+        <mj-text font-size="20px" color="#E48C66" align="left">
+          Admin Permissions Expiring Soon
+        </mj-text>
+        <mj-spacer height="12px" />
+        <mj-text color="#101010" line-height="24px" font-size="15px">
+          Hey [site admins], we noticed your subscription has been paused —
+          totally understandable!
+          <strong>Please note</strong> however, that access to the admin
+          dashboard for [site url] will <strong>expire on [date]</strong>, the
+          end of your original subscription billing period.
+        </mj-text>
+        <mj-text color="#101010" line-height="24px" font-size="15px">
+          To continue using the this feature you can either resume your
+          [current] plan or move to our
+          <a
+            href="https://buy.stripe.com/bIYaFu2nT2ne7sc5kp"
+            style="color: #e48c66"
+            >Admin Plan</a
+          >, originally priced at $150/month, now available for a limited 20%
+          discount at $120/month.
+          <strong>Offer ends [date, 60 days].</strong>
+        </mj-text>
+        <mj-text color="#101010" line-height="24px" font-size="15px">
+          If you'd rather let it go for now, no worries, you can always sign on
+          in the future!
+        </mj-text>
+        <mj-text color="#101010" line-height="24px" font-size="15px">
+          If you have any questions about changing your subscription or need to
+          resume your plan, feel free to reach us at
+          <a href="mailto:help@axyscreative.com" style="color: #e48c66">
+            help@axyscreative.com
+          </a>
+          . You can also visit your Stripe account to view billing info.
+        </mj-text>
+        <mj-button
+          href="https://billing.stripe.com/p/login/bIYcNw7NXeQDchi000"
+          background-color="#E48C66"
+          align="left"
+          font-size="15px"
+          padding="12px 24px"
+        >
+          Visit Account Portal
+        </mj-button>
+        <mj-spacer height="24px" />
+        <mj-text font-size="15px" color="#E48C66">
+          Aaron,
+          <br /><br />
+          AXYS Creative
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section padding="0">
+      <mj-column>
+        <mj-text
+          color="#101010"
+          line-height="24px"
+          font-size="13px"
+          align="center"
+        >
+          <em>
+            This email was sent regarding your subscription with
+            <a href="https://axyscreative.com" style="color: #e48c66">
+              axyscreative.com
+            </a>
+          </em>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section padding="12px 0">
+      <mj-column>
+        <mj-text
+          align="center"
+          font-size="13px"
+          color="#101010"
+          font-family="helvetica"
+        >
+          Connect with us:
+        </mj-text>
+        <mj-text align="center">
+          <a
+            href="https://www.instagram.com/axyscreative/"
+            style="margin-right: 12px; color: transparent"
+          >
+            <img
+              src="https://axyscreative.com/public/email-link-instagram.png"
+              alt="Instagram"
+              width="36px"
+              style="display: inline"
+            />
+          </a>
+          <a
+            href="https://dribbble.com/axyscreative"
+            style="margin-right: 12px; color: transparent"
+          >
+            <img
+              src="https://axyscreative.com/public/email-link-dribbble.png"
+              alt="Dribbble"
+              width="36px"
+              style="display: inline"
+            />
+          </a>
+          <a href="https://x.com/AXYSCreative">
+            <img
+              src="https://axyscreative.com/public/email-link-twitter-x.png"
+              alt="Twitter/X"
+              width="36px"
+              style="display: inline"
+            />
+          </a>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>
