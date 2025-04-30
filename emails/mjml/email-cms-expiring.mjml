@@ -25,12 +25,16 @@
           Hey [site admins], we noticed your subscription has been paused —
           totally understandable!
           <strong>Please note</strong> however, that access to the admin
-          dashboard for [site url] will <strong>expire on [date]</strong>, the
-          end of your original subscription billing period.
+          dashboard for
+          <a href="mailto:help@axyscreative.com" style="color: #e48c66"
+            >[site url]</a
+          >
+          will <strong>expire on [date]</strong>, the end of your original
+          subscription billing period.
         </mj-text>
         <mj-text color="#101010" line-height="24px" font-size="15px">
-          To continue using the this feature you can either resume your
-          [current] plan or move to our
+          To continue using this feature you can either resume your [current]
+          plan or move to our
           <a
             href="https://buy.stripe.com/bIYaFu2nT2ne7sc5kp"
             style="color: #e48c66"
